@@ -31,7 +31,7 @@
 
         <div class="mt-5 flex">
           <div class="mx-auto">
-            <p>or try it now</p>
+            <p>または今すぐ試す</p>
             <div class="language-bash mt-2">
               <pre><code><span class="opacity-50">$ </span><span class="token function">npm init</span> <span class="token text-[#408c9e] font-500">slidev</span></code></pre>
             </div>
