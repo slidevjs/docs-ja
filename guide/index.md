@@ -31,7 +31,7 @@ Slidev <sup>(slide + dev, `/slʌɪdɪv/`)</sup> はWebベースのスライド�
 これらのツールや技術を組み合わせることで、Slidevは実現されています。
 
 - [Vite](https://vitejs.dev) - 非常に高速なフロントエンドツール
-- [Vue 3](https://v3.vuejs.org/)をベースにした[Markdown](https://daringfireball.net/projects/markdown/syntax) - 必要に応じてHTMLとVueコンポーネントを使いつつ、コンテンツに集中できます
+- [Vue 3](https://v3.ja.vuejs.org/)をベースにした[Markdown](https://daringfireball.net/projects/markdown/syntax) - 必要に応じてHTMLとVueコンポーネントを使いつつ、コンテンツに集中できます
 - [Windi CSS](https://github.com/windicss/windicss) - オンデマンドなユーティリティファーストのCSSフレームワーク、 スライドを自在にスタイリング
 - [Prism](https://github.com/PrismJS/prism), [Shiki](https://github.com/shikijs/shiki), [Monaco Editor](https://github.com/Microsoft/monaco-editor) - ファーストクラスのコードスニペットサポートとライブコーディング機能
 - [RecordRTC](https://recordrtc.org) - ビルトインのレコーディングとカメラビュー

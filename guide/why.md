@@ -32,7 +32,7 @@ Slidevは開発者のためにコード巣にペットのファーストクラ�
 
 ## 高速
 
-Slidevは[Vite](https://vitejs.dev/)、[Vue 3](https://v3.vuejs.org/)、そして[Windi CSS](https://windicss.org/)を利用しており、もっとも素晴らしいオーサリング体験を提供しています。あなたが行ったすべての変更は、**即時に**あなたのスライドに反映されます。
+Slidevは[Vite](https://vitejs.dev/)、[Vue 3](https://v3.ja.vuejs.org/)、そして[Windi CSS](https://windicss.org/)を利用しており、もっとも素晴らしいオーサリング体験を提供しています。あなたが行ったすべての変更は、**即時に**あなたのスライドに反映されます。
 
 詳しくは[技術スタック](/guide/#技術スタック)をご覧ください。
 
