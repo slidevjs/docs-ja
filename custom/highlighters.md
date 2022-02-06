@@ -5,7 +5,7 @@ Slidevには2種類のシンタックスハイライトが付属しており、�
 - [Prism](https://prismjs.com/)
 - [Shiki](https://github.com/shikijs/shiki)
 
-**Prism**は最も人気のあるシンタックスハイライトの1つです。ハイライトはトークンクラスにコードを追加することで行われ、CSSによって色付けされます。[オフィシャルテーマ](https://github.com/PrismJS/prism-themes)を確認したり、[`prism-theme-vars`](https://github.com/antfu/prism-theme-vars)を使用して簡単にテーマを作成/カスタマイズすることができます。
+**Prism**は最も人気のあるシンタックスハイライトの1つです。ハイライトはトークンクラスにコードを追加することで行われ、CSSによって色付けされます。[公式テーマ](https://github.com/PrismJS/prism-themes)を確認したり、[`prism-theme-vars`](https://github.com/antfu/prism-theme-vars)を使用して簡単にテーマを作成/カスタマイズすることができます。
 
 一方で**Shiki**はTextMateの文法に対応したシンタックスハイライトです。色付きのトークンを生成するため、追加のCSSは必要ありません。充実した文法サポートにより、生成された色はVS Codeで見るのと同じように非常に正確です。またShikiには[多くのビルトインテーマ](https://github.com/shikijs/shiki/blob/master/docs/themes.md)が付属しています。Shikiの欠点は、ハイライトを行うためにTextMateのテーマ（VS Codeのテーマと互換性あり）も必要で、カスタマイズが少し難しくなることです。
 

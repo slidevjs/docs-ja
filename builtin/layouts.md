@@ -165,13 +165,13 @@ url: https://github.com/slidevjs/slidev
 layout: two-cols
 ---
 
-# 左
+# Left
 
 これは左側に表示されます。
 
 ::right::
 
-# 右
+# Right
 
 これは右側に表示されます。
 ```

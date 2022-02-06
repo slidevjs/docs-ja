@@ -41,7 +41,7 @@ your-slidev/
 
 <MyComponent :count="4"/>
 
-<!-- both namings work -->
+<!-- どちらの名前も使えます -->
 
 <hello-world foo="bar">
   Slot
@@ -50,7 +50,7 @@ your-slidev/
 
 この機能は[`vite-plugin-components`](https://github.com/antfu/vite-plugin-components)によって提供されています。詳細はこちらを参照してください。
 
-またSlidevはいくつかの[built-in components](/builtin/components)を提供していますので、それを利用することもできます。
+またSlidevはいくつかの[ビルトインコンポーネント](/builtin/components)を提供していますので、それを利用することもできます。
 
 ## レイアウト
 
@@ -95,7 +95,7 @@ layout: my-cool-theme
 
 規約： `./style.css` | `./styles/index.{css,js,ts}`
 
-この規約に従って配置されたファイルは、Appのルートに注入されます。複数のCSSをインポートする必要がある場合は、以下のような構造を作成し、インポートの順序を自分で管理することができます。
+この規約に従って配置されたファイルは、Appのルートに挿入されます。複数のCSSをインポートする必要がある場合は、以下のような構造を作成し、インポートの順序を自分で管理することができます。
 
 ```bash
 your-slidev/
@@ -141,7 +141,7 @@ import './layouts.css'
 
 規約： `index.html`
 
-`index.html`はメインの`index.html`にmeteタグやscriptを注入する機能を提供します。
+`index.html`はメインの`index.html`にmeteタグやscriptを挿入する機能を提供します。
 
 例えば、次のようなカスタム`index.html`の場合：
 
@@ -166,14 +166,14 @@ import './layouts.css'
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/slidevjs/slidev/assets/favicon.png">
-  <!-- injected head -->
+  <!-- 挿入されたhead -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Nunito+Sans:wght@200;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <div id="app"></div>
   <script type="module" src="__ENTRY__"></script>
-  <!-- injected body -->
+  <!-- 挿入されたbody -->
   <script src="./your-scripts"></script>
 </body>
 </html>

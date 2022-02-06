@@ -1,6 +1,6 @@
 # Markdownシンタックス
 
-スライドは **一つのマークダウンファイル** (デフォルト： `./slides.md`) の中に記述されます。 
+スライドは **1つのマークダウンファイル** (デフォルト： `./slides.md`) の中に記述されます。 
 
 [Markdownの機能](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)は通常通り使用することができ、インラインHTMLとVueコンポーネントが追加でサポートされています。[Windi CSS](https://windicss.org)を使ったスタイリングもサポートされています。スライドを区切るには改行で囲まれた`---`を使用してください。 
 
@@ -11,7 +11,7 @@ Hello, World!
 
 ---
 
-# ページ 2
+# Page 2
 
 コードブロックを直接使用してハイライト表示する
 
@@ -21,7 +21,7 @@ console.log('Hello, World!')
 
 ---
 
-# ページ 3
+# Page 3
 
 Windi CSSとVueコンポーネントを直接使用して、スライドをスタイリングし、リッチにすることができます。
 
@@ -49,13 +49,13 @@ background: './images/background-1.png'
 class: 'text-white'
 ---​
 
-# ページ 2
+# Page 2
 
 これはレイアウト`center`とバックグラウンドイメージが指定されたページです。
 
 ---
 
-# ページ 3
+# Page 3
 
 これはいかなる追加のメタデータもない、デフォルトのページです。
 ~~~
@@ -64,7 +64,7 @@ class: 'text-white'
 
 ## コードブロック
 
-Slidevを構築した大きな理由の1つは、自分のコードをスライド上で正しく見せる必要があるためです。SlidevではMarkdownフレーバーなコードブロックを使って、期待通りコードをハイライトすることができます。
+Slidevを開発した大きな理由の1つは、自分のコードをスライド上で正しく見せる必要があるためです。SlidevではMarkdownフレーバーなコードブロックを使って、意図した通りにコードをハイライトすることができます。
 
 ~~~ts
 //```ts
@@ -72,7 +72,7 @@ console.log('Hello, World!')
 //```
 ~~~
 
-Slidevはシンタックスハイライターとして[Prism](http://prismjs.com)と[Shiki](https://github.com/shiki/shiki)をサポートしています。詳細は[コードハイライト](/custom/highlighters)を参照してください。
+Slidevはシンタックスハイライターとして[Prism](http://prismjs.com)と[Shiki](https://github.com/shiki/shiki)をサポートしています。詳細は[シンタックスハイライト](/custom/highlighters)を参照してください。
 
 ### 行のハイライト
 
@@ -89,7 +89,7 @@ function add(
 //```
 ~~~
 
-ハイライトを複数ステップに分けて変更するには、`|`を使用して行番号を分割してください。例：
+ハイライトする行を複数ステップに分けて変更するには、`|`を使用して行番号を分割してください。例：
 
 ~~~ts
 //```ts {2-3|5|all}
@@ -102,7 +102,7 @@ function add(
 //```
 ~~~
 
-このサンプルでは、はじめに`a: Ref<number> | number`と`b: Ref<number> | number`を、次にクリックがされた後に`return computed(() => unref(a) + unref(b))`を、最後にコードブロック全体をハイライトします。詳細は[クリックアニメーションガイド](/guide/animations)を参照してください。
+このサンプルでは、はじめに`a: Ref<number> | number`と`b: Ref<number> | number`を、次にクリックがされた後に`return computed(() => unref(a) + unref(b))`を、最後にコードブロック全体をハイライトします。詳細は[アニメーションガイド](/guide/animations)を参照してください。
 
 ### Monacoエディタ
 
@@ -134,7 +134,7 @@ h1 {
 # 次のスライドには適用されない
 ```
 
-Markdown内の`<style>`タグは常に[scoped](https://vue-loader.vuejs.org/guide/scoped-css.html)です。グローバルにスタイルをオーバーライドする場合は、[カスタマイズセクション](/custom/directory-structure#style)を参照してください。
+Markdown内の`<style>`タグは常に[scoped](https://vue-loader.vuejs.org/guide/scoped-css.html)です。グローバルにスタイルをオーバーライドする場合は、[スタイル](/custom/directory-structure#スタイル)を参照してください。
 
 [Windi CSS](https://windicss.org)を搭載しているため、 ネストしたCSSや[directives](https://windicss.org/features/directives.html) (e.g. `@apply`)を直接利用することができます。
 
@@ -185,7 +185,7 @@ Markdownでは、各スライドの最後のコメントブロックはノート
 layout: cover
 ---
 
-# ページ 1
+# Page 1
 
 これはカバーページです。
 
@@ -193,7 +193,7 @@ layout: cover
 
 ---
 
-# ページ 2
+# Page 2
 
 <!-- これは、スライドの内容より前にあるため、ノートではありません。 -->
 
@@ -237,7 +237,7 @@ Slidevを使用すると、Markdownの中でほとんどすべての人気のあ
 
 > v0.18から使用可能です
 
-[名前付きスロット](https://v3.ja.vuejs.org/guide/component-slots.html#%E3%83%95%E3%82%A9%E3%83%BC%E3%83%AB%E3%83%8F%E3%82%99%E3%83%83%E3%82%AF%E3%82%B3%E3%83%B3%E3%83%86%E3%83%B3%E3%83%84)を使用して、複数のコントリビュートポイントを提供できるレイアウトもあります。
+レイアウトによっては、[名前付きスロット](https://v3.ja.vuejs.org/guide/component-slots.html#%E3%83%95%E3%82%A9%E3%83%BC%E3%83%AB%E3%83%8F%E3%82%99%E3%83%83%E3%82%AF%E3%82%B3%E3%83%B3%E3%83%86%E3%83%B3%E3%83%84)を使用して、複数のコントリビューションポイントを提供できます。
 
 例えば、[`two-cols`レイアウト](https://github.com/slidevjs/slidev/blob/main/packages/client/layouts/two-cols.vue)では、左 (`default`スロット）と右 (`right` スロット）の2つのカラムを並べることができるようになります。
 
@@ -248,14 +248,14 @@ layout: two-cols
 
 <template v-slot:default>
 
-# 左
+# Left
 
 これは左側に表示されます。
 
 </template>
 <template v-slot:right>
 
-# 右
+# Right
 
 これは右側に表示されます。
 
@@ -280,13 +280,13 @@ layout: two-cols
 layout: two-cols
 ---
 
-# 左
+# Left
 
 これは左側に表示されます。
 
 ::right::
 
-# 右
+# Right
 
 これは右側に表示されます。
 ```
@@ -300,13 +300,13 @@ layout: two-cols
 
 ::right::
 
-# 右
+# Right
 
 これは右側に表示されます。
 
 ::default::
 
-# 左
+# Left
 
 これは左側に表示されます。
 ```
@@ -327,7 +327,7 @@ background: 'https://source.unsplash.com/1600x900/?nature,water'
 これはカバーページです。
 ```
 
-詳細は[フロントマターの設定](/custom/#frontmatter-configures)を参照してください。
+詳細は[フロントマターの設定](/custom/#フロントマターの設定)を参照してください。
 
 ## LaTeX
 
@@ -400,7 +400,7 @@ slides.md`を複数のファイルに分割して、好きなように整理す�
 `slides.md` :
 
 ```md
-# ページ 1
+# Page 1
 
 これは通常のページです。
 
@@ -415,7 +415,7 @@ src: ./subpage2.md
 `subpage2.md` :
 
 ```md
-# ページ 2
+# Page 2
 
 このページは別のファイルのものです
 ```
@@ -463,7 +463,7 @@ class: text-center
 
 ### ページの再利用
 
-マルチエントリーにより、ページの再利用が用意になります。例：
+マルチエントリーにより、ページの再利用が容易になります。例：
 
 ```yaml
 ---

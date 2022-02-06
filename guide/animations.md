@@ -9,14 +9,14 @@
 ```md
 # Hello
 
-<!-- コンポーネントの使用方法: "次へ"を押すまで、ここから下の内容は表示されません -->
+<!-- コンポーネントの使い方: "次へ"を押すまで、ここから下の内容は表示されません -->
 <v-click>
 
 Hello World
 
 </v-click>
 
-<!-- ディレクティブの使用方法: 2回目の"次へ"を押すまで、ここから下の内容は表示されません -->
+<!-- ディレクティブの使い方: 2回目の"次へ"を押すまで、ここから下の内容は表示されません -->
 <div v-click class="text-xl p-2">
 
 Hey!
@@ -50,10 +50,10 @@ Hey!
 ```md
 <v-clicks>
 
-- 項目 1
-- 項目 2
-- 項目 3
-- 項目 4
+- Item 1
+- Item 2
+- Item 3
+- Item 4
 
 </v-clicks>
 ```
@@ -62,11 +62,11 @@ Hey!
 
 ### カスタムクリックカウント
 
-デフォルトでは、Slidevは次のスライドに行く前に必要なステップ数をカウントします。`clicks`というフロントマターオプションを記述することで、この設定をオーバーライドできます。
+デフォルトでは、Slidevは次のスライドに進む前に必要なステップ数をカウントします。`clicks`というフロントマターオプションを記述することで、この設定をオーバーライドできます。
 
 ```yaml
 ---
-# このスライドでは、次のスライドに行くまでに10回クリックする
+# このスライドでは、次のスライドに進むまでに10回クリックする
 clicks: 10
 ---
 ```
@@ -159,7 +159,7 @@ clicks: 3
 }
 ```
 
-詳細は[スタイルのカスタマイズ](/custom/directory-structure#style)を参照してください。
+詳細は[スタイルのカスタマイズ](/custom/directory-structure#スタイル)を参照してください。
 
 ## モーション
 
@@ -196,7 +196,7 @@ Slidevは[@vueuse/motion](https://motion.vueuse.org/)を内蔵しています。
 > </div>
 > ```
 
-詳細: [デモ](https://sli.dev/demo/starter/7) | [@vueuse/motion](https://motion.vueuse.org/) | [v-motion](https://motion.vueuse.org/directive-usage.html) | [Presets](https://motion.vueuse.org/presets.html)
+詳細： [デモ](https://sli.dev/demo/starter/7) | [@vueuse/motion](https://motion.vueuse.org/) | [v-motion](https://motion.vueuse.org/directive-usage.html) | [Presets](https://motion.vueuse.org/presets.html)
 
 ## ページのトランジション
 

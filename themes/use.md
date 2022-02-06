@@ -24,7 +24,7 @@ $ npm install @slidev/theme-seriph
 
 以上、新しいテーマをお楽しみください。各テーマの使い方の詳細については、テーマのREADMEを参照してください。
 
-あなたのテーマを共有したいですか？[テーマの書き方](/themes/write-a-theme)を参照してください。
+あなたのテーマを共有したいですか？[テーマを作成する](/themes/write-a-theme)を参照してください。
 
 ## テーマの取り出し
 
@@ -54,4 +54,4 @@ theme: ./path/to/theme
 ---
 ```
 
-詳細は[テーマの書き方](/themes/write-a-theme)を参照してください。
+詳細は[テーマを作成する](/themes/write-a-theme)を参照してください。

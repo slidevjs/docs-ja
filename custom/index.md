@@ -62,7 +62,7 @@ Slidevはディレクトリ構造の規約を利用して、設定を最小化�
 
 ## ツールを設定する
 
-- [ハイライター](/custom/highlighters)
+- [シンタックスハイライト](/custom/highlighters)
 - [Vueの設定](/custom/config-vue)
 - [Viteの設定](/custom/config-vite)
 - [Windi CSSの設定](/custom/config-windicss)
