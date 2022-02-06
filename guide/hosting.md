@@ -42,7 +42,7 @@ download: 'https://myside.com/my-talk.pdf'
 
 ## サンプル
 
-以下はSPAとしてエクスポートされた例です:
+以下はSPAとしてエクスポートされた例です：
 
 - [Starter Template](https://sli.dev/demo/starter)
 - [Composable Vue](https://talks.antfu.me/2021/composable-vue) by [Anthony Fu](https://github.com/antfu)

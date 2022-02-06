@@ -30,12 +30,12 @@ hideInToc: true
 <Toc />
 ~~~
 
-パラメータ:
+パラメータ：
 
-* `columns` (`string | number`, デフォルト: `1`): 表示する列数
-* `maxDepth` (`string | number`, デフォルト: `Infinity`): 表示する目次の階層の最大値
-* `minDepth` (`string | number`, デフォルト: `1`): 表示する目次の階層の最小値
-* `mode` (`'all' | 'onlyCurrentTree'| 'onlySiblings'`, デフォルト: `'all'`):
+* `columns` (`string | number`, デフォルト： `1`): 表示する列数
+* `maxDepth` (`string | number`, デフォルト： `Infinity`): 表示する目次の階層の最大値
+* `minDepth` (`string | number`, デフォルト： `1`): 表示する目次の階層の最小値
+* `mode` (`'all' | 'onlyCurrentTree'| 'onlySiblings'`, デフォルト： `'all'`):
   * `'all'`: すべての項目を表示する
   * `'onlyCurrentTree'`: 現在のページが含まれるツリーのアイテムのみを表示する（アクティブな要素、アクティブな要素の親と子）
   * `'onlySiblings'`: 現在のページが含まれるツリーと直接の兄弟関係にある要素のみを表示する

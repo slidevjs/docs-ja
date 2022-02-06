@@ -196,7 +196,7 @@ Slidevは[@vueuse/motion](https://motion.vueuse.org/)を内蔵しています。
 > </div>
 > ```
 
-詳細: [デモ](https://sli.dev/demo/starter/7) | [@vueuse/motion](https://motion.vueuse.org/) | [v-motion](https://motion.vueuse.org/directive-usage.html) | [Presets](https://motion.vueuse.org/presets.html)
+詳細： [デモ](https://sli.dev/demo/starter/7) | [@vueuse/motion](https://motion.vueuse.org/) | [v-motion](https://motion.vueuse.org/directive-usage.html) | [Presets](https://motion.vueuse.org/presets.html)
 
 ## ページのトランジション
 
