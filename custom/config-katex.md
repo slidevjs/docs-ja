@@ -14,4 +14,4 @@ export default defineKatexSetup(() => {
 })
 ```
 
-この設定により、[KaTex Options](https://katex.org/docs/options.html)のカスタム設定を提供することができます。詳細については、型の定義とドキュメントを参照してください。
+この設定により、[KaTex Options](https://katex.org/docs/options.html)のカスタム設定を使用することができます。詳細については、型の定義とドキュメントを参照してください。

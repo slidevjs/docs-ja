@@ -76,7 +76,7 @@ theme: ./
 }
 ```
 
-フォントは[Googleフォント](https://fonts.google.com/)から自動でインポートされます。
+フォントは[Google Fonts](https://fonts.google.com/)から自動でインポートされます。
 
 詳細は[フォント](/custom/fonts)と[フロントマターの設定](/custom/#フロントマターの設定)を参照してください。
 
@@ -114,7 +114,7 @@ html.dark {
 }
 ```
 
-SLidevはカラースキーマを切り替えるために、ページの`html`要素の`dark`クラスを切り替えます。
+Slidevはカラースキーマを切り替えるために、ページの`html`要素の`dark`クラスを切り替えます。
 
 ### シンタックスハイライト
 

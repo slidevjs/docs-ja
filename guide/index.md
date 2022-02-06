@@ -11,20 +11,20 @@ Slidev <sup>(slide + dev, `/slʌɪdɪv/`)</sup> はWebベースのスライド�
 ### 機能
 
 - 📝 [**Markdownベース**](/guide/syntax.html) - お気に入りのエディタとワークフローを使用
-- 🧑‍💻 [**デベロッパーフレンドリー**](/guide/syntax.html#コードブロック) - ビルトインのシンタックスハイライト、ライブコーディング、 etc
+- 🧑‍💻 [**デベロッパーフレンドリー**](/guide/syntax.html#コードブロック) - ビルトインのシンタックスハイライト、ライブコーディングなど
 - 🎨 [**豊富なテーマ**](/themes/gallery.html) - テーマはnpmパッケージで共有・利用が可能
 - 🌈 [**スタイリッシュ**](/guide/syntax.html#埋め込みスタイル) - [Windi CSS](https://windicss.org/) オンデマンドユーティリティ、 使いやすい埋め込まれたスタイルシート
 - 🤹 [**インタラクティブ**](/custom/directory-structure.html#コンポーネント) - Vueコンポーネントをシームレスに埋め込み
 - 🎙 [**プレゼンターモード**](/guide/presenter-mode.html) - 別のウィンドウ、スマートフォンでさえもスライドを操作
 - 🎨 [**描画**](/guide/drawing.html) - スライドに描画し、注釈をつける
 - 🧮 [**LaTeX**](/guide/syntax.html#latex) - LaTeX数式のビルトインサポート
-- 📰 [**図形**](/guide/syntax.html#図形) - 説明ともに図形を作成 
+- 📰 [**図形**](/guide/syntax.html#図形) - 説明と合わせて図形を作成 
 - 🌟 [**アイコン**](/guide/syntax.html#アイコン) - どんなアイコンセットからでも、直接アイコンにアクセス
-- 💻 [**エディタ**](/guide/editors.html) - 統合されたエディタ、もしくは [VS Code拡張機能](https://github.com/slidevjs/slidev-vscode)
+- 💻 [**エディタ**](/guide/editors.html) - 統合されたエディタと[VS Code拡張機能](https://github.com/slidevjs/slidev-vscode)
 - 🎥 [**レコーディング**](/guide/recording.html) - ビルトインのレコーディングとカメラビュー
 - 📤 [**ポータブル**](/guide/exporting.html) - PDF、PNG、またはホスト可能なSPAにエクスポート
 - ⚡️ [**高速**](https://vitejs.dev) - [Vite](https://vitejs.dev) によって提供されたインスタントリロード
-- 🛠 [**自由に開発可能**](/custom/config-vite.html) - Viteプラグイン、 Vue components、 どんなnpmパッケージも使用可能
+- 🛠 [**自由に開発可能**](/custom/config-vite.html) - Viteプラグイン、Vue components、どんなnpmパッケージも使用可能
 
 ### 技術スタック
 
@@ -33,11 +33,11 @@ Slidev <sup>(slide + dev, `/slʌɪdɪv/`)</sup> はWebベースのスライド�
 - [Vite](https://vitejs.dev) - 非常に高速なフロントエンドツール
 - [Vue 3](https://v3.ja.vuejs.org/)をベースにした[Markdown](https://daringfireball.net/projects/markdown/syntax) - 必要に応じてHTMLとVueコンポーネントを使いつつ、コンテンツに集中できます
 - [Windi CSS](https://github.com/windicss/windicss) - オンデマンドなユーティリティファーストのCSSフレームワーク、 スライドを自在にスタイリング
-- [Prism](https://github.com/PrismJS/prism), [Shiki](https://github.com/shikijs/shiki), [Monaco Editor](https://github.com/Microsoft/monaco-editor) - ファーストクラスのコードスニペットサポートとライブコーディング機能
+- [Prism](https://github.com/PrismJS/prism)、[Shiki](https://github.com/shikijs/shiki)、[Monaco Editor](https://github.com/Microsoft/monaco-editor) - ファーストクラスのコードスニペットサポートとライブコーディング機能
 - [RecordRTC](https://recordrtc.org) - ビルトインのレコーディングとカメラビュー
 - [VueUse](https://vueuse.org)ファミリー -  [`@vueuse/core`](https://github.com/vueuse/vueuse)、[`@vueuse/head`](https://github.com/vueuse/head)、[`@vueuse/motion`](https://github.com/vueuse/motion)など
 - [Iconify](https://iconify.design/) - アイコンセットコレクション
-- [Drauu](https://github.com/antfu/drauu) - 描画とアノテーションのサポーと
+- [Drauu](https://github.com/antfu/drauu) - 描画と注釈のサポート
 - [KaTeX](https://katex.org/) - LaTeX数式のレンダリング
 - [Mermaid](https://mermaid-js.github.io/mermaid) - テキストによる図解
 
@@ -69,7 +69,7 @@ $ yarn create slidev
 
 ### コマンドラインインターフェース
 
-Slidevがインストールされたプロジェクトでは、 npmスクリプトで `slidev` バイナリを使用することができます。
+Slidevがインストールされたプロジェクトでは、 npmスクリプトで `slidev`コマンドを使用することができます。
 
 ```json
 {
@@ -89,7 +89,7 @@ $ npx slidev
 
 その他のオプションについては、 `slidev --help` を実行してください。
 
-### Markdown シンタックス
+### Markdownシンタックス
 
 Slidevはプロジェクトルートの配下にある `slides.md` を読み取り、スライドに変換します。 変更を加えると、 スライドのコンテンツに即時に反映されます。 例：
 
