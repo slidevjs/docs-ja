@@ -2,7 +2,7 @@
 
 const Guide = [
   {
-    text: 'なぜSlidevを使うのか',
+    text: 'なぜSlidev？',
     link: '/guide/why',
   },
   {
@@ -72,7 +72,11 @@ const Theme = [
 
 const Translations = [
   {
+    text: '日本語',
+  },
+  {
     text: 'English',
+    link: 'https://sli.dev{{pathname}}',
   },
   {
     text: '简体中文',
@@ -180,19 +184,19 @@ const Resources = [
 
 const slidebars = [
   {
-    text: 'Guide',
+    text: 'ガイド',
     children: Guide,
   },
   {
-    text: 'Themes',
+    text: 'テーマ',
     children: Theme,
   },
   {
-    text: 'Customizations',
+    text: 'カスタマイズ',
     children: Customizations,
   },
   {
-    text: 'Built-in',
+    text: 'ビルトイン',
     children: [
       {
         text: 'コンポーネント',
@@ -211,7 +215,7 @@ const slidebars = [
  */
 module.exports = {
   title: 'Slidev',
-  description: 'Presentation slides for developers',
+  description: '開発者のためのプレゼンテーションスライド',
   head: [
     ['link', { rel: 'icon', type: 'image/png', href: '/favicon.png' }],
     ['meta', { name: 'author', content: 'Anthony Fu' }],
@@ -230,36 +234,36 @@ module.exports = {
     logo: '/logo.svg',
     docsBranch: 'main',
     editLinks: true,
-    editLinkText: 'Suggest changes to this page',
+    editLinkText: 'このページの編集を提案する',
 
     algolia: {
       apiKey: '1a5c5a504139c58f428974c78c55291d',
       indexName: 'slidev',
       searchParameters: {
         // for translations maintainers: change the filter to your locale code (subdomain name)
-        facetFilters: ['language:en']
+        facetFilters: ['language:ja']
       }
     },
 
     nav: [
       {
-        text: 'Guide',
+        text: 'ガイド',
         items: Guide,
       },
       {
-        text: 'Theme',
+        text: 'テーマ',
         items: Theme,
       },
       {
-        text: 'Customize',
+        text: 'カスタマイズ',
         items: Customizations,
       },
       {
-        text: 'Resources',
+        text: 'リソース',
         items: Resources,
       },
       {
-        text: 'English',
+        text: '日本語',
         items: Translations,
       },
     ],
