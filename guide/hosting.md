@@ -47,7 +47,7 @@ download: 'https://myside.com/my-talk.pdf'
 - [Starter Template](https://sli.dev/demo/starter)
 - [Composable Vue](https://talks.antfu.me/2021/composable-vue) by [Anthony Fu](https://github.com/antfu)
 
-詳しくは[Showcases](/showcases)を参照してください。
+詳しくは[ショーケース](/showcases)を参照してください。
 
 ## ホスティング
 

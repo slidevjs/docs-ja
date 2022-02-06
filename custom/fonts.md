@@ -18,11 +18,11 @@ fonts:
 ---
 ```
 
-フォントは**[Google Fonts](https://fonts.google.com/)から自動的にインポート**されます。つまり、Google Fontsで利用可能なフォントを直接利用することができます。
+フォントは **[Google Fonts](https://fonts.google.com/)から自動的にインポート** されます。つまり、Google Fontsで利用可能なフォントを直接利用することができます。
 
 ## ローカルフォント
 
-デフォルトでは、Slidevは`fonts`で指定されたすべてのフォントはGoogle Fontsのものとして認識します。ローカルのフォントを使用したい場合は、`fonts.local`を指定して、自動インポートを無効にします。 
+デフォルトでは、Slidevは`fonts`で指定されたすべてのフォントをGoogle Fontsのものとして認識します。ローカルのフォントを使用したい場合は、`fonts.local`を指定して、自動インポートを無効にします。 
 
 ```yaml
 ---

@@ -72,7 +72,7 @@ console.log('Hello, World!')
 //```
 ~~~
 
-Slidevはシンタックスハイライターとして[Prism](http://prismjs.com)と[Shiki](https://github.com/shiki/shiki)をサポートしています。詳細は[コードハイライト](/custom/highlighters)を参照してください。
+Slidevはシンタックスハイライターとして[Prism](http://prismjs.com)と[Shiki](https://github.com/shiki/shiki)をサポートしています。詳細は[シンタックスハイライト](/custom/highlighters)を参照してください。
 
 ### 行のハイライト
 
@@ -102,7 +102,7 @@ function add(
 //```
 ~~~
 
-このサンプルでは、はじめに`a: Ref<number> | number`と`b: Ref<number> | number`を、次にクリックがされた後に`return computed(() => unref(a) + unref(b))`を、最後にコードブロック全体をハイライトします。詳細は[クリックアニメーションガイド](/guide/animations)を参照してください。
+このサンプルでは、はじめに`a: Ref<number> | number`と`b: Ref<number> | number`を、次にクリックがされた後に`return computed(() => unref(a) + unref(b))`を、最後にコードブロック全体をハイライトします。詳細は[アニメーションガイド](/guide/animations)を参照してください。
 
 ### Monacoエディタ
 
@@ -134,7 +134,7 @@ h1 {
 # 次のスライドには適用されない
 ```
 
-Markdown内の`<style>`タグは常に[scoped](https://vue-loader.vuejs.org/guide/scoped-css.html)です。グローバルにスタイルをオーバーライドする場合は、[カスタマイズセクション](/custom/directory-structure#style)を参照してください。
+Markdown内の`<style>`タグは常に[scoped](https://vue-loader.vuejs.org/guide/scoped-css.html)です。グローバルにスタイルをオーバーライドする場合は、[スタイル](/custom/directory-structure#スタイル)を参照してください。
 
 [Windi CSS](https://windicss.org)を搭載しているため、 ネストしたCSSや[directives](https://windicss.org/features/directives.html) (e.g. `@apply`)を直接利用することができます。
 
@@ -327,7 +327,7 @@ background: 'https://source.unsplash.com/1600x900/?nature,water'
 これはカバーページです。
 ```
 
-詳細は[フロントマターの設定](/custom/#frontmatter-configures)を参照してください。
+詳細は[フロントマターの設定](/custom/#フロントマターの設定)を参照してください。
 
 ## LaTeX
 

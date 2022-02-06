@@ -78,7 +78,7 @@ theme: ./
 
 フォントは[Googleフォント](https://fonts.google.com/)から自動でインポートされます。
 
-詳細は[フォント](/custom/fonts)と[フロントマターの設定](/custom/#frontmatter-configures)を参照してください。
+詳細は[フォント](/custom/fonts)と[フロントマターの設定](/custom/#フロントマターの設定)を参照してください。
 
 ## メタデータ
 

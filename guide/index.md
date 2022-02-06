@@ -6,36 +6,36 @@ Slidev <sup>(slide + dev, `/slʌɪdɪv/`)</sup> はWebベースのスライド�
 
 機能豊富なマークダウンファイルを使用して、ライブコーディング、PDFエクスポート、プレゼンテーションのレコーディングのような、多くのビルトインインテグレーションとともに、瞬時に再読み込みが可能な美しいスライドを生成します。webで動くので、Slidevを使ってどんなことでもできます - 可能性は無限大です。
 
-プロジェクトの論理的根拠については [なぜSlidevを使うのか](/guide/why) のセクションで詳しく説明しています。
+プロジェクトの論理的根拠については [なぜSlidev？](/guide/why) のセクションで詳しく説明しています。
 
 ### 機能
 
-- 📝 [**Markdown-based**](/guide/syntax.html) - お気に入りのエディタとワークフローを使用
-- 🧑‍💻 [**Developer Friendly**](/guide/syntax.html#code-blocks) - ビルトインのシンタックスハイライト、ライブコーディング、 etc
-- 🎨 [**Themable**](/themes/gallery.html) - テーマはnpmパッケージで共有・利用が可能
-- 🌈 [**Stylish**](/guide/syntax.html#embedded-styles) - [Windi CSS](https://windicss.org/) オンデマンドユーティリティ、 使いやすい埋め込まれたスタイルシート
-- 🤹 [**Interactive**](/custom/directory-structure.html#components) - Vueコンポーネントをシームレスに埋め込み
-- 🎙 [**Presenter Mode**](/guide/presenter-mode.html) - 別のウィンドウ、スマートフォンでさえもスライドを操作
-- 🎨 [**Drawing**](/guide/drawing.html) - スライドに描画し、注釈をつける
+- 📝 [**Markdownベース**](/guide/syntax.html) - お気に入りのエディタとワークフローを使用
+- 🧑‍💻 [**デベロッパーフレンドリー**](/guide/syntax.html#コードブロック) - ビルトインのシンタックスハイライト、ライブコーディング、 etc
+- 🎨 [**豊富なテーマ**](/themes/gallery.html) - テーマはnpmパッケージで共有・利用が可能
+- 🌈 [**スタイリッシュ**](/guide/syntax.html#埋め込みスタイル) - [Windi CSS](https://windicss.org/) オンデマンドユーティリティ、 使いやすい埋め込まれたスタイルシート
+- 🤹 [**インタラクティブ**](/custom/directory-structure.html#コンポーネント) - Vueコンポーネントをシームレスに埋め込み
+- 🎙 [**プレゼンターモード**](/guide/presenter-mode.html) - 別のウィンドウ、スマートフォンでさえもスライドを操作
+- 🎨 [**描画**](/guide/drawing.html) - スライドに描画し、注釈をつける
 - 🧮 [**LaTeX**](/guide/syntax.html#latex) - LaTeX数式のビルトインサポート
-- 📰 [**Diagrams**](/guide/syntax.html#diagrams) - 説明ともにダイアグラムを作成 
-- 🌟 [**Icons**](/guide/syntax.html#icons) - どんなアイコンセットからでも、直接アイコンにアクセス
-- 💻 [**Editors**](/guide/editors.html) - 統合されたエディタ、もしくは [VS Code拡張機能](https://github.com/slidevjs/slidev-vscode)
-- 🎥 [**Recording**](/guide/recording.html) - ビルトインのレコーディングとカメラビュー
-- 📤 [**Portable**](/guide/exporting.html) - PDF、PNG、またはホスト可能なSPAにエクスポート
-- ⚡️ [**Fast**](https://vitejs.dev) - [Vite](https://vitejs.dev) によって提供されたインスタントリロード
-- 🛠 [**Hackable**](/custom/config-vite.html) - Viteプラグイン、 Vue components、 どんなnpmパッケージも使用可能
+- 📰 [**図形**](/guide/syntax.html#図形) - 説明ともに図形を作成 
+- 🌟 [**アイコン**](/guide/syntax.html#アイコン) - どんなアイコンセットからでも、直接アイコンにアクセス
+- 💻 [**エディタ**](/guide/editors.html) - 統合されたエディタ、もしくは [VS Code拡張機能](https://github.com/slidevjs/slidev-vscode)
+- 🎥 [**レコーディング**](/guide/recording.html) - ビルトインのレコーディングとカメラビュー
+- 📤 [**ポータブル**](/guide/exporting.html) - PDF、PNG、またはホスト可能なSPAにエクスポート
+- ⚡️ [**高速**](https://vitejs.dev) - [Vite](https://vitejs.dev) によって提供されたインスタントリロード
+- 🛠 [**自由に開発可能**](/custom/config-vite.html) - Viteプラグイン、 Vue components、 どんなnpmパッケージも使用可能
 
 ### 技術スタック
 
 これらのツールや技術を組み合わせることで、Slidevは実現されています。
 
 - [Vite](https://vitejs.dev) - 非常に高速なフロントエンドツール
-- [Vue 3](https://v3.vuejs.org/) powered [Markdown](https://daringfireball.net/projects/markdown/syntax) - 必要に応じてHTMLとVueコンポーネントを使いつつ、コンテンツに集中できます
+- [Vue 3](https://v3.vuejs.org/)をベースにした[Markdown](https://daringfireball.net/projects/markdown/syntax) - 必要に応じてHTMLとVueコンポーネントを使いつつ、コンテンツに集中できます
 - [Windi CSS](https://github.com/windicss/windicss) - オンデマンドなユーティリティファーストのCSSフレームワーク、 スライドを自在にスタイリング
 - [Prism](https://github.com/PrismJS/prism), [Shiki](https://github.com/shikijs/shiki), [Monaco Editor](https://github.com/Microsoft/monaco-editor) - ファーストクラスのコードスニペットサポートとライブコーディング機能
 - [RecordRTC](https://recordrtc.org) - ビルトインのレコーディングとカメラビュー
-- [VueUse](https://vueuse.org) family -  [`@vueuse/core`](https://github.com/vueuse/vueuse), [`@vueuse/head`](https://github.com/vueuse/head), [`@vueuse/motion`](https://github.com/vueuse/motion), etc.
+- [VueUse](https://vueuse.org)ファミリー -  [`@vueuse/core`](https://github.com/vueuse/vueuse)、[`@vueuse/head`](https://github.com/vueuse/head)、[`@vueuse/motion`](https://github.com/vueuse/motion)など
 - [Iconify](https://iconify.design/) - アイコンセットコレクション
 - [Drauu](https://github.com/antfu/drauu) - 描画とアノテーションのサポーと
 - [KaTeX](https://katex.org/) - LaTeX数式のレンダリング

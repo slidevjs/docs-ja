@@ -50,7 +50,7 @@ your-slidev/
 
 この機能は[`vite-plugin-components`](https://github.com/antfu/vite-plugin-components)によって提供されています。詳細はこちらを参照してください。
 
-またSlidevはいくつかの[built-in components](/builtin/components)を提供していますので、それを利用することもできます。
+またSlidevはいくつかの[ビルトインコンポーネント](/builtin/components)を提供していますので、それを利用することもできます。
 
 ## レイアウト
 

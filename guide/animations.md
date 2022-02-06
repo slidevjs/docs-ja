@@ -159,7 +159,7 @@ clicks: 3
 }
 ```
 
-詳細は[スタイルのカスタマイズ](/custom/directory-structure#style)を参照してください。
+詳細は[スタイルのカスタマイズ](/custom/directory-structure#スタイル)を参照してください。
 
 ## モーション
 

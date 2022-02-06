@@ -103,7 +103,7 @@ h1 {
 }
 ```
 
-詳細: [グローバルスタイル](/custom/directory-structure.html#style)
+詳細: [グローバルスタイル](/custom/directory-structure.html#スタイル)
 
 ### キャンバスの拡大・縮小
 

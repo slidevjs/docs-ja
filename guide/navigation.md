@@ -13,13 +13,13 @@ Slidevのページの左下にマウスを移動すると、ナビゲーショ�
 | <kbd>left</kbd> | <carbon-arrow-left class="inline-icon-btn"/> | 前のアニメーションもしくはスライドへ |
 | <kbd>up</kbd> | - | 前のスライドへ |
 | <kbd>down</kbd> | - | 次のスライドへ |
-| <kbd>o</kbd> | <carbon-apps class="inline-icon-btn"/> | [スライドオーバービュー](#slides-overview)に切り替え |
+| <kbd>o</kbd> | <carbon-apps class="inline-icon-btn"/> | [スライドオーバービュー](#スライドオーバービュー)に切り替え |
 | <kbd>d</kbd> | <carbon-sun class="inline-icon-btn"/> <carbon-moon class="inline-icon-btn"/> | ダークモードに切り替え |
-| - | <carbon-user-avatar class="inline-icon-btn"/> | [カメラビュー](/guide/recording#camera-view)に切り替え |
-| - | <carbon-video class="inline-icon-btn"/> | [レコーディング](/guide/recording#recording-1) |
+| - | <carbon-user-avatar class="inline-icon-btn"/> | [カメラビュー](/guide/recording#カメラビュー)に切り替え |
+| - | <carbon-video class="inline-icon-btn"/> | [レコーディング](/guide/recording#レコーディング-1) |
 | - | <carbon-user-speaker class="inline-icon-btn"/> | [プレゼンターモード](/guide/presenter-mode) |
-| - | <carbon-edit class="inline-icon-btn"/> | [統合エディタ](/guide/editors#integrated-editor)に切り替え |
-| - | <carbon-download class="inline-icon-btn"/> | スライドをダウンロード ([SPAビルド](/guide/exporting#single-page-application-spa)でだけ表示されます) |
+| - | <carbon-edit class="inline-icon-btn"/> | [統合エディタ](/guide/editors#統合エディタ)に切り替え |
+| - | <carbon-download class="inline-icon-btn"/> | スライドをダウンロード ([SPAビルド](/guide/exporting#シングルページアプリケーション-spa)でだけ表示されます) |
 | - | <carbon-information class="inline-icon-btn"/> | スライドの情報を表示 |
 | - | <carbon-settings-adjust class="inline-icon-btn"/> | 設定メニューを表示 |
 | <kbd>g</kbd> | - | goto...を表示 |

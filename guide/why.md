@@ -1,4 +1,4 @@
-# なぜSlidevを使うのか
+# なぜSlidev？
 
 [Microsoft PowerPoint](https://www.microsoft.com/en-us/microsoft-365/powerpoint)や[Apple Keynote](https://www.apple.com/keynote/)など、機能豊富で汎用的なWYSIWYGのスライド作成ツールがたくさんあります。これらは非常に直感的で簡単に学ぶことができる一方で、アニメーションやチャート、その他の多くの機能を使った素晴らしいスライドを作成するのに非常によく機能します。では、なぜわざわざSlidevを作ったのでしょうか？
 
@@ -16,25 +16,25 @@ WYSIWYGエディタで作業していると、スタイリングオプション�
 
 Slidevは拡張されたMarkdown形式を使用して、スライドを単一のプレーンテキストファイルに保存し、整理します。これにより、コンテンツの作成に集中することができます。またコンテンツとスタイルが分離されているので、異なるテーマに楽に切り替えることが可能です。
 
-詳しくは[SlidevのMarkdownシンタックス](/guide/syntax)を参照してください。
+詳しくは[Markdownシンタックス](/guide/syntax)を参照してください。
 
-## テーマブル
+## 豊富なテーマ
 
 Slidevのテーマは、npmパッケージを使用して共有とインストールができます。そして1行設定するだけでテーマを適用することができます。
 
-[テーマギャラリー](/themes/gallery)や[テーマの書き方を学ぶ](/themes/write-a-theme)をチェックしてみてください。
+[テーマギャラリー](/themes/gallery)や[テーマを作成する](/themes/write-a-theme)をチェックしてみてください。
 
 ## デベロッパーフレンドリー
 
 Slidevは開発者のためにコード巣にペットのファーストクラスのサポートを提供します。[Prism](https://prismjs.com/)と[Shiki](https://github.com/shikijs/shiki)の両方をサポートし、ピクセルパーフェクトなシンタックスハイライトを実現しつつ、いつでもコードを修正することができます。[Monaco editor](https://microsoft.github.io/monaco-editor/) を内蔵し、オートコンプリート、タイプホバーリング、TypeScriptの型チェックサポートにより、プレゼンテーションでのライブコーディングやデモも可能になります。
 
-詳しくは[ハイライター](/custom/highlighters)と[Monacoの設定](/custom/config-monaco)を参照してください。
+詳しくは[シンタックスハイライト](/custom/highlighters)と[Monacoの設定](/custom/config-monaco)を参照してください。
 
 ## 高速
 
 Slidevは[Vite](https://vitejs.dev/)、[Vue 3](https://v3.vuejs.org/)、そして[Windi CSS](https://windicss.org/)を利用しており、もっとも素晴らしいオーサリング体験を提供しています。あなたが行ったすべての変更は、**即時に**あなたのスライドに反映されます。
 
-詳しくは[技術スタック](/guide/#tech-stack)をご覧ください。
+詳しくは[技術スタック](/guide/#技術スタック)をご覧ください。
 
 ## インタラクティブ & エクスプレッシブ
 
@@ -52,7 +52,7 @@ Slidevはビルトインのレコーディング機能とカメラービュー�
 
 詳しくは[エクスポート](/guide/exporting)を参照してください。
 
-## ハッカブル
+## 自由に開発可能
 
 Web技術を使用していることにより、WebアプリでできることはSlidevでも実現可能です。例えば、WebGL、APIリクエスト、iframe、あるいはライブシェアリングなどが利用可能です。あなたの想像力次第でなんでもできます！
 
