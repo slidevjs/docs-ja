@@ -33,6 +33,8 @@ aspectRatio: '16/9'
 # canvasの実際の横幅を指定します。単位はpxです。
 canvasWidth: 980
 
+# faviconにはローカルファイルのパスか、URLを使用できます。
+favicon: 'https://cdn.jsdelivr.net/gh/slidevjs/slidev/assets/favicon.png'
 # フォントはGoogle Fontsから自動的にimportされます。
 # 詳細: https://sli.dev/custom/fonts
 fonts:
