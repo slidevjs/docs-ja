@@ -72,7 +72,7 @@ console.log('Hello, World!')
 //```
 ~~~
 
-Slidevはシンタックスハイライターとして[Prism](http://prismjs.com)と[Shiki](https://github.com/shiki/shiki)をサポートしています。詳細は[シンタックスハイライト](/custom/highlighters)を参照してください。
+Slidevはシンタックスハイライターとして[Prism](http://prismjs.com)と[Shiki](https://github.com/shikijs/shiki)をサポートしています。詳細は[シンタックスハイライト](/custom/highlighters)を参照してください。
 
 ### 行のハイライト
 
