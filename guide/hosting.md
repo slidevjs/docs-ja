@@ -95,27 +95,56 @@ Vercelのダッシュボードを開き、リポジトリを指定して新し�
 
 - [GitHub Pages](https://pages.github.com/)
 
-GitHub Actionsを使用してGitHub Pagesにスライドをデプロイするために、以下の内容で`.github/workflows/deploy.yml`を作成してください。
+GitHub Pagesにデプロイするには:
+
+- プロジェクトのすべてのファイルをリポジトリ（例：`name_of_repo`）にアップロードします。
+- `.github/workflows/deploy.yml`というファイルを作成し、以下の内容を記述して、GitHub Actions経由でスライドをGitHub Pagesにデプロイします。`<name_of_repo>`は`name_of_repo`に置き換えます。このとき、前後のスラッシュはそのまま残してください。
 
 ```yaml
 name: Deploy pages
-on: push
+
+on:
+  workflow_dispatch: {}
+  push:
+    branches:
+      - main
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
         with:
-          node-version: '14'
+          node-version: 'lts/*'
+
       - name: Install dependencies
         run: npm install
+
       - name: Build
-        run: npm run build
-      - name: Deploy pages
-        uses: crazy-max/ghaction-github-pages@v2
+        run: npm run build -- --base /${{github.event.repository.name}}/
+
+      - uses: actions/configure-pages@v4
+
+      - uses: actions/upload-pages-artifact@v3
         with:
-          build_dir: dist
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          path: dist
+
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
 ```
+
+- リポジトリ内で、Settings > Pagesに移動します。"Build and deployment"の項目で、"GitHub Actions"を選択します。
+- 最後に、すべてのワークフローが実行された後、Settings > Pagesの下にスライドへのリンクが表示されるはずです。
