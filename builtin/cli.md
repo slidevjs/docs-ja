@@ -1,28 +1,28 @@
 # Slidev CLI
 
-`@slidev/cli` exposes a binary called `slidev` that you can use to develop, build, and export your slides.
+`@slidev/cli` はスライドの開発、ビルド、エクスポートに使用できる `slidev` コマンドを提供しています。
 
-## Prerequisites
+## 前提条件
 
-To use the CLI, you can either install `@slidev/cli` globally or install it locally in your Node.js project. If you created your project with `npm init slidev`, the CLI is already installed locally.
+CLI は、`@slidev/cli` をグローバルにインストールするか、Node.js プロジェクトにローカルにインストールすることで使用できます。`npm init slidev` でプロジェクトを作成した場合、CLI はすでにインストールされています。
 
 ::: warning
-Usually `npx slidev` is not supported because the package name is actually `@slidev/cli`.
+パッケージ名は実際には `@slidev/cli` ですので、`npx slidev` は通常使用できません。
 :::
 
-The CLI options of the commands obey the following conventions:
+CLI オプションは以下のルールに従います:
 
-- the value of the option can be passed after a space or a `=` character:
+- オプションの値はスペースか `=` の後に続けて指定できます。
 
-  Example: `slidev --port 8080` is equivalent to `slidev --port=8080`
+  例: `slidev --port 8080` は `slidev --port=8080` と同じです。
 
-- `true` can be omitted for boolean options:
+- ブール値のオプションでは、`true` を省略できます。
 
-  Example: `slidev --open` is equivalent to `slidev --open true`
+  例: `slidev --open` は `slidev --open true` と同じです。
 
 ::: info
 
-If you use npm, please don't forget to add `--` before the options to pass them to Slidev:
+npm を使っているならば、オプションを Slidev に渡す前に `--` を追加することを忘れないでください:
 
 ```bash
 npm run slidev -- --remote --port 8080 --open
@@ -32,65 +32,65 @@ npm run slidev -- --remote --port 8080 --open
 
 ## `slidev [entry]` {#dev}
 
-Start a local server for Slidev.
+Slidev のローカルサーバーを起動します。
 
-- `[entry]` (`string`, default: `slides.md`): path to the markdown file containing your slides.
+- `[entry]` (`string`, デフォルト: `slides.md`): スライドの Markdown ファイルのパス
 
-Options:
+オプション:
 
-- `--port`, `-p` (`number`, default: `3030`): port number.
-- `--base` (`string`, default: `/`): base URL (see https://vitejs.dev/config/shared-options.html#base).
-- `--open`, `-o` (`boolean`, default: `false`): open in the browser.
-- `--remote [password]` (`string`): listen to the public host and enable remote control, if a value is passed then the presenter mode is private and only accessible by passing the given password in the URL query `password` parameter.
-- `--bind` (`string`, default: `0.0.0.0`): specify which IP addresses the server should listen on in the remote mode.
-- `--log` (`'error', 'warn', 'info', 'silent'`, default: `'warn'`): Log level.
-- `--force`, `-f` (`boolean`, default: `false`): force the optimizer to ignore the cache and re-bundle.
-- `--theme`, `-t` (`string`): override theme.
+- `--port`, `-p` (`number`, デフォルト: `3030`): ポート番号
+- `--base` (`string`, デフォルト: `/`): ベース URL (参照: https://vitejs.dev/config/shared-options.html#base)
+- `--open`, `-o` (`boolean`, デフォルト: `false`): ブラウザで自動的に開く
+- `--remote [password]` (`string`): パブリックホストをリッスンして、リモートコントロールを有効にする。値が渡された場合、プレゼンターモードはプライベートになり、URL クエリの `password` パラメーターで指定されたパスワードを渡すことでのみアクセスできる
+- `--bind` (`string`, デフォルト: `0.0.0.0`): リモートモードでサーバーがリッスンする IP アドレスを指定する
+- `--log` (`'error', 'warn', 'info', 'silent'`, デフォルト: `'warn'`): ログレベルを指定する
+- `--force`, `-f` (`boolean`, デフォルト: `false`): オプティマイザーにキャッシュを無視して再バンドルさせる
+- `--theme`, `-t` (`string`): 指定したテーマでオーバーライドする
 
 ## `slidev build [entry]` {#build}
 
-Build a hostable SPA. See <LinkInline link="guide/hosting" /> for more details.
+ホスト可能な SPA をビルドします。詳細は <LinkInline link="guide/hosting" /> を参照してください。
 
-- `[entry]` (`string`, default: `slides.md`): path to the slides markdown file.
+- `[entry]` (`string`, デフォルト: `slides.md`): スライド Markdown ファイルのパス
 
-Options:
+オプション:
 
-- `--out`, `-o` (`string`, default: `dist`): output directory
-- `--base` (`string`, default: `/`): base URL (see https://vitejs.dev/config/shared-options.html#base)
-- `--download` (`boolean`, default: `false`): allow the download of the slides as a PDF inside the SPA
-- `--theme`, `-t` (`string`): override theme
+- `--out`, `-o` (`string`, デフォルト: `dist`): 出力先のディレクトリ
+- `--base` (`string`, デフォルト: `/`): ベース URL (参照: https://vitejs.dev/config/shared-options.html#base)
+- `--download` (`boolean`, デフォルト: `false`): SPA 内でスライドを PDF としてダウンロード可能にする
+- `--theme`, `-t` (`string`): 指定したテーマでオーバーライドする
 
 ## `slidev export [...entry]` {#export}
 
-Export slides to PDF (or other format). See <LinkInline link="guide/exporting" /> for more details.
+スライドを PDF (または他の) 形式で出力します。詳細は <LinkInline link="guide/exporting" /> を参照してください。
 
-- `[entry]` (`string`, default: `slides.md`): path to the slides markdown entry.
+- `[entry]` (`string`, デフォルト: `slides.md`): スライド Markdown ファイルのパス
 
-Options:
+オプション:
 
-- `--output` (`string`, default: use `exportFilename` (see https://sli.dev/custom/#frontmatter-configures) or use `[entry]-export`): path to the output.
-- `--format` (`'pdf', 'png', 'pptx', 'md'`, default: `'pdf'`): output format.
-- `--timeout` (`number`, default: `30000`): timeout for rendering the print page (see https://playwright.dev/docs/api/class-page#page-goto).
-- `--range` (`string`): page ranges to export (example: `'1,4-5,6'`).
-- `--dark` (`boolean`, default: `false`): export as dark theme.
-- `--with-clicks`, `-c` (`boolean`, default: `false`): export pages for every click animation (see https://sli.dev/guide/animations.html#click-animation).
-- `--theme`, `-t` (`string`): override theme.
-- `--omit-background` (`boolean`, default: `false`): remove the default browser background
+- `--output` (`string`, デフォルト: `exportFilename` (参照: https://sli.dev/custom/#frontmatter-configures) もしくは `[entry]-export` ): 出力先のパス
+- `--format` (`'pdf', 'png', 'pptx', 'md'`, デフォルト: `'pdf'`): 出力形式
+- `--timeout` (`number`, デフォルト: `30000`): 印刷ページのレンダリングのタイムアウト (参照: https://playwright.dev/docs/api/class-page#page-goto)
+- `--range` (`string`): 出力するページ範囲 (例: `'1,4-5,6'`)
+- `--dark` (`boolean`, デフォルト: `false`): ダークテーマで出力する
+- `--with-clicks`, `-c` (`boolean`, デフォルト: `false`): クリックアニメーションごとにページを出力する (参照: https://sli.dev/guide/animations.html#click-animation)
+- `--theme`, `-t` (`string`): 指定したテーマでオーバーライドする
+- `--omit-background` (`boolean`, デフォルト: `false`): デフォルトのブラウザ背景を削除する
 
 ## `slidev format [entry]` {#format}
 
-Format the markdown file. Note that this won't format the content of the slides, only the organization of the markdown file.
+Markdown ファイルをフォーマットします。これはスライドの内容ではなく、Markdown ファイルの構成のみをフォーマットすることに注意してください。
 
-- `[entry]` (`string`, default: `slides.md`): path to the slides markdown entry.
+- `[entry]` (`string`, デフォルト: `slides.md`): スライド Markdown ファイルのパス
 
 ## `slidev theme [subcommand]` {#theme}
 
-Theme-related operations.
+テーマ関連の操作を行います。
 
-Subcommands:
+サブコマンド:
 
-- `eject [entry]`: Eject the current theme into the local file system. See <LinkInline link="features/eject-theme" />.
-  - `[entry]` (`string`, default: `slides.md`): path to the slides markdown entry.
-  - Options:
-    - `--dir` (`string`, default: `theme`): the output dir.
-    - `--theme`, `-t` (`string`): override theme.
+- `eject [entry]`: 現在のテーマをローカルファイルに出力します。詳細は <LinkInline link="features/eject-theme" /> を参照してください。
+  - `[entry]` (`string`, デフォルト: `slides.md`): スライド Markdown ファイルのパス
+  - オプション:
+    - `--dir` (`string`, デフォルト: `theme`): 出力先のディレクトリ
+    - `--theme`, `-t` (`string`): 指定したテーマでオーバーライドする
