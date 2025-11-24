@@ -1,110 +1,98 @@
-# Monacoの設定
+# Configure Monaco
 
 <Environment type="client" />
 
-以下の内容で`./setup/monaco.ts`を作成します。
+Create `./setup/monaco.ts` with the following content:
 
-```ts
+```ts twoslash [./setup/monaco.ts]
 import { defineMonacoSetup } from '@slidev/types'
 
 export default defineMonacoSetup(async (monaco) => {
-  // 設定するためには`monaco`を使用します
+  // use `monaco` to configure
 })
 ```
 
-詳細は[configuring Monaco](https://github.com/Microsoft/monaco-editor)を参照してください。
+Learn more about [configuring Monaco](https://github.com/Microsoft/monaco-editor).
 
-## 使い方
+## TypeScript Types
 
-スライドでMonacoを使用するには、コードスニペットに`{monaco}`を追加するだけです：
+When using TypeScript with Monaco, types for dependencies will be installed to the client-side automatically.
 
-~~~js
-//```js
-const count = ref(1)
-const plusOne = computed(() => count.value + 1)
-
-console.log(plusOne.value) // 2
-
-plusOne.value++ // error
-//```
-~~~
-
-これを以下のように変更します
-
-~~~js
-//```js {monaco}
-const count = ref(1)
-const plusOne = computed(() => count.value + 1)
-
-console.log(plusOne.value) // 2
-
-plusOne.value++ // error
-//```
-~~~
-
-## エクスポート
-
-デフォルトでは、Monacoは`開発者`モードのみで動作します。エクスポートされたSPAでMonacoを使用したい場合は、フロントマターで設定してください：
-
-```yaml
----
-monaco: true # デフォルト "dev"
----
-```
-
-## 型の自動インストール
-
-MonacoでTypeScriptを使用する場合、依存関係のある型は自動的にクライアントサイドにインストールされます。
-
-~~~ts
-//```ts {monaco}
+````md
+```ts {monaco}
 import { ref } from 'vue'
 import { useMouse } from '@vueuse/core'
 
 const counter = ref(0)
-//```
-~~~
+```
+````
 
-上記の例では、`vue`と`@vueuse/core`はdependencies / devDependenciesとしてローカルにインストールされています。あとはSlidevが自動的にエディタに対応した型を作成します。
+In the example above, make sure `vue` and `@vueuse/core` are installed locally as dependencies / devDependencies, Slidev will handle the rest to get the types working for the editor automatically. When deployed as SPA, those types will also be bundled for static hosting.
 
-## テーマの設定
+### Additional Types
 
-テーマはライトテーマ/ダークテーマをベースにSlidevで制御されています。テーマをカスタマイズしたい場合は、テーマのIDをsetup関数に指定します：
+Slidev will scan all the Monaco code blocks in your slides and import the types for those used libraries for you. In case it missed some, you can explicitly specify extra packages to import the types for:
 
-```ts
-// ./setup/monaco.ts
+```md
+---
+monacoTypesAdditionalPackages:
+  - lodash-es
+  - foo
+---
+```
+
+### Auto Type Acquisition
+
+You can optionally switch to load types from CDN by setting the following headmatter:
+
+```md
+---
+monacoTypesSource: ata
+---
+```
+
+This feature is powered by [`@typescript/ata`](https://github.com/microsoft/TypeScript-Website/tree/v2/packages/ata) and runs completely on the client-side.
+
+## Configure Themes
+
+Since v0.48.0, Monaco will reuse the Shiki theme you configured in [Shiki's setup file](/custom/config-highlighter#configure-shiki), powered by [`@shikijs/monaco`](https://shiki.style/packages/monaco). You don't need to worry about it anymore and it will have a consistent style with the rest of your code blocks.
+
+## Configure the Editor
+
+> Available since v0.43.0
+
+If you would like to customize the Monaco editor you may pass an `editorOptions` object that matches the [Monaco IEditorOptions](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor.IEditorOptions.html) definition.
+
+````md
+```ts {monaco} { editorOptions: { wordWrap:'on'} }
+console.log('HelloWorld')
+```
+````
+
+Alternatively if you would like these options to be applied to every Monaco instance, you can return them in the `defineMonacoSetup` function
+
+```ts twoslash [./setup/monaco.ts]
 import { defineMonacoSetup } from '@slidev/types'
 
 export default defineMonacoSetup(() => {
   return {
-    theme: {
-      dark: 'vs-dark',
-      light: 'vs',
-    },
+    editorOptions: {
+      wordWrap: 'on'
+    }
   }
 })
 ```
 
-カスタムテーマを使用する場合には次のようにします：
+## Disabling
 
-```ts
-import { defineMonacoSetup } from '@slidev/types'
+Since v0.48.0, the Monaco editor is enabled by default and only be bundled when you use it. If you want to disable it, you can set `monaco` to `false` in the frontmatter of your slide:
 
-// change to your themes
-import dark from 'theme-vitesse/themes/vitesse-dark.json'
-import light from 'theme-vitesse/themes/vitesse-light.json'
-
-export default defineMonacoSetup((monaco) => {
-  monaco.editor.defineTheme('vitesse-light', light as any)
-  monaco.editor.defineTheme('vitesse-dark', dark as any)
-
-  return {
-    theme: {
-      light: 'vitesse-light',
-      dark: 'vitesse-dark',
-    },
-  }
-})
+```yaml
+---
+monaco: false # can also be `dev` or `build` to conditionally enable it
+---
 ```
 
-> Slidev用のテーマを作成する場合は、setup関数内で動的`import()`を使用すると、より良いtree-shakingとcode-splittingの結果を得ることができます。
+## Configure Code Runners
+
+To configure how the Monaco Runner runs the code, or to add support for custom languages, please reference [Configure Code Runners](/custom/config-code-runners).

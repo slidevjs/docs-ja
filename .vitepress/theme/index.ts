@@ -1,18 +1,19 @@
-import Layout from './Layout.vue'
-import NotFound from './NotFound.vue'
+import type { EnhanceAppContext } from 'vitepress'
+import TwoSlash from '@shikijs/vitepress-twoslash/client'
+import Theme from 'vitepress/theme'
+import Layout from './components/Layout.vue'
 
-import 'windi-base.css'
-import 'windi-components.css'
+import '@shikijs/vitepress-twoslash/style.css'
 import './styles/vars.css'
-import './styles/layout.css'
-import './styles/code.css'
-import './styles/custom-blocks.css'
-import './styles/sidebar-links.css'
-import 'windi-utilities.css'
+import './styles/demo.css'
+import './styles/custom.css'
+import 'uno.css'
+import 'virtual:group-icons.css'
 
-const theme = {
+export default {
+  extends: Theme,
+  enhanceApp({ app }: EnhanceAppContext) {
+    app.use(TwoSlash as any)
+  },
   Layout,
-  NotFound,
 }
-
-export default theme

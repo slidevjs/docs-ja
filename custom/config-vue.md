@@ -1,12 +1,18 @@
-# Vueの設定
+# Configure Vue App
 
 <Environment type="client" />
 
-Slidevはクライアントサイドでアプリケーションをレンダリングするために[Vue 3](https://v3.ja.vuejs.org/)を使用しています。カスタムプラグインや設定を追加することで、アプリケーションを拡張することができます。
+Slidev uses [Vue 3](https://v3.vuejs.org/) to render the application on the client side. You can extend the app to add custom plugins or configurations.
 
-以下の内容で`./setup/main.ts`を作成します：
+Create `./setup/main.ts` with the following content:
 
-```ts
+<!-- eslint-disable import/first -->
+
+```ts twoslash [setup/main.ts]
+import type { Plugin } from 'vue'
+
+declare const YourPlugin: Plugin
+// ---cut---
 import { defineAppSetup } from '@slidev/types'
 
 export default defineAppSetup(({ app, router }) => {
@@ -15,6 +21,6 @@ export default defineAppSetup(({ app, router }) => {
 })
 ```
 
-これはSlidevアプリのメインエントランスとしても使用することができ、アプリ起動前にいくつかの初期化を行うことができます。
+This can also be used as the main entrance of your Slidev app to do some initializations before the app starts.
 
-詳細： [アプリケーションAPI](https://v3.ja.vuejs.org/api/application-api.html#component)
+Learn more: [Vue Application API](https://v3.vuejs.org/api/application-api.html#component).

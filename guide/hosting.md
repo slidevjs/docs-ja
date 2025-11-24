@@ -1,85 +1,172 @@
-# 静的ホスティング
+---
+outline: deep
+---
 
-## シングルページアプリケーション(SPA)を構築する 
+# Building and Hosting
 
-スライドをセルフホスティング可能なSPAとして構築することができます：
+Slidev is designed to run as a web server when you are editing or presenting your slides. However, after the presentation, you may still want to share your **interactive** slides with others. This guide will show you how to build and host your slides.
+
+## Build as a SPA {#spa}
+
+You can build the slides into a static [Single-page application (SPA)](https://developer.mozilla.org/en-US/docs/Glossary/SPA) via the following command:
 
 ```bash
 $ slidev build
 ```
 
-生成されたアプリケーションは`dist/`の配下に配置され、[GitHub Pages](https://pages.github.com/)、[Netlify](https://netlify.app/)、[Vercel](https://vercel.com/)など、好きな場所にホストすることができます。これでリンク1つで世界中の人とスライドを共有することできます。
+By default, the generated files are placed in the `dist` folder. You can test the built version of you slides by running: `npx vite preview` or any other static server.
 
-### ベースパス
+### Base Path {#base}
 
-サブルート下にスライドをデプロイするには、`--base`オプションを指定する必要があります。例：
+To deploy your slides under sub-routes, you need to pass the `--base` option. The `--base` path **must begin and end with a slash `/`**. For example:
 
 ```bash
 $ slidev build --base /talks/my-cool-talk/
 ```
 
-詳細は[Viteのドキュメント](https://vitejs.dev/guide/build.html#public-base-path)を参照してください。
+Refer to [Vite's documentation](https://vitejs.dev/guide/build.html#public-base-path) for more details.
 
-### ダウンロード可能なPDFを提供する
+### Output directory {#output-directory}
 
-以下の設定により、SPAの閲覧者向けにダウンロード可能なPDFを提供することができます：
+You can change the output directory using `--out`.
 
-```md
----
-download: true
----
+```bash
+$ slidev build --out my-build-folder
 ```
 
-Slidevはビルドと一緒にPDFファイルを生成し、SPAにダウンロードボタンが表示されます。
+### Multiple Builds {#multiple-builds}
 
-またPDFに対してカスタムURLを指定することもできます。その場合、レンダリング処理はスキップされます。
+You can build multiple slide decks in one go by passing multiple markdown files as arguments:
 
-```md
----
-download: 'https://myside.com/my-talk.pdf'
----
+```bash
+$ slidev build slides1.md slides2.md
 ```
 
-## サンプル
+Or if your shell supports it, you can use a glob pattern:
 
-以下はSPAとしてエクスポートされた例です：
+```bash
+$ slidev build *.md
+```
 
-- [Starter Template](https://sli.dev/demo/starter)
+In this case, each input file will generate a folder containing the build in the output directory.
+
+### Examples {#examples}
+
+Here are a few examples of the exported SPA:
+
+- [Demo Slides](https://sli.dev/demo/starter)
 - [Composable Vue](https://talks.antfu.me/2021/composable-vue) by [Anthony Fu](https://github.com/antfu)
+- More in [Showcases](../resources/showcases)
 
-詳しくは[ショーケース](/showcases)を参照してください。
+### Options {#options}
 
-## ホスティング
+<LinkCard link="features/build-with-pdf" />
+<LinkCard link="features/bundle-remote-assets" />
 
-`npm init slidev@lastest`を使って、サービスをそのままホスティングするために必要な設定ファイルが含まれたプロジェクトの雛形を生成することを推奨します。
+## Hosting {#hosting}
+
+We recommend using `npm init slidev@latest` to scaffold your project, which contains the necessary configuration files for hosting services out-of-the-box.
+
+### GitHub Pages {#github-pages}
+
+To deploy your slides on [GitHub Pages](https://pages.github.com/) via GitHub Actions, follow these steps:
+
+1. In your repository, go to `Settings` > `Pages`. Under `Build and deployment`, select `GitHub Actions`. (Do not choose `Deploy from a branch` and upload the `dist` directory, which is not recommended.)
+2. Create `.github/workflows/deploy.yml` with the following content to deploy your slides to GitHub Pages via GitHub Actions.
+
+::: details deploy.yml
+
+```yaml
+name: Deploy pages
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+
+      - name: Setup @antfu/ni
+        run: npm i -g @antfu/ni
+
+      - name: Install dependencies
+        run: nci
+
+      - name: Build
+        run: nr build --base /${{github.event.repository.name}}/
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    name: Deploy
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+```
+
+:::
+
+3. Commit and push the changes to your repository. The GitHub Actions workflow will automatically deploy your slides to GitHub Pages every time you push to the `main` branch.
+4. You can access your slides at `https://<username>.github.io/<repository-name>/`.
 
 ### Netlify
 
-- [Netlify](https://netlify.com/)
+Create `netlify.toml` in your project root with the following content:
 
-プロジェクトルートに以下の内容で`netlify.toml`を作成します。
+::: details netlify.toml
 
-```ts
-[build.environment]
-  NODE_VERSION = "14"
-
+```toml
 [build]
-  publish = "dist"
-  command = "npm run build"
+publish = 'dist'
+command = 'npm run build'
+
+[build.environment]
+NODE_VERSION = '20'
 
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+from = '/*'
+to = '/index.html'
+status = 200
 ```
 
-Netlifyのダッシュボードを開き、リポジトリを指定して新しいサイトを作成してください。
+:::
+
+Then go to your [Netlify dashboard](https://netlify.com/) and create a new site with the repository.
 
 ### Vercel
 
-- [Vercel](https://vercel.com/)
+Create `vercel.json` in your project root with the following content:
 
-プロジェクトルートに以下の内容で`vercel.json`を作成します。
+::: details vercel.json
 
 ```json
 {
@@ -89,33 +176,45 @@ Netlifyのダッシュボードを開き、リポジトリを指定して新し�
 }
 ```
 
-Vercelのダッシュボードを開き、リポジトリを指定して新しいサイトを作成してください。
+:::
 
-## GitHub Pages
+Then go to your [Vercel dashboard](https://vercel.com/) and create a new site with the repository.
 
-- [GitHub Pages](https://pages.github.com/)
+### Host on Docker {#docker}
 
-GitHub Actionsを使用してGitHub Pagesにスライドをデプロイするために、以下の内容で`.github/workflows/deploy.yml`を作成してください。
+If you need a rapid way to run a presentation with containers, you can use the prebuilt [docker image](https://hub.docker.com/r/tangramor/slidev) maintained by [tangramor](https://github.com/tangramor), or build your own.
 
-```yaml
-name: Deploy pages
-on: push
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-      - name: Install dependencies
-        run: npm install
-      - name: Build
-        run: npm run build
-      - name: Deploy pages
-        uses: crazy-max/ghaction-github-pages@v2
-        with:
-          build_dir: dist
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+::: details Use the Docker Image
+
+Just run the following command in your work folder:
+
+```bash
+docker run --name slidev --rm -it \
+    --user node \
+    -v ${PWD}:/slidev \
+    -p 3030:3030 \
+    -e NPM_MIRROR="https://registry.npmmirror.com" \
+    tangramor/slidev:latest
 ```
+
+**_Note_**: You can use `NPM_MIRROR` to specify a npm mirror to speed up the installation process.
+
+If your work folder is empty, it will generate a template `slides.md` and other related files under your work folder, and launch the server on port `3030`.
+
+You can access your slides from `http://localhost:3030/`
+
+To create an Docker Image for your slides, you can use the following Dockerfile:
+
+```Dockerfile
+FROM tangramor/slidev:latest
+
+ADD . /slidev
+```
+
+Create the docker image: `docker build -t myslides .`
+
+And run the container: `docker run --name myslides --rm --user node -p 3030:3030 myslides`
+
+You can visit your slides at `http://localhost:3030/`
+
+:::

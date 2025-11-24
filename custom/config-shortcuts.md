@@ -1,16 +1,18 @@
-# ショートカットの設定
-
-> v0.20から使用可能です
+# Configure Shortcuts
 
 <Environment type="client" />
 
-以下の内容で`./setup/shortcuts.ts`を作成します：
+## Getting started
 
-```ts
-import { defineShortcutsSetup, NavOperations } from '@slidev/types'
+Create `./setup/shortcuts.ts` with the following content:
 
-export default defineShortcutsSetup((nav: NavOperations) => {
+```ts twoslash [./setup/shortcuts.ts]
+import type { NavOperations, ShortcutOptions } from '@slidev/types'
+import { defineShortcutsSetup } from '@slidev/types'
+
+export default defineShortcutsSetup((nav: NavOperations, base: ShortcutOptions[]) => {
   return [
+    ...base, // keep the existing shortcuts
     {
       key: 'enter',
       fn: () => nav.next(),
@@ -25,8 +27,10 @@ export default defineShortcutsSetup((nav: NavOperations) => {
 })
 ```
 
-セットアップによって、[ナビゲーション](/guide/navigation#navigation-bar)で言及されているショートカットに対して、カスタム設定を使用することができます。上記の設定により、次のアニメーションやスライドへの移動は<kbd>enter</kbd>に、前のアニメーションやスライドへの移動は<kbd>backspace</kbd>に割り当てられます。
+In the setup function, you can customize the keyboard shortcuts by returning a new array of shortcuts. The above example binds the `next` operation to <kbd>enter</kbd> and the `prev` operation to <kbd>backspace</kbd>.
 
-設定用の関数は、いくつかのナビゲーションメソッドを持つオブジェクトを受け取り、いくつかのショートカット設定を含む配列を返します。詳細については型定義を参照してください。
+Please refer to [Navigation Actions](../guide/ui#navigation-actions) section for the default shortcuts and navigation operations.
 
-キーが押されたときのイベントについての詳細は、[useMagicKeys | VueUse](https://vueuse.org/core/useMagicKeys/)を参照してください。
+## Key Binding Format
+
+The `key` of each shortcut can be either a string (e.g. `'Shift+Ctrl+A'`) or a computed boolean. Please refer to [`useMagicKeys` from VueUse](https://vueuse.org/core/useMagicKeys/) for

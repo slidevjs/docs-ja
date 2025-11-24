@@ -1,71 +1,112 @@
-# なぜSlidev？
+---
+outline: deep
+---
 
-[Microsoft PowerPoint](https://www.microsoft.com/en-us/microsoft-365/powerpoint)や[Apple Keynote](https://www.apple.com/keynote/)など、機能豊富で汎用的なWYSIWYGのスライド作成ツールがたくさんあります。これらは非常に直感的で簡単に学ぶことができる一方で、アニメーションやチャート、その他の多くの機能を使った素晴らしいスライドを作成するのに非常によく機能します。では、なぜわざわざSlidevを作ったのでしょうか？
+# Why Slidev
 
-Slidevの目的は、開発者が既に慣れ親しんでいるツールや技術を使って、プレゼンテーションをさらに面白く、表現力豊かに、そして魅力的にするための柔軟性と対話性を提供することです。
+There have been lots of feature-rich WYSIWYG slides makers like [Microsoft PowerPoint](https://www.microsoft.com/en-us/microsoft-365/powerpoint) and [Apple Keynote](https://www.apple.com/keynote/) _(see [Comparisons](#comparisons))_. They are intuitive and easy to learn. So why bother making Slidev?
 
-WYSIWYGエディタで作業していると、スタイリングオプションに気を取られがちです。Slidevはコンテンツとビジュアルを分離することでそれを改善します。これによって、一度に1つのことに集中できるようになり、同時にコミュニティのテーマを再利用できるようになります。Slidevは他のスライドデッキビルダーに完全に取って代わろうとはしていません。それよりも、開発者コミュニティに応えることに重点をおいています。
+Slidev aims to provide flexibility and interactivity for **developers** to make their presentations much more interesting, expressive, and attractive by using technologies they are familiar with. Slidev is also open source with a strong community.
 
-## Slidev
+Slidev is Markdown-based, which helps you **focus on the content**. Slidev is also Web-based, which means **nothing is impossible** - everything you can do in a web app can apply to your slides.
 
-![](/screenshots/cover.png)
+Slidev is also **progressive**. You can start with a super simple Markdown file, and then use the [built-in features](../features/) when you need them without any configuration. There are also [themes and addons](./theme-addon) you can optionally install to enhance your slides.
 
-ここでは、いくつかのSlidevのクールな機能を紹介します：
+![demo slide](/screenshots/cover.png) {#welcome}
 
-## Markdownベース
+## Features
 
-Slidevは拡張されたMarkdown形式を使用して、スライドを単一のプレーンテキストファイルに保存し、整理します。これにより、コンテンツの作成に集中することができます。またコンテンツとスタイルが分離されているので、異なるテーマに楽に切り替えることが可能です。
+### 📝 Markdown-based
 
-詳しくは[Markdownシンタックス](/guide/syntax)を参照してください。
+Slidev uses an extended Markdown format to organize your slides in a single plain text file. This helps you focus on the content while allowing you to use Git and any editor you like.
 
-## 豊富なテーマ
+> Learn more: <LinkInline link="guide/syntax"/>.
 
-Slidevのテーマは、npmパッケージを使用して共有とインストールができます。そして1行設定するだけでテーマを適用することができます。
+### 🧑‍💻 Developer Friendly
 
-[テーマギャラリー](/themes/gallery)や[テーマを作成する](/themes/write-a-theme)をチェックしてみてください。
+Slidev provides first-class support for code snippets for developers. It uses [Shiki](https://github.com/shikijs/shiki) to get the most accurate syntax highlighting. Slidev also supports <LinkInline link="features/shiki-magic-move"/> and <LinkInline link="features/twoslash"/>. These make Slidev the best choice for tech talks.
 
-## デベロッパーフレンドリー
+### 🎨 Themable
 
-Slidevは開発者のためにコードスニペットのファーストクラスのサポートを提供します。[Prism](https://prismjs.com/)と[Shiki](https://github.com/shikijs/shiki)の両方をサポートし、ピクセルパーフェクトなシンタックスハイライトを実現しつつ、いつでもコードを修正することができます。[Monaco editor](https://microsoft.github.io/monaco-editor/) を内蔵し、オートコンプリート、タイプホバーリング、TypeScriptの型チェックサポートにより、プレゼンテーションでのライブコーディングやデモも可能になります。
+Themes for Slidev can be shared via npm packages. You apply a theme within one line of code.
 
-詳しくは[シンタックスハイライト](/custom/highlighters)と[Monacoの設定](/custom/config-monaco)を参照してください。
+Check out the [Theme Gallery](../resources/theme-gallery) for the beautiful themes made by the official team and the community.
 
-## 高速
+### ⚡ Fast
 
-Slidevは[Vite](https://vitejs.dev/)、[Vue 3](https://v3.ja.vuejs.org/)、そして[Windi CSS](https://windicss.org/)を利用しており、もっとも素晴らしいオーサリング体験を提供しています。あなたが行ったすべての変更は、**即時に**あなたのスライドに反映されます。
+Every change you make in the editor will be updated to your slides in the browser **instantly** without reloading, thanks to [Vite's HMR feature](https://vitejs.dev/guide/features.html#hot-module-replacement).
 
-詳しくは[技術スタック](/guide/#技術スタック)をご覧ください。
+### 🤹 Interactive & Expressive
 
-## インタラクティブ & エクスプレッシブ
+You can write Vue components and use them in your slides, which you can then interact with during the presentation to express your idea in a more interesting and intuitive way.
 
-Markdownファイルの中に直接Vueのカスタムコンポーネントを記述することができます。また、プレゼンテーションの中でそれらとやりとりすることで、より面白く、より直感的にアイデアを表現することができます。
+Slidev also has built-in support of <LinkInline link="features/monaco-editor"/>, which empowers you to do live coding in your presentation with auto-completion and hover messages.
 
-## レコーディングサポート
+### 🎥 Recording Support
 
-Slidevはビルトインのレコーディング機能とカメラービューを提供します。カメラービューを含めたプレゼンテーションを共有したり、画面とカメラで別々に録画・保存することも可能です。すべてSlidevだけで完結しており、追加のツールは必要ありません。
+Slidev provides built-in recording and camera view. You can share your presentation with your camera view inside, or record and save your screen and camera separately.
 
-詳しくは[レコーディング](/guide/recording)を参照してください。
+> Learn more: <LinkInline link="features/recording"/>.
 
-## ポータブル
+### 📤 Portable
 
-コマンド1つでスライドをPDF、PNG、あるいはホスティング可能なSPAとしてエクスポートでき、どこへでも共有することができます。
+You can export your slides into PDF, PPTX, PNGs, or even a single-page application (SPA) via a single command. Then you can share or host it anywhere you like.
 
-詳しくは[エクスポート](/guide/exporting)を参照してください。
+> Learn more: <LinkInline link="guide/exporting"/> and <LinkInline link="guide/hosting"/>.
 
-## 自由に開発可能
+### 🛠 Hackable
 
-Web技術を使用していることにより、WebアプリでできることはSlidevでも実現可能です。例えば、WebGL、APIリクエスト、iframe、あるいはライブシェアリングなどが利用可能です。あなたの想像力次第でなんでもできます！
+Because Slidev is web-based, everything that can be done in a normal web app can be applied to your slides. For example, WebGL, API requests, iframes, or even live sharing. It's up to your imagination!
 
-## 試してみる
+> Learn more: [Customization](../custom/).
 
-百聞は一件にしかずということで、実際にSlidevを使ってみましょう。 コマンドを実行：
+## Comparisons
 
-```bash
-$ npm init slidev
-```
+::: details Slidev vs. Microsoft PowerPoint / Apple Keynote
 
-またはプレビュー:
+[Microsoft PowerPoint](https://www.microsoft.com/en-us/microsoft-365/powerpoint) and [Apple Keynote](https://www.apple.com/keynote/) are feature-rich WYSIWYG slides makers. They are intuitive and easy to learn, which makes them one of the best choices for non-developers.
 
-<div class="aspect-9/16 relative">
-<iframe class="rounded w-full shadow-md border-none" src="https://www.youtube.com/embed/eW7v-2ZKZOU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+Compared to them, Slidev has the following advantages:
+
+- Developer-friendly: Code snippets are first-class citizens in Slidev.
+- Markdown-based: Focus on the content, and version control your slides with Git.
+- Web-based: Everything you can do in a web app can apply to your slides.
+- Hackable: Customize anything you like with web technologies.
+- Open source: Slidev is completely open source, and has a strong community.
+
+:::
+
+::: details Slidev vs. Reveal.js
+
+[Reveal.js](https://revealjs.com/) is a popular HTML presentation framework. It is also open source and supports Markdown.
+
+Compared to Reveal.js, Slidev has the following advantages:
+
+- More concise: Slidev uses an extended Markdown format, while Reveal.js encourages you to write HTML to organize your slides.
+- Vue support: You can use Vue components in Slidev to make your slides interactive.
+- Vite-based: Slidev is built on top of Vite, which provides instant HMR and flexible plugin API.
+- Atomatic CSS: You can [UnoCSS](https://unocss.dev/) out of the box to style your slides.
+
+:::
+
+::: details Slidev vs. Marp
+
+[Marp](https://marp.app/) is a Markdown presentation tool that focuses on simplicity and portability. It is also open source and supports Markdown.
+
+Compared to Marp, Slidev has the following advantages:
+
+- The same simplicity: Slidev's slides can start as simple as Marp's.
+- More features: Slidev supports many features that Marp doesn't.
+- Vue support: You can use Vue components in Slidev to make your slides interactive.
+- Vite-based: Slidev is built on top of Vite, which provides instant HMR and flexible plugin API.
+- Atomatic CSS: You can [UnoCSS](https://unocss.dev/) out of the box to style your slides.
+
+:::
+
+## Give it a Try
+
+Playing around with Slidev will tell you more than thousands of words. Check the <LinkInline link="guide/"/> guide to create your first Slidev project in one click or one command.
+
+Or you can have a quick preview of it:
+
+<iframe class="aspect-16/9 rounded-xl w-full shadow-md border-none" src="https://www.youtube.com/embed/eW7v-2ZKZOU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

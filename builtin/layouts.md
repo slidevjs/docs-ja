@@ -1,91 +1,107 @@
-# レイアウト
+# Layouts
 
-## ビルトインレイアウト
+This page lists all the built-in layouts provided by Slidev. These layouts can be used via the `layout` option in the frontmatters of your slides.
 
-> テーマはレイアウトの動作を上書きすることがあるため、使い方やパラメータ、サンプルを正しく知るには、各テーマのドキュメントを参照するのがよいでしょう。
+Note that <LinkInline link="guide/theme-addon" /> may provide additional layouts or override the existing ones. To add your own layouts, see <LinkInline link="guide/write-layout" />.
 
+## `center`
 
-### `center`
+Displays the content in the middle of the screen.
 
-コンテンツを画面中央に表示します。
+## `cover`
 
-### `cover`
+Used to display the cover page for the presentation, may contain the presentation title, contextualization, etc.
 
-プレゼンテーションの表紙を表示するために使用します。プレゼンテーションのタイトルや、コンテキストを含めることができます。
+## `default`
 
-### `default`
+The most basic layout, to display any kind of content.
 
-最も基本的なレイアウトで、あらゆる種類のコンテンツを表示することができます。
+## `end`
 
-### `end`
+The final page for the presentation.
 
-プレゼンテーションの最後のページです。
+## `fact`
 
-### `fact`
+To show some fact or data with a lot of prominence on the screen.
 
-事実やデータを画面上で大きく目立たせて見せるために使用します。
+## `full`
 
-### `full`
+Use all the space of the screen to display the content.
 
-画面のすべてのスペースを使って、コンテンツを表示します。
+## `image-left`
 
-### `image-left`
+Shows an image on the left side of the screen, the content will be placed on the right side.
 
-画面の左側に画像を表示し、右側にコンテンツを配置します。
-
-#### 使い方
+### Usage
 
 ```yaml
 ---
 layout: image-left
 
 # the image source
-image: ./path/to/the/image
+image: /path/to/the/image
 
 # a custom class name to the content
 class: my-cool-content-on-the-right
 ---
 ```
 
-### `image-right`
+## `image-right`
 
-画面右側に画像を表示し、左側にコンテンツを配置します。
+Shows an image on the right side of the screen, the content will be placed on the left side.
 
-#### 使い方
+### Usage
 
 ```yaml
 ---
 layout: image-right
 
 # the image source
-image: ./path/to/the/image
+image: /path/to/the/image
 
 # a custom class name to the content
 class: my-cool-content-on-the-left
 ---
 ```
 
-### `image`
+## `image`
 
-画像をページのメインコンテンツとして表示します。
+Shows an image as the main content of the page.
 
-#### 使い方
+### Usage
 
 ```yaml
 ---
 layout: image
 
 # the image source
-image: ./path/to/the/image
+image: /path/to/the/image
 ---
 ```
 
+You can change the default background size (`cover`) by adding the `backgroundSize` attribute:
 
-### `iframe-left`
+```yaml
+---
+layout: image
+image: /path/to/the/image
+backgroundSize: contain
+---
+```
 
-画面の左側にWebページを表示し、右側にコンテンツを配置します。
+```yaml
+---
+layout: image-left
+image: /path/to/the/image
+backgroundSize: 20em 70%
+---
+```
 
-#### 使い方
+## `iframe-left`
+
+Shows a web page on the left side of the screen, the content will be placed on the right side.
+
+### Usage
 
 ```yaml
 ---
@@ -99,11 +115,11 @@ class: my-cool-content-on-the-right
 ---
 ```
 
-### `iframe-right`
+## `iframe-right`
 
-画面の右側にWebページを表示し、左側にコンテンツを配置します。
+Shows a web page on the right side of the screen, the content will be placed on the left side.
 
-#### 使い方
+### Usage
 
 ```yaml
 ---
@@ -117,11 +133,11 @@ class: my-cool-content-on-the-left
 ---
 ```
 
-### `iframe`
+## `iframe`
 
-Webページをメインコンテンツとして表示します。
+Shows a web page as the main content of the page.
 
-#### 使い方
+### Usage
 
 ```yaml
 ---
@@ -132,33 +148,31 @@ url: https://github.com/slidevjs/slidev
 ---
 ```
 
+## `intro`
 
-### `intro`
+To introduce the presentation, usually with the presentation title, a short description, the author, etc.
 
-プレゼンテーションの始まりに使用します。一般的にはプレゼンテーションのタイトル、簡潔な説明、著者などです。
+## `none`
 
-### `none`
+A layout without any existing styling.
 
-スタイルなしのレイアウトです。
+## `quote`
 
-### `quote`
+To display a quotation with prominence.
 
-引用文を目立つように表示します。
+## `section`
 
-### `section`
+Used to mark the beginning of a new presentation section.
 
-新しいプレゼンテーションのセクションの開始を示すために使用します。
+## `statement`
 
-### `statement`
+Make an affirmation/statement as the main page content.
 
-断言/宣言をメインページのコンテンツとして表示します。
+## `two-cols`
 
-### `two-cols`
+Separates the page content in two columns.
 
-ページのコンテンツを2列に分割します。
-
-#### 使い方
-
+### Usage
 
 ```md
 ---
@@ -167,21 +181,43 @@ layout: two-cols
 
 # Left
 
-これは左側に表示されます。
+This shows on the left
 
 ::right::
 
 # Right
 
-これは右側に表示されます。
+This shows on the right
 ```
 
-## カスタムレイアウト
+## `two-cols-header`
 
-プロジェクトルートの配下に`layouts/`というディレクトリを作成し、そこにカスタムしたVueのレイアウトコンポーネントを配置します。
+Separates the upper and lower lines of the page content, and the second line separates the left and right columns.
 
-詳細は[レイアウト](/custom/directory-structure#レイアウト)のセクションを参照してください。
+### Usage
 
-## テーマが提供するレイアウト
+```md
+---
+layout: two-cols-header
+---
 
-テーマはレイアウトを提供したり、既存のレイアウトを上書きすることができます。テーマが提供するレイアウトについては、各テーマのドキュメントを参照してください。
+This spans both
+
+::left::
+
+# Left
+
+This shows on the left
+
+::right::
+
+# Right
+
+This shows on the right
+
+<style>
+.two-cols-header {
+  column-gap: 20px; /* Adjust the gap size as needed */
+}
+</style>
+```

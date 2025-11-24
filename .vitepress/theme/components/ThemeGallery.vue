@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { defineProps, computed } from 'vue'
-import { official, community } from '../../themes'
+import { computed } from 'vue'
+import { community, official } from '../../themes'
 
 const props = defineProps({
   collection: {
-    default: 'offical',
+    default: 'official',
   },
 })
 

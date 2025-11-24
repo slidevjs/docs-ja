@@ -1,12 +1,8 @@
 # [sli.dev](https://sli.dev)
 
-> [!WARNING]
->
-> This translation is out-dated and not maintained. Please refer to the [English documentation](https://sli.dev) instead.
+Documentation for [Slidev](https://github.com/slidevjs/slidev)
 
-[Slidev](https://github.com/slidevjs/slidev)の日本語ドキュメントです
-
-## All Translations
+## Translations
 
 > [!WARNING]
 >
@@ -23,9 +19,9 @@
 | <del>Deutsch</del>        | [docs-de](https://github.com/slidevjs/docs-de) | [de.sli.dev](https://de.sli.dev) | [@fabiankachlock](https://github.com/fabiankachlock)                  |
 | <del>Português (BR)</del> | [docs-br](https://github.com/slidevjs/docs-br) | [br.sli.dev](https://br.sli.dev) | [@luisfelipesdn12](https://github.com/luisfelipesdn12)                |
 | <del>Ελληνικά</del>       | [docs-el](https://github.com/slidevjs/docs-el) | [el.sli.dev](https://el.sli.dev) | [@GeopJr](https://github.com/GeopJr)                                  |
-| <del>日本語</del>         | [docs-ja](https://github.com/slidevjs/docs-el) | [ja.sli.dev](https://ja.sli.dev) | [@IkumaTadokoro](https://github.com/IkumaTadokoro)                    |
+| <del>日本語</del>         | [docs-ja](https://github.com/slidevjs/docs-ja) | [ja.sli.dev](https://ja.sli.dev) | [@IkumaTadokoro](https://github.com/IkumaTadokoro)                    |
 
-## ローカルでサーバーを立ち上げる
+## Start Server Locally
 
 ```
 npm i -g pnpm
@@ -34,11 +30,10 @@ pnpm i
 pnpm run dev
 ```
 
-コマンドを実行したら `http://localhost:3000` にアクセスしてください。
+And then visit `http://localhost:3000`
 
-または [Vite extension for VS Code](https://marketplace.visualstudio.com/items?itemName=antfu.vite)
-をインストールすると、サイドバイサイドで編集できます。
+Or install the [Vite extension for VS Code](https://marketplace.visualstudio.com/items?itemName=antfu.vite) to edit side-by-side.
 
-## 翻訳に貢献する
+## Help on Translating
 
-[TRANSLATIONS.md](/TRANSLATIONS.md) をご一読ください
+Please join our [Discord Server](https://chat.sli.dev) and contact the maintainers.

@@ -1,17 +1,14 @@
-import { resolve } from 'path'
-import { UserConfig } from 'vite'
-import Icons, { ViteIconsResolver } from 'vite-plugin-icons'
-import Components from 'vite-plugin-components'
-import WindiCSS from 'vite-plugin-windicss'
+import { slidebars } from '.vitepress/config'
+import UnoCSS from 'unocss/vite'
+import IconsResolver from 'unplugin-icons/resolver'
+import Icons from 'unplugin-icons/vite'
+import Components from 'unplugin-vue-components/vite'
+import { defineConfig } from 'vite'
+import Inspect from 'vite-plugin-inspect'
+import { groupIconVitePlugin } from 'vitepress-plugin-group-icons'
+import llmstxt from 'vitepress-plugin-llms'
 
-const config: UserConfig = {
-  resolve: {
-    alias: {
-      '@slidev/client': resolve(__dirname, '.vitepress/@slidev/client'),
-      '@slidev/parser': resolve(__dirname, '.vitepress/@slidev/parser'),
-      '@slidev/theme-default': resolve(__dirname, '.vitepress/@slidev/theme-default'),
-    },
-  },
+export default defineConfig({
   optimizeDeps: {
     exclude: [
       'vue-demi',
@@ -25,43 +22,31 @@ const config: UserConfig = {
     },
   },
   plugins: [
+    llmstxt({
+      ignoreFiles: [
+        'index.md',
+        'README.md',
+      ],
+      sidebar: slidebars,
+    }),
     Components({
       dirs: [
-        '.vitepress/theme/components',
-        '.vitepress/@slidev/client/builtin',
+        './.vitepress/theme/components',
+        './node_modules/@slidev/client/builtin',
       ],
-      customLoaderMatcher: id => id.endsWith('.md'),
-      customComponentResolvers: [
-        ViteIconsResolver({
-          componentPrefix: '',
+      extensions: ['vue', 'md'],
+      include: [/\.vue$/, /\.vue\?vue/, /\.md$/, /\.md\?vue/],
+      resolvers: [
+        IconsResolver({
+          prefix: '',
         }),
       ],
     }),
-    Icons(),
-    WindiCSS({
-      preflight: false,
+    Icons({
+      defaultStyle: 'display: inline-block;',
     }),
-    {
-      name: 'code-block-escape',
-      enforce: 'post',
-      transform(code, id) {
-        if (!id.endsWith('.md'))
-          return
-        return code.replace(/\/\/```/mg, '```')
-      },
-    },
-    {
-      name: 'virtual-modules',
-      resolveId(id){
-        return id === '/@slidev/configs' ? id : null
-      },
-      load(id) {
-        if(id !== '/@slidev/configs')
-        return
-        return 'export default {}'
-      }
-    },
+    Inspect(),
+    UnoCSS(),
+    groupIconVitePlugin(),
   ],
-}
-
-export default config
+})

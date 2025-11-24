@@ -1,29 +1,32 @@
-# Viteの設定
+# Configure Vite and Plugins
 
 <Environment type="node" />
 
-Slidevは[Vite](http://vitejs.dev/)を搭載しています。つまり、Viteの素晴らしいプラグインシステムを利用して、スライドをさらにカスタマイズすることができます。
+Slidev is powered by [Vite](https://vitejs.dev/) under the hood. This means you can leverage Vite's great plugin system to customize your slides even further.
 
-`vite.config.ts`があれば、それが採用されます。
+The `vite.config.ts` will be respected if you have one, and will be merged with the Vite config provided by Slidev, your theme and the addons.
 
-Slidevには以下のプラグインがあらかじめ設定されています：
+## Configure Internal Plugins
 
-- [@vitejs/plugin-vue](https://github.com/vitejs/vite/tree/main/packages/plugin-vue)
-- [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components)
-- [unplugin-icons](https://github.com/antfu/unplugin-icons)
-- [vite-plugin-md](https://github.com/antfu/vite-plugin-md)
-- [vite-plugin-windicss](https://github.com/windicss/vite-plugin-windicss)
+Slidev internally adds the following plugins to Vite:
+
+- [@vitejs/plugin-vue](https://github.com/vitejs/vite-plugin-vue)
+- [unplugin-vue-components](https://github.com/unplugin/unplugin-vue-components)
+- [unplugin-icons](https://github.com/unplugin/unplugin-icons)
+- [vite-plugin-vue-markdown](https://github.com/unplugin/unplugin-vue-markdown)
 - [vite-plugin-remote-assets](https://github.com/antfu/vite-plugin-remote-assets)
+- [unocss/vite](https://github.com/unocss/unocss/tree/main/packages/vite)
 
-詳細は[pre-configurations here](https://github.com/slidevjs/slidev/blob/main/packages/slidev/node/plugins/preset.ts)を参照してください。
+To configure the built-in plugins listed above, create a `vite.config.ts` with the following content. Please note that Slidev has some [default configurations](https://github.com/slidevjs/slidev/blob/main/packages/slidev/node/vite/index.ts) for those plugins, this usage will override some of them, which may potentially cause the app to break. Please treat this as **an advanced feature**, and make sure you know what you are doing before moving on.
 
-## 内部プラグインの設定
+<!-- eslint-disable import/first -->
 
-> v0.21から使用可能です
+```ts twoslash [vite.config.ts]
+/// <reference types="@slidev/types" />
+import type MarkdownIt from 'markdown-it'
 
-上記のビルトインプラグインのリストを設定するために、以下の内容で`vite.config.ts`を作成します。Slidevはこれらのプラグインに対して、いくつかあらかじめ設定されたオプションを保持していることに注意してください。この使い方はそれらの設定を上書きし、アプリケーションが潜在的に壊れる原因になる可能性があります。これは**高度な機能**として扱い、何を行っているのかを確認してから次に進んでください。
-
-```ts
+declare const MyPlugin: (md: any) => void
+// ---cut---
 import { defineConfig } from 'vite'
 
 export default defineConfig({
@@ -35,7 +38,7 @@ export default defineConfig({
       /* markdown-it options */
       markdownItSetup(md) {
         /* custom markdown-it plugins */
-        md.use(/* ... */)
+        md.use(MyPlugin)
       },
     },
     /* options for other plugins */
@@ -43,4 +46,39 @@ export default defineConfig({
 })
 ```
 
-その他のオプションについては[type declarations](https://github.com/slidevjs/slidev/blob/main/packages/slidev/node/options.ts#L50)を参照してください。
+See the [type declarations](https://github.com/slidevjs/slidev/blob/main/packages/types/src/vite.ts#L11) for more options.
+
+::: warning
+It is not allowed to re-add plugins that has been used internally be Slidev. For example, instead of
+
+```ts twoslash
+import Vue from '@vitejs/plugin-vue'
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+  plugins: [
+    Vue({
+      /* vue options */
+    })
+  ],
+})
+```
+
+Please pass the Vue options to the `slidev.vue` field as described above
+:::
+
+## Add Custom Plugins based on Slide data
+
+Usually you can add Vite plugins into your `vite.config.ts` (see above).
+However, if you want to add plugins based on the slide data, you need to add a `./setup/vite-plugins.ts` with the following content:
+
+```ts twoslash
+import { defineVitePluginsSetup } from '@slidev/types'
+
+export default defineVitePluginsSetup((options) => {
+  return [
+    // Your plugins here
+    // Slide data is available as options.data.slides
+  ]
+})
+```
