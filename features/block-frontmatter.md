@@ -3,21 +3,21 @@ depends:
   - guide/syntax
 relates:
   - features/prettier-plugin
-tags: [syntax]
+tags: [構文]
 description: |
-  Use a YAML code block as the frontmatter.
+  YAML ブロックをフロントマターとして使用します。
 ---
 
-# Block Frontmatter
+# ブロック フロントマター
 
-The usual way to define frontmatters of slides is concise, but may lack of highlighting and formatter support. To solve this, you can use a YAML block at the very beginning of the slide content as the frontmatter of the slide:
+スライドのフロントマターを定義する通常の方法は簡潔ですが、ハイライトやフォーマッターのサポートに欠ける場合があります。これを解決するために、スライドコンテンツの最初に YAML ブロックを使用して、スライドのフロントマターとして使用できます:
 
 ````md
 ---
 theme: default
 ---
 
-# Slide 1
+# スライド 1
 
 ---
 
@@ -25,15 +25,15 @@ theme: default
 layout: quote
 ```
 
-# Slide 2
+# スライド 2
 
 ---
 
-# Slide 3
+# スライド 3
 ````
 
-::: warning About headmatter
+::: warning ヘッドマターについて
 
-Headmatter in Slidev is exactly the usual called "frontmatter" of the a Markdown file, which is supported by most of the Markdown editors and formatters. So you can't use a YAML block as the headmatter of the whole slide deck.
+Slidev におけるヘッドマターは Markdown ファイルの通常の「フロントマター」と正確に同じもので、ほとんどの Markdown エディターやフォーマッターでサポートされています。したがって、YAML ブロックをスライド全体のヘッドマターとして使用することはできません。
 
 :::

@@ -4,14 +4,14 @@ relates:
   - Plant UML Live Editor: https://plantuml.com/plantuml
   - Example side: https://sli.dev/demo/starter/12
   - features/mermaid
-tags: [diagram]
+tags: [ダイアグラム]
 description: |
-  Create diagrams from textual descriptions, powered by PlantUML.
+  PlantUML を使って、テキスト記述からダイアグラムを作成します。
 ---
 
-# PlantUML Diagrams
+# PlantUML ダイアグラム
 
-You can create PlantUML diagrams easily in your slides, for example:
+スライド内で簡単に PlantUML ダイアグラムを作成できます。例えば:
 
 ````md
 ```plantuml
@@ -21,6 +21,6 @@ Alice -> Bob : Hello!
 ```
 ````
 
-The source code will be sent to https://www.plantuml.com/plantuml to render the diagram by default. You can also set up your own server by setting the `plantUmlServer` in the [Slidev configuration](../custom/index#headmatter).
+デフォルトでソースコードを https://www.plantuml.com/plantuml に送信してダイアグラムをレンダリングします。独自のサーバーを設定することもできます。[Slidev の設定](../custom/index#headmatter) で `plantUmlServer` を設定してください。
 
-Visit the [PlantUML Website](https://plantuml.com/) for more information.
+[PlantUML のウェブサイト](https://plantuml.com/) も参照してください。

@@ -3,12 +3,12 @@ depends:
   - guide/global-context
 tags: [client-api]
 description: |
-  Hooks to manage the slide lifecycle.
+  スライドのライフサイクルを管理するためのフック。
 ---
 
-# Slide Hooks
+# スライドフック
 
-Slidev provides a set of hooks to help you manage the slide lifecycle:
+Slidev は、スライドのライフサイクルを管理するための一連のフックを提供しています:
 
 ```ts twoslash
 import { onSlideEnter, onSlideLeave, useIsSlideActive } from '@slidev/client'
@@ -16,18 +16,18 @@ import { onSlideEnter, onSlideLeave, useIsSlideActive } from '@slidev/client'
 const isActive = useIsSlideActive()
 
 onSlideEnter(() => {
-  /* Called whenever the slide becomes active */
+  /* アクティブになったときに呼び出されます */
 })
 
 onSlideLeave(() => {
-  /* Called whenever the slide becomes inactive */
+  /* 非アクティブになったときに呼び出されます */
 })
 ```
 
-You can also use <LinkInline link="guide/global-context" /> to access other useful context information.
+<LinkInline link="guide/global-context" /> を使用して、他の便利なコンテキスト情報にアクセスすることもできます。
 
-::: warning
+::: warning 注意
 
-In the slide component, `onMounted` and `onUnmounted` hooks are not available, because the component instance is preserved even when the slide is not active. Use `onSlideEnter` and `onSlideLeave` instead.
+スライドコンポーネントでは、`onMounted` と `onUnmounted` フックは利用できません。なぜなら、スライドがアクティブでない場合でもコンポーネントインスタンスは保持されるからです。代わりに `onSlideEnter` と `onSlideLeave` を使用してください。
 
 :::

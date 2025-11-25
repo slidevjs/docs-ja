@@ -2,27 +2,26 @@
 relates:
   - Demo: /demo/starter/11
   - KaTeX: https://katex.org/
-tags: [codeblock, syntax]
+tags: [コードブロック, 構文]
 description: |
-  Slidev comes with LaTeX support out-of-box, powered by KaTeX.
+  Slidev は KaTeX によって LaTeX を標準でサポートしています。
 ---
 
 # LaTeX
 
-Slidev comes with LaTeX support out-of-box, powered by [KaTeX](https://katex.org/).
+Slidev は KaTeX によって LaTeX を標準でサポートしています。
 
-## Inline
+## インライン
 
-Surround your LaTeX with a single `$` on each side for inline rendering.
+LaTeX をインラインでレンダリングするには、LaTeX コマンドの左右を単一の `$` で囲みます。
 
 ```md
 $\sqrt{3x-1}+(1+x)^2$
 ```
 
-## Block
+## ブロック
 
-Use two (`$$`) for block rendering. This mode uses bigger symbols and centers
-the result.
+ブロックレンダリングには、左右を (`$$`) で囲みます。このモードでは、より大きな記号が使用され、結果が中央に配置されます。
 
 ```latex
 $$
@@ -35,9 +34,9 @@ $$
 $$
 ```
 
-## Line Highlighting
+## 行のハイライト
 
-To highlight specific lines, simply add line numbers within bracket `{}`. Line numbers start counting from 1 by default.
+特定の行をハイライトするには、単に波括弧 `{}` 内に行番号を追加します。行番号はデフォルトで 1 からカウントされます。
 
 ```latex
 $$ {1|3|all}
@@ -50,14 +49,14 @@ $$ {1|3|all}
 $$
 ```
 
-The `at` and `finally` options of [code blocks](#line-highlighting) are also available for LaTeX blocks.
+[コードブロック](#line-highlighting) の `at` および `finally` オプションも LaTeX ブロックで利用可能です。
 
-## Chemical equations
+## 化学方程式
 
-To enable the rendering of chemical equations, the [mhchem](https://github.com/KaTeX/KaTeX/tree/main/contrib/mhchem)
-KaTeX extension needs to be loaded.
+化学方程式のレンダリングを有効にするには、[mhchem](https://github.com/KaTeX/KaTeX/tree/main/contrib/mhchem)
+KaTeX 拡張機能を読み込む必要があります。
 
-Create `vite.config.ts` with the following content:
+`vite.config.ts` を作成して、次の内容を記述します:
 
 ```ts
 import 'katex/contrib/mhchem'
@@ -65,7 +64,7 @@ import 'katex/contrib/mhchem'
 export default {}
 ```
 
-Now chemical equations can be rendered properly.
+これにより、化学方程式が適切にレンダリングされるようになります。
 
 ```latex
 $$
@@ -73,7 +72,7 @@ $$
 $$
 ```
 
-Learn more: [Syntax](https://mhchem.github.io/MathJax-mhchem)
+さらに詳しく: [構文](https://mhchem.github.io/MathJax-mhchem)
 
 ---
 

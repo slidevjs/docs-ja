@@ -3,31 +3,31 @@ relates:
   - guide/faq#adjust-size
   - features/canvas-size
   - features/transform-component
-tags: [layout]
+tags: [レイアウト]
 description: |
-  Zoom the content of a slide to a specific scale.
+  スライドの内容を特定のスケールにズームします。
 ---
 
-# Zoom Slides
+# スライドをズームする
 
-You may find some slides in your presentation too spacious or too crowded. Slidev provides a `zoom` option for each slide that allows you to scale the content of a slide:
+プレゼンテーションの中には、スライドの内容が広すぎたり、逆に詰まりすぎていると感じることがあります。Slidev では、各スライドに対して `zoom` オプションを設定することで、スライドの内容をスケール調整できます。
 
 ```md
 ---
 zoom: 0.8
 ---
 
-# A Slide with lots of content
+# たくさんのコンテンツがあるスライド
 
 ---
 
-# Other slides aren't affected
+# 他のスライドには影響しません
 ```
 
-To scale all the slides in your presentation, you can set the slide canvas size:
+すべてのスライドのスケールを調整するには、スライドキャンバスのサイズを設定できます。
 
 <LinkCard link="features/canvas-size" />
 
-To adjust the size of some elements on your slides, you can use the `Transform` component:
+スライド上の一部の要素のサイズを調整するには、`Transform` コンポーネントを使用できます。
 
 <LinkCard link="features/transform-component" />

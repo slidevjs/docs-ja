@@ -1,17 +1,17 @@
 ---
 depends:
   - guide/syntax#code-block
-tags: [codeblock]
+tags: [コードブロック]
 description: |
-  Group multiple code blocks and automatically match icon by the title name.
+  複数のコードブロックをグループ化し、タイトル名に応じてアイコンを自動的に一致させます。
 ---
 
-# Code Groups
+# コードグループ
 
 > [!NOTE]
-> This feature requires [MDC Syntax](/features/mdc#mdc-syntax). Enable `mdc: true` to use it.
+> この機能を使うには [MDC 構文](/features/mdc#mdc-syntax) が必要です。`mdc: true` を有効にして使用してください。
 
-You can group multiple code blocks like this:
+複数のコードブロックをこのようにグループ化できます:
 
 ````md
 ::code-group
@@ -31,29 +31,29 @@ pnpm add @slidev/cli
 ::
 ````
 
-## Title Icon Matching
+## タイトルアイコンのマッチング
 
-`code groups`, `code block` and [`Shiki Magic Move`](/features/shiki-magic-move) also supports the automatically icon matching by the title name.
+`code groups`、`code block` そして [`Shiki Magic Move`](/features/shiki-magic-move) もタイトル名に応じてアイコンを自動的に一致させることをサポートしています。
 
 ![code-groups-demo](/assets/code-groups-demo.png)
 
 ::: info
 
-By default, we provide some built-in icons, you can use them by install [@iconify-json/vscode-icons](https://www.npmjs.com/package/@iconify-json/vscode-icons).
+デフォルトで、いくつかの組み込みアイコンを提供しています。これらを使用するには [@iconify-json/vscode-icons](https://www.npmjs.com/package/@iconify-json/vscode-icons) をインストールしてください。
 
 :::
 
-::: details All built-in icons
+::: details ビルトインアイコン一覧
 
 ```js
 const builtinIcons = {
-  // package managers
+  // パッケージマネージャー
   'pnpm': 'i-vscode-icons:file-type-light-pnpm',
   'npm': 'i-vscode-icons:file-type-npm',
   'yarn': 'i-vscode-icons:file-type-yarn',
   'bun': 'i-vscode-icons:file-type-bun',
   'deno': 'i-vscode-icons:file-type-deno',
-  // frameworks
+  // フレームワーク
   'vue': 'i-vscode-icons:file-type-vue',
   'svelte': 'i-vscode-icons:file-type-svelte',
   'angular': 'i-vscode-icons:file-type-angular',
@@ -62,12 +62,12 @@ const builtinIcons = {
   'nuxt': 'i-vscode-icons:file-type-nuxt',
   'solid': 'logos:solidjs-icon',
   'astro': 'i-vscode-icons:file-type-light-astro',
-  // bundlers
+  // バンドラー
   'rollup': 'i-vscode-icons:file-type-rollup',
   'webpack': 'i-vscode-icons:file-type-webpack',
   'vite': 'i-vscode-icons:file-type-vite',
   'esbuild': 'i-vscode-icons:file-type-esbuild',
-  // configuration files
+  // 設定ファイル
   'package.json': 'i-vscode-icons:file-type-node',
   'tsconfig.json': 'i-vscode-icons:file-type-tsconfig',
   '.npmrc': 'i-vscode-icons:file-type-npm',
@@ -85,7 +85,7 @@ const builtinIcons = {
   'unocss.config': 'i-vscode-icons:file-type-unocss',
   '.oxlintrc': 'i-vscode-icons:file-type-oxlint',
   'vue.config': 'i-vscode-icons:file-type-vueconfig',
-  // filename extensions
+  // ファイル名拡張子
   '.mts': 'i-vscode-icons:file-type-typescript',
   '.cts': 'i-vscode-icons:file-type-typescript',
   '.ts': 'i-vscode-icons:file-type-typescript',
@@ -109,9 +109,9 @@ const builtinIcons = {
 
 :::
 
-## Custom Icons
+## カスタムアイコン
 
-You can use any name from the [iconify](https://icones.js.org) collection by using the `~icon~` syntax, for example:
+[iconify](https://icones.js.org) コレクションの任意の名前を `~icon~` 構文で使用できます。例えば:
 
 ````md
 ```js [npm ~i-uil:github~]
@@ -119,9 +119,9 @@ console.log('Hello, GitHub!')
 ```
 ````
 
-To make it work, you need to:
+この機能を使うには、以下が必要です:
 
-1. Install the icon's collection.
+1. アイコンのコレクションをインストールします。
 
 :::code-group
 
@@ -143,7 +143,7 @@ bun add @iconify-json/uil
 
 :::
 
-2. Add the icon to the `uno.config.ts` file.
+2. `uno.config.ts` にアイコンを追加します。
 
 ```ts [uno.config.ts] {4-6}
 import { defineConfig } from 'unocss'

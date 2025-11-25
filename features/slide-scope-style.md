@@ -2,17 +2,17 @@
 relates:
   - Vue's Scoped CSS: https://vuejs.org/api/sfc-css-features.html#scoped-css
   - UnoCSS directives: https://unocss.dev/transformers/directives
-tags: [styling, syntax]
+tags: [スタイリング, 構文]
 description: |
-  Define styles for only the current slide.
+  現在のスライドのみに適用されるスタイルを定義します。
 ---
 
-# Slide Scope Styles
+# スライドスコープスタイル
 
-You can use the `<style>` tag in your Markdown to define styles for **only the current slide**.
+Markdown の `<style>` タグを使用して、**現在のスライドのみに適用される**スタイルを定義できます。
 
 ```md
-# This is Red
+# これは赤です
 
 <style>
 h1 {
@@ -22,12 +22,12 @@ h1 {
 
 ---
 
-# Other slides are not affected
+# 他のスライドには影響しません
 ```
 
-The `<style>` tag in Markdown is always [scoped](https://vuejs.org/api/sfc-css-features.html#scoped-css). As a result, a selector with a child combinator (`.a > .b`) is unusable as such; see the previous link. To have global styles, check out the [customization section](/custom/directory-structure#style).
+Markdown の `<style>` タグは常に [スコープ付き](https://vuejs.org/api/sfc-css-features.html#scoped-css) です。そのため、子セレクタ（`.a > .b`）はそのままでは使用できません。詳細は前述のリンクを参照してください。グローバルスタイルを適用したい場合は、[カスタマイズセクション](/custom/directory-structure#style) を参照してください。
 
-Powered by [UnoCSS](/custom/config-unocss), you can directly use nested css and [directives](https://unocss.dev/transformers/directives):
+[UnoCSS](/custom/config-unocss) によって、ネストされた CSS や [ディレクティブ](https://unocss.dev/transformers/directives) を直接使用できます:
 
 ```md
 # Slidev

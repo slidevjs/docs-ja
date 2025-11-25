@@ -3,12 +3,12 @@ relates:
   - guide/faq#adjust-size
   - features/zoom-slide
   - features/transform-component
-tags: [layout]
+tags: [レイアウト]
 description: |
-  Set the size for all your slides.
+  すべてのスライドのサイズを設定します。
 ---
 
-# Slide Canvas Size
+# スライドキャンバスのサイズ
 
 Slidev allows you to set the size of the slide canvas via the `canvasWidth` and `aspectRatio` options in the headmatter:
 

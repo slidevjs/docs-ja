@@ -1,20 +1,20 @@
 ---
 depends:
   - guide/theme-addon
-tags: [theme, cli]
+tags: [テーマ, cli]
 description: |
-  Eject the installed theme from your project to customize it.
+  インストールされているテーマをプロジェクトから書き出してカスタマイズできます。
 ---
 
-# Eject Theme
+# テーマの書き出し
 
-If you want to get full control of the current theme, you can **eject** it to your local file system and modify it as you want. By running the following command
+現在使用しているテーマを完全に制御したい場合は、ローカルファイルシステムに**書き出し**て、自由に変更できます。次のコマンドを実行してください。
 
 ```bash
 $ slidev theme eject
 ```
 
-It will eject the theme you are using currently into `./theme`, and change your frontmatter to
+現在使用しているテーマが `./theme` に書き出され、フロントマターが次のように変更されます。
 
 ```yaml
 ---
@@ -22,6 +22,6 @@ theme: ./theme
 ---
 ```
 
-This could also be helpful if you want to make a theme based on an existing one. If you do, remember to mention the original theme and the author :)
+既存のテーマをベースに新しいテーマを作成したい場合にも役立ちます。その際は、元のテーマと作者を明記することを忘れないでください :)
 
-For more options of the `theme` command, please refer to the [Theme Command](../builtin/cli#theme) section.
+`theme` コマンドの詳細なオプションについては、[テーマコマンド](../builtin/cli#theme) セクションを参照してください。

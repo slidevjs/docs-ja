@@ -1,14 +1,14 @@
 ---
 relates:
   - features/seo-meta
-tags: ['SEO', head]
+tags: ['SEO', ヘッダー]
 description: |
-  Set the Open Graph image for your slides.
+  スライドの Open Graph 画像を設定します。
 ---
 
-# Open Graph Image
+# Open Graph 画像
 
-Slidev allows you to set the Open Graph image via the `seoMeta.ogImage` option in the headmatter:
+Slidev はヘッドマターの `seoMeta.ogImage` オプションを使用して、Open Graph 画像を設定できます。
 
 ```md
 ---
@@ -16,20 +16,20 @@ seoMeta:
   ogImage: https://url.to.your.image.png
 ---
 
-# Your slides here
+# ここにスライドを書く
 ```
 
-Learn more about [SEO Meta Tags](./seo-meta).
+詳しくは [SEO Meta Tags](./seo-meta) を参照してください。
 
-## Local Image
+## ローカル画像
 
-If you have `./og-image.png` in your project root, Slidev will grab it as the Open Graph image automatically without any configuration.
+プロジェクトのルートに `./og-image.png` がある場合、Slidev は自動的にこれを Open Graph 画像として使用します。特別な設定は不要です。
 
-## Auto-generate
+## 自動生成
 
-Since v52.1.0, Slidev supports auto-generating the Open Graph image from the first slide.
+v52.1.0 以降、Slidev は最初のスライドから Open Graph 画像を自動生成する機能をサポートしています。
 
-You can set `seoMeta.ogImage` to `auto` to enable this feature.
+この機能を有効にするには、`seoMeta.ogImage` を `auto` に設定します。
 
 ```md
 ---
@@ -38,4 +38,4 @@ seoMeta:
 ---
 ```
 
-It will use [playwright](https://playwright.dev/) to capture the first slide and save it as `./og-image.png` (same as `slidev export`). You may also commit the generated image to your repository to avoid the auto-generation. Or if you generate it on CI, you might also want to setup the playwright environment.
+[playwright](https://playwright.dev/) を使用して最初のスライドをキャプチャし、`./og-image.png` として保存します（`slidev export` と同じです）。生成された画像をリポジトリにコミットして自動生成を回避することもできます。また、CI で生成する場合は playwright 環境のセットアップも検討してください。

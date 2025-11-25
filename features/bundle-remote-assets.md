@@ -1,28 +1,28 @@
 ---
 relates:
   - vite-plugin-remote-assets: https://github.com/antfu/vite-plugin-remote-assets
-tags: [build]
+tags: [ビルド]
 description: |
-  Download and bundle remote assets when building your slides.
+  ビルド時にリモートアセットをダウンロードしてバンドルします。
 ---
 
-# Bundle Remote Assets
+# リモートアセットのバンドル
 
-Just like you would do in markdown, you can use images pointing to a remote or local URL.
+Markdown で行うのと同様に、リモートまたはローカルの URL を指す画像を使用できます。
 
-For remote assets, the built-in [`vite-plugin-remote-assets`](https://github.com/antfu/vite-plugin-remote-assets) will cache them onto the disk at first run, ensuring instant loading even for large images later on.
-
-```md
-![Remote Image](https://sli.dev/favicon.png)
-```
-
-For local assets, put them into the [`public` folder](/custom/directory-structure.html#public) and reference them with a **leading slash** (i.e., `/pic.png`, NOT `./pic.png`, which is relative to the working file).
+リモートアセットの場合、組み込みの [`vite-plugin-remote-assets`](https://github.com/antfu/vite-plugin-remote-assets) は最初の実行時にそれらをディスクにキャッシュし、その後は大きな画像でも即座に読み込めるようにします。
 
 ```md
-![Local Image](/pic.png)
+![リモートの画像](https://sli.dev/favicon.png)
 ```
 
-If you want to apply custom sizes or styles, you can convert them to the `<img>` tag:
+ローカルアセットの場合は、[`public` フォルダー](/custom/directory-structure.html#public) に配置し、**先頭にスラッシュ**を付けて参照します（例: `/pic.png`、作業ファイルに対して相対的に `./pic.png` とは指定できません）。
+
+```md
+![ローカルの画像](/pic.png)
+```
+
+サイズやスタイルを指定したい場合は、`<img>` タグに変換して使用できます:
 
 ```html
 <img src="/pic.png" class="m-40 h-40 rounded shadow" />

@@ -3,14 +3,14 @@ relates:
   - guide/faq#adjust-size
   - features/canvas-size
   - features/zoom-slide
-tags: [layout]
+tags: [レイアウト]
 description: |
-  A component for scaling some elements.
+  一部の要素のサイズを拡大縮小するためのコンポーネント。
 ---
 
-# The `Transform` Component
+# `Transform` コンポーネント
 
-The `Transform` component allows you to scale the size of the elements on your slides:
+`Transform` コンポーネントを使用すると、スライド上の要素のサイズを拡大縮小できます。
 
 ```md
 <Transform :scale="0.5" origin="top center">
@@ -18,12 +18,12 @@ The `Transform` component allows you to scale the size of the elements on your s
 </Transform>
 ```
 
-This is useful when you want to adjust the size of some elements on your slides without affecting the layout of the entire slide.
+これは、スライド全体のレイアウトに影響を与えずに、スライド上の一部の要素のサイズを調整したい場合に便利です。
 
-To scale all the slides in your presentation, you can set the slide canvas size:
+プレゼンテーション内のすべてのスライドを拡大縮小するには、スライドキャンバスのサイズを設定できます。
 
 <LinkCard link="features/canvas-size" />
 
-To scale several slides in your presentation, you can use the `zoom` option:
+プレゼンテーション内のいくつかのスライドを拡大縮小するには、`zoom` オプションを使用できます。
 
 <LinkCard link="features/zoom-slide" />

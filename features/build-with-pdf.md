@@ -5,14 +5,14 @@ depends:
 relates:
   - CLI export options: /builtin/cli#export
   - Headmatter export options: /custom/#headmatter
-tags: [export, build]
+tags: [エクスポート, ビルド]
 description: |
-  Generate a downloadable PDF along with your slides build.
+  ダウンロード可能な PDF をスライドのビルドとともに生成します。
 ---
 
-# Generate PDF when Building
+# ビルド時の PDF 生成
 
-You can provide a downloadable PDF in your built slides with the following config in headmatter:
+ビルド時にダウンロード可能な PDF を生成するには、ヘッドマターに次の設定を追加します:
 
 ```md
 ---
@@ -20,9 +20,9 @@ download: true
 ---
 ```
 
-Slidev will generate a PDF file along with the build, and a download button will be displayed in the build.
+Slidev はビルドとともに PDF ファイルを生成し、ナビゲーションの中にダウンロードボタンが表示されます。
 
-You can also provide a custom URL for the PDF. In that case, the rendering process will be skipped.
+カスタムの PDF URL を指定することもできます。その場合、PDF のレンダリングプロセスはスキップされます。
 
 ```md
 ---
@@ -30,13 +30,13 @@ download: 'https://myside.com/my-talk.pdf'
 ---
 ```
 
-This can also be done with the CLI option `--download` (`boolean` only).
+これは、CLI オプション `--download`（`boolean` のみ）を指定することでも行うことができます。
 
 ```bash
 $ slidev build --download
 ```
 
-When using the download option, you can also provide the export options via:
+ダウンロードオプションを使用する場合、次の方法でエクスポートオプションを指定することもできます:
 
-- [CLI export options](/builtin/cli#export)
-- [Headmatter export options](/custom/#frontmatter-configures)
+- [CLI エクスポートオプション](/builtin/cli#export)
+- [ヘッドマターのエクスポートオプション](/custom/#frontmatter-configures)

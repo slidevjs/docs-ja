@@ -2,14 +2,14 @@
 depends:
   - guide/syntax#importing-slides
   - features/importing-slides
-tags: [syntax]
+tags: [構文]
 description: |
-  Merge frontmatter from multiple markdown files.
+  複数の Markdown ファイルからフロントマターを結合します。
 ---
 
-# Frontmatter Merging
+# フロントマターの統合
 
-You can provide frontmatter instructions from both your main entry and external markdown pages. If there are duplicate keys in them, the ones from the **main entry have the higher priority**. For example:
+エントリーポイントと外部の Markdown ページの両方からフロントマターを提供できます。重複するキーがある場合、**エントリーポイントのものが優先されます**。例えば:
 
 ::: code-group
 
@@ -29,12 +29,12 @@ background: https://sli.dev/foo.png // [!code highlight]
 
 # Cover
 
-Cover Page
+カバーページ
 ```
 
 :::
 
-They will end up being equivalent to the following page:
+それらは最終的に次のページと同等になります:
 
 ```md
 ---
@@ -45,5 +45,5 @@ class: text-center
 
 # Cover
 
-Cover Page
+カバーページ
 ```

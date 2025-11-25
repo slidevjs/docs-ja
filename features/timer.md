@@ -1,23 +1,24 @@
 ---
-tags: [presenter]
-description: Timer for the presenter mode.
+tags: [プレゼンター]
+description: プレゼンター モード用のタイマー。
 ---
 
-# Presenter Timer
+# プレゼンタータイマー
 
-Slidev provides a timer for the presenter mode. You can start, pause, and reset the timer.
+Slidev はプレゼンター モード用のタイマーを提供します。タイマーの開始、一時停止、リセットが可能です。
 
-It will show a timer (in stopwatch or countdown mode), and a progress bar in the presenter mode.
+プレゼンター モードでは、ストップウォッチまたはカウントダウンモードのタイマーと進行状況バーが表示されます。
 
-## Configuration
 
-You can set the duration of the presentation in the headmatter. Default is `30min`.
+## 設定
+
+プレゼンテーションの時間はヘッドマターで設定できます。デフォルトは `30min` です。
 
 ```yaml
 ---
-# duration of the presentation, default is '30min'
+# プレゼンテーション時間。デフォルトは '30min' です。
 duration: 30min
-# timer mode, can be 'countdown' or 'stopwatch', default is 'stopwatch'
+# タイマーモード。'countdown' または 'stopwatch' が指定可能。デフォルトは 'stopwatch' です。
 timer: stopwatch
 ---
 ```

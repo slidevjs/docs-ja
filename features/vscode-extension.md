@@ -3,12 +3,12 @@ relates:
   - VS Code: https://code.visualstudio.com/
   - View in Marketplace: https://marketplace.visualstudio.com/items?itemName=antfu.slidev
   - View in OVSX: https://open-vsx.org/extension/antfu/slidev
-tags: [editor]
+tags: [エディタ]
 description: |
-  Help you better organize your slides and have a quick overview of them.
+  スライドの整理や概要の把握を支援します。
 ---
 
-# VS Code Extension
+# VS Code 拡張機能
 
 <p align="center">
     <a href="https://github.com/slidevjs/slidev" target="_blank">
@@ -23,16 +23,16 @@ description: |
   <img inline src="https://img.shields.io/visual-studio-marketplace/d/antfu.slidev.svg?color=2B90B6" alt="Visual Studio Marketplace Downloads" />
 </a>
 
-The VS Code extension provides some features to help you better organize your slides and have a quick overview of them.
+VS Code 拡張機能はいくつかの機能を提供しており、スライドの整理や概要の把握を支援します。
 
-### Features
+### 機能
 
-- Preview slides in the side panel
-- Slides tree view
-- Re-ordering slides
-- Folding for slide blocks
-- Multiple slides project support
-- Start the dev server with one click
+- サイドパネルでのプレビュー
+- スライドのツリービュー
+- スライドの順序変更
+- スライドブロックの格納
+- 複数のスライドプロジェクトのサポート
+- ワンクリックで開発サーバーを起動
 
 ![](https://github.com/slidevjs/slidev/assets/63178754/2c9ba01a-d21f-4b33-b6b6-4e249873f865)
 
@@ -40,23 +40,23 @@ The VS Code extension provides some features to help you better organize your sl
 
 <TheTweet id="1789684139152810151" />
 
-### Installation
+### インストール
 
-You can install the extension from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=antfu.slidev) or the [Open VSX Registry](https://open-vsx.org/extension/antfu/slidev).
+拡張機能は、[VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=antfu.slidev) または [Open VSX Registry](https://open-vsx.org/extension/antfu/slidev) からインストールできます。
 
-### Usage
+### 使い方
 
-Click the `Slidev` icon in the activity bar to open the **Slidev panel**. In the Slidev panel, you can see the projects tree view, slides tree view, and the preview webview.
+アクティビティバーの `Slidev` アイコンをクリックして **Slidev パネル** を開きます。Slidev パネルでは、プロジェクトのツリービュー、スライドのツリービュー、プレビューの Webview を確認できます。
 
-In the **projects tree view**, you can see all the Slidev projects in your workspace. You can click the item to open the corresponding file, and click the <codicon-eye /> icon over it to switch the active project. The <codicon-add /> icon allows you to load a slides project that wasn't scanned automatically.
+**プロジェクトのツリービュー** では、ワークスペース内のすべての Slidev プロジェクトを確認できます。アイテムをクリックすると対応するファイルが開き、アイテム上の <codicon-eye /> アイコンをクリックするとアクティブなプロジェクトを切り替えられます。<codicon-add /> アイコンは自動的にスキャンされなかったスライドプロジェクトを読み込むためのものです。
 
-In the **slides tree view**, you can see all the slides in the active project. You can click the item to move your cursor to the slide in the editor, and drag and drop to reorder the slides.
+**スライドのツリービュー** では、アクティブなプロジェクト内のすべてのスライドを確認できます。アイテムをクリックするとエディタ内のスライドにカーソルが移動し、ドラッグアンドドロップでスライドの順序を変更できます。
 
-In the **preview webview**, you can click the <codicon-run-all /> icon to start the dev server and click the <codicon-globe /> icon to open the slides in the browser. Toggle <codicon-lock /> icon to sync/unsync the preview navigation with the editor cursor.
+プレビューの **Webview** では、<codicon-run-all /> アイコンをクリックして開発サーバーを起動し、<codicon-globe /> アイコンをクリックしてブラウザでスライドを開けます。プレビューのナビゲーションとエディタのカーソルの同期/非同期を<codicon-lock /> アイコンで切り替えられます。
 
-There are also some **commands** you can use. Type `Slidev` in the command palette to see them.
+いくつかの **コマンド** も利用できます。コマンドパレットで `Slidev` と入力して確認してください。
 
-You can add glob patterns to the `slidev.include` configuration to include files as Slidev entries. The default value is `["**/*.md"]`. Example:
+`slidev.include` 設定にグロブパターンを追加して、Slidev エントリとしてファイルを含めることができます。デフォルト値は `["**/*.md"]` です。例えば:
 
 ```json
 {
@@ -64,17 +64,17 @@ You can add glob patterns to the `slidev.include` configuration to include files
 }
 ```
 
-#### Dev Command {#dev-command}
+#### 開発コマンド {#dev-command}
 
-You can customize the command to start dev server by setting the `slidev.dev-command` configuration. The default value is `npm exec -c 'slidev ${args}'`.
+開発サーバーを起動するコマンドは、`slidev.dev-command` 設定でカスタマイズできます。デフォルト値は `npm exec -c 'slidev ${args}'` です。
 
-The configured command can contain placeholders:
+設定されたコマンドにはプレースホルダーを含めることができます:
 
-- `${args}`: All CLI arguments. e.g. `slides.md --port 3000 --remote`
-- `${port}`: The port number. e.g. `3000`
+- `${args}`: すべての CLI 引数。e.g.: `slides.md --port 3000 --remote`
+- `${port}`: ポート番号。e.g.: `3000`
 
-Examples:
+例:
 
-- Global installation: `slidev ${args}`
-- For PNPM users, you can set it to `pnpm slidev ${args}`.
-- For [code-server](https://coder.com/docs/code-server/) users, you can set it to `pnpm slidev ${args} --base /proxy/${port}/`. This will make the dev server accessible at `http://localhost:8080/proxy/3000/`.
+- グローバルインストール: `slidev ${args}`
+- PNPM ユーザーの場合は、`pnpm slidev ${args}` に設定できます。
+- [code-server](https://coder.com/docs/code-server/) ユーザーの場合は、`pnpm slidev ${args} --base /proxy/${port}/` に設定できます。これにより、開発サーバーは `http://localhost:8080/proxy/3000/` でアクセス可能になります。

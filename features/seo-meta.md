@@ -3,22 +3,22 @@ depends:
   - custom/index#headmatter
 relates:
   - features/og-image
-tags: [SEO, head]
+tags: [SEO, ヘッダー]
 description: |
-  Configure SEO meta tags for better social media sharing and search engine optimization.
+  ソーシャルメディアでの共有や検索エンジン最適化を向上させるために、SEO メタタグを設定します。
 ---
 
-# SEO Meta Tags
+# SEO メタタグ
 
-Slidev allows you to configure SEO meta tags in the headmatter to improve social media sharing and search engine optimization. You can set up Open Graph and Twitter Card meta tags to control how your slides appear when shared on social platforms.
+Slidev では、ヘッドマターで SEO メタタグを設定して、ソーシャルメディアでの共有や検索エンジン最適化を向上させることができます。Open Graph や Twitter Card のメタタグを設定して、スライドがソーシャルプラットフォームで共有されたときの表示方法を制御できます。
 
-## Configuration
+## 設定
 
-Add the `seoMeta` configuration to your slides deck frontmatter:
+`seoMeta` をスライドデッキのフロントマターに追加します:
 
 ```yaml
 ---
-# SEO meta tags
+# SEO メタタグ
 seoMeta:
   ogTitle: Slidev Starter Template
   ogDescription: Presentation slides for developers
@@ -33,4 +33,4 @@ seoMeta:
 ---
 ```
 
-This feature is powered by [unhead](https://unhead.unjs.io/)'s `useHead` hook, please refer to the [documentation](https://unhead.unjs.io/docs/head/api/composables/use-seo-meta) for more details.
+この機能は [unhead](https://unhead.unjs.io/) の `useHead` フックによって提供されています。詳細については、[ドキュメント](https://unhead.unjs.io/docs/head/api/composables/use-seo-meta) を参照してください。

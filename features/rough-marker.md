@@ -4,36 +4,36 @@ depends:
 relates:
   - Rough Notation: https://github.com/slidevjs/rough-notation
 since: v0.48.0
-tags: [drawing, animation]
+tags: [描画, アニメーション]
 description: |
-  Integrate Rough Notation to allow marking or highlighting elements in your slides.
+  Rough Notation を統合して、スライド内の要素にマークやハイライトを付けることができます。
 ---
 
 # Rough Markers
 
-Slidev integrates [Rough Notation](https://github.com/slidevjs/rough-notation) to allow marking or highlighting elements in your slides.
+Slidev は [Rough Notation](https://github.com/slidevjs/rough-notation) を統合して、スライド内の要素にマークやハイライトを付けることができます。
 
 ---
 
-### `v-mark` directive
+### `v-mark` ディレクティブ
 
-Rough Notation integration comes with the `v-mark` directive.
+Rough Notation の統合には `v-mark` ディレクティブが付属しています。
 
-#### Type
+#### 種類
 
-Use `v-mark.underline` for the underline mark, `v-mark.circle` for the circle mark, etc. (defaults to `underline`).
+`v-mark.underline` を使うと下線マーク、`v-mark.circle` を使うと円マークなどが付きます（デフォルトは `underline` です）。
 
-#### Color
+#### 色
 
-`v-mark.red` makes the notation `red`. Supported built-in color themes from UnoCSS. For custom colors, use object syntax `v-mark="{ color: '#234' }"`.
+`v-mark.red` はマークを赤色にします。UnoCSS の組み込みカラーテーマがサポートされています。カスタムカラーを使用する場合は、オブジェクト構文 `v-mark="{ color: '#234' }"` を使用してください。
 
-#### Clicks
+#### クリック
 
-`v-mark` works like `v-click` and will trigger after a click. Same as `v-click`, it allows you to pass a custom click value, like `v-mark="5"` or `v-mark="'+1'"`.
+`v-mark` は `v-click` と同様に動作し、クリック後にトリガーされます。`v-click` と同様に、`v-mark="5"` や `v-mark="'+1'"` のようにカスタムクリック値を渡すことができます。
 
-#### Options
+#### オプション
 
-Optionally, you can pass an object to `v-mark` to specify the options, for example:
+オプションとして、`v-mark` にオブジェクトを渡してオプションを指定することもできます。例えば:
 
 ```vue
 <span v-mark="{ at: 5, color: '#234', type: 'circle' }">
@@ -41,6 +41,6 @@ Important text
 </span>
 ```
 
-#### Preview
+#### プレビュー
 
 <video src="https://github.com/slidevjs/slidev/assets/11247099/c840340c-0aa1-4cde-b228-e6c67e5f6879" rounded-lg shadow controls></video>

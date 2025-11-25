@@ -3,14 +3,14 @@ relates:
   - guide/ui
   - CLI: builtin/cli
   - Cloudflare Quick Tunnels: https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/do-more-with-tunnels/trycloudflare/
-tags: [remote, tool]
+tags: [リモート, ツール]
 description: |
-  Access your presentation remotely with Slidev's remote access feature.
+  Slidev のリモートアクセス機能を使って、プレゼンテーションにリモートでアクセスできます。
 ---
 
-# Remote Access
+# リモートアクセス
 
-You can run your presentation with remote access by using the `--remote` flag:
+`--remote` フラグを使ってプレゼンテーションをリモートアクセスで実行できます:
 
 ::: code-group
 
@@ -41,13 +41,13 @@ deno run dev --remote
 
 :::
 
-## Password Protection
+## パスワード保護
 
-If you want to share your slides but don't want other people to access the presenter mode, you can pass a password to the option, i.e. `--remote=your_password`. Then the password is required when accessing the presenter mode.
+スライドを共有したいが、他の人にプレゼンターモードへのアクセスを許可したくない場合は、オプションに `--remote=your_password` のように指定してパスワードを設定できます。これで、プレゼンターモードにアクセスする際にパスワードが必要になります。
 
-## Remote Tunnel
+## リモートトンネル
 
-You can open a [Cloudflare Quick Tunnels](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/do-more-with-tunnels/trycloudflare/) to expose your local server to the internet. This way, you can share your slides with others without setting up a server.
+[Cloudflare Quick Tunnels](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/do-more-with-tunnels/trycloudflare/) を使ってローカルサーバーをインターネットに公開できます。これにより、サーバーを設定することなくスライドを他の人と共有できます。
 
 ::: code-group
 

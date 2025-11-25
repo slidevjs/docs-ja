@@ -6,17 +6,17 @@ relates:
   - features/import-snippet
   - Custom Code Runners: /custom/config-code-runners
 since: v0.49.5
-tags: [codeblock, editor]
+tags: [コードブロック, エディター]
 description: |
-  A monaco editor that allows you to write code directly in the slides and save the changes back to the file.
+  スライド内で直接コードを書き込み、その変更をファイルに保存できる Monaco エディターです。
 ---
 
-# Writable Monaco Editor
+# 書き込み可能な Monaco エディター
 
-You can also use the [Import Code Snippets](#import-code-snippets) syntax combined with the `{monaco-write}` directive, to link your Monaco Editor with a file on your filesystem. This will allow you to edit the code directly in the editor and save the changes back to the file.
+[Import Code Snippets](#import-code-snippets) 構文と `{monaco-write}` ディレクティブを組み合わせて使用することで、Monaco エディターをファイルシステム上のファイルにリンクできます。これにより、エディター内でコードを直接編集し、その変更をファイルに保存することが可能になります。
 
 ```md
 <<< ./some-file.ts {monaco-write}
 ```
 
-When using this, be sure to back up your files beforehand, as the changes will be saved directly to the file.
+この機能を使用する際は、変更が直接ファイルに保存されるため、事前にファイルのバックアップを取ることをお勧めします。\

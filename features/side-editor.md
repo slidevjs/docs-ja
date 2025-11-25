@@ -3,15 +3,15 @@ depends:
   - guide/ui#navigation-actions
 relates:
   - features/vscode-extension
-tags: [editor]
+tags: [エディター]
 description: |
-  Edit your slides source file alongside the presentation.
+  スライドのソースファイルをプレゼンテーションと並べて編集します。
 ---
 
-# Integrated Editor
+# 統合エディター
 
-Slidev comes with an integrated editor that will instantly reload and save the changes to your file.
+Slidev には統合エディターが付属しており、ファイルへの変更を即座にリロードして保存します。
 
-Click the <carbon-edit class="inline-icon-btn"/> button on the navigation panel to open it.
+ナビゲーションパネルの <carbon-edit class="inline-icon-btn"/> ボタンをクリックして開きます。
 
 ![](/screenshots/integrated-editor.png)

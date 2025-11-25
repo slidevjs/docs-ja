@@ -4,16 +4,16 @@ depends:
 relates:
   - TwoSlash: https://twoslash.netlify.app/
 since: v0.46.0
-tags: [codeblock]
+tags: [コードブロック]
 description: |
-  A powerful tool for rendering TypeScript code blocks with type information on hover or inlined.
+  TypeScript の型情報をホバーやインラインで表示できる強力なツールです。
 ---
 
-# TwoSlash Integration
+# TwoSlash 統合
 
-[TwoSlash](https://twoslash.netlify.app/) is a powerful tool for rendering TypeScript code blocks with type information on hover or inlined. It's quite useful for preparing slides for JavaScript/TypeScript-related topics.
+[TwoSlash](https://twoslash.netlify.app/) は、TypeScript のコードブロックに型情報をホバーやインラインで表示できる強力なツールです。JavaScript/TypeScript 関連のトピックのスライド作成に非常に便利です。
 
-To use it, you can add `twoslash` to the code block's language identifier:
+TwoSlash を使用するには、コードブロックの言語識別子に `twoslash` を追加します:
 
 ````md
 ```ts twoslash
@@ -24,7 +24,7 @@ const count = ref(0)
 ```
 ````
 
-It will be rendered as:
+これは、次のようにレンダリングされます:
 
 ```ts twoslash
 import { ref } from 'vue'
@@ -33,5 +33,5 @@ const count = ref(0)
 //            ^?
 ```
 
-<!-- For the popup to not overlap the content below -->
+<!-- ポップアップが下のコンテンツと重ならないように -->
 <div class="py-20" />

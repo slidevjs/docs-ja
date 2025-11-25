@@ -1,60 +1,60 @@
 ---
 relates:
   - features/frontmatter-merging
-tags: [syntax]
+tags: [構文]
 description: |
-  Split your `slides.md` into multiple files for better reusability and organization.
+  複数のファイルに `slides.md` を分割して、再利用性と整理性を向上させることができます。
 ---
 
-# Importing Slides
+# スライドのインポート
 
-You can split your `slides.md` into multiple files for better reusability and organization. To do this, you can use the `src` frontmatter option to specify the path to the external markdown file. For example:
+複数のファイルに `slides.md` を分割して、再利用性と整理性を向上させることができます。これを行うには、`src` フロントマターオプションを使用して外部マークダウンファイルへのパスを指定します。例えば:
 
 ::: code-group
 
 <!-- eslint-skip -->
 
 ```md [./slides.md]
-# Title
+# タイトル
 
-This is a normal page
+これは普通のページです
 
 ---
 src: ./pages/toc.md // [!code highlight]
 ---
 
-<!-- this page will be loaded from './pages/toc.md' -->
+<!-- このページは './pages/toc.md' から読み込まれます -->
 
-Contents here are ignored
+ここに書いた要素は無視されます
 
 ---
 
 # Page 4
 
-Another normal page
+これは、別の普通のページです
 
 ---
-src: ./pages/toc.md   # Reuse the same file // [!code highlight]
+src: ./pages/toc.md   # 同じファイルを再利用する // [!code highlight]
 ---
 ```
 
 ```md [./pages/toc.md]
-# Table of Contents
+# 目次
 
-Part 1
+パート 1
 
 ---
 
-# Table of Contents
+# 目次
 
-Part 2
+パート 2
 ```
 
 :::
 
-## Importing Specific Slides
+## 特定のスライドのインポート
 
-To reuse some of the slides inside another Markdown file, you can use the hash part of the import path:
+別のマークダウンファイル内の一部のスライドを再利用するには、インポートパスのハッシュ部分を使用できます:
 
 ```md
 ---
@@ -62,8 +62,8 @@ src: ./another-presentation.md#2,5-7
 ---
 ```
 
-This will import the slides 2, 5, 6, and 7 from `./another-presentation.md`.
+これは `./another-presentation.md` のスライド 2、5、6、7 をインポートします。
 
-## Frontmatter Merging
+## フロントマターの統合
 
 <LinkCard link="features/frontmatter-merging" />

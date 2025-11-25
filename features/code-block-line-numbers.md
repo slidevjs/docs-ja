@@ -1,16 +1,16 @@
 ---
 depends:
   - guide/syntax#code-block
-tags: [codeblock]
+tags: [コードブロック]
 description: |
-  Enable line numbering for all code blocks across the slides or individually.
+  すべてのコードブロックで、または個別に行番号を有効にできます。
 ---
 
-# Line Numbers
+# 行番号
 
-You can enable line numbering for all code blocks across the slides by setting `lineNumbers: true` in the headmatter, or enable each code block individually by setting `lines: true`.
+すべてのコードブロックで行番号を有効にするには、ヘッドマターで `lineNumbers: true` を設定します。個別のコードブロックで有効にするには、`lines: true` を設定します。
 
-You can also set the starting line for each code block and highlight the lines accordingly via `{startLine: number}`, which defaults to 1.
+`{startLine: number}` を使用して、各コードブロックの開始行を設定し、それに応じて行をハイライトすることもできます。デフォルトは 1 です。
 
 ````md
 ```ts {6,7}{lines:true,startLine:5}
@@ -23,7 +23,7 @@ function add(
 ```
 ````
 
-Note that you can use `{*}` as a placeholder of <LinkInline link="features/line-highlighting" />:
+`{*}` を使用して、<LinkInline link="features/line-highlighting" /> のプレースホルダーとして使用できます:
 
 ````md
 ```ts {*}{lines:true,startLine:5}

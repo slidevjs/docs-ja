@@ -4,25 +4,25 @@ depends:
 relates:
   - RecordRTC: https://github.com/muaz-khan/RecordRTC
   - WebRTC API: https://webrtc.org/
-tags: [presenter, tool]
+tags: [プレゼンター, ツール]
 description: |
-  Record your presentation with the built-in camera view and recording feature.
+  内蔵のカメラビューと録画機能を使ってプレゼンテーションを録画します。
 ---
 
-# Recording
+# 録画
 
-Slidev comes with a built-in camera view and recording feature. They make it simple for you to record your presentation without having to switch between other recording tools while delivering a presentation.
+Slidev には内蔵のカメラビューと録画機能があります。これにより、プレゼンテーション中に他の録画ツールに切り替えることなく、簡単にプレゼンテーションを録画できます。
 
-## Camera View {#camera-view}
+## カメラビュー {#camera-view}
 
-Click the <carbon-user-avatar class="inline-icon-btn"/> button in the [navigation bar](../guide/ui#navigation-bar) to show your camera view in the presentation. You can drag it to move it, and use the handler on the right bottom corner to resize it. The size and position will persist across reloads.
+[ナビゲーションバー](../guide/ui#navigation-bar) の <carbon-user-avatar class="inline-icon-btn"/> ボタンをクリックすると、プレゼンテーション内にカメラビューが表示されます。ドラッグして移動したり、右下のハンドラーを使ってサイズを変更したりできます。サイズと位置はリロード後も保持されます。
 
 <TheTweet id="1395006771027120133" />
 
-## Start Recording {#start-recording}
+## 録画を開始する {#start-recording}
 
-Clicking the <carbon-video class="inline-icon-btn"/> button in the [navigation bar](../guide/ui#navigation-bar) will bring up a dialog for you. Here you can choose to either record your camera output embedded in your slides or to separate them into two video files.
+[ナビゲーションバー](../guide/ui#navigation-bar) の <carbon-video class="inline-icon-btn"/> ボタンをクリックすると、ダイアログが表示されます。ここで、カメラ出力をスライドに埋め込んで録画するか、2 つのビデオファイルに分けて録画するかを選択できます。
 
-This feature is powered by [RecordRTC](https://github.com/muaz-khan/RecordRTC) and uses the [WebRTC API](https://webrtc.org/).
+この機能は [RecordRTC](https://github.com/muaz-khan/RecordRTC) によって提供されており、[WebRTC API](https://webrtc.org/) を使用しています。
 
 ![](/screenshots/recording.png)

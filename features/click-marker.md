@@ -3,29 +3,29 @@ depends:
   - guide/syntax#notes
   - guide/animations
 since: v0.48.0
-tags: [presenter, animation]
+tags: [発表者向け, アニメーション]
 description: |
-  Highlighting notes and auto-scrolling to the active section of notes.
+  ノートのハイライトとアクティブなノートセクションへの自動スクロール。
 ---
 
-# Click Markers
+# クリックマーカー
 
-For some slides you may have longer notes that could be hard to find your place. Slidev supports click markers that allow highlighting and auto-scrolling to the section of notes from your corresponding content. Put `[click]` markers at the beginning of any line in your notes for the timing you need to go to another [click](/guide/animations#click-animation). You may skip `n` clicks by using `[click:{n+1}]`. For example:
+長いノートがある場合、発表中にどこを話しているのかわからなくなることがあります。Slidev では、クリックマーカーをサポートしており、対応するコンテンツからノートのセクションをハイライトして自動スクロールできます。ノート内の任意の行の先頭に `[click]` マーカーを配置して、別の [クリック](/guide/animations#click-animation) に移動するタイミングを指定します。`[click:{n+1}]` を使用して、`n` 回のクリックをスキップすることもできます。例えば:
 
 ```md
 <!--
-Content before the first click
+最初のクリック前に表示するコンテンツ
 
-[click] This will be highlighted after the first click
+[click] 1 回目のクリックの後、ここがハイライトされます。
 
-Also highlighted after the first click
+ここも同様にハイライトされます。
 
-- [click] This list element will be highlighted after the second click
+- [click] このリスト要素は 2 回目のクリックの後にハイライトされます
 
-[click:3] Last click (skip two clicks)
+[click:3] 最後のクリック（2 回のクリックをスキップ）
 -->
 ```
 
-Slidev divides the content between the click markers and highlights it in presenter notes, synchronized with your slide progress.
+Slidev はクリックマーカー間のコンテンツを分割し、スライドの進行に同期して発表者ノートでハイライトします。
 
 <video src="https://github.com/slidevjs/slidev/assets/11247099/40014e34-67cd-4830-8c8d-8431754a3672" controls rounded shadow w-full></video>

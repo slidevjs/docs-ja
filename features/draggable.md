@@ -1,16 +1,16 @@
 ---
-tags: [layout]
+tags: [レイアウト]
 description: |
-  Move, resize, and rotate elements by dragging them with the mouse.
+  マウスでドラッグして要素を移動、サイズ変更、回転できます。
 ---
 
-# Draggable Elements
+# ドラッグ可能な要素
 
-Draggable elements give you the ability to move, resize, and rotate elements by dragging them with the mouse. This is useful for creating floating elements in your slides.
+ドラッグ可能な要素は、マウスでドラッグして要素を移動、サイズ変更、回転する機能を提供します。これはスライド内で浮動要素を作成するのに便利です。
 
-## Directive Usage
+## ディレクティブの使い方
 
-### Data from the frontmatter
+### フロントマターからのデータ
 
 ```md
 ---
@@ -21,19 +21,19 @@ dragPos:
 <img v-drag="'square'" src="https://sli.dev/logo.png">
 ```
 
-### Data from the directive value
+### ディレクティブの値からのデータ
 
-::: warning
-Slidev use regex to update the position value in the slide content. If you meet problems, please use the frontmatter to define the values instead.
+::: warning 注意
+Slidev は正規表現を使用して、スライドコンテンツ内の位置の値を更新します。問題が発生した場合は、代わりにフロントマターを使用して値を定義してください。
 :::
 
 ```md
 <img v-drag="[Left,Top,Width,Height,Rotate]" src="https://sli.dev/logo.png">
 ```
 
-## Component Usage
+## コンポーネントの使い方
 
-### Data from the frontmatter
+### フロントマターからのデータ
 
 ```md
 ---
@@ -43,40 +43,40 @@ dragPos:
 
 <v-drag pos="foo" text-3xl>
   <div class="i-carbon:arrow-up" />
-  Use the `v-drag` component to have a draggable container!
+  `v-drag` コンポーネントを使用して、ドラッグ可能なコンテナを作成します！
 </v-drag>
 ```
 
-### Data from props
+### props からのデータ
 
 ```md
 <v-drag pos="Left,Top,Width,Height,Rotate" text-3xl>
   <div class="i-carbon:arrow-up" />
-  Use the `v-drag` component to have a draggable container!
+  `v-drag` コンポーネントを使用して、ドラッグ可能なコンテナを作成します！
 </v-drag>
 ```
 
-## Create a Draggable Element
+## ドラッグ可能な要素の作成
 
-When you create a new draggable element, you don't need to specify the position value (but you need to specify the position name if you want to use the frontmatter). Slidev will automatically generate the initial position value for you.
+ドラッグ可能な要素を新しく作成するとき、位置の値を指定する必要はありません（フロントマターを使用したい場合は位置の名前を指定する必要があります）。Slidev は自動的に初期位置の値を生成します。
 
-## Automatic Height
+## 高さの自動調整
 
-You can set `Height` to `NaN` (in) or `_` (if you use the component) to make the height of the draggable element automatically adjust to its content.
+`Height` を `NaN`（ディレクティブの場合）または `_`（コンポーネントの場合）に設定すると、ドラッグ可能な要素の高さはコンテンツの高さに自動的に調整されます。
 
-## Controls
+## コントロール
 
-- Double-click the draggable element to start dragging it.
-- You can also use the arrow keys to move the element.
-- Hold `Shift` while dragging to preserve its aspect ratio.
-- Click outside the draggable element to stop dragging it.
+- ダブルクリックしてドラッグを開始します。
+- 矢印キーでも要素を移動できます。
+- `Shift` キーを押しながらドラッグして、要素の縦横比を維持します。
+- ドラッグ可能な要素の外側をクリックして、ドラッグを停止します。
 
-## Draggable Arrow
+## ドラッグ可能な矢印
 
-The `<v-drag-arrow>` component creates a draggable arrow element. Simply use it like this:
+`<v-drag-arrow>` コンポーネントは、ドラッグ可能な矢印を作成します。次のように使用します:
 
 ```md
 <v-drag-arrow />
 ```
 
-And you will get a draggable arrow element. Other props are the same as [the `Arrow` component](/builtin/components#arrow).
+ドラッグ可能な矢印要素が表示されます。他の props は [the `Arrow` component](/builtin/components#arrow) と同じです。

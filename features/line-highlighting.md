@@ -2,14 +2,14 @@
 depends:
   - guide/syntax#code-block
   - guide/animations
-tags: [codeblock, animation]
+tags: [コードブロック, アニメーション]
 description: |
-  Highlight specific lines in code blocks based on clicks.
+  コードブロック中の特定の行を、クリックをもとにハイライトできます。
 ---
 
-# Line Highlighting
+# 行のハイライト
 
-To highlight specific lines, simply add line numbers within brackets `{}`. Line numbers start counting from 1 by default.
+特定の行をハイライトするには、単に波括弧 `{}` 内に行番号を追加します。行番号はデフォルトで 1 からカウントされます。
 
 ````md
 ```ts {2,3}
@@ -22,9 +22,9 @@ function add(
 ```
 ````
 
-## Dynamic Line Highlighting
+## 動的なハイライト
 
-To change what's highlighted with multiple clicks, you can use `|` to separate each stage:
+複数回のクリックでハイライトを変更するには、`|` を使って各段階を区切ります。
 
 ````md
 ```ts {2-3|5|all}
@@ -37,9 +37,9 @@ function add(
 ```
 ````
 
-This will first highlight `a: Ref<number> | number` and `b: Ref<number> | number`, and then `return computed(() => unref(a) + unref(b))` after one click, and lastly, the whole block.
+これは最初に `a: Ref<number> | number` と `b: Ref<number> | number` をハイライトし、1 回クリックすると `return computed(() => unref(a) + unref(b))` がハイライトされ、最後にブロック全体がハイライトされます。
 
-You can set the line number to `hide` to hide the code block or `none` to not highlight any line:
+行番号に `hide` を設定するとコードブロックを非表示にし、`none` を設定すると行をハイライトしません:
 
 ````md
 ```ts {hide|none}
@@ -53,5 +53,5 @@ function add(
 ````
 
 ::: tip
-Learn more in the [click animations guide](/guide/animations#positioning).
+詳しくは、[クリックアニメーションガイド](/guide/animations#positioning) をご覧ください。
 :::

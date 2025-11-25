@@ -1,15 +1,15 @@
 ---
-tags: [notes, presenter]
-description: Automatically add `<ruby>` tags to your notes.
+tags: [ノート, プレゼンター]
+description: ノートに自動的に `<ruby>` タグを追加します。
 ---
 
-# Notes Auto Ruby
+# ノートの自動ルビ付け
 
-> Available since v52.4.0
+> v52.4.0 以降で利用可能
 
-When you write notes in your slides, you might want to add some ruby text to help pronouncing the some words. You can always add `<ruby>` tags to your notes manually, but Slidev also provides a convenient way to do this automatically by a global auto-replacement.
+スライドにノートを書く際、特定の単語の読み方を示すためにルビを付けたい場合があります。ノートに手動で `<ruby>` タグを追加することもできますが、Slidev ではグローバルな自動置換機能を使ってこれを自動的に行う便利な方法も提供しています。
 
-In the headmatter, you can set the `notesAutoRuby` option to a map of words to their ruby text:
+ヘッドマター で `notesAutoRuby` オプションを使用し、単語とそのルビのマップに設定できます。
 
 ```md
 ---
@@ -18,13 +18,13 @@ notesAutoRuby:
   勉強: べんきょう
 ---
 
-# Your slides here
+# ここにスライドを書く
 
 <!--
 私は日本語を勉強しています。
 -->
 ```
 
-And the notes will be rendered as:
+そして、ノートは次のようにレンダリングされます。
 
 <p>私は<ruby>日本語<rt>ni hon go</rt></ruby>を<ruby>勉強<rt>べんきょう</rt></ruby>しています。</p>

@@ -4,16 +4,16 @@ depends:
 relates:
   - Monaco Editor: https://microsoft.github.io/monaco-editor/
   - Configure Monaco Editor: /custom/config-monaco
-tags: [codeblock, editor]
+tags: [コードブロック, エディター]
 description: |
-  Turn code blocks into fully-featured editors, or generate a diff between two code blocks.
+  コードブロックを完全な機能を備えたエディターに変えたり、2つのコードブロック間の差分を生成したりできます。
 ---
 
-# Monaco Editor
+# Monaco エディター
 
 <video src="https://github.com/slidevjs/slidev/assets/11247099/0c6ce681-80d3-4555-93bf-9288ee533462" controls rounded shadow w-full></video>
 
-Whenever you want to do some modification in the presentation, simply add `{monaco}` after the language id — it turns the block into a fully-featured Monaco editor!
+プレゼンテーションでなにか変更を加えたいときは、言語 ID の後に `{monaco}` を追加するだけで、そのブロックが完全な機能を備えた Monaco エディターに変わります！
 
 ````md
 ```ts {monaco}
@@ -21,11 +21,11 @@ console.log('HelloWorld')
 ```
 ````
 
-Learn more about [Configuring Monaco](/custom/config-monaco).
+詳しくは [Configuring Monaco](/custom/config-monaco) をご覧ください。
 
-## Diff Editor
+## 差分エディター
 
-Monaco can also generate a diff between two code blocks. Use `{monaco-diff}` to turn the block into a [Monaco diff editor](https://microsoft.github.io/monaco-editor/playground.html?source=v0.36.1#example-creating-the-diffeditor-multi-line-example) and use `~~~` to separate the original and modified code!
+Monaco は 2 つのコードブロック間の差分を生成することもできます。`{monaco-diff}` を使用してブロックを [Monaco 差分エディター](https://microsoft.github.io/monaco-editor/playground.html?source=v0.36.1#example-creating-the-diffeditor-multi-line-example) に変え、`~~~` を使って変更前のコードと変更後のコードを区切ります。
 
 ````md
 ```ts {monaco-diff}
@@ -35,15 +35,15 @@ console.log('Modified text')
 ```
 ````
 
-## Editor Height
+## エディターの高さ
 
-By default, the Monaco editor has a fixed height based on the initial content. If you start with an empty or small code block and want the editor to automatically grow as you type more code, you can set `{height:'auto'}`.
+デフォルトでは、Monaco エディターは初期コンテンツに基づいて固定の高さを持っています。空のコードブロックや小さなコードブロックから始めて、コードを入力するにつれてエディターが自動的に高さを調整するようにしたい場合は、`{height:'auto'}` を使用します。
 
 ````md
 ```ts {monaco} {height:'auto'}
-// The editor will automatically grow as you type more code
+// エディターの高さはコンテンツに基づいて自動的に調整されます
 console.log('Hello, World!')
 ```
 ````
 
-You can also set a specific height using CSS units like `{height:'300px'}` or `{height:'100%'}`.
+CSS 単位 (例えば `{height:'300px'}` や `{height:'100%'}`) を使用して特定の高さを設定することもできます。

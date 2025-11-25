@@ -5,18 +5,18 @@ depends:
 relates:
   - Shiki Magic Move: https://github.com/shikijs/shiki-magic-move
 since: v0.48.0
-tags: [codeblock, animation]
+tags: [コードブロック, アニメーション]
 description: |
-  Enable granular transition between code changes, similar to Keynote's Magic Move.
+  コードの変更間で細かいトランジションを可能にし、Keynote の Magic Move に似た効果を実現します。
 ---
 
 # Shiki Magic Move
 
-[Shiki Magic Move](https://github.com/shikijs/shiki-magic-move) enables you to have a granular transition between code changes, similar to Keynote's Magic Move. You can check [the playground](https://shiki-magic-move.netlify.app/) to see how it works.
+[Shiki Magic Move](https://github.com/shikijs/shiki-magic-move) を使うと、コードの変更間で Keynote の Magic Move に似た細かいトランジションを実現できます。[プレイグラウンド](https://shiki-magic-move.netlify.app/) で動作を確認できます。
 
 <video src="https://github.com/slidevjs/slidev/assets/11247099/79927794-27ba-4342-9911-9996cec889d6" controls rounded shadow w-full></video>
 
-In Slidev, we bind the magic-move to the [clicks system](/guide/animations#click-animation). The syntax is to wrap multiple code blocks representing each step with <code>````md magic-move</code> (mind it's **4** backticks), this will be transformed into one code block, that morphs to each step as you click.
+Slidev では、Magic Move を [クリックシステム](/guide/animations#click-animation) にバインドしています。構文は、各ステップを表す複数のコードブロックを <code>````md magic-move</code>（バックティックは**4つ**）でラップすることで、1 つのコードブロックに変換され、クリックするたびに各ステップに変形します。
 
 `````md
 ````md magic-move
@@ -32,7 +32,7 @@ console.log(`Step ${3}` as string)
 ````
 `````
 
-It's also possible to mix Magic Move with <LinkInline link="features/line-highlighting" /> and <LinkInline link="features/code-block-line-numbers" />, for example:
+<LinkInline link="features/line-highlighting" /> と <LinkInline link="features/code-block-line-numbers" /> と組み合わせることも可能です。例えば:
 
 `````md
 ````md magic-move {at:4, lines: true} // [!code hl]
@@ -43,7 +43,7 @@ function add() {
 }
 ```
 
-Non-code blocks in between as ignored, you can put some comments.
+コードブロックの間に非コードブロックがある場合は無視され、コメントなどを入れることができます
 
 ```js {*}{lines: false} // [!code hl]
 let count = 1

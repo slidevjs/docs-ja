@@ -5,14 +5,14 @@ depends:
 relates:
   - Custom Code Runners: /custom/config-code-runners
 since: v0.48.0
-tags: [codeblock, editor]
+tags: [コードブロック, エディター]
 description: |
-  Run code directly in the editor and see the result.
+  エディターの中で直接コードを実行し、その結果を見ることができます。
 ---
 
 # Monaco Runner
 
-Slidev also provides the Monaco Runner Editor, which allows you to run the code directly in the editor and see the result. Use `{monaco-run}` to turn the block into a Monaco Runner Editor.
+Slidev は Monaco Runner エディターも提供しており、エディターの中で直接コードを実行し、その結果を見ることができます。`{monaco-run}` を使用してブロックを Monaco Runner エディターに変えます。
 
 ````md
 ```ts {monaco-run}
@@ -23,17 +23,17 @@ console.log(distance(3, 4))
 ```
 ````
 
-It provides the editor with a "Run" button, and shows the result of the code execution right below the code block. You may also modify the code and the result will be re-evaluated on the fly.
+エディターには「Run」ボタンがあり、コードの実行結果がコードブロックのすぐ下に表示されます。コードを変更すると、実行結果もリアルタイムで再評価されます。
 
-By default it will automatically run the code when the slide is loaded; if you want to instead explicitly trigger the run, you can set `{autorun:false}`.
+デフォルトでは、スライドが読み込まれたときにコードが自動的に実行されます。代わりに明示的に実行をトリガーしたい場合は、`{autorun:false}` を設定できます。
 
 ````md
 ```ts {monaco-run} {autorun:false}
-console.log('Click the play button to run me')
+console.log('クリックして実行してください')
 ```
 ````
 
-If you want to only show the output in certain clicks, you can use the `showOutputAt` prop. The value is the same as `v-click`.
+特定のクリック数でのみ出力を表示したい場合は、`showOutputAt` プロパティを使用できます。値は `v-click` と同じ形式です。
 
 ````md
 ```ts {monaco-run} {showOutputAt:'+1'}
@@ -41,4 +41,4 @@ console.log('Shown after 1 click')
 ```
 ````
 
-Currently, Slidev supports running JavaScript and TypeScript code out-of-box. Refer to [Custom Code Runners](/custom/config-code-runners) for custom language support.
+現在、Slidev は JavaScript と TypeScript のコードをそのまま実行することができます。カスタム言語のサポートについては、[Custom Code Runners](/custom/config-code-runners) を参照してください。

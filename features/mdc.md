@@ -3,29 +3,29 @@ relates:
   - Nuxt's MDC Syntax: https://content.nuxt.com/docs/files/markdown#mdc-syntax
   - markdown-it-mdc: https://github.com/antfu/markdown-it-mdc
 since: v0.43.0
-tags: [syntax, styling]
+tags: [構文, スタイリング]
 description: |
-  A powerful syntax to enhance your markdown content with components and styles.
+  強力な構文で、マークダウンコンテンツをコンポーネントやスタイルで拡張できます。
 ---
 
-# MDC Syntax
+# MDC 構文
 
-Slidev supports optional [MDC (Markdown Components) Syntax](https://content.nuxt.com/docs/files/markdown#mdc-syntax) powered by [`markdown-it-mdc`](https://github.com/antfu/markdown-it-mdc).
+Slidev は [`markdown-it-mdc`](https://github.com/antfu/markdown-it-mdc) によって提供されるオプションの [MDC (Markdown Components) 構文](https://content.nuxt.com/docs/files/markdown#mdc-syntax) をサポートしています。
 
-You can enable it by adding `mdc: true` to the frontmatter of your markdown file.
+有効にするには、マークダウンファイルのフロントマターに `mdc: true` を追加します。
 
 ```mdc
 ---
 mdc: true
 ---
 
-This is a [red text]{style="color:red"} :inline-component{prop="value"}
+これは [赤い文字です]{style="color:red"} :inline-component{prop="value"}
 
 ![](/image.png){width=500px lazy}
 
 ::block-component{prop="value"}
-The **default** slot
+**default** のスロット
 ::
 ```
 
-Learn more about [MDC Syntax](https://content.nuxt.com/docs/files/markdown#mdc-syntax).
+詳しくは、[MDC 構文](https://content.nuxt.com/docs/files/markdown#mdc-syntax) をご覧ください。

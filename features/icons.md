@@ -3,23 +3,23 @@ relates:
   - Iconify: https://iconify.design/
   - Icones: https://icones.js.org/
   - unplugin-icons: https://github.com/antfu/unplugin-icons
-tags: [components]
+tags: [コンポーネント]
 description: |
-  Use icons from virtually all open-source icon sets directly in your markdown.
+  ほぼすべてのオープンソースアイコンセットのアイコンを、対応するパッケージをインストールするだけでマークダウン内で直接使用できます。
 ---
 
-# Icons
+# アイコン
 
-Slidev allows you to have access to virtually all open-source icon sets **directly** in your markdown after installing the corresponding package. Powered by [`unplugin-icons`](https://github.com/antfu/unplugin-icons) and [Iconify](https://iconify.design/).
+Slidev は、[`unplugin-icons`](https://github.com/antfu/unplugin-icons) と [Iconify](https://iconify.design/) を使用して、対応するパッケージをインストールするだけで、ほぼすべてのオープンソースアイコンセットに**直接**アクセスできます。
 
-The naming follows [Iconify](https://iconify.design/)'s convention of `{collection-name}-{icon-name}`. For example:
+命名規則は [Iconify](https://iconify.design/) の `{collection-name}-{icon-name}` に従っています。例えば:
 
-- `<mdi-account-circle />` - <mdi-account-circle /> from [Material Design Icons](https://github.com/Templarian/MaterialDesign) - [`@iconify-json/mdi`](https://npmjs.com/package/@iconify-json/mdi)
-- `<carbon-badge />` - <carbon-badge /> from [Carbon](https://github.com/carbon-design-system/carbon/tree/main/packages/icons) - [`@iconify-json/carbon`](https://npmjs.com/package/@iconify-json/carbon)
-- `<uim-rocket />` - <uim-rocket /> from [Unicons Monochrome](https://github.com/Iconscout/unicons) - [`@iconify-json/uim`](https://npmjs.com/package/@iconify-json/uim)
-- `<twemoji-cat-with-tears-of-joy />` - <twemoji-cat-with-tears-of-joy /> from [Twemoji](https://github.com/twitter/twemoji) - [`@iconify-json/twemoji`](https://npmjs.com/package/@iconify-json/twemoji)
-- `<logos-vue />` - <logos-vue /> from [SVG Logos](https://github.com/gilbarbara/logos) - [`@iconify-json/logos`](https://npmjs.com/package/@iconify-json/logos)
-- And much more...
+- `<mdi-account-circle />` - <mdi-account-circle /> [Material Design Icons](https://github.com/Templarian/MaterialDesign) から - [`@iconify-json/mdi`](https://npmjs.com/package/@iconify-json/mdi)
+- `<carbon-badge />` - <carbon-badge /> [Carbon](https://github.com/carbon-design-system/carbon/tree/main/packages/icons) から - [`@iconify-json/carbon`](https://npmjs.com/package/@iconify-json/carbon)
+- `<uim-rocket />` - <uim-rocket /> [Unicons Monochrome](https://github.com/Iconscout/unicons) から - [`@iconify-json/uim`](https://npmjs.com/package/@iconify-json/uim)
+- `<twemoji-cat-with-tears-of-joy />` - <twemoji-cat-with-tears-of-joy /> [Twemoji](https://github.com/twitter/twemoji) から - [`@iconify-json/twemoji`](https://npmjs.com/package/@iconify-json/twemoji)
+- `<logos-vue />` - <logos-vue /> [SVG Logos](https://github.com/gilbarbara/logos) から - [`@iconify-json/logos`](https://npmjs.com/package/@iconify-json/logos)
+- 他にもたくさん。
 
 ::: code-group
 
@@ -45,11 +45,11 @@ deno add jsr:@iconify-json/[the-collection-you-want]
 
 :::
 
-We use [Iconify](https://iconify.design) as our data source of icons. You need to install the corresponding icon-set in `dependencies` by following the `@iconify-json/*` pattern. For example, `@iconify-json/mdi` for [Material Design Icons](https://materialdesignicons.com/), `@iconify-json/tabler` for [Tabler](https://tabler-icons.io/). You can refer to [Icônes](https://icones.js.org/) or [Iconify](https://icon-sets.iconify.design/) for all the collections available.
+Slidev は [Iconify](https://iconify.design) をアイコンのデータソースとして使用しています。対応するアイコンセットを `dependencies` に `@iconify-json/*` パターンでインストールする必要があります。例えば、[Material Design Icons](https://materialdesignicons.com/) は `@iconify-json/mdi` パッケージ、[Tabler](https://tabler-icons.io/) は `@iconify-json/tabler` パッケージ、などです。利用可能なすべてのコレクションについては、[Icônes](https://icones.js.org/) または [Iconify](https://icon-sets.iconify.design/) を参照できます。
 
-### Styling Icons
+### アイコンにスタイルを適用する
 
-You can style the icons just like other HTML elements. For example:
+他の HTML 要素と同様に、アイコンにスタイルを適用できます。例えば:
 
 ```html
 <uim-rocket />

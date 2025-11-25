@@ -40,11 +40,11 @@ function removeTag(tag: string) {
 }
 </script>
 
-# Features
+# 機能
 
-This is a list of all the individual features that Slidev provides. Each feature can be used independently and is optional.
+これは、Slidev が提供する個々の機能のリストです。各機能は独立して、かつ任意に使用できます。
 
-You can also read <LinkInline link="guide/" /> to learn the features by topic.
+トピックごとに機能を学びたい場合は、<LinkInline link="guide/" /> を参照してください。
 
 <ClientOnly>
 <div flex items-center mt-6 gap-6>
@@ -57,7 +57,7 @@ You can also read <LinkInline link="guide/" /> to learn the features by topic.
     <input
       v-model="search"
       type="search" text-base
-      placeholder="Search features..."
+      placeholder="機能を検索..."
     />
   </div>
   <div
@@ -72,10 +72,10 @@ You can also read <LinkInline link="guide/" /> to learn the features by topic.
 <FeaturesOverview :features="filteredFeatures" />
 
 <div v-if="filteredFeatures.length === 0" class="w-full mt-6 op-80 flex flex-col items-center">
-  No results found
+  検索結果が見つかりません
   <button class="block select-button flex-inline gap-1 items-center px-2 py-1 hover:bg-gray-400/10 rounded" @click="resetFilters()">
     <div class="i-carbon:filter-remove" />
-    Clear Filters
+    フィルターをクリア
   </button>
 </div>
 </ClientOnly>

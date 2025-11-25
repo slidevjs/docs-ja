@@ -4,16 +4,16 @@ relates:
   - Mermaid Live Editor: https://mermaid.live/
   - Demo Slide: https://sli.dev/demo/starter/12
   - features/plantuml
-tags: [diagram]
+tags: [ダイアグラム]
 description: |
-  Create diagrams/graphs from textual descriptions, powered by Mermaid.
+  Mermaid を使用して、テキスト記述からダイアグラム/グラフを作成します。
 ---
 
-# Mermaid Diagrams
+# Mermaid ダイアグラム
 
-You can also create diagrams/graphs from textual descriptions in your Markdown, powered by [Mermaid](https://mermaid.js.org/).
+Mermaid を使用して、マークダウン内のテキスト記述からダイアグラムやグラフを作成できます。
 
-Code blocks marked as `mermaid` will be converted to diagrams, for example:
+コードブロックに `mermaid` とマークすると、ダイアグラムに変換されます。例えば:
 
 ````md
 ```mermaid
@@ -23,7 +23,7 @@ sequenceDiagram
 ```
 ````
 
-You can further pass an options object to it to specify the scaling and theming. The syntax of the object is a JavaScript object literal, you will need to add quotes (`'`) for strings and use comma (`,`) between keys.
+さらに、オプションオブジェクトを渡してスケーリングやテーマを指定することもできます。オブジェクトの構文は JavaScript のオブジェクトリテラルで、文字列には引用符（`'`）を付け、キーの間はカンマ（`,`）で区切る必要があります。
 
 ````md
 ```mermaid {theme: 'neutral', scale: 0.8}
@@ -34,4 +34,4 @@ C -->|Two| E[Result 2]
 ```
 ````
 
-Visit the [Mermaid Website](https://mermaid.js.org/) for more information.
+詳しくは、[Mermaid の公式サイト](https://mermaid.js.org/) をご覧ください。

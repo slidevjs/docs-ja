@@ -3,16 +3,16 @@ relates:
   - features/block-frontmatter
   - GitHub Repo: https://github.com/slidevjs/prettier-plugin
   - Prettier: https://prettier.io/
-tags: [editor]
+tags: [エディタ]
 description: |
-  Use the Prettier plugin to format your slides.
+  Prettier プラグインを使ってスライドをフォーマットします。
 ---
 
-# Prettier Plugin
+# Prettier プラグイン
 
-The Slidev's syntax may be incompatible with the default Markdown parser of [Prettier](https://prettier.io/). To solve this, Slidev provides a Prettier plugin to format your slides. You can use it with your favorite editor that supports Prettier.
+Slidev の構文は、[Prettier](https://prettier.io/) のデフォルトの Markdown パーサーと互換性がない場合があります。これを解決するために、Slidev はスライドをフォーマットするための Prettier プラグインを提供しています。Prettier をサポートするお好みのエディタで使用できます。
 
-## 1. Install
+## 1. インストール
 
 ::: code-group
 
@@ -38,9 +38,9 @@ deno add -D npm:prettier npm:prettier-plugin-slidev
 
 :::
 
-## 2. Activate the plugin
+## 2. プラグインを有効化
 
-Create or modify your [prettier configuration file](https://prettier.io/docs/en/configuration) to activate the plugin:
+[prettier 設定ファイル](https://prettier.io/docs/en/configuration) を作成または変更して、プラグインを有効にします:
 
 ```json
 {
@@ -56,4 +56,4 @@ Create or modify your [prettier configuration file](https://prettier.io/docs/en/
 }
 ```
 
-Note that only specifying `plugins` is not enough, because Slidev and common Markdown files share the same file extension `.md`.
+`plugins` を指定するだけでは不十分です。Slidev と一般的な Markdown ファイルは同じファイル拡張子 `.md` を共有しているためです。
