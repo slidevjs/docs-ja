@@ -324,11 +324,11 @@ export const showcases: ShowCaseInfo[] = [
   },
   // Add yours here!
   {
-    title: 'Yours?',
+    title: 'あなたのスライドも？',
     author: {
       name: '',
     },
-    at: 'Submit your talk/presentation to be list here!',
+    at: 'ここにあなたのトークやプレゼンテーションを掲載してみませんか？',
     slidesLink: 'https://github.com/slidevjs/slidev/edit/main/docs/.vitepress/showcases.ts',
     cover: `${import.meta.env.BASE_URL}theme-placeholder.png`,
     datetime: '2020-1-1',

@@ -27,7 +27,7 @@ export function resolveLink(link: string): {
     case 'features': {
       const feature = features[name]
       if (!feature)
-        throw new Error(`Feature "${name}" not found.`)
+        throw new Error(`機能 "${name}" が見つかりません。`)
       return {
         kind: 'features',
         title: `✨ ${feature.title}`,
@@ -40,12 +40,12 @@ export function resolveLink(link: string): {
       return {
         kind: 'guide',
         title: `📖  ${getGuideTitle(name)}`,
-        tags: ['guide'],
-        descripton: 'Click to read this guide',
+        tags: ['ガイド'],
+        descripton: 'このガイドを読む',
         url: `/guide/${nameWithHash}`,
       }
     }
     default:
-      throw new Error(`Invalid link: ${link}`)
+      throw new Error(`無効なリンク: ${link}`)
   }
 }

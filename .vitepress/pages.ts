@@ -1,46 +1,46 @@
 export const Guides = [
   {
-    text: 'Why Slidev',
+    text: 'なぜ Slidev か',
     link: '/guide/why',
   },
   {
-    text: 'Getting Started',
+    text: 'はじめに',
     link: '/guide/',
   },
   {
-    text: 'Syntax Guide',
+    text: '構文ガイド',
     link: '/guide/syntax',
   },
   {
-    text: 'User Interface',
+    text: 'ユーザーインターフェース',
     link: '/guide/ui',
   },
   {
-    text: 'Animations',
+    text: 'アニメーション',
     link: '/guide/animations',
   },
   {
-    text: 'Theme & Addons',
+    text: 'テーマとアドオン',
     link: '/guide/theme-addon',
   },
   {
-    text: 'Components',
+    text: 'コンポーネント',
     link: '/guide/component',
   },
   {
-    text: 'Layouts',
+    text: 'レイアウト',
     link: '/guide/layout',
   },
   {
-    text: 'Exporting',
+    text: 'エクスポート',
     link: '/guide/exporting',
   },
   {
-    text: 'Hosting',
+    text: 'ホスティング',
     link: '/guide/hosting',
   },
   {
-    text: 'FAQ',
+    text: 'よくある質問',
     link: '/guide/faq',
   },
 ]
@@ -51,57 +51,57 @@ export const BuiltIn = [
     link: '/builtin/cli',
   },
   {
-    text: 'Components',
+    text: 'コンポーネント',
     link: '/builtin/components',
   },
   {
-    text: 'Layouts',
+    text: 'レイアウト',
     link: '/builtin/layouts',
   },
 ]
 
 export const Advanced = [
   {
-    text: 'Global Context',
+    text: 'グローバルコンテキスト',
     link: '/guide/global-context',
   },
   {
-    text: 'Writing Layouts',
+    text: 'レイアウトを作る',
     link: '/guide/write-layout',
   },
   {
-    text: 'Writing Themes',
+    text: 'テーマを作る',
     link: '/guide/write-theme',
   },
   {
-    text: 'Writing Addons',
+    text: 'アドオンを作る',
     link: '/guide/write-addon',
   },
 ]
 
 export const Resources = [
   {
-    text: 'Showcases',
+    text: 'ショーケース',
     link: '/resources/showcases',
   },
   {
-    text: 'Theme Gallery',
+    text: 'テーマギャラリー',
     link: '/resources/theme-gallery',
   },
   {
-    text: 'Addon Gallery',
+    text: 'アドオンギャラリー',
     link: '/resources/addon-gallery',
   },
   {
-    text: 'Learning Resources',
+    text: '学習リソース',
     link: '/resources/learning',
   },
   {
-    text: 'Curated Covers',
+    text: '厳選されたカバー画像',
     link: '/resources/covers',
   },
   {
-    text: 'Release Notes',
+    text: 'リリースノート',
     link: 'https://github.com/slidevjs/slidev/releases',
   },
 ]

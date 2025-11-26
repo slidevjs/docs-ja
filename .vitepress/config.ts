@@ -10,36 +10,36 @@ import { getSidebarObject } from './sidebar-gen'
 
 export const slidebars: DefaultTheme.SidebarItem[] = [
   {
-    text: 'Guide',
+    text: 'ガイド',
     items: Guides,
   },
   {
-    text: 'Advanced',
+    text: '高度',
     items: Advanced,
   },
   {
-    text: 'Customizations',
+    text: 'カスタマイズ',
     items: Customizations,
   },
   {
-    text: 'Built-in',
+    text: 'ビルトイン',
     items: BuiltIn,
   },
   {
-    text: 'Resources',
+    text: 'リソース',
     items: Resources,
   },
 ]
 
 export default defineConfig({
   title: 'Slidev',
-  description: 'Presentation slides for developers',
+  description: '開発者のためのプレゼンテーションスライド',
   head: [
     ['link', { rel: 'icon', type: 'image/png', href: '/favicon.png' }],
     ['meta', { name: 'author', content: 'Anthony Fu' }],
     ['meta', { property: 'og:title', content: 'Slidev' }],
     ['meta', { property: 'og:image', content: 'https://sli.dev/og-image.png' }],
-    ['meta', { property: 'og:description', content: 'Presentation slides for developers' }],
+    ['meta', { property: 'og:description', content: '開発者のためのプレゼンテーションスライド' }],
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
     ['meta', { name: 'twitter:creator', content: '@slidevjs' }],
     ['meta', { name: 'twitter:image', content: 'https://sli.dev/og-image.png' }],
@@ -82,8 +82,8 @@ export default defineConfig({
   themeConfig: {
     logo: '/logo.svg',
     editLink: {
-      pattern: 'https://github.com/slidevjs/slidev/edit/main/docs/:path',
-      text: 'Suggest changes to this page',
+      pattern: 'https://github.com/toreis-up/slidev-docs-ja/edit/main/:path',
+      text: 'このページの変更を提案する',
     },
 
     search: {
@@ -92,41 +92,41 @@ export default defineConfig({
 
     nav: [
       {
-        text: '📖 Guide',
+        text: '📖 ガイド',
         items: [
           ...Guides,
           {
-            text: 'Advanced',
+            text: '高度',
             items: Advanced,
           },
         ],
       },
       {
-        text: '✨ Features',
+        text: '✨ 機能',
         link: '/features/',
       },
       {
-        text: 'Reference',
+        text: '参考資料',
         items: [
           {
-            text: 'Built-in',
+            text: 'ビルトイン',
             items: BuiltIn,
           },
           {
-            text: 'Customize',
+            text: 'カスタマイズ',
             items: Customizations,
           },
         ],
       },
       {
-        text: 'Resources',
+        text: 'リソース',
         items: Resources,
       },
     ],
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/slidevjs/slidev' },
-      { icon: 'twitter', link: 'https://twitter.com/slidevjs' },
+      { icon: 'x', link: 'https://x.com/slidevjs' },
       { icon: 'discord', link: 'https://chat.sli.dev' },
     ],
 
@@ -151,11 +151,15 @@ export default defineConfig({
 
   locales: {
     root: {
-      label: `English (v${version})`,
+      label: `日本語 (v${version})`,
     },
     zh: {
-      label: '简体中文',
-      link: 'https://cn.sli.dev/',
+      label: "简体中文",
+      link: "https://cn.sli.dev/",
     },
+    en: {
+      label: `English`,
+      link: 'https://sli.dev/',
+    }
   },
 })

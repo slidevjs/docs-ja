@@ -1,66 +1,66 @@
 export default [
   {
-    text: 'Configurations',
+    text: 'Slidev の設定',
     link: '/custom/',
   },
   {
-    text: 'Directory Structure',
+    text: 'ディレクトリ構造',
     link: '/custom/directory-structure',
   },
   {
-    text: 'Configure Highlighter',
+    text: 'ハイライトの設定',
     link: '/custom/config-highlighter',
   },
   {
-    text: 'Configure Vite and Plugins',
+    text: 'Vite とプラグインの設定',
     link: '/custom/config-vite',
   },
   {
-    text: 'Configure Vue App',
+    text: 'Vue アプリの設定',
     link: '/custom/config-vue',
   },
   {
-    text: 'Configure UnoCSS',
+    text: 'UnoCSS の設定',
     link: '/custom/config-unocss',
   },
   {
-    text: 'Configure Code Runners',
+    text: 'コードランナーの設定',
     link: '/custom/config-code-runners',
   },
   {
-    text: 'Configure Transformers',
+    text: 'カスタム構文の設定',
     link: '/custom/config-transformers',
   },
   {
-    text: 'Configure Monaco',
+    text: 'Monaco の設定',
     link: '/custom/config-monaco',
   },
   {
-    text: 'Configure KaTeX',
+    text: 'KaTeX の設定',
     link: '/custom/config-katex',
   },
   {
-    text: 'Configure Mermaid',
+    text: 'Mermaid の設定',
     link: '/custom/config-mermaid',
   },
   {
-    text: 'Configure Routes',
+    text: 'ルートの設定',
     link: '/custom/config-routes',
   },
   {
-    text: 'Configure Shortcuts',
+    text: 'ショートカットの設定',
     link: '/custom/config-shortcuts',
   },
   {
-    text: 'Configure Context Menu',
+    text: 'コンテキストメニューの設定',
     link: '/custom/config-context-menu',
   },
   {
-    text: 'Configure Fonts',
+    text: 'フォントの設定',
     link: '/custom/config-fonts',
   },
   {
-    text: 'Configure Pre-Parser',
+    text: 'プリパーサーの設定',
     link: '/custom/config-parser',
   },
 ]

@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url'
 import fg from 'fast-glob'
 import graymatter from 'gray-matter'
 
-const root = fileURLToPath(new URL('../../', import.meta.url))
+const root = fileURLToPath(new URL('../', import.meta.url))
 
 interface ParsedFile {
   filepath: string
@@ -30,7 +30,7 @@ export async function getSidebarObject() {
   const map: Record<string, DefaultTheme.SidebarItem[]> = {}
 
   const parsedFeatures: ParsedFile[] = await fg([
-    'docs/features/*.md',
+    'features/*.md',
   ], {
     onlyFiles: true,
     cwd: root,
@@ -38,7 +38,7 @@ export async function getSidebarObject() {
     .then(files => files.map(parseFile))
 
   const parsedGuides: ParsedFile[] = await fg([
-    'docs/guide/*.md',
+    'guide/*.md',
   ], {
     onlyFiles: true,
     cwd: root,
@@ -48,10 +48,10 @@ export async function getSidebarObject() {
   parsedFeatures.forEach(({ matter, path }) => {
     const items: DefaultTheme.SidebarItem[] = [
       {
-        text: 'Back to',
+        text: '上位ページに戻る',
         items: [
           {
-            text: 'All Features',
+            text: 'すべての機能',
             link: '/features',
           },
         ],
@@ -88,7 +88,7 @@ export async function getSidebarObject() {
         }
         if (match?.type === 'guide') {
           return [{
-            text: `📖  ${match.item.title}`,
+            text: `📖 ${match.item.title}`,
             link: `/${match.item.path}`,
           }]
         }
@@ -108,14 +108,14 @@ export async function getSidebarObject() {
 
     if (matter.data.depends) {
       items.push({
-        text: 'Depends on',
+        text: '依存機能',
         items: matter.data.depends.flatMap(frontmatterToSidebarItem),
       })
     }
 
     if (matter.data.relates) {
       items.push({
-        text: 'Related to',
+        text: '関連機能',
         items: matter.data.relates.flatMap(frontmatterToSidebarItem),
       })
     }

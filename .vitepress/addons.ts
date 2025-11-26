@@ -6,7 +6,7 @@ export const official: AddonInfo[] = [
   {
     id: '',
     link: '#',
-    name: 'Work in Progress',
+    name: '作業中',
     description: '',
     tags: [],
     author: {
@@ -207,8 +207,8 @@ export const community: AddonInfo[] = [
   {
     id: '',
     link: 'https://github.com/slidevjs/slidev/edit/main/docs/.vitepress/addons.ts',
-    name: 'Yours?',
-    description: 'Click here to submit your addon :)',
+    name: 'あなたのアドオンも？',
+    description: 'ここをクリックして、あなたのアドオンを投稿してください :)',
     tags: [],
     author: {
       name: '',
