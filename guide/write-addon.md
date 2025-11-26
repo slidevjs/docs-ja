@@ -1,33 +1,33 @@
-# Writing Addons
+# アドオンの作成
 
-> Please read <LinkInline link="guide/theme-addon" /> and <LinkInline link="guide/write-theme" /> first.
+> 最初に <LinkInline link="guide/theme-addon" /> と <LinkInline link="guide/write-theme" /> を読んでください。
 
-Each slides project can only have one theme, but can have multiple addons.
+各スライドプロジェクトは 1 つのテーマのみを持つことができますが、複数のアドオンを持つことができます。
 
-## Capability
+## 機能
 
-Theoretically, all the capabilities of a theme can be done in an addon. However, an addon is more like a plugin that extends the functionalities of Slidev.
+理論的には、テーマのすべての機能はアドオンで実行できます。ただし、アドオンは Slidev の機能を拡張するプラグインのようなものです。
 
-It's recommended to implement one or more of the following points in an addon:
+アドオンで以下のポイントの 1 つ以上を実装することをお勧めします:
 
-- Provide custom components
-- Provide _new_ layouts
-- Provide new code snippets
-- Provide new code runners
-- Configure tools like UnoCSS, Vite, etc.
+- カスタムコンポーネントを提供する
+- _新しい_レイアウトを提供する
+- 新しいコードスニペットを提供する
+- 新しいコードランナーを提供する
+- UnoCSS、Vite などのツールを構成する
 
-However, the following points are **not** recommended to be done in an addon, and may be better [implemented as a theme](./write-theme):
+ただし、以下のポイントはアドオンで実装することは**推奨されず**、[テーマとして実装](./write-theme) する方が良いかもしれません:
 
-- Wildcard global styles
-- Overriding existing layouts
-- Overriding configurations
-- Other things that may be incompatible with the theme and other addons
+- ワイルドカードグローバルスタイル
+- 既存のレイアウトをオーバーライドする
+- 設定をオーバーライドする
+- テーマや他のアドオンと互換性がないその他の事項
 
-An addon can also specify its required Slidev version in the same way as themes.
+アドオンはまた、テーマと同じ方法で必要な Slidev バージョンを指定できます。
 
-## Previewing
+## プレビュー
 
-The same as themes, you can preview your addon via a `./slides.md` like this:
+テーマと同じように、`./slides.md` を通じてアドオンをプレビューできます:
 
 ```md [slides.md]
 ---
@@ -36,13 +36,13 @@ addons:
 ---
 ```
 
-## Publishing
+## 公開
 
-When publishing the addon, non-JS files like `.vue` and `.ts` files can be published directly without compiling. Slidev will automatically compile them when using the addon.
+アドオンを公開する場合、`.vue` や `.ts` ファイルなどの非 JS ファイルはコンパイルせずに直接公開できます。Slidev はアドオンを使用するときに自動的にコンパイルします。
 
-Addons should follow the following conventions:
+アドオンは以下の規約に従う必要があります:
 
-- Package name should start with `slidev-addon-`. For example, `slidev-addon-name` or `@scope/slidev-addon-name`
-- Add `"slidev-addon"` and `"slidev"` in the `keywords` field of your `package.json`
+- パッケージ名は `slidev-addon-` で始まるべきです。たとえば、`slidev-addon-name` または `@scope/slidev-addon-name`
+- `package.json` の `keywords` フィールドに `"slidev-addon"` と `"slidev"` を追加します
 
-Theme can be used locally without publishing to NPM. If your addon is only for personal use, you can simply use it as a local addon, or publish it as a private scoped package. However, it is recommended to publish it to the NPM registry if you want to share it with others.
+アドオン (訳注: 原文は theme、原文が間違っています) は NPM に公開せずにローカルで使用できます。アドオンが個人的な使用のためのみの場合、単にそれをローカルアドオンとして使用するか、プライベートスコープ付きパッケージとして公開できます。ただし、他のユーザーと共有したい場合は、NPM レジストリに公開することをお勧めします。

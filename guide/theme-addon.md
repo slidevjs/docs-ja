@@ -1,55 +1,55 @@
-# Theme and Addons
+# テーマとアドオン
 
-A slides project can have one theme and multiple addons. All of them can provide styles, components, layouts, and other configs to your slides project.
+スライドプロジェクトは 1 つのテーマと複数のアドオンを持つことができます。それらはすべてスタイル、コンポーネント、レイアウト、およびその他の設定をスライドプロジェクトに提供できます。
 
-## Use a Theme {#use-theme}
+## テーマを使用する {#use-theme}
 
-Changing the theme in Slidev is surprisingly easy. All you need to do is to add the `theme` option in your [headmatter](../custom/index#headmatter):
+Slidev でテーマを変更するのは驚くほど簡単です。[ヘッドマター](../custom/index#headmatter) に `theme` オプションを追加するだけです。
 
 ```md
 ---
 theme: seriph
 ---
 
-# The first slide
+# 最初のスライド
 ```
 
-You can find the list of official themes and community themes in the [Themes Gallery](../resources/theme-gallery).
+公式テーマとコミュニティテーマのリストは [テーマギャラリー](../resources/theme-gallery) で確認できます。
 
-::: info Theme name convention
+::: info テーマ名の命名規則
 
-- You can also pass a relative or absolute path to a local theme folder, like `../my-theme`
-- You can always use the full package name as the theme name
-- If the theme is [official](../resources/theme-gallery#official-themes) or is named like `slidev-theme-name`, you can omit the `slidev-theme-` prefix
-- For scoped packages like `@org/slidev-theme-name`, the full package name is required
+- ローカルテーマフォルダへの相対パスまたは絶対パス(`../my-theme` など)を渡すこともできます
+- テーマ名としてフルパッケージ名を常に使用できます
+- テーマが [公式](../resources/theme-gallery#official-themes) からか、`slidev-theme-name` のように名前が付けられている場合、`slidev-theme-` プレフィックスを省略できます
+- `@org/slidev-theme-name` のようなスコープ付きパッケージの場合、フルパッケージ名が必要です
 
 :::
 
-You can start the server and will be prompted to install the theme after a confirmation.
+サーバーを起動すると、確認後にテーマをインストールするよう求められます。
 
 <div class="language-md text-xs pl-6">
 <pre style="overflow: hidden; text-wrap: pretty;">
-<span class="token keyword">?</span> The theme <span class="token string">"@slidev/theme-seriph"</span> was not found in your project, do you want to install it now? › (Y/n)
+<span class="token keyword">?</span> テーマ <span class="token string">"@slidev/theme-seriph"</span> がプロジェクトで見つかりません。今すぐインストールしますか? › (Y/n)
 </pre>
 </div>
 
-or install the theme manually via:
+または手動でテーマをインストール:
 
 ```bash
 $ npm install @slidev/theme-seriph
 ```
 
-And that's all, enjoy the new theme! For more details about the usage, you can refer to the theme's README.
+以上です。新しいテーマを楽しんでください！　使用方法の詳細については、テーマの README を参照できます。
 
 <SeeAlso :links="[
   'features/eject-theme',
 ]" />
 
-## Use an Addon {#use-addon}
+## アドオンを使用する {#use-addon}
 
-Addons are similar to themes, but they are more flexible and can be used to add extra features to your slides project. You can add multiple addons to your project, and they can be used to add extra features to your slides project.
+アドオンはテーマに似ていますが、より柔軟で、スライドプロジェクトに追加機能を追加するために使用できます。プロジェクトに複数のアドオンを追加でき、スライドプロジェクトに追加機能を追加するために使用できます。
 
-To use an addon, you can add the `addons` option in your [headmatter](../custom/index#headmatter):
+アドオンを使用するには、[ヘッドマター](../custom/index#headmatter) に `addons` オプションを追加できます。
 
 ```md
 ---
@@ -59,4 +59,4 @@ addons:
 ---
 ```
 
-You can find the list of official addons and community addons in the [Addons Gallery](../resources/addon-gallery).
+公式アドオンとコミュニティアドオンのリストは [アドオンギャラリー](../resources/addon-gallery) で確認できます。

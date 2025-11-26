@@ -2,27 +2,27 @@
 outline: deep
 ---
 
-# Exporting
+# エクスポート
 
-Usually the slides are displayed in a web browser, but you can also export them to PDF, PPTX, PNG, or Markdown files for sharing or printing. This feature is available through the CLI command [`slidev export`](../builtin/cli#export).
+通常、スライドは Web ブラウザで表示されますが、PDF、PPTX、PNG、または Markdown ファイルにエクスポートして共有または印刷することもできます。この機能は CLI コマンド [`slidev export`](../builtin/cli#export) で利用できます。
 
-However, interactive features in your slides may not be available in the exported files. You can build and host your slides as a web application to keep the interactivity. See [Building and Hosting](./hosting) for more information.
+ただし、スライド内の対話的な機能はエクスポートされたファイルでは利用できない場合があります。対話性を保つために、スライドを Web アプリケーションとしてビルドしてホストできます。詳しくは [ビルドとホスティング](./hosting) を参照してください。
 
-## The Browser Exporter <Badge> Recommended </Badge> {#browser}
+## ブラウザエクスポーター <Badge> 推奨 </Badge> {#browser}
 
-> Available since v0.50.0-beta.11
+> v0.50.0-beta.11 以降で利用可能
 
-Slidev provides a UI in the browser for exporting your slides. You can access it by clicking the "Export" button in "More options" menu in the [navigation bar](./ui#navigation-bar), or go to `http://localhost:<port>/export` directly.
+Slidev はブラウザでスライドをエクスポートするための UI を提供します。[ナビゲーションバー](./ui#navigation-bar) の "More options" メニューの "Export" ボタンをクリック、または `http://localhost:<port>/export` に直接移動してアクセスできます。
 
-In the UI, you can export the slides as PDF, or capture the slides as images and download them as a PPTX or zip file.
+UI では、スライドを PDF としてエクスポート、またはスライドを画像としてキャプチャして PPTX または zip ファイルとしてダウンロードできます。
 
-Note that browsers other than **modern Chromium-based browsers** may not work well with the exporting UI. If you encounter any issues, please try use the CLI instead.
+**最新の Chromium ベースのブラウザ** 以外のブラウザでは、エクスポート UI がうまく動作しない場合があることに注意してください。問題が発生した場合は、代わりに CLI を使用してください。
 
-> The following content of this page is for the CLI only.
+> このページの以下の内容は CLI のみ対象です。
 
-## The CLI {#cli}
+## CLI {#cli}
 
-Exporting to PDF, PPTX, or PNG relies on [Playwright](https://playwright.dev) for rendering the slides. Therefore [`playwright-chromium`](https://npmjs.com/package/playwright-chromium) is required to be installed in your project:
+PDF、PPTX、または PNG へのエクスポートは、スライドのレンダリングに [Playwright](https://playwright.dev) を使用します。したがって、プロジェクトに [`playwright-chromium`](https://npmjs.com/package/playwright-chromium) をインストールする必要があります。
 
 ::: code-group
 
@@ -48,65 +48,65 @@ $ deno add -D npm:playwright-chromium
 
 :::
 
-## Formats
+## フォーマット
 
 ### PDF
 
-After installing `playwright-chromium` as described above, you can export your slides to PDF using the following command:
+上記のように `playwright-chromium` をインストールした後、次のコマンドを使用してスライドを PDF にエクスポートできます。
 
 ```bash
 $ slidev export
 ```
 
-By default, the PDF will be placed at `./slides-export.pdf`.
+デフォルトでは、PDF は `./slides-export.pdf` に配置されます。
 
 ### PPTX
 
-Slidev can also export your slides as a PPTX file:
+Slidev はスライドを PPTX ファイルとしてエクスポートすることもできます。
 
 ```bash
 $ slidev export --format pptx
 ```
 
-Note that all the slides in the PPTX file will be exported as images, so the text will not be selectable. Presenter notes will be conveyed into the PPTX file on a per-slide basis.
+PPTX ファイル内のすべてのスライドは画像としてエクスポートされるため、テキストは選択できないことに注意してください。プレゼンターノートはスライドごとに PPTX ファイルに含まれます。
 
-In this mode, the `--with-clicks` option is enabled by default. To disable it, pass `--with-clicks false`.
+このモードでは、`--with-clicks` オプションはデフォルトで有効になっています。これを無効にするには、`--with-clicks false` を渡してください。
 
-### PNGs and Markdown
+### PNG と Markdown
 
-When passing in the `--format png` option, Slidev will export PNG images for each slide instead of a PDF:
+`--format png` オプションを渡すと、Slidev は PDF の代わりに各スライドの PNG 画像をエクスポートします。
 
 ```bash
 $ slidev export --format png
 ```
 
-You can also compile a markdown file composed of compiled png using `--format md`:
+`--format md` を使用して、PNG で構成される Markdown ファイルをコンパイルすることもできます。
 
 ```bash
 $ slidev export --format md
 ```
 
-## Options
+## オプション
 
-Here are some common options you can use with the `slidev export` command. For a full list of options, see the [CLI documentation](../builtin/cli#export).
+`slidev export` コマンドで使用できる一般的なオプションを以下に示します。オプションの完全なリストについては、[CLI ドキュメント](../builtin/cli#export) を参照してください。
 
-### Export Clicks Steps
+### クリックステップのエクスポート
 
-By default, Slidev exports one page per slide with clicks animations disabled. If you want to export slides with multiple steps into multiple pages, pass the `--with-clicks` option:
+デフォルトでは、Slidev はクリックアニメーションを無効にしてスライドごとに 1 ページをエクスポートします。複数ステップを持つスライドを複数ページにエクスポートしたい場合は、`--with-clicks` オプションを渡してください。
 
 ```bash
 $ slidev export --with-clicks
 ```
 
-### Output Filename
+### 出力ファイル名
 
-You can specify the output filename with the `--output` option:
+`--output` オプションで出力ファイル名を指定できます。
 
 ```bash
 $ slidev export --output my-pdf-export
 ```
 
-Or in the headmatter configuration:
+またはフロントマター設定で指定できます。
 
 ```yaml
 ---
@@ -114,102 +114,102 @@ exportFilename: my-pdf-export
 ---
 ```
 
-### Export with Range
+### 範囲を指定してエクスポート
 
-By default, all slides in the presentation are exported. If you want to export a specific slide or a range of slides you can set the `--range` option and specify which slides you would like to export:
+デフォルトでは、プレゼンテーション内のすべてのスライドがエクスポートされます。特定のスライドまたはスライドの範囲をエクスポートしたい場合は、`--range` オプションを設定してエクスポートするスライドを指定できます。
 
 ```bash
 $ slidev export --range 1,6-8,10
 ```
 
-This option accepts both specific slide numbers and ranges. The example above would export slides 1,6,7,8 and 10.
+このオプションは特定のスライド番号と範囲の両方を受け入れます。上記の例はスライド 1、6、7、8、10 をエクスポートします。
 
-### Multiple Exports
+### 複数スライドのエクスポート
 
-You can also export multiple slides at once:
+複数のスライドを一度にエクスポートすることもできます。
 
 ```bash
 $ slidev export slides1.md slides2.md
 ```
 
-Or (only available in certain shells):
+または (特定のシェルでのみ利用可能):
 
 ```bash
 $ slidev export *.md
 ```
 
-In this case, each input file will generate its own PDF file.
+この場合、各入力ファイルは独自の PDF ファイルを生成します。
 
-### Dark Mode
+### ダークモード
 
-In case you want to export your slides using the dark version of the theme, use the `--dark` option:
+テーマのダークバージョンを使用してスライドをエクスポートしたい場合は、`--dark` オプションを使用してください。
 
 ```bash
 $ slidev export --dark
 ```
 
-### Timeouts
+### タイムアウト
 
-For big presentations, you might want to increase the Playwright timeout with `--timeout`:
+大きなプレゼンテーションの場合、`--timeout` で Playwright タイムアウトを増やしたい場合があります。
 
 ```bash
 $ slidev export --timeout 60000
 ```
 
-### Wait
+### 待機
 
-Some parts of your slides may require a longer time to render. You can use the `--wait` option to have an extra delay before exporting:
+スライドの一部は描画にかなりの時間を要する場合があります。`--wait` オプションを使用してエクスポート前に追加の遅延を設定できます。
 
 ```bash
 $ slidev export --wait 10000
 ```
 
-There is also a `--wait-until` option to wait for a state before exporting each slide. If you keep encountering timeout issues, you can try setting this option:
+各スライドをエクスポート前に状態を待つ `--wait-until` オプションもあります。タイムアウトの問題が続く場合は、このオプションを設定してみてください。
 
 ```bash
 $ slidev export --wait-until none
 ```
 
-Possible values:
+可能な値:
 
-- `'networkidle'` - (_default_) consider operation to be finished when there are no network connections for at least `500` ms. This is the safest, but may cause timeouts.
-- `'domcontentloaded'` - consider operation to be finished when the `DOMContentLoaded` event is fired.
-- `'load'` - consider operation to be finished when the `load` event is fired.
-- `'none'` - do not wait for any event.
+- `'networkidle'` - (デフォルト) 少なくとも `500` ms 間ネットワーク接続がない場合、操作は完了と見なされます。最も安全ですが、タイムアウトを引き起こす可能性があります。
+- `'domcontentloaded'` - `DOMContentLoaded` イベントが発火した時点で操作は完了と見なされます。
+- `'load'` - `load` イベントが発火した時点で操作は完了と見なされます。
+- `'none'` - イベントを待ちません。
 
 ::: warning
-When specifying values other than `'networkidle'`, please make sure the printed slides are complete and correct. If some contents are missing, you may need to use the `--wait` option.
+`'networkidle'` 以外の値を指定する場合、印刷されたスライドが完全かつ正確なことを確認してください。コンテンツの一部が見つからない場合は、`--wait` オプションを使用する必要があります。
 :::
 
-### Executable Path
+### 実行可能ファイルのパス
 
-Chromium may miss some features like codecs that are required to decode some videos. You can set the browser executable path for Playwright to your Chrome or Edge using `--executable-path`:
+Chromium は一部のビデオをデコードするために必要なコーデックなどの一部の機能が不足している可能性があります。`--executable-path` を使用して、Playwright のブラウザ実行可能ファイルパスを Chrome または Edge に設定できます。
 
 ```bash
 $ slidev export --executable-path [path_to_chromium]
 ```
 
-### PDF Outline
+### PDF アウトライン
 
-> Available since v0.36.10
+> v0.36.10 以降で利用可能
 
-You can generate the PDF outline by passing the `--with-toc` option:
+`--with-toc` オプションを渡して PDF アウトラインを生成できます。
 
 ```bash
 $ slidev export --with-toc
 ```
 
-### Omit Background
+### 背景を省略
 
-When exporting to PNGs, you can remove the default browser background by passing `--omit-background`:
+PNG にエクスポートする場合、`--omit-background` を渡してデフォルトのブラウザ背景を削除できます。
 
 ```bash
 $ slidev export --omit-background
 ```
 
-The default browser background is the white background visible on all browser windows and is different than other backgrounds applied throughout the application using CSS styling. [See Playwright docs](https://playwright.dev/docs/api/class-page#page-screenshot-option-omit-background). You will then need to apply additional CSS styling to the application to reveal the transparency.
+デフォルトのブラウザ背景は、すべてのブラウザウィンドウに表示される白い背景のことで、CSS スタイリングを使用してアプリケーション全体に適用される他の背景とは異なります。[Playwright ドキュメントを参照](https://playwright.dev/docs/api/class-page#page-screenshot-option-omit-background)。その後、アプリケーションに追加の CSS スタイリングを適用して透明性を表示する必要があります。
 
-Here is a basic example that covers all backgrounds in the application:
+アプリケーション内のすべての背景をカバーする基本的な例を以下に示します。
 
 ```css
 * {
@@ -217,21 +217,21 @@ Here is a basic example that covers all backgrounds in the application:
 }
 ```
 
-## Troubleshooting
+## トラブルシューティング
 
-### Missing Content or Animation not Finished
+### コンテンツが見つからないまたはアニメーションが完了していない
 
-If you find that some content is missing or the animations are not finished in the exported PDF, you can try adding a wait time before exporting each slide:
+エクスポートされた PDF でコンテンツが見つからないか、アニメーションが完了していない場合は、各スライドをエクスポートする前に待機時間を追加してみてください。
 
 ```bash
 $ slidev export --wait 1000
 ```
 
-### Broken Emojis
+### 絵文字が壊れている
 
-If the PDF or PNG are missing Emojis, you are likely missing required fonts (such as. e.g. [Google's _Noto Emoji_](https://fonts.google.com/noto/specimen/Noto+Emoji)) in your environment.
+PDF または PNG に絵文字がない場合、環境に必要なフォント ([Google の _Noto Emoji_](https://fonts.google.com/noto/specimen/Noto+Emoji) など) がない可能性があります。
 
-This can affect e.g. CI/CD-like in-container sort of Linux environments. It can be fixed e.g. like this:
+これは、例えば CI/CD のようなコンテナ内の Linux 環境に影響を与える可能性があります。例えば、以下のように修正できます。
 
 ```bash
 $ curl -L --output NotoColorEmoji.ttf https://github.com/googlefonts/noto-emoji/raw/main/fonts/NotoColorEmoji.ttf
@@ -239,6 +239,6 @@ $ sudo mv NotoColorEmoji.ttf /usr/local/share/fonts/
 $ fc-cache -fv
 ```
 
-### Wrong Context in Global Layers
+### グローバルレイヤーのコンテキストが間違っている
 
-See the tip in https://sli.dev/features/global-layers.
+https://sli.dev/features/global-layers のヒントを参照してください。

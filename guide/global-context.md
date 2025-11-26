@@ -1,34 +1,34 @@
-# Global Context
+# グローバルコンテキスト
 
-Slidev injects several global context values for advanced navigation controls.
+Slidev は高度なナビゲーション制御のためにいくつかのグローバルコンテキスト値を注入します。
 
-## Direct Usage {#direct-usage}
+## 直接使用 {#direct-usage}
 
-You can access them directly in your slides or components:
+スライドまたはコンポーネント内で直接アクセスできます。
 
 ```md [slides.md]
-# Page 1
+# ページ 1
 
-Current page is: {{ $nav.currentPage }}
+現在のページは: {{ $nav.currentPage }}
 ```
 
 ```vue [Foo.vue]
 <template>
-  <div>Title: {{ $slidev.configs.title }}</div>
+  <div>タイトル: {{ $slidev.configs.title }}</div>
   <button @click="$nav.next">
-    Next Click
+    次のクリック
   </button>
   <button @click="$nav.nextSlide">
-    Next Slide
+    次のスライド
   </button>
 </template>
 ```
 
-## Composable Usage {#composable-usage}
+## コンポーザブルの使用方法 {#composable-usage}
 
-> Available since v0.48.0
+> v0.48.0 以降で利用可能
 
-If you want to get the context programmatically (also type-safely), you can import composables from `@slidev/client`:
+プログラム的に（また型安全に）コンテキストを取得したい場合は、`@slidev/client` からコンポーザブルをインポートできます。
 
 ```vue
 <script setup>
@@ -45,114 +45,115 @@ onSlideLeave(() => { /* ... */ })
 ```
 
 > [!NOTE]
-> Previously, you might see the usage of importing nested modules like `import { isDark } from '@slidev/client/logic/dark.ts'`, this is **NOT RECOMMENDED** as they are internal implementation details and may change in the future. Always use the public APIs from `@slidev/client` if possible.
+> 以前は、`import { isDark } from '@slidev/client/logic/dark.ts'` のようにネストされたモジュールをインポートする使用方法が見られる場合があります。これは内部実装であり、将来変更される可能性があるため、**推奨されません**。可能な限り `@slidev/client` から公開 API を使用してください。
 
-::: warning
+::: warning 注意
 
-When the `useSlideContext` composable is used in a file, the automatic injection of `$slidev` will be disabled. You need to manually get the `$slidev` object to the `useSlideContext` function.
+ファイルで `useSlideContext` コンポーザブルを使用する場合、`$slidev` の自動注入は無効になります。`useSlideContext` 関数から `$slidev` オブジェクトを手動で取得する必要があります。
 
 :::
 
 <SeeAlso :links="['features/slide-hook']" />
 
-## Properties {#properties}
+## プロパティ {#properties}
 
 ### `$slidev` {#slidev}
 
-The global context object.
+グローバルコンテキストオブジェクト。
 
 ### `$frontmatter` {#frontmatter}
 
-The frontmatter object of the current slide. Note that this is empty for components out of the slides like <LinkInline link="features/global-layers" />.
+現在のスライドのフロントマターオブジェクト。<LinkInline link="features/global-layers" /> のようなスライド外のコンポーネントではこれは空。
 
 ### `$clicks` {#clicks}
 
-`$clicks` hold the number of clicks on the current slide. Can be used conditionally to show different content on clicks.
+`$clicks` は現在のスライド上のクリック数を保持します。クリックに応じて、異なるコンテンツを条件付きで表示するために使用できます。
 
 ```html
-<div v-if="$clicks > 3">Content</div>
+<div v-if="$clicks > 3">コンテンツ</div>
 ```
 
-See the <LinkInline link="guide/animations" /> guide for more information.
+詳細は <LinkInline link="guide/animations" /> ガイドを参照してください。
 
 ### `$nav` {#nav}
 
-A reactive object holding the properties and controls of the slide navigation. For examples:
+スライドナビゲーションのプロパティとコントロールを保持するリアクティブオブジェクト。例えば:
 
 ```js
-$nav.next() // go next step
-$nav.nextSlide() // go next slide (skip clicks)
-$nav.go(10) // go slide #10
+$nav.next() // 次のステップに進む
+$nav.nextSlide() // 次のスライドに進む (クリックをスキップ)
+$nav.go(10) // スライド #10 に進む
 
-$nav.currentPage // current slide number
-$nav.currentLayout // current layout name
+$nav.currentPage // 現在のスライド番号
+$nav.currentLayout // 現在のレイアウト名
 ```
 
-For more properties available, refer to the [`SlidevContextNav` interface](https://github.com/slidevjs/slidev/blob/main/packages/client/composables/useNav.ts).
+利用可能なその他のプロパティについては、[`SlidevContextNav` インターフェース](https://github.com/slidevjs/slidev/blob/main/packages/client/composables/useNav.ts) を参照してください。
 
 ### `$page` {#page}
 
-`$page` holds the number of the current page, 1-indexed.
+`$page` は現在のページ番号を保持し、1 から始まります。
 
 ```md
-Page: {{ $page }}
+ページ: {{ $page }}
 
-Is current page active: {{ $page === $nav.currentPage }}
+現在のページはアクティブか: {{ $page === $nav.currentPage }}
 ```
 
-> [!Note] > `$nav.clicks` is a global state while `$clicks` is the local clicks number for each slide.
+> [!Note]
+> `$nav.clicks` はグローバルの状態ですが、`$clicks` は各スライドの中でのクリック数です。
 
 ### `$renderContext` {#render-context}
 
-`$renderContext` holds the current render context, which can be `slide`, `overview`, `presenter` or `previewNext`
+`$renderContext` は現在のレンダリングコンテキストを保持し、`slide`、`overview`、`presenter`、または `previewNext` になります。
 
 ```md
 <div v-if="['slide', 'presenter'].includes($renderContext)">
-  This content will only be rendered in main slides view
+  このコンテンツは主なスライド表示でのみレンダリングされます
 </div>
 ```
 
-You can also use the [`<RenderWhen>` component](../builtin/components#renderwhen).
+[`<RenderWhen>` コンポーネント](../builtin/components#renderwhen) も使用できます。
 
 ### `$slidev.configs` {#configs}
 
-A reactive object holding the configurations for the slide project. For example:
+スライドプロジェクトの設定を保持するリアクティブオブジェクト。例えば:
 
 ```md
 ---
-title: My First Slidev!
+title: 初めての Slidev!
 ---
 
-# Page 1
+# ページ 1
 
 ---
 
-# Any Page
+# 任意のページ
 
-{{ $slidev.configs.title }} // 'My First Slidev!'
+{{ $slidev.configs.title }} // '初めての Slidev!'
 ```
 
 ### `$slidev.themeConfigs` {#theme-configs}
 
-A reactive object holding the parsed theme configurations:
+解析されたテーマ設定を保持するリアクティブオブジェクト:
 
 ```yaml
 ---
-title: My First Slidev!
+title: 初めての Slidev!
 themeConfig:
   primary: '#213435'
 ---
 ```
 
-Then the theme can access the primary color like:
+その後、テーマはプライマリカラーに次のようにアクセスできます:
 
 ```md
 {{ $slidev.themeConfigs.primary }} // '#213435'
 ```
 
-## Types {#types}
+## 型 {#types}
 
-If you want to get a type programmatically, you can import types like `TocItem` from `@slidev/types`:
+プログラム的に型を取得したい場合は、`@slidev/types` から `TocItem` などの型をインポートできます。
 
 ```vue
 <script setup>

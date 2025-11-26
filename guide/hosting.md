@@ -2,77 +2,77 @@
 outline: deep
 ---
 
-# Building and Hosting
+# ビルドとホスティング
 
-Slidev is designed to run as a web server when you are editing or presenting your slides. However, after the presentation, you may still want to share your **interactive** slides with others. This guide will show you how to build and host your slides.
+Slidev はスライドを編集またはプレゼンテーション中に Web サーバーとして実行するように設計されています。ただし、プレゼンテーション後も、**インタラクティブな**スライドを他の人と共有したい場合があります。このガイドでは、スライドをビルドしてホストする方法を説明します。
 
-## Build as a SPA {#spa}
+## SPA としてビルド {#spa}
 
-You can build the slides into a static [Single-page application (SPA)](https://developer.mozilla.org/en-US/docs/Glossary/SPA) via the following command:
+次のコマンドを使用して、スライドを静的な [シングルページアプリケーション (SPA)](https://developer.mozilla.org/ja/docs/Glossary/SPA) にビルドできます。
 
 ```bash
 $ slidev build
 ```
 
-By default, the generated files are placed in the `dist` folder. You can test the built version of you slides by running: `npx vite preview` or any other static server.
+デフォルトでは、生成されたファイルは `dist` フォルダに配置されます。ビルドされたバージョンのスライドをテストするには、`npx vite preview` または他の静的サーバーを実行します。
 
-### Base Path {#base}
+### ベースパス {#base}
 
-To deploy your slides under sub-routes, you need to pass the `--base` option. The `--base` path **must begin and end with a slash `/`**. For example:
+スライドをサブルートにデプロイするには、`--base` オプションを渡す必要があります。`--base` パスは **スラッシュ `/` で始まり、スラッシュ `/` で終わる必要があります**。例えば:
 
 ```bash
 $ slidev build --base /talks/my-cool-talk/
 ```
 
-Refer to [Vite's documentation](https://vitejs.dev/guide/build.html#public-base-path) for more details.
+詳細については [Vite のドキュメント](https://vitejs.dev/guide/build.html#public-base-path) を参照してください。
 
-### Output directory {#output-directory}
+### 出力先のディレクトリ {#output-directory}
 
-You can change the output directory using `--out`.
+`--out` を使用して出力先のディレクトリを変更できます。
 
 ```bash
 $ slidev build --out my-build-folder
 ```
 
-### Multiple Builds {#multiple-builds}
+### 複数ビルド {#multiple-builds}
 
-You can build multiple slide decks in one go by passing multiple markdown files as arguments:
+複数のマークダウンファイルを引数として渡すことで、一度に複数のスライドデッキをビルドできます。
 
 ```bash
 $ slidev build slides1.md slides2.md
 ```
 
-Or if your shell supports it, you can use a glob pattern:
+またはシェルがサポートしている場合、グロブパターンを使用できます。
 
 ```bash
 $ slidev build *.md
 ```
 
-In this case, each input file will generate a folder containing the build in the output directory.
+この場合、各入力ファイルは出力ディレクトリ内のビルドを含むフォルダを生成します。
 
-### Examples {#examples}
+### 例 {#examples}
 
-Here are a few examples of the exported SPA:
+エクスポートされた SPA の例をいくつか示します。
 
-- [Demo Slides](https://sli.dev/demo/starter)
+- [デモスライド](https://sli.dev/demo/starter)
 - [Composable Vue](https://talks.antfu.me/2021/composable-vue) by [Anthony Fu](https://github.com/antfu)
-- More in [Showcases](../resources/showcases)
+- その他は [ショーケース](../resources/showcases) を参照
 
-### Options {#options}
+### オプション {#options}
 
 <LinkCard link="features/build-with-pdf" />
 <LinkCard link="features/bundle-remote-assets" />
 
-## Hosting {#hosting}
+## ホスティング {#hosting}
 
-We recommend using `npm init slidev@latest` to scaffold your project, which contains the necessary configuration files for hosting services out-of-the-box.
+プロジェクトのひな型を作成するには、`npm init slidev@latest` を使用することをお勧めします。これには、ホスティングサービスに必要な構成ファイルが含まれています。
 
 ### GitHub Pages {#github-pages}
 
-To deploy your slides on [GitHub Pages](https://pages.github.com/) via GitHub Actions, follow these steps:
+GitHub Actions を使用して [GitHub Pages](https://pages.github.com/) にスライドをデプロイするには、以下の手順に従ってください。
 
-1. In your repository, go to `Settings` > `Pages`. Under `Build and deployment`, select `GitHub Actions`. (Do not choose `Deploy from a branch` and upload the `dist` directory, which is not recommended.)
-2. Create `.github/workflows/deploy.yml` with the following content to deploy your slides to GitHub Pages via GitHub Actions.
+1. リポジトリで、`Settings` > `Pages` に進みます。`Build and deployment` の下で `GitHub Actions` を選択します。(`Deploy from a branch` を選択して `dist` ディレクトリを主導でアップロードする方法は推奨されません)
+2. `.github/workflows/deploy.yml` を作成して、以下の内容で GitHub Actions を通じて GitHub Pages にスライドをデプロイします。
 
 ::: details deploy.yml
 
@@ -135,12 +135,12 @@ jobs:
 
 :::
 
-3. Commit and push the changes to your repository. The GitHub Actions workflow will automatically deploy your slides to GitHub Pages every time you push to the `main` branch.
-4. You can access your slides at `https://<username>.github.io/<repository-name>/`.
+3. リポジトリに変更をコミットしてプッシュします。GitHub Actions ワークフローは `main` ブランチにプッシュするたびに自動的にスライドを GitHub Pages にデプロイします。
+4. スライドに `https://<username>.github.io/<repository-name>/` でアクセスできます。
 
 ### Netlify
 
-Create `netlify.toml` in your project root with the following content:
+プロジェクトルートに `netlify.toml` を作成して、以下の内容にします。
 
 ::: details netlify.toml
 
@@ -160,11 +160,11 @@ status = 200
 
 :::
 
-Then go to your [Netlify dashboard](https://netlify.com/) and create a new site with the repository.
+その後、[Netlify ダッシュボード](https://netlify.com/) に移動してリポジトリから新しいサイトを作成します。
 
 ### Vercel
 
-Create `vercel.json` in your project root with the following content:
+プロジェクトルートに `vercel.json` を作成して、以下の内容にします。
 
 ::: details vercel.json
 
@@ -178,15 +178,15 @@ Create `vercel.json` in your project root with the following content:
 
 :::
 
-Then go to your [Vercel dashboard](https://vercel.com/) and create a new site with the repository.
+その後、[Vercel ダッシュボード](https://vercel.com/) に移動してリポジトリから新しいサイトを作成します。
 
-### Host on Docker {#docker}
+### Docker でホストする {#docker}
 
-If you need a rapid way to run a presentation with containers, you can use the prebuilt [docker image](https://hub.docker.com/r/tangramor/slidev) maintained by [tangramor](https://github.com/tangramor), or build your own.
+コンテナでプレゼンテーションを実行する迅速な方法が必要な場合は、[tangramor](https://github.com/tangramor) によって維持されているプリビルト [docker イメージ](https://hub.docker.com/r/tangramor/slidev) を使用することも、独自にビルドすることもできます。
 
-::: details Use the Docker Image
+::: details Docker イメージを使用する
 
-Just run the following command in your work folder:
+作業フォルダで以下のコマンドを実行するだけです。
 
 ```bash
 docker run --name slidev --rm -it \
@@ -197,13 +197,13 @@ docker run --name slidev --rm -it \
     tangramor/slidev:latest
 ```
 
-**_Note_**: You can use `NPM_MIRROR` to specify a npm mirror to speed up the installation process.
+**_注_**: `NPM_MIRROR` を使用して npm ミラーを指定してインストールプロセスを高速化できます。
 
-If your work folder is empty, it will generate a template `slides.md` and other related files under your work folder, and launch the server on port `3030`.
+作業フォルダが空の場合、テンプレート `slides.md` とその他の関連ファイルを作業フォルダの下に生成し、ポート `3030` でサーバーを起動します。
 
-You can access your slides from `http://localhost:3030/`
+スライドには `http://localhost:3030/` からアクセスできます
 
-To create an Docker Image for your slides, you can use the following Dockerfile:
+スライド用の Docker イメージを作成するには、以下の Dockerfile を使用できます。
 
 ```Dockerfile
 FROM tangramor/slidev:latest
@@ -211,10 +211,10 @@ FROM tangramor/slidev:latest
 ADD . /slidev
 ```
 
-Create the docker image: `docker build -t myslides .`
+docker イメージを作成: `docker build -t myslides .`
 
-And run the container: `docker run --name myslides --rm --user node -p 3030:3030 myslides`
+コンテナを実行: `docker run --name myslides --rm --user node -p 3030:3030 myslides`
 
-You can visit your slides at `http://localhost:3030/`
+スライドを `http://localhost:3030/` で確認できます
 
 :::

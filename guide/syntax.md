@@ -2,26 +2,26 @@
 outline: deep
 ---
 
-# Syntax Guide
+# 構文ガイド
 
-Slidev's slides are written as Markdown files, which are called **Slidev Markdown**s. A presentation has a Slidev Markdown as its entry, which is `./slides.md` by default, but you can change it by passing the file path as an argument to [the CLI commands](../builtin/cli).
+Slidev のスライドはマークダウンファイルで記述されており、**Slidev Markdown** と呼ばれます。プレゼンテーションは Slidev Markdown をエントリーポイントとしており、デフォルトでは `./slides.md` ですが、[CLI コマンド](../builtin/cli) に引数としてファイルパスを渡すことで変更できます。
 
-In a Slidev Markdown, not only [the basic Markdown features](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) can be used as usual, Slidev also provides additional features to enhance your slides. This section covers the syntax introduced by Slidev. Please make sure you know the basic Markdown syntax before reading this guide.
+Slidev Markdown では、[基本的なマークダウン機能](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) をいつも通り使用できるだけでなく、Slidev はスライドを強化するための追加機能も提供します。このセクションでは、Slidev で導入された構文について説明します。このガイドを読む前に、基本的なマークダウン構文を必ず理解しておいてください。
 
-## Slide Separators {#slide-separators}
+## スライド分離記号 {#slide-separators}
 
-Use `---` padded with a new line to separate your slides.
+`---` の前後に空行を入れてスライドを分離します。
 
 ````md {5,15}
-# Title
+# タイトル
 
-Hello, **Slidev**!
+こんにちは、**Slidev**!
 
 ---
 
-# Slide 2
+# スライド 2
 
-Use code blocks for highlighting:
+コードブロックを使用して強調表示:
 
 ```ts
 console.log('Hello, World!')
@@ -29,30 +29,30 @@ console.log('Hello, World!')
 
 ---
 
-# Slide 3
+# スライド 3
 
-Use UnoCSS classes and Vue components to style and enrich your slides:
+UnoCSS クラスと Vue コンポーネントを使用してスライドをスタイルし、豊かにします:
 
 <div class="p-3">
   <Tweet id="..." />
 </div>
 ````
 
-## Frontmatter & Headmatter {#frontmatter}
+## フロントマター & ヘッドマター {#frontmatter}
 
-At the beginning of each slide, you can add an optional [frontmatter](https://jekyllrb.com/docs/front-matter/) to configure the slide. The first frontmatter block is called **headmatter** and can configure the whole slide deck. The rest are **frontmatters** for individual slides. Texts in the headmatter or the frontmatter should be an object in [YAML](https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started/) format. For example:
+各スライドの開始時に、オプションの [フロントマター](https://jekyllrb.com/docs/front-matter/) を追加してスライドを設定できます。最初のフロントマターブロックは **ヘッドマター** と呼ばれ、スライドデック全体を設定できます。残りは個々のスライドの **フロントマター** です。ヘッドマターまたはフロントマターのテキストは [YAML](https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started/) 形式のオブジェクトである必要があります。例えば:
 
 <!-- eslint-skip -->
 
 ```md {1-4,10-14,26-28}
 ---
 theme: seriph
-title: Welcome to Slidev
+title: Slidev へようこそ
 ---
 
-# Slide 1
+# スライド 1
 
-The frontmatter of this slide is also the headmatter
+このスライドのフロントマターは、ヘッドマターでもあります
 
 ---
 layout: center
@@ -60,74 +60,74 @@ background: /background-1.png
 class: text-white
 ---
 
-# Slide 2
+# スライド 2
 
-A page with the layout `center` and a background image
-
----
-
-# Slide 3
-
-A page without frontmatter
-
----
-src: ./pages/4.md  # This slide only contains a frontmatter
----
+`center` レイアウトと背景画像を持つページ
 
 ---
 
-# Slide 5
+# スライド 3
+
+フロントマターなしのページ
+
+---
+src: ./pages/4.md  # このスライドはフロントマターのみを含みます
+---
+
+---
+
+# スライド 5
 ```
 
-Configurations you can set are described in the [Slides deck configurations](/custom/#headmatter) and [Per slide configurations](/custom/#frontmatter) sections.
+使用できる設定は [スライドデッキの設定](/custom/#headmatter) と [スライドごとの設定](/custom/#frontmatter) セクションで説明されています。
 
-To make the headmatter more readable, you can install the VSCode extension:
+ヘッドマターをより読みやすくするために、VSCode 拡張機能をインストールできます。
 
 <LinkCard link="features/vscode-extension" />
 
-Also, there is another possible frontmatter format:
+また、別のフロントマター形式も利用できます。
 
 <LinkCard link="features/block-frontmatter" />
 
-## Notes {#notes}
+## ノート {#notes}
 
-You can also create presenter notes for each slide. They will show up in <LinkInline link="guide/ui#presenter-mode" /> for you to reference during presentations.
+各スライドのプレゼンターノートを作成することもできます。プレゼンテーション中に参照するため、<LinkInline link="guide/ui#presenter-mode" /> に表示されます。
 
-The comment blocks at the end of each slide are treated as the note of the slide:
+各スライドの末尾にあるコメントブロックはスライドのノートとして扱われます。
 
 ```md {9,19-21}
 ---
 layout: cover
 ---
 
-# Slide 1
+# スライド 1
 
-This is the cover page.
+これはカバーページです。
 
-<!-- This is a **note** -->
+<!-- これは **ノート** です -->
 
 ---
 
-# Slide 2
+# スライド 2
 
-<!-- This is NOT a note because it is not at the end of the slide -->
+<!-- このコメントはスライドの最後にないため、ノートではありません -->
 
-The second page
+2 番目のページ
 
 <!--
-This is _another_ note
+これは _別の_ ノートです
 -->
 ```
 
-Basic Markdown and HTML are also supported in notes and will be rendered.
+基本的なマークダウンと HTML もノートでサポートされており、レンダリングされます。
 
 <SeeAlso :links="[
   'features/click-marker',
 ]" />
 
-## Code Blocks {#code-block}
+## コードブロック {#code-block}
 
-One big reason that led to the creation of Slidev was the need to perfectly display code in slides. Consequently, you can use Markdown-flavored code blocks to highlight your code.
+Slidev の作成に至った大きな理由の 1 つは、スライド内のコードを完璧に表示する必要があったからです。したがって、マークダウン風のコードブロックを使用してコードを強調表示できます。
 
 ````md
 ```ts
@@ -135,9 +135,9 @@ console.log('Hello, World!')
 ```
 ````
 
-Slidev has [Shiki](https://github.com/shikijs/shiki) built in as the syntax highlighter. Refer to [Configure Shiki](/custom/config-highlighter) for more details.
+Slidev には構文ハイライター として [Shiki](https://github.com/shikijs/shiki) がビルトインされています。詳細は [Shiki の設定](/custom/config-highlighter) を参照してください。
 
-More about code blocks:
+コードブロックの詳細:
 
 <LinkCard link="features/code-block-line-numbers" />
 <LinkCard link="features/code-block-max-height" />
@@ -150,31 +150,31 @@ More about code blocks:
 <LinkCard link="features/import-snippet" />
 <LinkCard link="features/code-groups" />
 
-## LaTeX Blocks {#latex-block}
+## LaTeX ブロック {#latex-block}
 
-Slidev supports LaTeX blocks for mathematical and chemical formulas:
+Slidev は数学および化学方程式のために LaTeX ブロックをサポートしています。
 
 <LinkCard link="features/latex" />
 
-## Diagrams {#diagrams}
+## ダイアグラム {#diagrams}
 
-Slidev supports [Mermaid](https://mermaid.js.org/) and [PlantUML](https://plantuml.com/) for creating diagrams from text:
+Slidev はテキストからダイアグラムを作成するために [Mermaid](https://mermaid.js.org/) と [PlantUML](https://plantuml.com/) をサポートしています。
 
 <LinkCard link="features/mermaid" />
 <LinkCard link="features/plantuml" />
 
-## MDC Syntax {#mdc-syntax}
+## MDC 構文 {#mdc-syntax}
 
-MDC Syntax is the easiest way to apply styles and classes to elements:
+MDC 構文は要素にスタイルとクラスを適用する最も簡単な方法です。
 
 <LinkCard link="features/mdc" />
 
-## Scoped CSS {#scoped-css}
+## スコープ付き CSS {#scoped-css}
 
-You can use scoped CSS to style your slides:
+スコープ付き CSS を使用してスライドをスタイルできます。
 
 <LinkCard link="features/slide-scope-style" />
 
-## Importing Slides {#importing-slides}
+## スライドのインポート {#importing-slides}
 
 <LinkCard link="features/importing-slides" />

@@ -2,34 +2,34 @@
 outline: deep
 ---
 
-# FAQ
+# よくある質問
 
-## Assets Handling {#assets-handling}
+## アセットの処理 {#assets-handling}
 
-You may use static assets like images and videos in your slides. Since Slidev is based on Vite, you can import them directly in your markdown files.
+スライド内で画像やビデオなどの静的アセットを使用することができます。Slidev は Vite をベースとしているため、マークダウンファイルに直接インポートできます。
 
-URLs that can be statically analyzed as assets can use relative paths:
+静的解析可能なアセット URL には相対パスを使用できます。
 
 ```md
 ![alt](./image.png)
 <img src="./image.png" />
 ```
 
-In the above case, the URLs will be resolved to `/BASE_URL/assets/image.png` after build.
+上記の場合、ビルド後、URL は `/BASE_URL/assets/image.png` に解決されます。
 
-However, relative paths in frontmatter and other components will be broken after build:
+ただし、フロントマターおよび他のコンポーネント内の相対パスはビルド後に破損します。
 
 ```md
 ---
-background: ./image.png  # Broken after build
+background: ./image.png  # ビルド後に破損
 ---
 
 <Comp src="./image.png" />
 ```
 
-In the above case, the URLs are not statically analyzable and will be preserved as-is, which will result in 404 errors after build.
+上記の場合、URL は静的に分析できず、そのまま保存されるため、ビルド後に 404 エラーが発生します。
 
-To solve this, you can place these assets in the [public folder](../custom/directory-structure#public) and use an absolute path to import them:
+これを解決するには、これらのアセットを [public フォルダ](../custom/directory-structure#public) に配置し、絶対パスを使用してインポートできます。
 
 ```md
 ---
@@ -39,96 +39,96 @@ background: /image.png
 <Comp src="/image.png" />
 ```
 
-For more details, refer to [Vite's documentation](https://vitejs.dev/guide/assets.html).
+詳細については、[Vite のドキュメント](https://vitejs.dev/guide/assets.html) を参照してください。
 
-## Positioning {#positioning}
+## ポジショニング {#positioning}
 
-Since Slidev is web-based, CSS is the primary way to position elements. Here are some useful tips for position elements:
+Slidev は Web ベースなので、CSS は要素をポジショニングするための主な方法です。要素をポジショニングするための便利なヒントを以下に示します。
 
-### Grids And Flexboxes
+### グリッドとフレックスボックス
 
-You can use CSS Grids to create complex layouts:
+CSS グリッドを使用して複雑なレイアウトを作成できます。
 
 ::: code-group
 
-```md [Two columns]
+```md [2 列]
 <div class="grid grid-cols-2 gap-4">
   <div>
-    The first column
+    最初の列
   </div>
   <div>
-    The second column
+    2 番目の列
   </div>
 </div>
 ```
 
-```md [Complex case]
+```md [複雑なケース]
 <div class="grid grid-cols-[200px_1fr_10%] gap-4">
   <div>
-    The first column (200px)
+    最初の列 (200px)
   </div>
   <div>
-    The second column (auto fit)
+    2 番目の列 (自動調整)
   </div>
   <div>
-    The third column (10% width to parent container)
+    3 番目の列 (親コンテナの 10% 幅)
   </div>
 </div>
 ```
 
 :::
 
-And use Flexboxes to create more responsive layouts:
+そしてフレックスボックスを使用して、より応答性の高いレイアウトを作成できます。
 
 ::: code-group
 
-```md [Horizontal]
+```md [水平]
 <div class="flex items-center">
   <div>
-    First block
+    最初のブロック
   </div>
   <div>
-    Second block
+    2 番目のブロック
   </div>
 </div>
 ```
 
-```md [Vertical]
+```md [垂直]
 <div class="flex flex-col items-center">
   <div>
-    Centered content
+    中央寄せコンテンツ
   </div>
 </div>
 ```
 
 :::
 
-Learn more: [CSS Grids](https://css-tricks.com/snippets/css/complete-guide-grid/), [flexboxes](https://css-tricks.com/snippets/css/a-guide-to-flexbox/), or even [Masonry](https://css-tricks.com/native-css-masonry-layout-in-css-grid/).
+詳細は [CSS グリッド](https://css-tricks.com/snippets/css/complete-guide-grid/)、[フレックスボックス](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)、または [Masonry](https://css-tricks.com/native-css-masonry-layout-in-css-grid/) をご覧ください。
 
-### Absolute Position
+### 絶対位置
 
-You can use UnoCSS to position elements absolutely:
+UnoCSS を使用して要素を絶対位置に配置できます。
 
 ```md
 <div class="absolute left-30px bottom-30px">
-  This is a left-bottom aligned footer
+  これは左下に揃ったフッターです
 </div>
 ```
 
-Or use the draggable elements feature:
+または、ドラッグ可能な要素機能を使用してください。
 
 <LinkCard link="features/draggable" />
 
-## Adjust Sizes {#adjust-size}
+## サイズを調整 {#adjust-size}
 
-- Adjust all slides's size:
+- すべてのスライドのサイズを調整:
 
 <LinkCard link="features/canvas-size" />
 
-- Adjust several slides' size:
+- 複数のスライドのサイズを調整:
 
 <LinkCard link="features/zoom-slide" />
 
-- Adjust some elements' size:
+- いくつかの要素のサイズを調整:
 
 <LinkCard link="features/transform-component" />

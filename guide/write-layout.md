@@ -1,8 +1,8 @@
-# Writing Layouts
+# レイアウトの作成
 
-> Please read <LinkInline link="guide/layout" /> first.
+> 最初に <LinkInline link="guide/layout" /> を読んでください。
 
-To create a custom layout, simply create a new Vue file in the `layouts` directory:
+カスタムレイアウトを作成するには、`layouts` ディレクトリに新しい Vue ファイルを作成するだけです:
 
 ```bash
 your-slidev/
@@ -13,9 +13,9 @@ your-slidev/
       └── MyLayout.vue
 ```
 
-Layouts are Vue components, so you can use all the features of Vue in them.
+レイアウトは Vue コンポーネントなので、Vue のすべての機能を使用できます。
 
-In the layout component, use `<slot/>` (the default slot) for the slide content:
+レイアウトコンポーネントで、スライドコンテンツに `<slot/>` (デフォルトスロット) を使用します:
 
 ```vue [default.vue]
 <template>
@@ -25,7 +25,7 @@ In the layout component, use `<slot/>` (the default slot) for the slide content:
 </template>
 ```
 
-You can also have [named slots](https://vuejs.org/guide/components/slots.html) for more complex layouts:
+より複雑なレイアウト用に [名前付きスロット](https://vuejs.org/guide/components/slots.html) を持つこともできます:
 
 ```vue [split.vue]
 <template>
@@ -40,4 +40,4 @@ You can also have [named slots](https://vuejs.org/guide/components/slots.html) f
 </template>
 ```
 
-And then use it with <LinkInline link="features/slot-sugar" />.
+その後、<LinkInline link="features/slot-sugar" /> で使用します。

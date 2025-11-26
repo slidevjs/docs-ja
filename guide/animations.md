@@ -2,65 +2,65 @@
 outline: deep
 ---
 
-# Animation
+# アニメーション
 
-Animation is an essential part of slide presentations. Slidev provides a variety of ways to animate your slides, from the simple to the complex. This guide will show you how to use them effectively.
+アニメーションは、スライドプレゼンテーションの重要な要素です。Slidev は、シンプルなものから複雑なものまで、さまざまな方法でスライドにアニメーションを追加する機能を提供しています。このガイドでは、それらを効果的に使用する方法を紹介します。
 
-## Click Animation {#click-animation}
+## クリックアニメーション {#click-animation}
 
-A "**click**" can be considered as the unit of animation steps in slides. A slide can have one or more clicks, and each click can trigger one or more animations - for example, revealing or hiding elements.
+**クリック**は、スライド内のアニメーションステップの単位と考えることができます。スライドには 1 つ以上のクリックがあり、各クリックは 1 つ以上のアニメーションをトリガーできます。たとえば、要素の表示や非表示などです。
 
 > [!NOTE]
-> Since v0.48.0, we've rewritten the click animations system with much more consistent behaviors. It might change the behaviors of your existing slides in edge cases. While this page is showing the new click system, you can find more details about the refactor in [#1279](https://github.com/slidevjs/slidev/pull/1279).
+> v0.48.0以降、より一貫した動作にするため、クリックアニメーションシステムを大幅に書き換えました。これにより、エッジケースで既存のスライドの動作が変更される可能性があります。このページでは新しいクリックシステムを紹介していますが、リファクタリングの詳細については [#1279](https://github.com/slidevjs/slidev/pull/1279) を参照してください。
 
 ### `v-click` {#v-click}
 
-To apply show/hide "click animations" for elements, you can use the `<v-click>` component or the `v-click` directive.
+表示 / 非表示の「クリックアニメーション」を要素に適用するには、`<v-click>` コンポーネントまたは `v-click` ディレクティブを使用します。
 
 <!-- eslint-skip -->
 
 ```md
-<!-- Component usage:
-     this will be invisible until you press "next" -->
+<!-- コンポーネントの使い方:
+     1 回クリックするまでこの要素は隠されます -->
 <v-click> Hello World! </v-click>
 
-<!-- Directive usage:
-     this will be invisible until you press "next" the second time -->
+<!-- ディレクティブの使い方:
+     2 回クリックするまでこの要素は隠されます -->
 <div v-click class="text-xl"> Hey! </div>
 ```
 
 ### `v-after` {#v-after}
 
-`v-after` will turn the element visible when the previous `v-click` is triggered.
+`v-after` は、前の `v-click` がトリガーされたときに要素を表示します。
 
 ```md
 <div v-click> Hello </div>
-<div v-after> World </div>  <!-- or <v-after> World </v-after> -->
+<div v-after> World </div>  <!-- もしくは <v-after> World </v-after> -->
 ```
 
-When you press "next", both `Hello` and `World` will show up together.
+"次へ" を押すと、`Hello` と `World` が一緒に表示されます。
 
-### Hide after clicking {#hide-after-clicking}
+### クリックした後に隠す {#hide-after-clicking}
 
-Add a `.hide` modifier to `v-click` or `v-after` directives to make elements invisible after clicking, instead of showing up.
+`v-click` または `v-after` ディレクティブに `.hide` モディファイアを追加すると、クリック後に要素を表示するのではなく、非表示にします。
 
 ```md
-<div v-click> Visible after 1 click </div>
-<div v-click.hide> Hidden after 2 clicks </div>
-<div v-after.hide> Hidden after 2 clicks </div>
+<div v-click> 1 回クリックすると表示されます </div>
+<div v-click.hide> 2 回クリックすると隠されます </div>
+<div v-after.hide> 2 回クリックすると隠されます </div>
 ```
 
-For the components, you can use the `hide` prop to achieve the same effect:
+コンポーネントの場合、同じ効果を得るために `hide` プロパティを使用できます:
 
 ```md
-<v-click> Visible after 1 click </v-click>
-<v-click hide> Hidden after 2 clicks </v-click>
-<v-after hide> Also hidden after 2 clicks </v-after>
+<v-click> 1 回クリックすると表示されます </v-click>
+<v-click hide> 2 回クリックすると隠されます </v-click>
+<v-after hide> これも 2 回クリックすると隠されます </v-after>
 ```
 
 ### `v-clicks` {#v-clicks}
 
-`v-clicks` is only provided as a component. It's a shorthand to apply the `v-click` directive to all its child elements. It is especially useful when working with lists and tables.
+`v-clicks` はコンポーネントとしてのみ提供されます。これは、その子要素すべてに `v-click` ディレクティブを適用するためのショートハンドです。特にリストやテーブルで作業する際に便利です。
 
 ```md
 <v-clicks>
@@ -72,8 +72,8 @@ For the components, you can use the `hide` prop to achieve the same effect:
 </v-clicks>
 ```
 
-An item will become visible each time you click "next".
-It accepts a `depth` prop for nested list:
+クリックするたびに、項目が表示されるようになります。
+ネストされたリストには `depth` プロパティを使用します:
 
 ```md
 <v-clicks depth="2">
@@ -88,7 +88,7 @@ It accepts a `depth` prop for nested list:
 </v-clicks>
 ```
 
-Also, you can use the `every` prop to specify the number of items to show after each click:
+また、`every` プロパティを使用して、クリックごとに表示する項目の数を指定できます:
 
 ```md
 <v-clicks every="2">
@@ -101,83 +101,83 @@ Also, you can use the `every` prop to specify the number of items to show after 
 </v-clicks>
 ```
 
-### Positioning {#positioning}
+### アニメーションの順番 {#positioning}
 
-By default, the clicking animations are triggered one by one. You can customize the animation "position" of elements by using the `at` prop or the `v-click` directive with value.
+デフォルトでは、クリックアニメーションは 1 つずつトリガーされます。 要素のアニメーションの "順番" は、`at` プロパティまたは値付きの `v-click` ディレクティブを使用してカスタマイズできます。
 
-Like the CSS layout system, click-animated elements can be "relative" or "absolute":
+CSS レイアウトシステムと同様に、クリックアニメーション化された要素は "相対的な順番" または "絶対的な順番" にできます。
 
-#### Relative Position {#relative-position}
+#### 相対的な順番 {#relative-position}
 
-This actual position of relative elements is calculated based on the previous relative elements:
+相対的な順番は、前の相対的な要素の順番に基づいて計算されます:
 
 ````md
-<div v-click> visible after 1 click </div>
-<v-click at="+2"><div> visible after 3 clicks </div></v-click>
-<div v-click.hide="'-1'"> hidden after 2 clicks </div>
+<div v-click> 1 回クリックすると表示されます </div>
+<v-click at="+2"><div> 3 回クリックすると表示されます </div></v-click>
+<div v-click.hide="'-1'"> 2 回クリックすると隠されます </div>
 
 ```js {none|1|2}{at:'+5'}
-1  // highlighted after 7 clicks
-2  // highlighted after 8 clicks
+1  // 7 回クリックするとハイライトされます
+2  // 8 回クリックするとハイライトされます
 ```
 ````
 
 > [!NOTE]
-> The default value of `v-click` is `'+1'` when you don't specify it.
+> `v-click` の初期値は指定しない場合 `'+1'` です。
 
-In fact, `v-after` are just shortcuts for `v-click` with `at` prop:
+事実上、`v-after` は `at` プロパティを持つ `v-click` のショートカットに過ぎません:
 
 ```md
-<!-- The following 2 usages are equivalent -->
+<!-- 次の 2 つは同じです -->
 <img v-after />
 <img v-click="'+0'" />
 
-<!-- The following 3 usages are equivalent -->
+<!-- 次の 3 つは同じです -->
 <img v-click />
 <img v-click="'+1'" />
 <v-click-gap size="1" /><img v-after />
 ```
 
-::: tip `at` prop value format
-Only string values starting with `'+'` or `'-'` like `'+1'` are treated as relative positions:
+::: tip `at` プロパティのフォーマット
+`'+1'` のような、`+` または `-` で始まる文字列値のみが相対位置として扱われます:
 
-| Value          | Kind     |
+| 値             | 種類     |
 | -------------- | -------- |
-| `'-1'`, `'+1'` | Relative |
-| `+1` === `1`   | Absolute |
-| `'1'`          | Absolute |
+| `'-1'`, `'+1'` | 相対     |
+| `+1` === `1`   | 絶対     |
+| `'1'`          | 絶対     |
 
-So don't forget the single quotes for the relative values.
+なので、相対値にはシングルクォートを忘れないでください。
 :::
 
-#### Absolute Position {#absolute-position}
+#### 絶対的な順番 {#absolute-position}
 
-The given value is the exact click count to trigger this animation:
+指定された値は、このアニメーションをトリガーする正確なクリック数です:
 
 ````md
-<div v-click="3"> visible after 3 clicks </div>
-<v-click at="2"><div> visible after 2 clicks </div></v-click>
-<div v-click.hide="1"> hidden after 1 click </div>
+<div v-click="3"> 3 回クリックすると表示されます </div>
+<v-click at="2"><div> 2 回クリックすると表示されます </div></v-click>
+<div v-click.hide="1"> 1 回クリックすると隠されます </div>
 
 ```js {none|1|2}{at:3}
-1  // highlighted after 3 clicks
-2  // highlighted after 4 clicks
+1  // 3 回クリックするとハイライトされます
+2  // 4 回クリックするとハイライトされます
 ```
 ````
 
-#### Mixed Case {#mixed-case}
+#### 混合ケース {#mixed-case}
 
-You can mix the absolute and relative positions:
+相対的な順番と絶対的な順番を混在させることもできます:
 
 ```md
-<div v-click> visible after 1 click </div>
-<div v-click="3"> visible after 3 clicks </div>
-<div v-click> visible after 2 click </div>
-<div v-click="'-1'"> visible after 1 click </div>
-<div v-click="4"> visible after 4 clicks </div>
+<div v-click> 1 回クリックすると表示されます </div>
+<div v-click="3"> 3 回クリックすると表示されます </div>
+<div v-click> 2 回クリックすると表示されます </div>
+<div v-click="'-1'"> 1 回クリックすると表示されます </div>
+<div v-click="4"> 4 回クリックすると表示されます </div>
 ```
 
-The following example synchronizes the highlighting of the two code blocks:
+以下の例は、2 つのコードブロックを同期してハイライトさせる方法を示しています:
 
 ````md {1,6}
 ```js {1|2}{at:1}
@@ -191,61 +191,61 @@ The following example synchronizes the highlighting of the two code blocks:
 ```
 ````
 
-### Enter & Leave {#enter-leave}
+### 表示 / 非表示のタイミング {#enter-leave}
 
-You can also specify the enter and leave index for the `v-click` directive by passing an array. The end index is exclusive.
+`v-click` ディレクティブに配列を渡すことで、要素の表示と非表示のクリックインデックスを指定することもできます。終了インデックスは排他的です。
 
 ```md
 <div v-click.hide="[2, 4]">
-  This will be hidden at click 2 and 3 (and shown otherwise).
+  この要素は 2 回目と 3 回目のクリックで非表示になります（それ以外では表示されます）。
 </div>
 <div v-click />
 <div v-click="['+1', '+1']">
-  This will be shown only at click 2 (and hidden otherwise).
+  これは 2 回目のクリックでのみ表示されます（それ以外では非表示です）。
 </div>
 ```
 
-You can also use `v-switch` to achieve the same effect:
+`v-switch` コンポーネントを使用しても同じことができます:
 
 ```md
 <v-switch>
-  <template #1> show at click 1, hide at click 2. </template>
-  <template #2> show at click 2, hide at click 5. </template>
-  <template #5-7> show at click 5, hide at click 7. </template>
+  <template #1> 1 回目のクリックで表示され、2 回目のクリックで非表示になります。 </template>
+  <template #2> 2 回目のクリックで表示され、5 回目のクリックで非表示になります。 </template>
+  <template #5-7> 5 回目のクリックで表示され、7 回目のクリックで非表示になります。 </template>
 </v-switch>
 ```
 
-See [`VSwitch` Component](/builtin/components#vswitch) for more details.
+詳しくは、[`VSwitch` コンポーネント](/builtin/components#vswitch) を参照してください。
 
-### Custom Total Clicks Count {#total}
+### 総クリック数のカスタマイズ {#total}
 
-By default, Slidev automatically calculates how many clicks are required before going to the next slide. You can override this via the `clicks` frontmatter option:
+デフォルトでは、Slidev は次のスライドに進む前に必要なクリック数を自動的に計算します。これを上書きするには、フロントマターの `clicks` オプションを使用します:
 
 ```yaml
 ---
-# 10 clicks in this slide, before going to the next slide
+# このスライドで次のスライドに進む前に必要なクリック数を 10 に設定
 clicks: 10
 ---
 ```
 
-### Element Transitions {#element-transitions}
+### 要素のトランジション {#element-transitions}
 
-When you apply the `v-click` directive to your elements, it will attach the class name `slidev-vclick-target` to it. When the elements are hidden, the class name `slidev-vclick-hidden` will also be attached. For example:
-
-```html
-<div class="slidev-vclick-target slidev-vclick-hidden">Text</div>
-```
-
-After a click, it may become:
+`v-click` ディレクティブを要素に適用すると、クラス名 `slidev-vclick-target` が要素に付与されます。要素が非表示の場合、クラス名 `slidev-vclick-hidden` も付与されます。例えば:
 
 ```html
-<div class="slidev-vclick-target">Text</div>
+<div class="slidev-vclick-target slidev-vclick-hidden">テキスト</div>
 ```
 
-By default, a subtle opacity transition is applied to those classes:
+クリック後は、次のようになる場合があります:
+
+```html
+<div class="slidev-vclick-target">テキスト</div>
+```
+
+デフォルトでは、これらのクラスに微妙な不透明度のトランジションが適用されます:
 
 ```css
-/* below shows the default style */
+/* デフォルトのスタイル */
 
 .slidev-vclick-target {
   transition: opacity 100ms ease;
@@ -257,7 +257,7 @@ By default, a subtle opacity transition is applied to those classes:
 }
 ```
 
-You can override them to customize the transition effects in your custom stylesheets. For example, you can achieve the scaling up transitions by:
+カスタムスタイルシートでそれらを上書きして、トランジション効果をカスタマイズできます。例えば、スケーリングアップのトランジションを実現するには:
 
 ```css
 /* styles.css */
@@ -271,7 +271,7 @@ You can override them to customize the transition effects in your custom stylesh
 }
 ```
 
-To specify animations for only certain slides or layouts:
+特定のスライドやレイアウトに対してのみアニメーションを指定するには:
 
 ```scss
 .slidev-page-7,
@@ -286,11 +286,11 @@ To specify animations for only certain slides or layouts:
 }
 ```
 
-Learn more about [customizing styles](/custom/directory-structure#style).
+詳しくは [スタイルのカスタマイズ](/custom/directory-structure#style) をご覧ください。
 
-## Motion {#motion}
+## モーション {#motion}
 
-Slidev has [@vueuse/motion](https://motion.vueuse.org/) built-in. You can use the `v-motion` directive to any elements to apply motion to them. For example
+Slidev は [@vueuse/motion](https://motion.vueuse.org/) を組み込んでいます。`v-motion` ディレクティブを任意の要素に使用して、モーションを適用できます。例えば
 
 ```html
 <div
@@ -303,15 +303,15 @@ Slidev has [@vueuse/motion](https://motion.vueuse.org/) built-in. You can use th
 </div>
 ```
 
-The text `Slidev` will move from `-80px` to its original position when entering the slide. When leaving, it will move to `80px`.
+`Slidev` はスライドに入るときに `-80px` から元の位置に移動します。スライドを離れるときは `80px` に移動します。
 
-> Before v0.48.9, you need to add `preload: false` to the slide's frontmatter to enable motion.
+> v0.48.9 以前では、モーションを有効にするためにスライドのフロントマターに `preload: false` を追加する必要があります。
 
-### Motion with Clicks {#motion-with-clicks}
+### クリックによるモーション {#motion-with-clicks}
 
-> Available since v0.48.9
+> v0.48.9 から利用可能
 
-You can also trigger the motion by clicks:
+モーションも、クリックでトリガーすることができます:
 
 ```html
 <div
@@ -327,7 +327,7 @@ You can also trigger the motion by clicks:
 </div>
 ```
 
-Or combine `v-click` with `v-motion`:
+もしくは `v-click` と `v-motion` を組み合わせて使用します:
 
 ```html
 <div v-click="[2, 4]" v-motion
@@ -335,31 +335,31 @@ Or combine `v-click` with `v-motion`:
   :enter="{ x: 0 }"
   :leave="{ x: 50 }"
 >
-  Shown at click 2 and hidden at click 4.
+  2 回目のクリックで表示され、4 回目のクリックで非表示になります。
 </div>
 ```
 
-The meanings of variants:
+変数の意味は以下の通りです:
 
-- `initial`: When `currentPage < thisPage`, or `v-click` hides the current element because `$clicks` is too small.
-- `enter`: When `currentPage === thisPage`, and `v-click` shows the element. _Priority: lowest_
-- `click-x`: `x` is a number representing the **absolute** click num. The variant will take effect if `$clicks >= x`. _Priority: `x`_
-- `click-x-y`: The variant will take effect if `x <= $clicks < y`. _Priority: `x`_
-- `leave`: `currentPage > thisPage`, or `v-click` hides the current element because `$clicks` is too large.
+- `initial`: `今のページ < このページ` か、`$clicks` が小さくて `v-click` が要素を隠している場合
+- `enter`: `currentPage === thisPage` かつ `v-click` が要素を表示している場合。_優先度: 最低_
+- `click-x`: `x` は絶対クリック数を表す数値です。`$clicks >= x` の場合にこのバリアントが適用されます。_優先度: `x`_
+- `click-x-y`: `x <= $clicks < y` の場合にこのバリアントが適用されます。_優先度: `x`_
+- `leave`: `currentPage > thisPage` か、`$clicks` が大きすぎて `v-click` が現在の要素を隠している場合。
 
-The variants will be combined according to the priority defined above.
+変数は、上記で定義された優先度に従って組み合わされます。
 
-::: warning
-Due to a Vue internal [bug](https://github.com/vuejs/core/issues/10295), currently **only** `v-click` applied to the same element as `v-motion` can control the motion animation. As a workaround, you can use something like `v-if="3 < $clicks"` to achieve the same effect.
+::: warning 注意
+Vue の内部バグにより、現在 **同じ要素に適用された** `v-click` のみが `v-motion` のモーションアニメーションを制御できます。回避策として、`v-if="3 < $clicks"` のような方法を使用して同じ効果を得ることができます。
 :::
 
-Learn more: [Demo](https://sli.dev/demo/starter/10) | [@vueuse/motion](https://motion.vueuse.org/) | [v-motion](https://motion.vueuse.org/features/directive-usage) | [Presets](https://motion.vueuse.org/features/presets)
+詳しくは [Demo](https://sli.dev/demo/starter/10) 、 [@vueuse/motion](https://motion.vueuse.org/) 、 [v-motion](https://motion.vueuse.org/features/directive-usage) 、 [Presets](https://motion.vueuse.org/features/presets) をご覧ください。
 
-## Slide Transitions {#slide-transitions}
+## スライドトランジション {#slide-transitions}
 
 <div id="pages-transitions" />
 
-Slidev supports slide transitions out of the box. You can enable it by setting the `transition` frontmatter option:
+Slidev はスライドトランジションを標準でサポートしています。`transition` フロントマターオプションを設定することで有効にできます:
 
 ```md
 ---
@@ -367,29 +367,29 @@ transition: slide-left
 ---
 ```
 
-This will give you a nice sliding effects on slide switching. Setting it in the headmatter will apply this to all slides. You can also set different transitions per slide in frontmatters.
+これで、スライド切り替え時に素敵なスライド効果が得られます。ヘッドマターで設定すると、すべてのスライドに適用されます。フロントマターでスライドごとに異なるトランジションを設定することもできます。
 
-### Builtin Transitions {#builtin-transitions}
+### ビルトイントランジション {#builtin-transitions}
 
-- `fade` - Crossfade in/out
-- `fade-out` - Fade out and then fade in
-- `slide-left` - Slides to the left (slide to right when going backward)
-- `slide-right` - Slides to the right (slide to left when going backward)
-- `slide-up` - Slides to the top (slide to bottom when going backward)
-- `slide-down` - Slides to the bottom (slide to top when going backward)
-- `view-transition` - Via the view transitions API
+- `fade` - クロスフェードイン / アウト
+- `fade-out` - フェードアウトしてからフェードイン
+- `slide-left` - 左へスライド (戻るときは右へスライド)
+- `slide-right` - 右へスライド (戻るときは左へスライド)
+- `slide-up` - 上へスライド (戻るときは下へスライド)
+- `slide-down` - 下へスライド (戻るときは上へスライド)
+- `view-transition` - View Transitions API を使用
 
 ### View Transition API {#view-transitions}
 
-The View Transitions API provides a mechanism for easily creating animated transitions between different DOM states. Learn more about it in [View Transitions API - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API).
+View Transitions API は、異なる DOM 状態間でアニメーション付きのトランジションを簡単に作成するためのメカニズムを提供します。詳細については、[View Transitions API - MDN Web Docs](https://developer.mozilla.org/ja/docs/Web/API/View_Transition_API) をご覧ください。
 
-:::warning
-Experimental: This is not supported by all browsers. Check the [Browser compatibility table](https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API#browser_compatibility) carefully before using this.
+:::warning 注意
+試験的: すべてのブラウザでサポートされているわけではありません。使用する前に、[Browser compatibility table](https://developer.mozilla.org/ja/docs/Web/API/View_Transition_API#ブラウザーの互換性) を注意深く確認してください。
 :::
 
-You can use the `view-transition-name` CSS property to name view transitions, which creates connections between different page elements and smooth transitions when switching slides.
+`view-transition-name` プロパティを使用してビューのトランジションに名前を付けることで、異なるページ要素間に接続を作成し、スライドを切り替える際にスムーズなトランジションを実現できます。
 
-You can enable [MDC (Markdown Component) Syntax](/guide/syntax#mdc-syntax) support to conveniently name view-transitions:
+name view-transition を便利に使うために [MDC (Markdown Component) 構文](/guide/syntax#mdc-syntax) を有効にできます:
 
 ```md
 ---
@@ -404,9 +404,9 @@ mdc: true
 # View Transition {.inline-block.view-transition-title}
 ```
 
-### Custom Transitions {#custom-transitions}
+### カスタムトランジション {#custom-transitions}
 
-Slidev's slide transitions are powered by [Vue Transition](https://vuejs.org/guide/built-ins/transition.html). You can provide your custom transitions by:
+Slidev のスライドトランジションは [Vue Transition](https://vuejs.org/guide/built-ins/transition.html) によって実現されています。カスタムトランジションを使用するには、次のようにします:
 
 ```md
 ---
@@ -414,7 +414,7 @@ transition: my-transition
 ---
 ```
 
-and then in your custom stylesheets:
+そしてカスタムスタイルシートで:
 
 ```css
 .my-transition-enter-active,
@@ -428,11 +428,11 @@ and then in your custom stylesheets:
 }
 ```
 
-Learn more about how it works in [Vue Transition](https://vuejs.org/guide/built-ins/transition.html).
+どう動作しているかについては、[Vue Transition](https://vuejs.org/guide/built-ins/transition.html) をご覧ください。
 
-### Forward & Backward Transitions {#forward-backward-transitions}
+### 前向きと後ろ向きのトランジション {#forward-backward-transitions}
 
-You can specify different transitions for forward and backward navigation using `|` as a separator in the transition name:
+前向きナビゲーションと後ろ向きナビゲーションに異なるトランジションを指定するには、トランジション名の区切り文字として `|` を使用します:
 
 ```md
 ---
@@ -440,11 +440,11 @@ transition: go-forward | go-backward
 ---
 ```
 
-With this, when you go from slide 1 to slide 2, the `go-forward` transition will be applied. When you go from slide 2 to slide 1, the `go-backward` transition will be applied.
+これにより、スライド 1 からスライド 2 に移動するときに `go-forward` トランジションが適用され、スライド 2 からスライド 1 に戻るときに `go-backward` トランジションが適用されます。
 
-### Advanced Usage {#advanced-usage}
+### 高度な使用法 {#advanced-usage}
 
-The `transition` field accepts an option that will passed to the [`<TransitionGroup>`](https://vuejs.org/api/built-in-components.html#transition) component. For example:
+`transition` フィールドは、[`<TransitionGroup>`](https://vuejs.org/api/built-in-components.html#transition) コンポーネントに渡されるオプションを受け入れます。例えば:
 
 ```md
 ---

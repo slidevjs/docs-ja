@@ -1,10 +1,10 @@
-# Components in Slides
+# スライドのコンポーネント
 
-One of the most powerful features of Slidev is the ability to use Vue components directly in your slides. This allows you to create interactive and dynamic content with ease.
+Slidev の最も強力な機能の 1 つは、Vue コンポーネントをスライド内で直接使用できる機能です。これにより、対話的で動的なコンテンツを簡単に作成できます。
 
-## Using Components {#use}
+## コンポーネントの使用 {#use}
 
-With the help of [`unplugin-vue-components`](https://github.com/unplugin/unplugin-vue-components), Slidev allows you to use Vue components directly in your slides without importing them manually:
+[`unplugin-vue-components`](https://github.com/unplugin/unplugin-vue-components) の助けを借りて、Slidev はスライド内で Vue コンポーネントを手動でインポートすることなく直接使用できます。
 
 ```md
 # My Slide
@@ -12,15 +12,15 @@ With the help of [`unplugin-vue-components`](https://github.com/unplugin/unplugi
 <MyComponent :count="4"/>
 ```
 
-The components come from:
+コンポーネントの取得元は以下の通りです。
 
-- Built-in components. See [Built-in Components](../builtin/components) for reference.
-- Provided by the theme and addons. See <LinkInline link="guide/theme-addon" />.
-- Custom components in the `components` directory. See the next section.
+- ビルトインコンポーネント。[ビルトインコンポーネント](../builtin/components) を参照してください。
+- テーマとアドオンによって提供されたもの。<LinkInline link="guide/theme-addon" /> を参照してください。
+- `components` ディレクトリ内のカスタムコンポーネント。次のセクションを参照してください。
 
-## Writing Components {#write}
+## コンポーネントの作成 {#write}
 
-To create a custom component, simply create a new Vue file in the `components` directory:
+カスタムコンポーネントを作成するには、`components` ディレクトリに新しい Vue ファイルを作成するだけです。
 
 ```bash
 your-slidev/
@@ -31,6 +31,6 @@ your-slidev/
       └── MyComponent.vue
 ```
 
-Refer to the [Vue documentation](https://vuejs.org/guide/essentials/component-basics.html) for how to write Vue components.
+Vue コンポーネントの作成方法については、[Vue ドキュメント](https://vuejs.org/guide/essentials/component-basics.html) を参照してください。
 
-You can also <LinkInline link="guide/write-addon" /> to reuse and share your components with others.
+また <LinkInline link="guide/write-addon" /> を使用して、コンポーネントを再利用し、他の人と共有することもできます。

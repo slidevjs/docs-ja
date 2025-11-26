@@ -1,32 +1,32 @@
-# Slide Layout
+# スライドレイアウト
 
-Layouts in Slidev are used to define the structure for each slide. They are Vue components that wrap the content of the slides.
+Slidev のレイアウトは、各スライドの構造を定義するために使用されます。これらはスライドのコンテンツをラップする Vue コンポーネントです。
 
-## Using Layouts {#use}
+## レイアウトの使用 {#use}
 
-To use a layout, you can specify it in the frontmatter of the slide:
+レイアウトを使用するには、スライドのフロントマターで指定できます。
 
 ```md
 ---
 layout: quote
 ---
 
-A quote from someone
+誰かの引用
 ```
 
-By default, the layout of the first slide is `cover`, and the rest are `default`.
+デフォルトでは、最初のスライドのレイアウトは `cover` で、残りは `default` です。
 
-The layouts are loaded in the following order, and the last one loaded will override the previous ones:
+レイアウトは次の順序で読み込まれ、最後に読み込まれたものが前のものをオーバーライドします。
 
-1. default layouts. See [Built-in Layouts](../builtin/layouts).
-2. layouts provided by the theme
-3. layouts provided by the addons
-4. custom layouts in the `layouts` directory
+1. デフォルトレイアウト。[ビルトインレイアウト](../builtin/layouts) を参照してください。
+2. テーマによって提供されるレイアウト
+3. アドオンによって提供されるレイアウト
+4. `layouts` ディレクトリ内のカスタムレイアウト
 
 <SeeAlso :links="[
   'features/slot-sugar',
 ]" />
 
-## Writing Layouts {#write}
+## レイアウトの作成 {#write}
 
 <LinkCard link="guide/write-layout" />

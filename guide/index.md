@@ -2,13 +2,13 @@
 outline: deep
 ---
 
-# Getting Started
+# はじめに
 
-Slidev <sup>(slide + dev, **/slaɪdɪv/**)</sup> is a web-based slides maker and presenter. It's designed for developers to focus on writing content in Markdown. With the power of web technologies like Vue, you are able to deliver pixel-perfect designs with interactive demos to your presentation.
+Slidev <sup>(slide + dev, **/slaɪdɪv/**)</sup> は Web ベースのスライドメーカーおよびプレゼンターです。開発者がマークダウンでのコンテンツ作成に集中できるように設計されています。Vue などの Web テクノロジーの力により、ピクセルパーフェクトなデザインと対話的なデモをプレゼンテーションに提供できます。
 
 ::: tip
 
-You can learn more about the rationale behind this project in <LinkInline link="guide/why" />.
+このプロジェクトの背景にある理由の詳細については、<LinkInline link="guide/why" /> を参照してください。
 
 :::
 
@@ -32,31 +32,31 @@ You can learn more about the rationale behind this project in <LinkInline link="
 
 <!-- <FeaturesAnimation /> -->
 
-## Create Slides
+## スライドを作成する
 
-### Try it Online
+### オンラインで試す
 
-Start Slidev right in your browser with StackBlitz: [sli.dev/new](https://sli.dev/new)
+StackBlitz でブラウザで直接 Slidev を開始: [sli.dev/new](https://sli.dev/new)
 
-### Create Locally
+### ローカルで作成する
 
-> Requires [Node.js](https://nodejs.org) >= 18.0 installed.
+> [Node.js](https://nodejs.org) >= 18.0 がインストールされている必要があります。
 
-Run the following command to create a new Slidev project locally:
+次のコマンドを実行して、ローカルに新しい Slidev プロジェクトを作成します。
 
 ::: code-group
 
 ```bash [pnpm]
-# If you haven't installed pnpm
+# pnpm がインストールされていない場合
 npm i -g pnpm
 
 pnpm create slidev
 ```
 
 ```bash [npm]
-# Not recommended -
-# NPM will download the packages each time you create a new project,
-# which is slow and takes up a lot of space
+# 推奨されません -
+# NPM は新しいプロジェクトを作成するたびにパッケージをダウンロードします。
+# これは遅く、多くのスペースを占めます
 
 npm init slidev@latest
 ```
@@ -75,11 +75,11 @@ deno init --npm slidev
 
 :::
 
-Follow the prompts to start your slides project. The slides content is in `slides.md`, which initially includes demos of most the Slidev features. For more information about the Markdown syntax, please check <LinkInline link="guide/syntax" />.
+プロンプトに従ってスライドプロジェクトを開始します。スライドコンテンツは `slides.md` にあり、最初はほとんどの Slidev 機能のデモが含まれています。マークダウン構文の詳細については、<LinkInline link="guide/syntax" /> を確認してください。
 
-:::: details Single file usage (not recommended)
+:::: details 単一ファイルの使用 (推奨されません)
 
-If you prefer to have a single Markdown file as your slides, you can install the Slidev CLI globally:
+スライドとして単一のマークダウンファイルを使用したい場合は、Slidev CLI をグローバルにインストールできます。
 
 ::: code-group
 
@@ -105,7 +105,7 @@ deno i -g npm:@slidev/cli
 
 :::
 
-Then, you can create and start a single file slides via:
+その後、次を使用して単一ファイルスライドを作成および開始できます。
 
 ```bash
 slidev slides.md
@@ -113,17 +113,17 @@ slidev slides.md
 
 ::::
 
-## Basic Commands
+## 基本的なコマンド
 
-Slidev provides a set of commands in its CLI. Here are some common ones:
+Slidev は CLI に一連のコマンドを提供します。一般的なものをいくつか紹介します。
 
-- `slidev` - Start the dev server. See [the dev command](../builtin/cli#dev).
-- `slidev export` - Export the slides to PDF, PPTX, or PNGs. See <LinkInline link="guide/exporting" />.
-- `slidev build` - Build the slides as a static web application. See <LinkInline link="guide/hosting" />.
-- `slidev format` - Format the slides. See [the format command](../builtin/cli#format).
-- `slidev --help` - Show the help message
+- `slidev` - 開発サーバーを起動します。[dev コマンド](../builtin/cli#dev) を参照してください。
+- `slidev export` - スライドを PDF、PPTX、または PNG にエクスポートします。<LinkInline link="guide/exporting" /> を参照してください。
+- `slidev build` - スライドを静的 Web アプリケーションとしてビルドします。<LinkInline link="guide/hosting" /> を参照してください。
+- `slidev format` - スライドをフォーマットします。[format コマンド](../builtin/cli#format) を参照してください。
+- `slidev --help` - ヘルプメッセージを表示します
 
-To run these commands, you can add them to your `package.json` scripts (which has been done for you if the project was created via `npm init slidev`):
+これらのコマンドを実行するには、`package.json` スクリプトに追加できます (`npm init slidev` でプロジェクトが作成された場合は既に行われています)。
 
 ```json [package.json]
 {
@@ -135,35 +135,35 @@ To run these commands, you can add them to your `package.json` scripts (which ha
 }
 ```
 
-Then, you can simply run `npm run dev`, `npm run build`, and `npm run export`.
+その後、`npm run dev`、`npm run build`、`npm run export` を実行するだけです。
 
-For more information about the CLI, please check the [CLI guide](../builtin/cli).
+CLI の詳細については、[CLI ガイド](../builtin/cli) を確認してください。
 
-## Setup Your Editor {#editor}
+## エディターを設定する {#editor}
 
-Since Slidev uses Markdown as the source entry, you can use any editor you prefer to create your slides. We also provide tools to help you edit you slides more conveniently:
+Slidev はマークダウンをソースエントリとして使用するため、スライドを作成するためにお好みのエディターを使用できます。また、スライドをより便利に編集するために役立つツールも提供しています。
 
 <LinkCard link="features/vscode-extension" />
 <LinkCard link="features/side-editor" />
 <LinkCard link="features/prettier-plugin" />
 
-## Join the Community
+## コミュニティに参加する
 
-It's recommended to join our official [Discord Server](https://chat.sli.dev/) to get help, share your slides, or discuss anything about Slidev.
+公式の [Discord サーバー](https://chat.sli.dev/) に参加して、ヘルプを取得したり、スライドを共有したり、Slidev について何でも議論することをお勧めします。
 
-If you're encountering bugs, feel free to open an issue on [GitHub](https://github.com/slidevjs/slidev/issues/new/choose).
+バグが発生している場合は、[GitHub](https://github.com/slidevjs/slidev/issues/new/choose) で問題を開くことをお勧めします。
 
-## Tech Stack
+## 技術スタック
 
-Slidev is made possible by combining these tools and technologies.
+Slidev は以下のツールとテクノロジーを組み合わせることで実現しています。
 
-- [Vite](https://vitejs.dev) - An extremely fast frontend tooling
-- [Vue 3](https://v3.vuejs.org/) powered [Markdown](https://daringfireball.net/projects/markdown/syntax) - Focus on the content while having the power of HTML and Vue components whenever needed
-- [UnoCSS](https://github.com/unocss/unocss) - On-demand utility-first CSS framework, style your slides at ease
-- [Shiki](https://github.com/shikijs/shiki), [Monaco Editor](https://github.com/Microsoft/monaco-editor) - First-class code snippets support with live coding capability
-- [RecordRTC](https://recordrtc.org) - Built-in recording and camera view
-- [VueUse](https://vueuse.org) family - [`@vueuse/core`](https://github.com/vueuse/vueuse), [`@vueuse/head`](https://github.com/vueuse/head), [`@vueuse/motion`](https://github.com/vueuse/motion), etc.
-- [Iconify](https://iconify.design/) - Iconsets collection.
-- [Drauu](https://github.com/antfu/drauu) - Drawing and annotations support
-- [KaTeX](https://katex.org/) - LaTeX math rendering.
-- [Mermaid](https://mermaid-js.github.io/mermaid) - Textual Diagrams.
+- [Vite](https://vitejs.dev) - 非常に高速なフロントエンドツール
+- [Vue 3](https://v3.vuejs.org/) によって強化された [マークダウン](https://daringfireball.net/projects/markdown/syntax) - コンテンツに焦点を当てながら、必要に応じて HTML と Vue コンポーネントの力を持つ
+- [UnoCSS](https://github.com/unocss/unocss) - オンデマンド・ユーティリティ優先の CSS フレームワーク、簡単にスライドをスタイル可能
+- [Shiki](https://github.com/shikijs/shiki)、[Monaco Editor](https://github.com/Microsoft/monaco-editor) - ライブコーディング機能を備えたファーストクラスのコードスニペットサポート
+- [RecordRTC](https://recordrtc.org) - ビルトインの録画とカメラビュー
+- [VueUse](https://vueuse.org) ファミリー - [`@vueuse/core`](https://github.com/vueuse/vueuse)、[`@vueuse/head`](https://github.com/vueuse/head)、[`@vueuse/motion`](https://github.com/vueuse/motion) など
+- [Iconify](https://iconify.design/) - アイコンセット集
+- [Drauu](https://github.com/antfu/drauu) - 描画と注釈のサポート
+- [KaTeX](https://katex.org/) - LaTeX 数式レンダリング
+- [Mermaid](https://mermaid-js.github.io/mermaid) - テキストで描ける図

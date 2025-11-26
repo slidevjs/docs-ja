@@ -1,10 +1,10 @@
-# Writing Themes
+# テーマの作成
 
-> Please read <LinkInline link="guide/theme-addon" /> first.
+> 最初に <LinkInline link="guide/theme-addon" /> を読んでください。
 
-Each slides project can only have one theme. Themes should focus on providing the appearance of slides. If the feature isn't related to the appearance and can be used separately, it should be implemented as an [addon](./write-addon).
+各スライドプロジェクトは 1 つのテーマのみを持つことができます。テーマはスライドの外観を提供することに焦点を当てるべきです。機能が外観に関連していない場合、別々に使用できる場合は、[アドオン](./write-addon) として実装するべきです。
 
-To get started, we recommend you use our generator for scaffolding your first theme
+開始するために、最初のテーマをひな型から展開するためにジェネレータを使用することをお勧めします
 
 ::: code-group
 
@@ -30,27 +30,27 @@ $ deno init --npm slidev-theme
 
 :::
 
-Then you can modify and play with it. You can also refer to the [official themes](../resources/theme-gallery#official-themes) as examples.
+その後、それを修正して遊ぶことができます。[公式テーマ](../resources/theme-gallery#official-themes) も例として参照できます。
 
-## Capability
+## 機能
 
-A theme can contribute to the following points:
+テーマは以下のポイントに寄与できます:
 
-- Global styles
-- Provide default configurations
-- Provide custom layouts or override the existing ones
-- Provide custom components
-- Configure tools like UnoCSS, Shiki, etc.
+- グローバルスタイル
+- デフォルト設定を提供する
+- カスタムレイアウトを提供するか、既存のものをオーバーライドする
+- カスタムコンポーネントを提供する
+- UnoCSS、Shiki などのツールを構成する
 
-However, the following points are **not** recommended to be done in a theme, and may be better implemented as an [addon](./write-addon):
+ただし、以下のポイントはテーマで実装することは**推奨されず**、[アドオン](./write-addon) として実装する方が良いかもしれません:
 
-- New code snippets
-- New code runners
-- Other things that can be used separately
+- 新しいコードスニペット
+- 新しいコードランナー
+- 別々に使用できるその他のもの
 
-Basically, the way to provide global styles, layouts, components and configure tools is the same as doing these in a slides project. For example, to configure Shiki, you can create a `./setup/shiki.ts` as described in [Configure Highlighter](../custom/config-highlighter). You can refer to the [customization guide](/custom/) for more information.
+基本的に、グローバルスタイル、レイアウト、コンポーネントを提供し、ツールを構成する方法は、スライドプロジェクトで同じです。たとえば、Shiki を設定するために、[ハイライターの設定](../custom/config-highlighter) に説明されているように `./setup/shiki.ts` を作成できます。詳細については、[カスタマイズガイド](/custom/) を参照してください。
 
-To provide default Slidev configurations, you can add a `slidev.defaults` field in the `package.json` file, which will be merged with the user's configurations:
+デフォルト Slidev 設定を提供するために、`package.json` ファイルに `slidev.defaults` フィールドを追加できます。これはユーザーの設定とマージされます:
 
 ```json [package.json]
 {
@@ -63,9 +63,9 @@ To provide default Slidev configurations, you can add a `slidev.defaults` field 
 }
 ```
 
-### Require Slidev Version
+### 必須 Slidev バージョンを指定する
 
-If the theme is relying on a specific feature of Slidev that is newly introduced, you can set the minimal Slidev version required to have your theme working properly:
+テーマが新しく導入された Slidev の特定の機能に依存している場合、テーマが正しく機能するために必要な最小 Slidev バージョンを設定できます:
 
 ```json
 {
@@ -75,11 +75,11 @@ If the theme is relying on a specific feature of Slidev that is newly introduced
 }
 ```
 
-An error message will be shown when the an incompatible version is used.
+互換性のないバージョンが使用されると、エラーメッセージが表示されます。
 
-### Theme Metadata
+### テーマのメタデータ
 
-By default, Slidev assumes themes support both light mode and dark mode. If you only want your theme to be presented in a specific color schema, you need to specify it explicitly in the `package.json`:
+デフォルトでは、Slidev はテーマがライトモードとダークモードの両方をサポートしていると想定しています。テーマを特定の色スキームでのみ対応させたい場合は、`package.json` で明示的に指定する必要があります:
 
 ```json [package.json]
 {
@@ -89,25 +89,25 @@ By default, Slidev assumes themes support both light mode and dark mode. If you 
 }
 ```
 
-## Previewing
+## プレビュー
 
-You can preview your theme when developing by using a demo slide deck. To do so, create a `./slides.md` file with the following headmatter:
+開発時にテーマをプレビューするには、デモスライドデッキを使用できます。そうするには、次のヘッドマターで `./slides.md` ファイルを作成します:
 
 ```md [slides.md]
 ---
-theme: ./  # Use the theme in the current directory
+theme: ./  # カレントディレクトリのテーマを使用する
 ---
 ```
 
-Then you can start the demo slides as usual.
+その後、通常と同じようにデモスライドを開始できます。
 
-## Publishing
+## 公開
 
-When publishing the theme, non-JS files like `.vue` and `.ts` files can be published directly without compiling. Slidev will automatically compile them when using the theme.
+テーマを公開する場合、`.vue` や `.ts` ファイルなどの非 JS ファイルはコンパイルせずに直接公開できます。Slidev はテーマを使用するときに自動的にコンパイルします。
 
-Themes should follow the following conventions:
+テーマは以下の規約に従う必要があります:
 
-- Package name should start with `slidev-theme-`. For example, `slidev-theme-name` or `@scope/slidev-theme-name`
-- Add `"slidev-theme"` and `"slidev"` in the `keywords` field of your `package.json`
+- パッケージ名は `slidev-theme-` で始まるべきです。たとえば、`slidev-theme-name` または `@scope/slidev-theme-name`
+- `package.json` の `keywords` フィールドに `"slidev-theme"` と `"slidev"` を追加します
 
-Theme can be used locally without publishing to NPM. If your theme is only for personal use, you can simply use it as a local theme, or publish it as a private scoped package. However, it is recommended to publish it to the NPM registry if you want to share it with others.
+テーマは NPM に公開せずにローカルで使用できます。テーマが個人的な使用のためのみの場合、単にそれをローカルテーマとして使用するか、プライベートスコープ付きパッケージとして公開できます。ただし、他のユーザーと共有したい場合は、NPM レジストリに公開することをお勧めします。
