@@ -82,8 +82,8 @@ function play() {
       setTimeout(() => completed.value = true, 300)
     },
   })
-    .type('<br><span class="token title"># Welcome to Slidev!</span><br><br>', { delay: 400 })
-    .type('Presentation Slides for Developers', { delay: 400 })
+    .type('<br><span class="token title"># Slidev へようこそ！</span><br><br>', { delay: 400 })
+    .type('開発者のためのプレゼンテーションスライド', { delay: 400 })
     .move(null, { to: 'START', speed: 0 })
     .type('<br>')
     .move(null, { to: 'START' })
@@ -110,9 +110,9 @@ function play() {
     .exec(resume)
     .exec(() => setTimeout(() => page.value = 1))
     .type('<span class="token title"># Page 2</span><br><br>', { delay: 400 })
-    .type('- 📄 Write slides in a single Markdown file<br>', { delay: 800 })
-    .type('- 🌈 Themes, code blocks, interactive components<br>', { delay: 800 })
-    .type('- 😎 Read the docs to learn more!', { delay: 800 })
+    .type('- 📄 スライドを 1 つの Markdown ファイルで<br>', { delay: 800 })
+    .type('- 🌈 テーマ、コードブロック、インタラクティブなコンポーネント<br>', { delay: 800 })
+    .type('- 😎 詳しくはドキュメントをご覧ください！', { delay: 800 })
     .exec(() => setTimeout(() => page.value = 0))
     .go()
 }

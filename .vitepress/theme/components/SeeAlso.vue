@@ -6,7 +6,7 @@ defineProps<{
 
 <template>
   <div class="op-90 mb--1">
-    See also:
+    参照:
   </div>
   <LinkCard v-for="link in links" :key="link" :link="link" />
 </template>
