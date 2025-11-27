@@ -1,8 +1,8 @@
-# Configure Mermaid
+# Mermaid の設定
 
 <Environment type="client" />
 
-Create `./setup/mermaid.ts` with the following content:
+`./setup/mermaid.ts` を作成して、以下の内容を入力します:
 
 ```ts twoslash [setup/mermaid.ts]
 import { defineMermaidSetup } from '@slidev/types'
@@ -14,11 +14,11 @@ export default defineMermaidSetup(() => {
 })
 ```
 
-The return value should be the custom configs for [Mermaid](https://mermaid.js.org/). Refer to the [Mermaid documentation](https://mermaid.js.org/config/schema-docs/config.html) or the type definition for the full config list.
+戻り値は [Mermaid](https://mermaid.js.org/) のカスタム設定である必要があります。[Mermaid のドキュメント](https://mermaid.js.org/config/schema-docs/config.html) または型定義で完全な設定リストを参照してください。
 
-## Custom theme/styles
+## カスタムテーマ / スタイル
 
-In case you want to create your custom Mermaid themes or styles, you can do this by defining `themeVariables` like in the following example:
+カスタム Mermaid テーマまたはスタイルを作成する場合は、次の例のように `themeVariables` を定義することでこれを行うことができます:
 
 ```ts twoslash
 import { defineMermaidSetup } from '@slidev/types'
@@ -44,4 +44,4 @@ export default defineMermaidSetup(() => {
 })
 ```
 
-You can find all theme variables on the [Mermaid Theme Configuration](https://mermaid.js.org/config/theming.html) page.
+すべてのテーマ変数は [Mermaid テーマ設定](https://mermaid.js.org/config/theming.html) のページで見つけることができます。

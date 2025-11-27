@@ -1,12 +1,12 @@
-# Configure Routes
+# ルートの設定
 
 <Environment type="client" />
 
-Add custom pages to the Slidev app.
+Slidev アプリにカスタムページを追加します。
 
-## Usage
+## 使用方法
 
-Create `./setup/routes.ts` with the following content:
+`./setup/routes.ts` ファイルを以下の内容で作成します:
 
 ```ts twoslash [./setup/routes.ts]
 import { defineRoutesSetup } from '@slidev/types'
@@ -25,4 +25,4 @@ export default defineRoutesSetup((routes) => {
 })
 ```
 
-Learn more about routes in the [Vue Router documentation](https://router.vuejs.org/).
+ルートについて、詳しくは [Vue ルーターのドキュメント](https://router.vuejs.org/) をご覧ください。

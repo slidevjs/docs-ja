@@ -1,12 +1,12 @@
-# Configure Highlighter
+# ハイライターの設定
 
-Slidev uses [Shiki](https://github.com/shikijs/shiki) as the code highlighter. It's a TextMate Grammar powered syntax highlighter as accurate as VS Code. It generates colored tokens so no additinal CSS is required. Shiki also comes with [a bunch of built-in themes](https://shiki.style/themes). In Slidev, we also provided the [TwoSlash](#twoslash-integration) support.
+Slidev はコードハイライターとして [Shiki](https://github.com/shikijs/shiki) を使用します。これは TextMate Grammar を使用した構文ハイライター で、VS Code と同じくらい正確です。色付きトークンを生成するための、追加の CSS は不要です。Shiki には [多くの組み込みテーマ](https://shiki.style/themes) も付属しています。Slidev では、[TwoSlash](#twoslash-integration) サポートも提供しています。
 
-## Configure Shiki
+## Shiki の設定
 
 <Environment type="both" />
 
-Create `./setup/shiki.ts` file with the following content:
+`./setup/shiki.ts` ファイルを作成して、以下の内容を入力します:
 
 ```ts twoslash [setup/shiki.ts]
 import { defineShikiSetup } from '@slidev/types'
@@ -24,7 +24,7 @@ export default defineShikiSetup(() => {
 })
 ```
 
-If you want to add custom theme or language (TextMate grammar/themes in JSON), you can import them in the setup file:
+カスタムテーマまたは言語 (JSON の TextMate grammar/テーマ) を追加する場合は、セットアップファイルにそれらをインポートできます:
 
 <!-- eslint-disable import/first-->
 
@@ -59,14 +59,14 @@ export default defineShikiSetup(() => {
 })
 ```
 
-Check [Built-in languages](https://shiki.style/languages) and [Built-in themes](https://shiki.style/themes), and refer to [Shiki's docs](https://shiki.style) for more details.
+[組み込み言語](https://shiki.style/languages) と [組み込みテーマ](https://shiki.style/themes) を確認し、詳細については [Shiki のドキュメント](https://shiki.style) を参照してください。
 
 :::info
-For now, Shiki Magic Move does not support transformers.
+現在のところ、Shiki Magic Move はトランスフォーマーをサポートしていません。
 :::
 
-## Configure Prism
+## Prism の設定
 
 :::warning
-Prism support has been removed since v0.50. Please use Shiki instead.
+Prism サポートは v0.50 以降削除されました。代わりに Shiki を使用してください。
 :::

@@ -1,8 +1,8 @@
-# Directory Structure
+# ディレクトリ構造
 
-Slidev employs some directory structure conventions to minimize the configuration surface and to make the functionality extensions flexible and intuitive.
+Slidev は、設定対象領域を最小限に抑え、機能拡張を柔軟かつ直感的にするため、いくつかのディレクトリ構造の慣例を採用しています。
 
-The conventional directory structure is:
+通常のディレクトリ構造は以下のとおりです:
 
 ```bash
 your-slidev/
@@ -17,31 +17,31 @@ your-slidev/
   └── vite.config.ts    # extending vite config
 ```
 
-All of them are optional.
+すべて任意です。
 
-## Components
+## コンポーネント
 
-Pattern: `./components/*.{vue,js,ts,jsx,tsx,md}`
+パターン: `./components/*.{vue,js,ts,jsx,tsx,md}`
 
 <LinkCard link="guide/component" />
 
-## Layouts
+## レイアウト
 
-Pattern: `./layouts/*.{vue,js,ts,jsx,tsx}`
+パターン: `./layouts/*.{vue,js,ts,jsx,tsx}`
 
 <LinkCard link="guide/layout" />
 
 ## Public
 
-Pattern: `./public/*`
+パターン: `./public/*`
 
-Assets in this directory will be served at root path `/` during dev, and copied to the root of the dist directory as-is. Read more about [Assets Handling](../guide/faq#assets-handling).
+このディレクトリのアセットは開発中にルートパス `/` で提供され、dist ディレクトリのルートにそのままコピーされます。詳細は [アセットの処理](../guide/faq#assets-handling) を確認してください。
 
-## Style
+## スタイル
 
-Pattern: `./style.css` | `./styles/index.{css,js,ts}`
+パターン: `./style.css` | `./styles/index.{css,js,ts}`
 
-Files following this convention will be injected to the App root. If you need to import multiple CSS entries, you can create the following structure and manage the import order yourself.
+この規約に従うファイルはアプリルートに注入されます。複数の CSS エントリをインポートする必要がある場合は、次の構造を作成し、インポート順序を自分で管理できます。
 
 ```bash
 your-slidev/
@@ -61,7 +61,7 @@ import './code.css'
 import './layouts.css'
 ```
 
-Styles will be processed by [UnoCSS](https://unocss.dev/) and [PostCSS](https://postcss.org/), so you can use CSS nesting and [at-directives](https://unocss.dev/transformers/directives#apply) and Nested CSS out-of-box. For example:
+スタイルは [UnoCSS](https://unocss.dev/) と [PostCSS](https://postcss.org/) で処理されるため、CSS ネストと [at-directives](https://unocss.dev/transformers/directives#apply) とネストされた CSS をそのまま使用できます。例えば:
 
 <!-- eslint-skip -->
 
@@ -83,15 +83,15 @@ Styles will be processed by [UnoCSS](https://unocss.dev/) and [PostCSS](https://
 }
 ```
 
-Learn more about the syntax [here](https://unocss.dev/transformers/directives#apply).
+構文についての詳細は [こちら](https://unocss.dev/transformers/directives#apply) を確認してください。
 
 ## `index.html`
 
-Pattern: `index.html`
+パターン: `index.html`
 
-The `index.html` provides the ability to inject meta tags and/or scripts to the main `index.html`
+`index.html` は、メイン `index.html` にメタタグおよび / またはスクリプトを注入する機能を提供します
 
-For example, for the following custom `index.html`:
+たとえば、次のカスタム `index.html` の場合:
 
 ```html [index.html]
 <head>
@@ -104,7 +104,7 @@ For example, for the following custom `index.html`:
 </body>
 ```
 
-The final hosted `index.html` will be:
+最終的にホストされる `index.html` は:
 
 ```html
 <!DOCTYPE html>
@@ -126,8 +126,8 @@ The final hosted `index.html` will be:
 </html>
 ```
 
-## Global Layers
+## グローバルレイヤー
 
-Pattern: `global-top.vue` | `global-bottom.vue` | `custom-nav-controls.vue` | `slide-top.vue` | `slide-bottom.vue`
+パターン: `global-top.vue` | `global-bottom.vue` | `custom-nav-controls.vue` | `slide-top.vue` | `slide-bottom.vue`
 
 <LinkCard link="features/global-layers" />

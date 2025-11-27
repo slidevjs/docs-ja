@@ -1,10 +1,10 @@
-# Configure Shortcuts
+# ショートカットの設定
 
 <Environment type="client" />
 
-## Getting started
+## はじめに
 
-Create `./setup/shortcuts.ts` with the following content:
+`./setup/shortcuts.ts` を作成して、以下の内容を入力します:
 
 ```ts twoslash [./setup/shortcuts.ts]
 import type { NavOperations, ShortcutOptions } from '@slidev/types'
@@ -27,10 +27,10 @@ export default defineShortcutsSetup((nav: NavOperations, base: ShortcutOptions[]
 })
 ```
 
-In the setup function, you can customize the keyboard shortcuts by returning a new array of shortcuts. The above example binds the `next` operation to <kbd>enter</kbd> and the `prev` operation to <kbd>backspace</kbd>.
+セットアップ関数では、ショートカットの新しい配列を返すことでキーボードショートカットをカスタマイズできます。上の例は `next` 操作を <kbd>enter</kbd> にバインドし、`prev` 操作を <kbd>backspace</kbd> にバインドします。
 
-Please refer to [Navigation Actions](../guide/ui#navigation-actions) section for the default shortcuts and navigation operations.
+デフォルトのショートカットとナビゲーション操作については、[ナビゲーションアクション](../guide/ui#navigation-actions) セクションを参照してください。
 
-## Key Binding Format
+## キーバインディング形式
 
-The `key` of each shortcut can be either a string (e.g. `'Shift+Ctrl+A'`) or a computed boolean. Please refer to [`useMagicKeys` from VueUse](https://vueuse.org/core/useMagicKeys/) for
+各ショートカットの `key` は文字列 (例: `'Shift+Ctrl+A'`) または計算型ブール値にすることができます。[VueUse の `useMagicKeys`](https://vueuse.org/core/useMagicKeys/) を参照してください

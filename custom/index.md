@@ -1,10 +1,10 @@
-# Customizations
+# カスタマイズ
 
-Slidev is fully customizable, from styling to tooling configurations. It allows you to configure the tools underneath ([Vite](/custom/config-vite), [UnoCSS](/custom/config-unocss), [Monaco](/custom/config-monaco), etc.)
+Slidev はスタイリングからツール設定まで完全にカスタマイズ可能です。これにより、[Vite](/custom/config-vite)、[UnoCSS](/custom/config-unocss)、[Monaco](/custom/config-monaco) などの基盤となるツールを設定できます。
 
-## Slides Deck Configs {#headmatter}
+## スライドデッキの設定 {#headmatter}
 
-You can configure the whole slides project in the frontmatter of your **first** slide (i.e. headmatter). The following shows the default value for each option:
+**最初の**スライドのフロントマター (つまり、ヘッドマター) でスライドプロジェクト全体を設定できます。以下は各オプションのデフォルト値を示しています:
 
 ```yaml
 ---
@@ -124,11 +124,11 @@ seoMeta:
 ---
 ```
 
-Check out the [type definitions](https://github.com/slidevjs/slidev/blob/main/packages/types/src/config.ts) for more details.
+詳細については、[型定義](https://github.com/slidevjs/slidev/blob/main/packages/types/src/config.ts) を確認してください。
 
-## Per-slide Configs {#frontmatter}
+## スライドごとの設定 {#frontmatter}
 
-Also every slide accepts the following configuration in its frontmatter block. The following shows the default value for each option:
+また、すべてのスライドは、そのフロントマターブロックで次の設定を受け入れます。以下は各オプションのデフォルト値を示しています:
 
 ```yaml
 ---
@@ -170,15 +170,15 @@ dragPos: {} # type: Record<string, string>
 ---
 ```
 
-Check out the [type definition](https://github.com/slidevjs/slidev/blob/main/packages/types/src/frontmatter.ts#L260) for more details.
+詳細については、[型定義](https://github.com/slidevjs/slidev/blob/main/packages/types/src/frontmatter.ts#L260) を確認してください。
 
-## Directory Structure
+## ディレクトリ構造
 
-Slidev uses directory structure conventions to minimalize the configuration surface and make extensions in functionality flexible and intuitive.
+Slidev は、設定対象領域を最小限に抑え、機能拡張を柔軟かつ直感的にするため、いくつかのディレクトリ構造の慣例を採用しています。
 
-Refer to the [Directory Structure](/custom/directory-structure) section.
+[ディレクトリ構造](/custom/directory-structure) セクションを参照してください。
 
-## Config Tools
+## 設定ツール
 
 <script setup>
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue'

@@ -1,8 +1,8 @@
-# Configure Monaco
+# Monaco の設定
 
 <Environment type="client" />
 
-Create `./setup/monaco.ts` with the following content:
+`./setup/monaco.ts` を作成して、以下の内容を入力します:
 
 ```ts twoslash [./setup/monaco.ts]
 import { defineMonacoSetup } from '@slidev/types'
@@ -12,11 +12,11 @@ export default defineMonacoSetup(async (monaco) => {
 })
 ```
 
-Learn more about [configuring Monaco](https://github.com/Microsoft/monaco-editor).
+詳細は、[Monaco の設定](https://github.com/Microsoft/monaco-editor) をご覧ください。
 
-## TypeScript Types
+## TypeScript 型
 
-When using TypeScript with Monaco, types for dependencies will be installed to the client-side automatically.
+Monaco で TypeScript を使用する場合、依存関係の型は自動的にクライアント側にインストールされます。
 
 ````md
 ```ts {monaco}
@@ -27,11 +27,11 @@ const counter = ref(0)
 ```
 ````
 
-In the example above, make sure `vue` and `@vueuse/core` are installed locally as dependencies / devDependencies, Slidev will handle the rest to get the types working for the editor automatically. When deployed as SPA, those types will also be bundled for static hosting.
+上の例では、`vue` と `@vueuse/core` が dependencies / devDependencies としてインストールされていることを確認してください。Slidev は残りの部分を処理して、エディタの型を自動的に機能させます。SPA としてデプロイされる場合、これらの型は静的ホスティング用にバンドルされます。
 
-### Additional Types
+### 追加の型
 
-Slidev will scan all the Monaco code blocks in your slides and import the types for those used libraries for you. In case it missed some, you can explicitly specify extra packages to import the types for:
+Slidev はスライド内のすべての Monaco コードブロックをスキャンし、使用されているライブラリの型をインポートします。何かが見落とされた場合は、型をインポートする追加パッケージを明示的に指定できます:
 
 ```md
 ---
@@ -41,9 +41,9 @@ monacoTypesAdditionalPackages:
 ---
 ```
 
-### Auto Type Acquisition
+### 自動型取得
 
-You can optionally switch to load types from CDN by setting the following headmatter:
+以下のヘッドマターを設定して、CDN から型をロードすることを選択できます:
 
 ```md
 ---
@@ -51,17 +51,17 @@ monacoTypesSource: ata
 ---
 ```
 
-This feature is powered by [`@typescript/ata`](https://github.com/microsoft/TypeScript-Website/tree/v2/packages/ata) and runs completely on the client-side.
+この機能は [`@typescript/ata`](https://github.com/microsoft/TypeScript-Website/tree/v2/packages/ata) を使用して、完全にクライアント側で実行されます。
 
-## Configure Themes
+## テーマの設定
 
-Since v0.48.0, Monaco will reuse the Shiki theme you configured in [Shiki's setup file](/custom/config-highlighter#configure-shiki), powered by [`@shikijs/monaco`](https://shiki.style/packages/monaco). You don't need to worry about it anymore and it will have a consistent style with the rest of your code blocks.
+v0.48.0 以降、Monaco は [Shiki のセットアップファイル](/custom/config-highlighter#configure-shiki) で設定した Shiki テーマを再利用します。これは [`@shikijs/monaco`](https://shiki.style/packages/monaco) を使用しています。もう心配する必要はなく、コードブロックの残りの部分と一貫したスタイルを持つようになります。
 
-## Configure the Editor
+## エディターの設定
 
-> Available since v0.43.0
+> v0.43.0 以降で利用可能
 
-If you would like to customize the Monaco editor you may pass an `editorOptions` object that matches the [Monaco IEditorOptions](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor.IEditorOptions.html) definition.
+Monaco エディターをカスタマイズする場合、[Monaco IEditorOptions](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor.IEditorOptions.html) 定義に一致する `editorOptions` オブジェクトを渡すことができます。
 
 ````md
 ```ts {monaco} { editorOptions: { wordWrap:'on'} }
@@ -69,7 +69,7 @@ console.log('HelloWorld')
 ```
 ````
 
-Alternatively if you would like these options to be applied to every Monaco instance, you can return them in the `defineMonacoSetup` function
+または、これらのオプションをすべての Monaco インスタンスに適用したい場合は、`defineMonacoSetup` 関数で設定することができます
 
 ```ts twoslash [./setup/monaco.ts]
 import { defineMonacoSetup } from '@slidev/types'
@@ -83,9 +83,9 @@ export default defineMonacoSetup(() => {
 })
 ```
 
-## Disabling
+## 無効化
 
-Since v0.48.0, the Monaco editor is enabled by default and only be bundled when you use it. If you want to disable it, you can set `monaco` to `false` in the frontmatter of your slide:
+v0.48.0 以降、Monaco エディターはデフォルトで有効になっており、使用時のみバンドルされます。無効にする場合は、スライドのフロントマターで `monaco` を `false` に設定できます:
 
 ```yaml
 ---
@@ -93,6 +93,6 @@ monaco: false # can also be `dev` or `build` to conditionally enable it
 ---
 ```
 
-## Configure Code Runners
+## コードランナーの設定
 
-To configure how the Monaco Runner runs the code, or to add support for custom languages, please reference [Configure Code Runners](/custom/config-code-runners).
+Monaco ランナーがコードを実行する方法を設定するか、カスタム言語のサポートを追加するには、[コードランナーの設定](/custom/config-code-runners) を参照してください。

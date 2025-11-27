@@ -1,8 +1,8 @@
-# Configure KaTeX
+# KaTeX の設定
 
 <Environment type="node" />
 
-Create `./setup/katex.ts` with the following content:
+`./setup/katex.ts` を作成して、以下の内容を入力します:
 
 ```ts twoslash [setup/katex.ts]
 import { defineKatexSetup } from '@slidev/types'
@@ -15,4 +15,4 @@ export default defineKatexSetup(() => {
 })
 ```
 
-The return value should be the custom options for KaTeX. Refer to [KaTeX's documentation](https://katex.org/docs/options.html) or the type definition for the full options list.
+戻り値は KaTeX のカスタムオプションである必要があります。[KaTeX のドキュメント](https://katex.org/docs/options.html) または型定義で完全なオプションリストを参照してください。

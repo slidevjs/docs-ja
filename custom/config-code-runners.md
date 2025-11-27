@@ -1,12 +1,12 @@
-# Configure Code Runners
+# コードランナーの設定
 
 <Environment type="client" />
 
-Define code runners for custom languages in your Monaco Editor.
+Monaco エディタのカスタム言語用のコードランナーを定義します。
 
-By default, JavaScript, TypeScript runners are supported built-in. They run in the browser **without** a sandbox environment. If you want more advanced integrations, you can provide your own code runner that sends the code to a remote server, runs in a Web Worker, or anything, up to you.
+デフォルトでは、JavaScript、TypeScript ランナーが組み込みでサポートされています。これらはブラウザで**サンドボックス環境なし**で実行されます。より高度な統合が必要な場合は、コードをリモートサーバーに送信したり、Web Worker で実行したり、その他のことを行うカスタムコードランナーを提供できます。
 
-Create `./setup/code-runners.ts` with the following content:
+`./setup/code-runners.ts` を作成して、以下の内容を入力します:
 
 <!-- eslint-disable import/first -->
 
@@ -35,9 +35,9 @@ export default defineCodeRunnersSetup(() => {
 })
 ```
 
-## Runner Context
+## ランナーコンテキスト
 
-The second argument `ctx` is the runner context, which contains the following properties:
+2 番目の引数 `ctx` はランナーコンテキストで、以下のプロパティを含みます:
 
 ```ts twoslash
 import type { CodeRunnerOutputs } from '@slidev/types'
@@ -59,13 +59,13 @@ export interface CodeRunnerContext {
 }
 ```
 
-## Runner Output
+## ランナーの出力
 
-The runner can either return a text or HTML output, or an element to be mounted. Refer to https://github.com/slidevjs/slidev/blob/main/packages/types/src/code-runner.ts for more details.
+ランナーはテキストまたは HTML 出力、またはマウントされる要素を返すことができます。詳細については https://github.com/slidevjs/slidev/blob/main/packages/types/src/code-runner.ts を参照してください。
 
-## Additional Runner Dependencies
+## 追加のランナー依存関係
 
-By default, Slidev will scan the Markdown source and automatically import the necessary dependencies for the code runners. If you want to manually import dependencies, you can use the `monacoRunAdditionalDeps` option in the slide frontmatter:
+デフォルトでは、Slidev は Markdown ソースをスキャンし、コードランナーに必要な依存関係を自動的にインポートします。手動で依存関係をインポートする場合は、スライドのフロントマターで `monacoRunAdditionalDeps` オプションを使用できます:
 
 ```yaml
 monacoRunAdditionalDeps:
@@ -74,5 +74,5 @@ monacoRunAdditionalDeps:
 ```
 
 ::: tip
-The paths are resolved relative to the `snippets` directory. And the names of the deps should be exactly the same as the imported ones in the code.
+パスは `snippets` ディレクトリを基準に解決されます。そして、依存関係の名前は、コード内でインポートされたものと完全に同じである必要があります。
 :::

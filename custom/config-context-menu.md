@@ -1,10 +1,10 @@
-# Configure Context Menu
+# コンテキストメニューの設定
 
 <Environment type="client" />
 
-Customize the context menu items in Slidev.
+Slidev のコンテキストメニュー項目をカスタマイズします。
 
-Create `./setup/context-menu.ts` with the following content:
+`./setup/context-menu.ts` を作成して、以下の内容を入力します:
 
 <!-- eslint-disable import/first -->
 
@@ -35,6 +35,6 @@ export default defineContextMenuSetup((items) => {
 })
 ```
 
-This will append a new menu item to the context menu.
+これはコンテキストメニューに新しいメニュー項目を追加します。
 
-To disable context menu globally, set `contextMenu` to `false` in the frontmatter. `contextMenu` can also be set to `dev` or `build` to only enable the context menu in development or build mode.
+コンテキストメニューをグローバルに無効にするには、フロントマターで `contextMenu` を `false` に設定します。`contextMenu` は `dev` または `build` に設定して、開発モードまたはビルドモードでのみコンテキストメニューを有効にすることもできます。

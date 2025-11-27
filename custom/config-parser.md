@@ -1,30 +1,30 @@
-# Configure Pre-Parser
+# プレパーサーの設定
 
 ::: info
-Custom pre-parsers are not supposed to be used too often. Usually you can use [Transformers](./config-transformers) for custom syntaxes.
+カスタムプレパーサーはあまり頻繁に使用されることを想定されていません。通常、カスタム構文に [トランスフォーマー](./config-transformers) を使用できます。
 :::
 
-Slidev parses your presentation file (e.g. `slides.md`) in three steps:
+Slidev は、プレゼンテーションファイル (例: `slides.md`) を 3 つのステップで解析します:
 
-1. A "preparsing" step is carried out: the file is split into slides using the `---` separator, and considering the possible frontmatter blocks.
-2. Each slide is parsed with an external library.
-3. Slidev resolves the special frontmatter property `src: ....`, which allows to include other md files.
+1. 「事前解析」ステップが実行されます: ファイルは `---` セパレータを使用してスライドに分割され、可能なフロントマターブロックが考慮されます。
+2. 各スライドは外部ライブラリで解析されます。
+3. Slidev は特別なフロントマタープロパティ `src: ....` を解決し、他の md ファイルを含めることができます。
 
-## Markdown Parser
+## Markdown パーサー
 
-Configuring the markdown parser used in step 2 can be done by [configuring Vite internal plugins](/custom/config-vite#configure-internal-plugins).
+ステップ 2 で使用される Markdown パーサーの設定は、[Vite 内部プラグインの設定](/custom/config-vite#configure-internal-plugins) で行うことができます。
 
-## Preparser Extensions
+## プレパーサー拡張機能
 
-> Available since v0.37.0.
+> v0.37.0 以降で利用可能。
 
 ::: warning
-Important: when modifying the preparser configuration, you need to stop and start Slidev again (restart might not be sufficient).
+重要: プレパーサー設定を変更するときは、Slidev を停止して開始する必要があります (再起動では十分でないかもしれません)。
 :::
 
-The preparser (step 1 above) is highly extensible and allows you to implement custom syntaxes for your md files. Extending the preparser is considered **an advanced feature** and is susceptible to breaking [editor integrations](../features/side-editor) due to implicit changes in the syntax.
+プレパーサー (上記のステップ 1) は高度に拡張可能で、md ファイル用にカスタム構文を実装できます。プレパーサーの拡張は**高度な機能**と見なされ、構文の暗黙的な変更により [エディター統合](../features/side-editor) が破損する可能性があります。
 
-To customize it, create a `./setup/preparser.ts` file with the following content:
+カスタマイズするには、以下の内容で `./setup/preparser.ts` ファイルを作成します:
 
 ```ts twoslash [./setup/preparser.ts]
 import { definePreparserSetup } from '@slidev/types'
@@ -43,22 +43,22 @@ export default definePreparserSetup(({ filepath, headmatter, mode }) => {
 })
 ```
 
-This example systematically replaces any `@@@` line with a line with `hello`. It illustrates the structure of a preparser configuration file and some of the main concepts the preparser involves:
+この例は、任意の `@@@` 行を `hello` 行に置き換えます。プレパーサー設定ファイルの構造と、プレパーサーが関与する主な概念を示すと:
 
-- `definePreparserSetup` must be called with a function as parameter.
-- The function receives the file path (of the root presentation file), the headmatter (from the md file) and, since v0.48.0, a mode (dev, build or export). It could use this information (e.g., enable extensions based on the presentation file or whether we are exporting a PDF).
-- The function must return a list of preparser extensions.
-- An extension can contain:
-  - a `transformRawLines(lines)` function that runs just after parsing the headmatter of the md file and receives a list of all lines (from the md file). The function can mutate the list arbitrarily.
-  - a `transformSlide(content, frontmatter)` function that is called for each slide, just after splitting the file, and receives the slide content as a string and the frontmatter of the slide as an object. The function can mutate the frontmatter and must return the content string (possibly modified, possibly `undefined` if no modifications have been done).
-  - a `transformNote(note, frontmatter)` function that is called for each slide, just after splitting the file, and receives the slide note as a string or undefined and the frontmatter of the slide as an object. The function can mutate the frontmatter and must return the note string (possibly modified, possibly `undefined` if no modifications have been done).
-  - a `name`
+- `definePreparserSetup` はパラメータとして関数で呼び出す必要があります。
+- 関数はファイルパス (ルートプレゼンテーションファイルの)、ヘッドマター (md ファイルから)、および v0.48.0 以降は、モード (dev、build、または export) を受け取ります。この情報を使用できます (例: プレゼンテーションファイルに基づいて拡張機能を有効にするか、PDF をエクスポートしているかどうか)。
+- 関数はプレパーサー拡張機能のリストを返す必要があります。
+- 拡張機能には以下を含めることができます:
+  - md ファイルのヘッドマター解析直後に実行される `transformRawLines(lines)` 関数。md ファイルのすべての行のリストを受け取ります。関数はリストを任意に変更できます。
+  - 各スライドに対して呼び出される `transformSlide(content, frontmatter)` 関数。ファイルの分割直後に、スライドコンテンツを文字列として受け取り、スライドのフロントマターをオブジェクトとして受け取ります。関数はフロントマターを変更でき、コンテンツ文字列を返す必要があります (変更されていない場合は `undefined` でもかまいません)。
+  - 各スライドに対して呼び出される `transformNote(note, frontmatter)` 関数。ファイルの分割直後に、スライドノートを文字列または未定義として受け取り、スライドのフロントマターをオブジェクトとして受け取ります。関数はフロントマターを変更でき、ノート文字列を返す必要があります (変更されていない場合は `undefined` でもかまいません)。
+  - `name`
 
-## Example Preparser Extensions
+## プレパーサー拡張機能の例
 
-### Use case 1: compact syntax top-level presentation
+### ユースケース 1: トップレベルのコンパクトな構文
 
-Imagine a situation where (part of) your presentation is mainly showing cover images and including other md files. You might want a compact notation where for instance (part of) `slides.md` is as follows:
+プレゼンテーション（の一部）がカバー画像とほかの md ファイルのインクルードで構成される場合を想像してください。例えば、`slides.md`（の一部）を以下のようなコンパクトな記法で書きたくなるかもしれません:
 
 <!-- eslint-skip -->
 
@@ -74,7 +74,7 @@ Imagine a situation where (part of) your presentation is mainly showing cover im
 see you next time
 ```
 
-To allow these `@src:` and `@cover:` syntaxes, create a `./setup/preparser.ts` file with the following content:
+これらの `@src:` および `@cover:` 構文に対応させるには、以下の内容で `./setup/preparser.ts` ファイルを作成します:
 
 ```ts twoslash [./setup/preparser.ts]
 import { definePreparserSetup } from '@slidev/types'
@@ -117,12 +117,12 @@ export default definePreparserSetup(() => {
 })
 ```
 
-And that's it.
+以上です。
 
-### Use case 2: using custom frontmatter to wrap slides
+### ユースケース 2: カスタムフロントマターを使用してスライドをラップする
 
-Imagine a case where you often want to scale some of your slides but still want to use a variety of existing layouts so creating a new layout would not be suited.
-For instance, you might want to write your `slides.md` as follows:
+既存のさまざまなレイアウトのスライドをスケーリングしたい場合を想像してください。新しいレイアウトを作成することは適切ではありませんでした。
+たとえば、`slides.md` を以下のように記述する場合があります:
 
 <!-- eslint-skip -->
 
@@ -153,9 +153,9 @@ _scale: 2.5
 see you next time
 ```
 
-Here we used an underscore in `_scale` to avoid possible conflicts with existing frontmatter properties (indeed, the case of `scale`, without underscore would cause potential problems).
+ここでは、フロントマターで `_scale` にアンダースコアを使用して、既存のフロントマタープロパティとの競合を避けました (実際、アンダースコアなしの `scale` の場合は潜在的な問題を引き起こす可能性があります)。
 
-To handle this `_scale: ...` syntax in the frontmatter, create a `./setup/preparser.ts` file with the following content:
+フロントマターでこの `_scale: ...` 構文を処理するには、以下の内容で `./setup/preparser.ts` ファイルを作成します:
 
 ```ts twoslash [./setup/preparser.ts]
 import { definePreparserSetup } from '@slidev/types'
@@ -179,12 +179,12 @@ export default definePreparserSetup(() => {
 })
 ```
 
-And that's it.
+以上です。
 
-### Use case 3: using custom frontmatter to transform note
+### ユースケース 3: カスタムフロントマターを使用してノートを変換する
 
-Imagine a case where you want to replace the slides default notes with custom notes.
-For instance, you might want to write your `slides.md` as follows:
+スライドのデフォルトノートをカスタムノートに置き換えたい場合を想像してください。
+たとえば、`slides.md` を以下のように記述する場合があります:
 
 <!-- eslint-skip -->
 
@@ -203,9 +203,9 @@ Default slide notes
 -->
 ```
 
-Here we used an underscore in `_note` to avoid possible conflicts with existing frontmatter properties.
+ここでは、フロントマターで `_note` にアンダースコアを使用して、既存のフロントマタープロパティとの競合を避けました。
 
-To handle this `_note: ...` syntax in the frontmatter, create a `./setup/preparser.ts` file with the following content:
+フロントマターでこの `_note: ...` 構文を処理するには、以下の内容で `./setup/preparser.ts` ファイルを作成します:
 
 ```ts twoslash [./setup/preparser.ts]
 import fs, { promises as fsp } from 'node:fs'

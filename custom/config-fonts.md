@@ -1,8 +1,8 @@
-# Configure Fonts
+# フォントの設定
 
-While you can use HTML and CSS to customize the fonts and style for your slides as you want, Slidev also provides a convenient way to use them effortlessly.
+HTML と CSS を使用してスライドのフォントとスタイルをカスタマイズできますが、Slidev は手間なくそれらを使用する便利な方法も提供しています。
 
-In your frontmatter, configure as the following:
+フロントマターで、以下のように設定します:
 
 ```yaml
 ---
@@ -16,13 +16,13 @@ fonts:
 ---
 ```
 
-And that's all.
+以上です。
 
-Fonts will be **imported automatically from a provider via CDN, by default it is [Google Fonts](https://fonts.google.com/)**. That means you can use any fonts available on Google Fonts directly.
+フォントはデフォルトで**CDN を通じてプロバイダーから自動的にインポートされます。デフォルトは [Google Fonts](https://fonts.google.com/)** です。つまり、Google Fonts で利用可能なフォントを直接使用できます。
 
-## Local Fonts
+## ローカルフォント
 
-By default, Slidev assumes all the fonts specified via `fonts` configurations come from Google Fonts. If you want to use local fonts, specify the `fonts.local` to opt-out the auto-importing.
+デフォルトでは、Slidev は `fonts` 設定を通じて指定されたすべてのフォントが Google Fonts から来ると想定しています。ローカルフォントを使用する場合は、`fonts.local` を指定して自動インポートを無効にします。
 
 ```yaml
 ---
@@ -34,9 +34,9 @@ fonts:
 ---
 ```
 
-## Weights & Italic
+## 太さとイタリック
 
-By default, Slidev imports three weights `200`,`400`,`600` for each font. You can configure them by:
+デフォルトでは、Slidev は各フォントに対して 3 つの太さ `200`、`400`、`600` をインポートします。以下のように設定できます:
 
 ```yaml
 ---
@@ -49,11 +49,11 @@ fonts:
 ---
 ```
 
-This configuration applies to all web fonts. For more fine-grained controls of each font's weights, you will need to manually import them with [HTML](/custom/directory-structure.html#index-html) and CSS.
+この設定はすべての Web フォントに適用されます。各フォントの太さをより詳細に制御するには、[HTML](/custom/directory-structure.html#index-html) と CSS を使用して手動でインポートする必要があります。
 
-## Fallback Fonts
+## フォールバックフォント
 
-For most of the scenarios, you only need to specify the "special font" and Slidev will append the fallback fonts for you, for example:
+ほとんどのシナリオでは、「特別なフォント」を指定するだけで、Slidev がフォールバックフォントを追加します。例えば:
 
 ```yaml
 ---
@@ -64,7 +64,7 @@ fonts:
 ---
 ```
 
-will result in
+結果として以下のようになります
 
 <!-- eslint-skip -->
 
@@ -80,7 +80,7 @@ will result in
 }
 ```
 
-If you want to disable the fallback fonts, configure as the following:
+フォールバックフォントを無効にする場合は、以下のように設定します:
 
 ```yaml
 ---
@@ -90,12 +90,12 @@ fonts:
 ---
 ```
 
-## Providers
+## プロバイダー
 
-- Options: `google` | `coollabs` | `none`
-- Default: `google`
+- オプション: `google` | `coollabs` | `none`
+- デフォルト: `google`
 
-Currently, only [Google Fonts](https://fonts.google.com/) and [coolLabs](https://fonts.coollabs.io/) supported, we are planning to add more providers in the future. Specify to `none` will disable the auto-importing feature entirely and treat all the fonts locally.
+現在、[Google Fonts](https://fonts.google.com/) と [coolLabs](https://fonts.coollabs.io/) のみがサポートされており、今後さらにプロバイダーを追加する予定です。`none` に設定すると自動インポート機能が完全に無効になり、すべてのフォントがローカルとして扱われます。
 
 ```yaml
 ---
