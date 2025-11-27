@@ -1,6 +1,6 @@
 # [sli.dev](https://sli.dev)
 
-Documentation for [Slidev](https://github.com/slidevjs/slidev)
+[Slidev](https://github.com/slidevjs/slidev) の日本語ドキュメントです。
 
 ## Translations
 
@@ -12,6 +12,7 @@ Documentation for [Slidev](https://github.com/slidevjs/slidev)
 | ------------------------- | ---------------------------------------------- | -------------------------------: | --------------------------------------------------------------------- |
 | English                   | [docs](https://github.com/slidevjs/docs)       |       [sli.dev](https://sli.dev) | [@antfu](https://github.com/antfu)                                    |
 | 简体中文                  | [docs-cn](https://github.com/slidevjs/docs-cn) | [cn.sli.dev](https://cn.sli.dev) | [@QC-L](https://github.com/QC-L) [@Ivocin](https://github.com/Ivocin) |
+| 日本語                    | [docs-ja](https://github.com/slidevjs/docs-ja) | [ja.sli.dev](https://ja.sli.dev) | [@toreis-up](https://github.com/toreis-up)                    |
 | <del>Français</del>       | [docs-fr](https://github.com/slidevjs/docs-fr) | [fr.sli.dev](https://fr.sli.dev) | [@ArthurDanjou](https://github.com/ArthurDanjou)                      |
 | <del>Español</del>        | [docs-es](https://github.com/slidevjs/docs-es) | [es.sli.dev](https://es.sli.dev) | [@owlnai](https://github.com/owlnai)                                  |
 | <del>Русский</del>        | [docs-ru](https://github.com/slidevjs/docs-ru) | [ru.sli.dev](https://ru.sli.dev) | [@xesjkeee](https://github.com/xesjkeee)                              |
@@ -19,7 +20,6 @@ Documentation for [Slidev](https://github.com/slidevjs/slidev)
 | <del>Deutsch</del>        | [docs-de](https://github.com/slidevjs/docs-de) | [de.sli.dev](https://de.sli.dev) | [@fabiankachlock](https://github.com/fabiankachlock)                  |
 | <del>Português (BR)</del> | [docs-br](https://github.com/slidevjs/docs-br) | [br.sli.dev](https://br.sli.dev) | [@luisfelipesdn12](https://github.com/luisfelipesdn12)                |
 | <del>Ελληνικά</del>       | [docs-el](https://github.com/slidevjs/docs-el) | [el.sli.dev](https://el.sli.dev) | [@GeopJr](https://github.com/GeopJr)                                  |
-| <del>日本語</del>         | [docs-ja](https://github.com/slidevjs/docs-ja) | [ja.sli.dev](https://ja.sli.dev) | [@IkumaTadokoro](https://github.com/IkumaTadokoro)                    |
 
 ## Start Server Locally
 
@@ -30,7 +30,7 @@ pnpm i
 pnpm run dev
 ```
 
-And then visit `http://localhost:3000`
+And then visit `http://localhost:5173`
 
 Or install the [Vite extension for VS Code](https://marketplace.visualstudio.com/items?itemName=antfu.vite) to edit side-by-side.
 
