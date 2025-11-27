@@ -1,16 +1,16 @@
-# Curated Covers
+# 厳選されたカバー画像
 
-We curated a few cover images to demonstrate our starter template.
+私たちはスターターテンプレートを示すために、いくつかのカバー画像を厳選しました。
 
 ![](/screenshots/covers.png)
 
 ```yaml
 ---
-# random image from the curated collection
+# 厳選されたコレクションからのランダムな画像
 background: https://cover.sli.dev
 ---
 ```
 
-If you enjoy any of them, check out our [Unsplash collection](https://unsplash.com/collections/94734566/slidev) and find out their authors.
+それらのいずれかが気に入った場合は、[Unsplashコレクション](https://unsplash.com/collections/94734566/slidev) を確認して、著者を見つけてください。
 
-[cover.sli.dev](https://cover.sli.dev) is hosted from [`slidevjs/slidev-covers`](https://github.com/slidevjs/slidev-covers).
+[cover.sli.dev](https://cover.sli.dev) は [`slidevjs/slidev-covers`](https://github.com/slidevjs/slidev-covers) からホストされています。

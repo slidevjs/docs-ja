@@ -6,27 +6,27 @@ aside: false
 import ThemeGallery from '../.vitepress/theme/components/ThemeGallery.vue'
 </script>
 
-# Theme Gallery
+# テーマギャラリー
 
-Browse awesome themes available for Slidev here.
+Slidev で利用可能な素晴らしいテーマをここで参照してください。
 
-Read more about <LinkInline link="guide/theme-addon#use-theme" /> to use them, and <LinkInline link="guide/write-theme" /> to create your own theme.
+<LinkInline link="guide/theme-addon#use-theme" />でそれらを使用する方法について詳しく読み、<LinkInline link="guide/write-theme" />で独自のテーマを作成してください。
 
-## Official Themes {#official-themes}
+## 公式テーマ {#official-themes}
 
 <ClientOnly>
   <ThemeGallery collection="official"/>
 </ClientOnly>
 
-## Community Themes {#community-themes}
+## コミュニティテーマ {#community-themes}
 
-Here are the curated themes made by the community.
+これらはコミュニティによって厳選されたテーマです。
 
 <!-- Edit in ./docs/.vitepress/themes.ts -->
 <ClientOnly>
   <ThemeGallery collection="community"/>
 </ClientOnly>
 
-## More Themes {#more-themes}
+## その他のテーマ {#more-themes}
 
-Find all the [themes available on NPM](https://www.npmjs.com/search?q=keywords%3Aslidev-theme).
+[NPM で利用可能なすべてのテーマ](https://www.npmjs.com/search?q=keywords%3Aslidev-theme) を見つけてください。

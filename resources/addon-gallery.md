@@ -6,27 +6,27 @@ aside: false
 import AddonGallery from '../.vitepress/theme/components/AddonGallery.vue'
 </script>
 
-# Addon Gallery
+# アドオンギャラリー
 
-Browse awesome addons available for Slidev here.
+Slidev で利用可能な素晴らしいアドオンをここで参照してください。
 
-Read more about <LinkInline link="guide/theme-addon#use-addon" /> to use them, and <LinkInline link="guide/write-addon" /> to create your own addon.
+<LinkInline link="guide/theme-addon#use-addon" />でそれらを使用する方法について詳しく読み、<LinkInline link="guide/write-addon" />で独自のアドオンを作成してください。
 
-## Official Addons
+## 公式アドオン
 
 <ClientOnly>
   <AddonGallery collection="official"/>
 </ClientOnly>
 
-## Community Addons
+## コミュニティアドオン
 
-Here are the curated addons made by the community.
+これらはコミュニティによって厳選されたアドオンです。
 
 <!-- Edit in ./docs/.vitepress/addons.ts -->
 <ClientOnly>
   <AddonGallery collection="community"/>
 </ClientOnly>
 
-## More Addons
+## その他のアドオン
 
-Find all the [addons available on NPM](https://www.npmjs.com/search?q=keywords%3Aslidev-addon).
+[NPM で利用可能なすべてのアドオン](https://www.npmjs.com/search?q=keywords%3Aslidev-addon) を見つけてください。

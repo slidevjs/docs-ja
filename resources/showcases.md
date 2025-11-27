@@ -2,9 +2,9 @@
 aside: false
 ---
 
-# Showcases
+# ショーケース
 
-Talks / Presentations using Slidev.
+Slidev を使用したトーク / プレゼンテーション。
 
 <!-- Edit in ./docs/.vitepress/showcases.ts -->
 <ShowCases />
