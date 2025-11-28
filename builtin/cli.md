@@ -59,6 +59,7 @@ Slidev のローカルサーバーを起動します。
 - `--base` (`string`, デフォルト: `/`): ベース URL (参照: https://vitejs.dev/config/shared-options.html#base)
 - `--download` (`boolean`, デフォルト: `false`): SPA 内でスライドを PDF としてダウンロード可能にする
 - `--theme`, `-t` (`string`): 指定したテーマでオーバーライドする
+- `--without-notes` (`boolean`, デフォルト: `false`): SPA からスピーカーノートを除外する
 
 ## `slidev export [...entry]` {#export}
 

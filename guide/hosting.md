@@ -34,6 +34,14 @@ $ slidev build --base /talks/my-cool-talk/
 $ slidev build --out my-build-folder
 ```
 
+### スピーカーノートを削除する {#without-notes}
+
+スライドは公開したいけど、スピーカーノートを含めたくない場合、`--without-notes` オプションでビルドします:
+
+```bash
+$ slidev build --without-notes
+```
+
 ### 複数ビルド {#multiple-builds}
 
 複数のマークダウンファイルを引数として渡すことで、一度に複数のスライドデッキをビルドできます。
