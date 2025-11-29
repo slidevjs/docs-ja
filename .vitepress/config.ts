@@ -82,7 +82,7 @@ export default defineConfig({
   themeConfig: {
     logo: '/logo.svg',
     editLink: {
-      pattern: 'https://github.com/toreis-up/slidev-docs-ja/edit/main/:path',
+      pattern: 'https://github.com/slidevjs/docs-ja/edit/main/:path',
       text: 'このページの変更を提案する',
     },
 
