@@ -12,7 +12,7 @@
 | ------------------------- | ---------------------------------------------- | -------------------------------: | --------------------------------------------------------------------- |
 | English                   | [docs](https://github.com/slidevjs/docs)       |       [sli.dev](https://sli.dev) | [@antfu](https://github.com/antfu)                                    |
 | 简体中文                  | [docs-cn](https://github.com/slidevjs/docs-cn) | [cn.sli.dev](https://cn.sli.dev) | [@QC-L](https://github.com/QC-L) [@Ivocin](https://github.com/Ivocin) |
-| 日本語                    | [docs-ja](https://github.com/slidevjs/docs-ja) | [ja.sli.dev](https://ja.sli.dev) | [@toreis-up](https://github.com/toreis-up) [@IkumaTadokoro](https://github.com/IkumaTadokoro)|
+| 日本語                    | [docs-ja](https://github.com/slidevjs/docs-ja) | [ja.sli.dev](https://ja.sli.dev) | [@toreis-up](https://github.com/toreis-up) [@IkumaTadokoro](https://github.com/IkumaTadokoro) |
 | <del>Français</del>       | [docs-fr](https://github.com/slidevjs/docs-fr) | [fr.sli.dev](https://fr.sli.dev) | [@ArthurDanjou](https://github.com/ArthurDanjou)                      |
 | <del>Español</del>        | [docs-es](https://github.com/slidevjs/docs-es) | [es.sli.dev](https://es.sli.dev) | [@owlnai](https://github.com/owlnai)                                  |
 | <del>Русский</del>        | [docs-ru](https://github.com/slidevjs/docs-ru) | [ru.sli.dev](https://ru.sli.dev) | [@xesjkeee](https://github.com/xesjkeee)                              |
