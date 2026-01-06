@@ -4,7 +4,7 @@ depends:
   - guide/hosting
 relates:
   - CLI エクスポートオプション: /builtin/cli#export
-  - Headmatter エクスポートオプション: /custom/index#headmatter
+  - Headmatter エクスポートオプション: /custom/#headmatter
 tags: [エクスポート, ビルド]
 description: |
   ダウンロード可能な PDF をスライドのビルドとともに生成します。
