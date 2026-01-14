@@ -8,108 +8,108 @@ Slidev はスタイリングからツール設定まで完全にカスタマイ�
 
 ```yaml
 ---
-# theme id, package name, or local path
-# Learn more: https://sli.dev/guide/theme-addon.html#use-theme
+# テーマ ID、パッケージ名、またはローカルパス
+# 詳しくは: https://ja.sli.dev/guide/theme-addon.html#use-theme
 theme: default
-# addons, can be a list of package names or local paths
-# Learn more: https://sli.dev/guide/theme-addon.html#use-addon
+# アドオン、パッケージ名またはローカルパスのリストにすることができます
+# 詳しくは: https://ja.sli.dev/guide/theme-addon.html#use-addon
 addons: []
-# title of your slide, will inferred from the first header if not specified
+# スライドのタイトル、指定しない場合は最初のヘッダーから推測されます
 title: Slidev
-# titleTemplate for the webpage, `%s` will be replaced by the slides deck's title
+# ウェブサイトのタイトルテンプレート、`%s` はスライドデッキのタイトルに置き換えられます
 titleTemplate: '%s - Slidev'
-# information for your slides, can be a Markdown string
+# スライドの情報、Markdown 文字列にすることができます
 info: false
-# author field for exported PDF or PPTX
+# エクスポートされた PDF または PPTX の著者フィールド
 author: Your Name Here
-# keywords field for exported PDF, comma-delimited
+# エクスポートされた PDF のキーワードフィールド、カンマ区切り
 keywords: keyword1,keyword2
 
-# enable presenter mode, can be boolean, 'dev' or 'build'
+# プレゼンターモードを有効にします。boolean、'dev'、または 'build' を指定できます
 presenter: true
-# enable browser exporter, can be boolean, 'dev' or 'build'
+# ブラウザーエクスポーターを有効にします。boolean、'dev'、または 'build' を指定できます
 browserExporter: dev
-# enabled pdf downloading in SPA build, can also be a custom url
+# SPA ビルドでの PDF ダウンロードを有効にします。カスタム URL も指定可能です
 download: false
-# filename of the export file
+# エクスポートファイルのファイル名
 exportFilename: slidev-exported
-# export options
-# use export CLI options in camelCase format
-# Learn more: https://sli.dev/guide/exporting.html
+# エクスポートオプション
+# CLI のエクスポートオプションを camelCase で記述します
+# 詳しくは: https://ja.sli.dev/guide/exporting.html
 export:
   format: pdf
   timeout: 30000
   dark: false
   withClicks: false
   withToc: false
-# enable twoslash, can be boolean, 'dev' or 'build'
+# twoslash を有効にします。boolean、'dev'、または 'build' を指定できます
 twoslash: true
-# show line numbers in code blocks
+# コードブロックに行番号を表示します
 lineNumbers: false
-# enable monaco editor, can be boolean, 'dev' or 'build'
+# Monaco エディターを有効にします。boolean、'dev'、または 'build' を指定できます
 monaco: true
-# Where to load monaco types from, can be 'cdn', 'local' or 'none'
+# Monaco の型情報をどこから読み込むかを指定します。'cdn'、'local'、または 'none' が指定可能です
 monacoTypesSource: local
-# explicitly specify extra local packages to import the types for
+# 型情報をインポートするための追加のローカルパッケージを明示的に指定します
 monacoTypesAdditionalPackages: []
-# explicitly specify extra local modules as dependencies of monaco runnable
+# Monaco runnable の依存関係として追加のローカルモジュールを明示的に指定します
 monacoRunAdditionalDeps: []
 # download remote assets in local using vite-plugin-remote-assets, can be boolean, 'dev' or 'build'
 remoteAssets: false
 # controls whether texts in slides are selectable
 selectable: true
-# enable slide recording, can be boolean, 'dev' or 'build'
+# スライドの録画を有効にします。boolean、'dev'、または 'build' を指定できます
 record: dev
-# enable Slidev's context menu, can be boolean, 'dev' or 'build'
+# Slidev のコンテキストメニューを有効にします。boolean、'dev'、または 'build' を指定できます
 contextMenu: true
-# enable wake lock, can be boolean, 'dev' or 'build'
+# 画面の常時表示 (ウェイクロック) を有効にします。boolean、'dev'、または 'build' を指定できます
 wakeLock: true
-# take snapshot for each slide in the overview
+# オーバービューで各スライドのスナップショットを撮影します
 overviewSnapshots: false
 
-# force color schema for the slides, can be 'auto', 'light', or 'dark'
+# スライドのカラースキーマを強制します。'auto'、'light'、または 'dark' が指定可能です
 colorSchema: auto
-# router mode for vue-router, can be "history" or "hash"
+# vue-router のルーターモードを指定します。"history" または "hash" が指定可能です
 routerMode: history
-# aspect ratio for the slides
+# スライドのアスペクト比を指定します
 aspectRatio: 16/9
-# real width of the canvas, unit in px
+# キャンバスの実際の幅、単位はピクセル
 canvasWidth: 980
-# used for theme customization, will inject root styles as `--slidev-theme-x` for attribute `x`
+# テーマのカスタマイズに使用され、属性 `x` に対して `--slidev-theme-x` としてルートスタイルを注入します
 themeConfig:
   primary: '#5d8392'
 
-# favicon, can be a local file path or URL
+# favicon にはローカルファイルのパスか、URL を使用できます
 favicon: 'https://cdn.jsdelivr.net/gh/slidevjs/slidev/assets/favicon.png'
-# URL of PlantUML server used to render diagrams
-# Learn more: https://sli.dev/features/plantuml.html
+# ダイアグラムをレンダリングするために使用される PlantUML サーバーの URL
+# 詳しくは: https://ja.sli.dev/features/plantuml.html
 plantUmlServer: https://www.plantuml.com/plantuml
-# fonts will be auto-imported from Google fonts
-# Learn more: https://sli.dev/custom/config-fonts.html
+# フォントは Google Fonts から自動的にインポートされます
+# 詳しくは: https://ja.sli.dev/custom/config-fonts.html
 fonts:
   sans: Roboto
   serif: Roboto Slab
   mono: Fira Code
 
-# default frontmatter applies to all slides
+# デフォルトのフロントマターはすべてのスライドに適用されます
 defaults:
   layout: default
   # ...
 
-# drawing options
-# Learn more: https://sli.dev/guide/drawing.html
+# 描画オプション
+# 詳しくは: https://ja.sli.dev/guide/drawing.html
 drawings:
   enabled: true
   persist: false
   presenterOnly: false
   syncAll: true
 
-# HTML tag attributes
+# HTML タグ属性
 htmlAttrs:
   dir: ltr
   lang: en
 
-# SEO meta tags
+# SEO メタタグ
 seoMeta:
   ogTitle: Slidev Starter Template
   ogDescription: Presentation slides for developers
@@ -132,40 +132,40 @@ seoMeta:
 
 ```yaml
 ---
-# custom clicks count
-# Learn more: https://sli.dev/guide/animations#total
+# クリック数の変更
+# 詳しくは: https://ja.sli.dev/guide/animations#total
 clicks: 0
-# custom start clicks count
+# 開始クリック数の変更
 clicksStart: 0
-# completely disable and hide the slide
+# スライドを完全に無効化して非表示にします
 disabled: false
-# the same as `disabled`
+# `disabled` と同じです
 hide: false
-# hide the slide for the <Toc> components
+# <Toc> コンポーネントでスライドを非表示にします
 hideInToc: false
-# defines the layout component applied to the slide
-layout: <"cover" if the slide is the first slide, otherwise "default">
-# override the title level for the <TitleRenderer> and <Toc> components
-# only if `title` has also been declared
+# スライドに適用されるレイアウト
+layout: <最初のスライドには "cover"、それ以外は "default">
+# <TitleRenderer> と <Toc> コンポーネントでのタイトルレベルを上書きします
+# `title` が宣言されている場合にのみ有効です
 level: 1
-# mount this slide before entering
+# スライドを事前読み込みする
 preload: true
-# create a route alias that can be used in the URL or with the <Link> component
-routeAlias: undefined # or string
-# includes a markdown file
-# Learn more: https://sli.dev/guide/syntax.html#importing-slides
-src: undefined # or string
-# override the title for the <TitleRenderer> and <Toc> components
-# only if `title` has also been declared
-title: undefined # or string
-# defines the transition between the slide and the next one
-# Learn more: https://sli.dev/guide/animations.html#slide-transitions
-transition: undefined # or BuiltinSlideTransition | string | TransitionGroupProps | null
-# custom zoom scale
-# useful for slides with a lot of content
+# URL や <Link> コンポーネントで使用できるルートのエイリアスを作成します
+routeAlias: undefined # もしくは string
+# マークダウンファイルをインクルードします
+# 詳しくは: https://ja.sli.dev/guide/syntax.html#importing-slides
+src: undefined # もしくは string
+# <TitleRenderer> と <Toc> コンポーネントでのタイトルを上書きします
+# `title` が宣言されている場合にのみ有効です
+title: undefined # もしくは string
+# このスライドと次のスライド間のトランジション効果
+# 詳しくは: https://ja.sli.dev/guide/animations.html#slide-transitions
+transition: undefined # もしくは BuiltinSlideTransition | string | TransitionGroupProps | null
+# ズーム倍率の変更
+# 内容が多いスライドに便利です
 zoom: 1
-# used as positions of draggable elements
-# Learn more: https://sli.dev/features/draggable.html
+# ドラッグ可能な要素の位置として使用されます
+# 詳しくは: https://ja.sli.dev/features/draggable.html
 dragPos: {} # type: Record<string, string>
 ---
 ```

@@ -40,7 +40,7 @@ UnoCSS クラスと Vue コンポーネントを使用してスライドをス�
 
 ## フロントマター & ヘッドマター {#frontmatter}
 
-各スライドの開始時に、オプションの [フロントマター](https://jekyllrb.com/docs/front-matter/) を追加してスライドを設定できます。最初のフロントマターブロックは **ヘッドマター** と呼ばれ、スライドデック全体を設定できます。残りは個々のスライドの **フロントマター** です。ヘッドマターまたはフロントマターのテキストは [YAML](https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started/) 形式のオブジェクトである必要があります。例えば:
+各スライドの開始時に、オプションの [フロントマター](https://jekyllrb.com/docs/front-matter/) を追加してスライドを設定できます。最初のフロントマターブロックは **ヘッドマター** と呼ばれ、スライドデッキ全体を設定できます。残りは個々のスライドの **フロントマター** です。ヘッドマターまたはフロントマターのテキストは [YAML](https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started/) 形式のオブジェクトである必要があります。例えば:
 
 <!-- eslint-skip -->
 
@@ -135,7 +135,7 @@ console.log('Hello, World!')
 ```
 ````
 
-Slidev には構文ハイライター として [Shiki](https://github.com/shikijs/shiki) がビルトインされています。詳細は [Shiki の設定](/custom/config-highlighter) を参照してください。
+Slidev には構文ハイライター として [Shiki](https://github.com/shikijs/shiki) が組み込まれています。詳細は [Shiki の設定](/custom/config-highlighter) を参照してください。
 
 コードブロックの詳細:
 

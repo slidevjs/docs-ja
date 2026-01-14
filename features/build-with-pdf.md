@@ -3,8 +3,8 @@ depends:
   - guide/exporting
   - guide/hosting
 relates:
-  - CLI export options: /builtin/cli#export
-  - Headmatter export options: /custom/#headmatter
+  - CLI エクスポートオプション: /builtin/cli#export
+  - Headmatter エクスポートオプション: /custom/#headmatter
 tags: [エクスポート, ビルド]
 description: |
   ダウンロード可能な PDF をスライドのビルドとともに生成します。

@@ -151,11 +151,11 @@ Slidev はマークダウンをソースエントリとして使用するため�
 
 公式の [Discord サーバー](https://chat.sli.dev/) に参加して、ヘルプを取得したり、スライドを共有したり、Slidev について何でも議論することをお勧めします。
 
-バグが発生している場合は、[GitHub](https://github.com/slidevjs/slidev/issues/new/choose) で問題を開くことをお勧めします。
+バグが発生している場合は、[GitHub](https://github.com/slidevjs/slidev/issues/new/choose) で Issue を作成することをお勧めします。
 
 ## 技術スタック
 
-Slidev は以下のツールとテクノロジーを組み合わせることで実現しています。
+Slidev は以下のツールと技術を組み合わせることで実現しています。
 
 - [Vite](https://vitejs.dev) - 非常に高速なフロントエンドツール
 - [Vue 3](https://v3.vuejs.org/) によって強化された [マークダウン](https://daringfireball.net/projects/markdown/syntax) - コンテンツに焦点を当てながら、必要に応じて HTML と Vue コンポーネントの力を持つ
