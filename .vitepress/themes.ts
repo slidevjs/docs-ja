@@ -253,9 +253,9 @@ export const community: ThemeInfo[] = [
     description: 'A Penguin theme for Slidev',
     author: {
       name: 'Alvaro Saburido',
-      link: 'https://github.com/alvarosaburido',
+      link: 'https://github.com/alvarosabu',
     },
-    repo: 'https://github.com/alvarosaburido/slidev-theme-penguin',
+    repo: 'https://github.com/alvarosabu/slidev-theme-penguin',
     previews: [
       'https://cdn.jsdelivr.net/gh/alvarosaburido/slidev-theme-penguin@master/screenshots/dark/01.png',
       'https://cdn.jsdelivr.net/gh/alvarosaburido/slidev-theme-penguin@master/screenshots/light/02.png',
@@ -534,6 +534,30 @@ export const community: ThemeInfo[] = [
     tags: [
       'dark',
       'catppuccin',
+    ],
+  },
+  {
+    id: 'slidev-theme-nord',
+    name: 'Nord',
+    description: 'Based on the Nord theme',
+    author: {
+      name: 'David Ollerhead',
+      link: 'https://github.com/oller',
+    },
+    repo: 'https://github.com/oller/slidev-theme-nord',
+    previews: [
+      'https://raw.githubusercontent.com/oller/slidev-theme-nord/HEAD/example-export/1.png',
+      'https://raw.githubusercontent.com/oller/slidev-theme-nord/HEAD/example-export/2.png',
+      'https://raw.githubusercontent.com/oller/slidev-theme-nord/HEAD/example-export/3.png',
+      'https://raw.githubusercontent.com/oller/slidev-theme-nord/HEAD/example-export/4.png',
+      'https://raw.githubusercontent.com/oller/slidev-theme-nord/HEAD/example-export/5.png',
+      'https://raw.githubusercontent.com/oller/slidev-theme-nord/HEAD/example-export/6.png',
+      'https://raw.githubusercontent.com/oller/slidev-theme-nord/HEAD/example-export/7.png',
+    ],
+    tags: [
+      'dark',
+      'light',
+      'nord',
     ],
   },
   // Add yours here!
