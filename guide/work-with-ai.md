@@ -11,7 +11,7 @@ Slidev は AI コーディングエージェント向けに公式の [スキル]
 AI コーディングエージェントに Slidev スキルをインストールします:
 
 ```bash
-npx add-skill slidevjs/slidev
+npx skills add slidevjs/slidev
 ```
 
 スキルのソースコードは[ここ](https://github.com/slidevjs/slidev/tree/main/skills/slidev)にあります。
