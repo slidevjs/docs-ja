@@ -79,7 +79,7 @@ console.log('Step 2')
 
 ```yaml
 ---
-magicMoveDuration: 500  # ミリ秒、デフォルトは 800
+magicMoveDuration: 500 # ミリ秒、デフォルトは 800
 ---
 ```
 
