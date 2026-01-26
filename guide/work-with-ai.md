@@ -23,7 +23,6 @@ npx add-skill slidevjs/slidev
 ```
 TypeScript ジェネリクスに関する Slidev プレゼンテーションをコード例付きで作成してください
 ```
-```
 
 ```
 コード例を左側に、説明を右側に配置した 2 カラムのスライドを追加してください
@@ -47,3 +46,14 @@ Slidev スキルは以下の知識を提供します:
 - 図表 (Mermaid、PlantUML) と LaTeX 数式
 - 組み込みレイアウトとコンポーネント
 - エクスポートとホスティングのオプション
+
+## VS Code 拡張
+
+<LinkInline link="features/vscode-extension" /> は Language Model Tools を提供しており、VS Code の Copilot やその他の AI アシスタントが Slidev プロジェクトと直接対話できるようにします。これらのツールにより、AI は以下のことが可能になります:
+
+- アクティブなスライドとプロジェクトに関する情報の取得
+- 特定のスライドの内容の取得
+- タイトルによるスライドの一覧表示と検索
+- スライド間のナビゲーション
+
+詳しくは <LinkInline link="features/vscode-extension#ai-integration" /> をご覧ください。

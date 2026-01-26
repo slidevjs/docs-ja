@@ -51,3 +51,64 @@ const add = () => count += 1
 ```
 ````
 `````
+
+## タイトルバー {#title-bar}
+
+> v0.52.0 以降で利用可能
+
+マジックムーブブロックにタイトルバーを追加するには、各ステップの開始フェンスでファイル名を指定します:
+
+`````md
+````md magic-move
+```js [app.js]
+console.log('Step 1')
+```
+```js [app.js]
+console.log('Step 2')
+```
+````
+`````
+
+タイトルバーには、ファイル名に基づいて自動的に一致するアイコンも表示されます（詳細は <LinkInline link="features/code-groups#title-icon-matching" /> を参照）。
+
+## アニメーションの継続時間 {#duration}
+
+> v0.52.0 以降で利用可能
+
+マジックムーブのトランジションのアニメーション継続時間は、ヘッドマターでグローバルにカスタマイズできます:
+
+```yaml
+---
+magicMoveDuration: 500  # ミリ秒、デフォルトは 800
+---
+```
+
+または各ブロックごとに `duration` オプションを渡して設定できます:
+
+`````md
+````md magic-move {duration:500}
+```js
+console.log('Step 1')
+```
+```js
+console.log('Step 2')
+```
+````
+`````
+
+## コピーボタン {#copy-button}
+
+> v0.52.0 以降で利用可能
+
+マジックムーブのコードブロックは、ホバー時に表示されるコピーボタンをサポートしています。この動作は、ヘッドマターの `magicMoveCopy` オプションでグローバルに設定できます:
+
+```yaml
+---
+# オプション: true | false | 'always' | 'final'
+magicMoveCopy: true     # すべてのステップでコピーボタンを表示 (デフォルト)
+magicMoveCopy: false    # コピーボタンを無効化
+magicMoveCopy: 'final'  # 最終ステップのみコピーボタンを表示
+---
+```
+
+コピーボタンはグローバルな `codeCopy` 設定を尊重します。`codeCopy` が `false` の場合、マジックムーブのコピーボタンも無効になります。
