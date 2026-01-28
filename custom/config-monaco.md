@@ -93,6 +93,18 @@ monaco: false # can also be `dev` or `build` to conditionally enable it
 ---
 ```
 
+## Strict モード {#strict-mode}
+
+> v0.52.0 以降で利用可能
+
+デフォルトで、Monaco の実行可能コードは strict モード (`"use strict"`) で実行されます。コードが非 strict モードの動作に依存している場合、これを無効にできます:
+
+```yaml
+---
+monacoRunUseStrict: false
+---
+```
+
 ## コードランナーの設定
 
 Monaco ランナーがコードを実行する方法を設定するか、カスタム言語のサポートを追加するには、[コードランナーの設定](/custom/config-code-runners) を参照してください。

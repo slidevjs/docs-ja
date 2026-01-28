@@ -40,6 +40,10 @@ export const Guides = [
     link: '/guide/hosting',
   },
   {
+    text: 'AI との連携',
+    link: '/guide/work-with-ai',
+  },
+  {
     text: 'よくある質問',
     link: '/guide/faq',
   },

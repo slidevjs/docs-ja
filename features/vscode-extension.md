@@ -33,6 +33,7 @@ VS Code 拡張機能はいくつかの機能を提供しており、スライド
 - スライドブロックの格納
 - 複数のスライドプロジェクトのサポート
 - ワンクリックで開発サーバーを起動
+- Language Model Tools を通した AI/Copilot 統合
 
 ![](https://github.com/slidevjs/slidev/assets/63178754/2c9ba01a-d21f-4b33-b6b6-4e249873f865)
 
@@ -42,7 +43,7 @@ VS Code 拡張機能はいくつかの機能を提供しており、スライド
 
 ### インストール
 
-拡張機能は、[VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=antfu.slidev) または [Open VSX Registry](https://open-vsx.org/extension/antfu/slidev) からインストールできます。
+拡張機能は [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=antfu.slidev) または [Open VSX Registry](https://open-vsx.org/extension/antfu/slidev) からインストールできます。
 
 ### 使い方
 
@@ -78,3 +79,25 @@ VS Code 拡張機能はいくつかの機能を提供しており、スライド
 - グローバルインストール: `slidev ${args}`
 - PNPM ユーザーの場合は、`pnpm slidev ${args}` に設定できます。
 - [code-server](https://coder.com/docs/code-server/) ユーザーの場合は、`pnpm slidev ${args} --base /proxy/${port}/` に設定できます。これにより、開発サーバーは `http://localhost:8080/proxy/3000/` でアクセス可能になります。
+
+#### スライドのツリービュー {#slides-tree}
+
+> v0.52.0 以降で利用可能
+
+スライドのツリービューでは、プレゼンテーション内のすべてのスライドがスライド番号とタイトルとともに表示されます。各スライドは `{slideNo}. {title}` の形式で表示され、特定のスライドへのナビゲーションが容易になります。
+
+#### AI/Copilot 統合 {#ai-integration}
+
+> v0.52.0 以降で利用可能
+
+拡張機能は Language Model Tools を提供しており、VSCode の Copilot やその他の AI アシスタントが Slidev プロジェクトと対話できるようにします。利用可能なツールは以下の通りです:
+
+- `slidev_getActiveSlide` - アクティブなスライドとプロジェクトに関する情報の取得
+- `slidev_getSlideContent` - スライドの内容を番号で取得
+- `slidev_getAllSlideTitles` - プレゼンテーション内のすべてのスライドタイトルを一覧表示
+- `slidev_findSlideNoByTitle` - タイトルからスライド番号を検索
+- `slidev_listEntries` - 読み込まれたすべての Slidev プロジェクトエントリを一覧表示
+- `slidev_getPreviewPort` - プロジェクトのプレビューサーバーのポートを取得
+- `slidev_chooseEntry` - アクティブな Slidev エントリを切り替え
+
+これらのツールは、AI アシスタントがより効率的にスライドを理解できるようにし、ナビゲートや編集を支援します。
