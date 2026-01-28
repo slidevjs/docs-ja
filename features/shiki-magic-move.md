@@ -102,6 +102,8 @@ console.log('Step 2')
 
 マジックムーブのコードブロックは、ホバー時に表示されるコピーボタンをサポートしています。この動作は、ヘッドマターの `magicMoveCopy` オプションでグローバルに設定できます:
 
+<!-- eslint-skip -->
+
 ```yaml
 ---
 # オプション: true | false | 'always' | 'final'
