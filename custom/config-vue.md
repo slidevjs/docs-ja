@@ -6,9 +6,8 @@ Slidev は [Vue 3](https://v3.vuejs.org/) を使用してクライアント側�
 
 `./setup/main.ts` を作成して、以下の内容を入力します:
 
-<!-- eslint-disable import/first -->
-
 ```ts twoslash [setup/main.ts]
+/* eslint-disable import/first */
 import type { Plugin } from 'vue'
 
 declare const YourPlugin: Plugin

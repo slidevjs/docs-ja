@@ -8,9 +8,8 @@ Monaco エディタのカスタム言語用のコードランナーを定義し�
 
 `./setup/code-runners.ts` を作成して、以下の内容を入力します:
 
-<!-- eslint-disable import/first -->
-
 ```ts twoslash [setup/code-runners.ts]
+/* eslint-disable import/first */
 declare const executePythonCodeRemotely: (code: string) => Promise<string>
 declare const sanitizeHtml: (html: string) => string
 // ---cut---

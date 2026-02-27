@@ -19,9 +19,8 @@ Slidev は Vite に以下のプラグインを内部的に追加します:
 
 上記の組み込みプラグインを設定するには、以下の内容で `vite.config.ts` を作成します。Slidev にはこれらのプラグイン用の [デフォルト設定](https://github.com/slidevjs/slidev/blob/main/packages/slidev/node/vite/index.ts) があることに注意してください。この使用法はそれらの一部をオーバーライドし、アプリを破壊する可能性があります。**高度な機能**として扱い、設定する前に何をしているのかを確認してください。
 
-<!-- eslint-disable import/first -->
-
 ```ts twoslash [vite.config.ts]
+/* eslint-disable import/first */
 /// <reference types="@slidev/types" />
 import type MarkdownExit from 'markdown-exit'
 
