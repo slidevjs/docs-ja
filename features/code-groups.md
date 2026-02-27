@@ -9,7 +9,7 @@ description: |
 # コードグループ
 
 > [!NOTE]
-> この機能を使うには [MDC 構文](/features/mdc#mdc-syntax) が必要です。`mdc: true` を有効にして使用してください。
+> この機能を使うには [Comark 構文](/features/comark#comark-syntax)が必要です。`comark: true` を有効にして使用してください。
 
 複数のコードブロックをこのようにグループ化できます:
 
