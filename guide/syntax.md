@@ -163,11 +163,11 @@ Slidev はテキストからダイアグラムを作成するために [Mermaid]
 <LinkCard link="features/mermaid" />
 <LinkCard link="features/plantuml" />
 
-## MDC 構文 {#mdc-syntax}
+## Comark 構文 {#comark-syntax}
 
-MDC 構文は要素にスタイルとクラスを適用する最も簡単な方法です。
+Comark 構文は要素にスタイルとクラスを適用する最も簡単な方法です。
 
-<LinkCard link="features/mdc" />
+<LinkCard link="features/comark" />
 
 ## スコープ付き CSS {#scoped-css}
 
