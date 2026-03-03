@@ -6,8 +6,6 @@ Slidev のコンテキストメニュー項目をカスタマイズします。
 
 `./setup/context-menu.ts` を作成して、以下の内容を入力します:
 
-<!-- eslint-disable import/first -->
-
 ```ts twoslash [./setup/context-menu.ts]
 // ---cut---
 import { useNav } from '@slidev/client'

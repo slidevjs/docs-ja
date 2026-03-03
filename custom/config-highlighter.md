@@ -26,8 +26,6 @@ export default defineShikiSetup(() => {
 
 カスタムテーマまたは言語 (JSON の TextMate grammar/テーマ) を追加する場合は、セットアップファイルにそれらをインポートできます:
 
-<!-- eslint-disable import/first-->
-
 ```ts twoslash [setup/shiki.ts]
 import { defineShikiSetup } from '@slidev/types'
 // ---cut-start---

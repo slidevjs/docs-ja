@@ -389,12 +389,12 @@ View Transitions API は、異なる DOM 状態間でアニメーション付き
 
 `view-transition-name` プロパティを使用してビューのトランジションに名前を付けることで、異なるページ要素間に接続を作成し、スライドを切り替える際にスムーズなトランジションを実現できます。
 
-name view-transition を便利に使うために [MDC (Markdown Component) 構文](/guide/syntax#mdc-syntax) を有効にできます:
+name view-transition を便利に使うために [Comark 構文](/guide/syntax#comark-syntax) を有効にできます:
 
 ```md
 ---
 transition: view-transition
-mdc: true
+comark: true
 ---
 
 # View Transition {.inline-block.view-transition-title}
