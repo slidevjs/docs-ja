@@ -44,6 +44,10 @@ export default [
     link: '/custom/config-mermaid',
   },
   {
+    text: 'Mermaid レンダラーの設定',
+    link: '/custom/config-mermaid-renderer',
+  },
+  {
     text: 'ルートの設定',
     link: '/custom/config-routes',
   },
