@@ -64,7 +64,7 @@ export interface CodeRunnerContext {
 
 ## 追加のランナー依存関係
 
-デフォルトでは、Slidev は Markdown ソースをスキャンし、コードランナーに必要な依存関係を自動的にインポートします。手動で依存関係をインポートする場合は、スライドのフロントマターで `monacoRunAdditionalDeps` オプションを使用できます:
+デフォルトでは、Slidev は Markdown ソースをスキャンし、コードランナーに必要な依存関係を自動的にインポートします。手動で依存関係をインポートする場合は、スライドの[ヘッドマタ―](./index#headmatter)で `monacoRunAdditionalDeps` オプションを使用できます:
 
 ```yaml
 monacoRunAdditionalDeps:

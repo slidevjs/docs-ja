@@ -18,17 +18,17 @@ importers:
         specifier: ^4.0.0
         version: 4.0.1(@nuxt/kit@3.20.1)(typescript@5.9.3)
       '@slidev/client':
-        specifier: ^52.14.0
-        version: 52.14.0(@nuxt/kit@3.20.1)(@vue/compiler-sfc@3.5.29)(markdown-it-async@2.2.0)(vite@7.3.1(@types/node@25.3.3)(jiti@2.6.1)(yaml@2.8.2))
+        specifier: ^52.14.1
+        version: 52.14.1(@nuxt/kit@3.20.1)(@vue/compiler-sfc@3.5.29)(markdown-it-async@2.2.0)(vite@7.3.1(@types/node@25.3.3)(jiti@2.6.1)(yaml@2.8.2))
       '@slidev/parser':
-        specifier: ^52.14.0
-        version: 52.14.0(@nuxt/kit@3.20.1)(@vue/compiler-sfc@3.5.29)(markdown-it-async@2.2.0)(typescript@5.9.3)(vite@7.3.1(@types/node@25.3.3)(jiti@2.6.1)(yaml@2.8.2))
+        specifier: ^52.14.1
+        version: 52.14.1(@nuxt/kit@3.20.1)(@vue/compiler-sfc@3.5.29)(markdown-it-async@2.2.0)(typescript@5.9.3)(vite@7.3.1(@types/node@25.3.3)(jiti@2.6.1)(yaml@2.8.2))
       '@slidev/theme-default':
         specifier: latest
         version: 0.25.0
       '@slidev/types':
-        specifier: ^52.14.0
-        version: 52.14.0(@nuxt/kit@3.20.1)(@vue/compiler-sfc@3.5.29)(markdown-it-async@2.2.0)(typescript@5.9.3)(vite@7.3.1(@types/node@25.3.3)(jiti@2.6.1)(yaml@2.8.2))
+        specifier: ^52.14.1
+        version: 52.14.1(@nuxt/kit@3.20.1)(@vue/compiler-sfc@3.5.29)(markdown-it-async@2.2.0)(typescript@5.9.3)(vite@7.3.1(@types/node@25.3.3)(jiti@2.6.1)(yaml@2.8.2))
       '@types/node':
         specifier: ^25.3.2
         version: 25.3.3
@@ -431,8 +431,8 @@ packages:
   '@floating-ui/utils@0.2.10':
     resolution: {integrity: sha512-aGTxbpbg8/b5JfU1HXSrbH3wXZuLPJcNEcZQFMxLs3oSzgtVu6nFPkbbGGUvBcUjKV2YyB9Wxxabo+HEH9tcRQ==}
 
-  '@iconify-json/carbon@1.2.18':
-    resolution: {integrity: sha512-Grb13E6r/RqTEV4Sqd/BQR2FUt57U2WLuticJ5H8JbTdHLop1LmdePu3EJJA3Xi8DcWRbD6OnC133hKfOwlgtg==}
+  '@iconify-json/carbon@1.2.19':
+    resolution: {integrity: sha512-l89XjtEeSA5fxlxPTNSU9AA+rxaz/Dn0X/ux0/3awR+tAayY8iJqWQu3AKxhchfx3LB/fX1Nv3ZppZzrBAt7aA==}
 
   '@iconify-json/logos@1.2.10':
     resolution: {integrity: sha512-qxaXKJ6fu8jzTMPQdHtNxlfx6tBQ0jXRbHZIYy5Ilh8Lx9US9FsAdzZWUR8MXV8PnWTKGDFO4ZZee9VwerCyMA==}
@@ -727,12 +727,12 @@ packages:
   '@shikijs/vscode-textmate@10.0.2':
     resolution: {integrity: sha512-83yeghZ2xxin3Nj8z1NMd/NCuca+gsYXswywDy5bHvwlWL8tpTQmzGeUuHd9FC3E/SBEMvzJRwWEOz5gGes9Qg==}
 
-  '@slidev/client@52.14.0':
-    resolution: {integrity: sha512-/HUKCcRkSyNmVbVu2yGoFCnYomt1kJBfK9kK8Ncq3LEg2SZqz2RETfOknWXpSFCkf1ThvMv7xBGccgaFrw/CXA==}
+  '@slidev/client@52.14.1':
+    resolution: {integrity: sha512-aljFqR3wNhaqcOxjm3jo0DyyTnD7H8BOTwnAFFIsb4j+p3ufMh/rx39GfQF2j+ABy4K3o+L/Ue+QsA2nLNmIHg==}
     engines: {node: '>=18.0.0'}
 
-  '@slidev/parser@52.14.0':
-    resolution: {integrity: sha512-cP41iuvAHMvW84nJR7GOuQyqO6NzHMsWeT6g9OX7JMrv1nc0R7Fyu29SysBHn/EPw2+Pz/8xkArjmP1R/cLMzw==}
+  '@slidev/parser@52.14.1':
+    resolution: {integrity: sha512-Y/9aYcyzj5PGAflO0IPBwb3qs7OohfDc4kcHl149hGLceHo9jfZZh20V10NyK/R8IYTRJDgALbEHN/16jSRaqg==}
     engines: {node: '>=18.0.0'}
 
   '@slidev/rough-notation@0.1.0':
@@ -746,8 +746,8 @@ packages:
     resolution: {integrity: sha512-X67V4cCgM0Sz50bP8GbVzmiL8DHC2IXvdKcsN7DlxHyf+/T4d9GveeGukwha5Fx3MuYeGZWKag7TFL2ZY4w54A==}
     engines: {node: '>=18.0.0'}
 
-  '@slidev/types@52.14.0':
-    resolution: {integrity: sha512-Pyp/ems4WJKj4MKQtCYS5BPxIYqZXlTGRcr3jLat6hVvsoaw+GGejBqDMVTgdKsiFjsMkvaOhuqs5WKUXpEhdA==}
+  '@slidev/types@52.14.1':
+    resolution: {integrity: sha512-48wp+YRCT8mckFAdu7hGX8DICRrqSpaDNOikQT087jvzCT/D7dr15wA+QTVRJiSLHr5yJVQAlX2lVD/Izhg0FQ==}
     engines: {node: '>=18.0.0'}
 
   '@types/d3-array@3.2.2':
@@ -3219,7 +3219,7 @@ snapshots:
 
   '@floating-ui/utils@0.2.10': {}
 
-  '@iconify-json/carbon@1.2.18':
+  '@iconify-json/carbon@1.2.19':
     dependencies:
       '@iconify/types': 2.0.0
 
@@ -3544,18 +3544,18 @@ snapshots:
 
   '@shikijs/vscode-textmate@10.0.2': {}
 
-  '@slidev/client@52.14.0(@nuxt/kit@3.20.1)(@vue/compiler-sfc@3.5.29)(markdown-it-async@2.2.0)(vite@7.3.1(@types/node@25.3.3)(jiti@2.6.1)(yaml@2.8.2))':
+  '@slidev/client@52.14.1(@nuxt/kit@3.20.1)(@vue/compiler-sfc@3.5.29)(markdown-it-async@2.2.0)(vite@7.3.1(@types/node@25.3.3)(jiti@2.6.1)(yaml@2.8.2))':
     dependencies:
       '@antfu/utils': 9.3.0
-      '@iconify-json/carbon': 1.2.18
+      '@iconify-json/carbon': 1.2.19
       '@iconify-json/ph': 1.2.2
       '@iconify-json/svg-spinners': 1.2.4
       '@shikijs/engine-javascript': 4.0.1
       '@shikijs/monaco': 4.0.1
       '@shikijs/vitepress-twoslash': 4.0.1(@nuxt/kit@3.20.1)(typescript@5.9.3)
-      '@slidev/parser': 52.14.0(@nuxt/kit@3.20.1)(@vue/compiler-sfc@3.5.29)(markdown-it-async@2.2.0)(typescript@5.9.3)(vite@7.3.1(@types/node@25.3.3)(jiti@2.6.1)(yaml@2.8.2))
+      '@slidev/parser': 52.14.1(@nuxt/kit@3.20.1)(@vue/compiler-sfc@3.5.29)(markdown-it-async@2.2.0)(typescript@5.9.3)(vite@7.3.1(@types/node@25.3.3)(jiti@2.6.1)(yaml@2.8.2))
       '@slidev/rough-notation': 0.1.0
-      '@slidev/types': 52.14.0(@nuxt/kit@3.20.1)(@vue/compiler-sfc@3.5.29)(markdown-it-async@2.2.0)(typescript@5.9.3)(vite@7.3.1(@types/node@25.3.3)(jiti@2.6.1)(yaml@2.8.2))
+      '@slidev/types': 52.14.1(@nuxt/kit@3.20.1)(@vue/compiler-sfc@3.5.29)(markdown-it-async@2.2.0)(typescript@5.9.3)(vite@7.3.1(@types/node@25.3.3)(jiti@2.6.1)(yaml@2.8.2))
       '@typescript/ata': 0.9.8(typescript@5.9.3)
       '@unhead/vue': 2.1.10(vue@3.5.29(typescript@5.9.3))
       '@unocss/extractor-mdc': 66.6.3
@@ -3601,10 +3601,10 @@ snapshots:
       - svelte
       - vite
 
-  '@slidev/parser@52.14.0(@nuxt/kit@3.20.1)(@vue/compiler-sfc@3.5.29)(markdown-it-async@2.2.0)(typescript@5.9.3)(vite@7.3.1(@types/node@25.3.3)(jiti@2.6.1)(yaml@2.8.2))':
+  '@slidev/parser@52.14.1(@nuxt/kit@3.20.1)(@vue/compiler-sfc@3.5.29)(markdown-it-async@2.2.0)(typescript@5.9.3)(vite@7.3.1(@types/node@25.3.3)(jiti@2.6.1)(yaml@2.8.2))':
     dependencies:
       '@antfu/utils': 9.3.0
-      '@slidev/types': 52.14.0(@nuxt/kit@3.20.1)(@vue/compiler-sfc@3.5.29)(markdown-it-async@2.2.0)(typescript@5.9.3)(vite@7.3.1(@types/node@25.3.3)(jiti@2.6.1)(yaml@2.8.2))
+      '@slidev/types': 52.14.1(@nuxt/kit@3.20.1)(@vue/compiler-sfc@3.5.29)(markdown-it-async@2.2.0)(typescript@5.9.3)(vite@7.3.1(@types/node@25.3.3)(jiti@2.6.1)(yaml@2.8.2))
       yaml: 2.8.2
     transitivePeerDependencies:
       - '@nuxt/kit'
@@ -3634,7 +3634,7 @@ snapshots:
 
   '@slidev/types@0.47.5': {}
 
-  '@slidev/types@52.14.0(@nuxt/kit@3.20.1)(@vue/compiler-sfc@3.5.29)(markdown-it-async@2.2.0)(typescript@5.9.3)(vite@7.3.1(@types/node@25.3.3)(jiti@2.6.1)(yaml@2.8.2))':
+  '@slidev/types@52.14.1(@nuxt/kit@3.20.1)(@vue/compiler-sfc@3.5.29)(markdown-it-async@2.2.0)(typescript@5.9.3)(vite@7.3.1(@types/node@25.3.3)(jiti@2.6.1)(yaml@2.8.2))':
     dependencies:
       '@antfu/utils': 9.3.0
       '@shikijs/markdown-it': 4.0.1(markdown-it-async@2.2.0)
