@@ -35,7 +35,7 @@ export default defineTransformersSetup(() => {
 3. スニペット構文と Shiki Magic Move のインポート
 4. プロジェクトの `preCodeblock`
 5. アドオンとテーマの `preCodeblock`
-6. Mermaid、Monaco、PlantUML などの組み込み特別コードブロック
+6. Mermaid、PlantUML などの組み込み特別コードブロック
 7. アドオンとテーマの `postCodeblock`
 8. プロジェクトの `postCodeblock`
 9. コードブロックラッピングなどの他の組み込みトランスフォーマー
