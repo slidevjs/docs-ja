@@ -59,11 +59,11 @@ const add = () => count += 1
 マジックムーブブロックにタイトルバーを追加するには、各ステップの開始フェンスでファイル名を指定します:
 
 `````md
-````md magic-move
-```js [app.js]
+````md magic-move [app.js]
+```js
 console.log('Step 1')
 ```
-```js [app.js]
+```js
 console.log('Step 2')
 ```
 ````
