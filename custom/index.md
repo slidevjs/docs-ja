@@ -66,15 +66,21 @@ contextMenu: true
 wakeLock: true
 # オーバービューで各スライドのスナップショットを撮影します
 overviewSnapshots: false
+# vue-router のルーターモードを指定します。"history" または "hash" が指定可能です
+routerMode: history
 
 # スライドのカラースキーマを強制します。'auto'、'light'、または 'dark' が指定可能です
 colorSchema: auto
-# vue-router のルーターモードを指定します。"history" または "hash" が指定可能です
-routerMode: history
 # スライドのアスペクト比を指定します
 aspectRatio: 16/9
 # キャンバスの実際の幅、単位はピクセル
 canvasWidth: 980
+# スライド間トランジションのデフォルトを定義します
+# 詳しくは: https://sli.dev/guide/animations.html#slide-transitions
+transition: undefined # or BuiltinSlideTransition | string | TransitionGroupProps | null
+# クリックアニメーションのデフォルトプリセットを定義します
+# 詳しくは: https://sli.dev/guide/animations.html#click-animation-presets
+clickAnimation: undefined # or comma-delimited string
 # テーマのカスタマイズに使用され、属性 `x` に対して `--slidev-theme-x` としてルートスタイルを注入します
 themeConfig:
   primary: '#5d8392'
@@ -161,6 +167,9 @@ title: undefined # もしくは string
 # このスライドと次のスライド間のトランジション効果
 # 詳しくは: https://ja.sli.dev/guide/animations.html#slide-transitions
 transition: undefined # もしくは BuiltinSlideTransition | string | TransitionGroupProps | null
+# このスライドのクリックアニメーションのデフォルトプリセットを定義します
+# 詳しくは: https://sli.dev/guide/animations.html#click-animation-presets
+clickAnimation: undefined # or comma-delimited string
 # ズーム倍率の変更
 # 内容が多いスライドに便利です
 zoom: 1
