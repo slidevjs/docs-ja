@@ -188,6 +188,29 @@ status = 200
 
 その後、[Vercel ダッシュボード](https://vercel.com/) に移動してリポジトリから新しいサイトを作成します。
 
+### Zephyr Cloud {#zephyr-cloud}
+
+To deploy your Slidev deck on  you can add Zephyr support to an existing Slidev project with:
+スライドを [Zephyr Cloud](https://zephyr-cloud.io/) にデプロイするには、既存の Slidev プロジェクトに以下のコマンドで Zephyr サポートを追加します:
+
+```bash
+npx with-zephyr@latest
+```
+
+この codemod は、あなたのバンドラー (Slidev が使っている Vite) を検出して、Zephyr Cloud 用にコンフィグを更新します。
+
+設定が完了したら、ビルドコマンドを実行してください:
+
+```bash
+npm run build
+```
+
+Zephyr でビルドを実行するようにしている場合には、あなたのスライドは Zephyr Cloud にデプロイされ、プレビューリンクが帰ってきます。
+
+::: info
+Zephyr Cloud はほとんどのホスティングプロバイダーと少し違います: 毎度の `build` でデプロイが行われます。 
+:::
+
 ### Docker でホストする {#docker}
 
 コンテナでプレゼンテーションを実行する迅速な方法が必要な場合は、[tangramor](https://github.com/tangramor) によって維持されているプリビルト [docker イメージ](https://hub.docker.com/r/tangramor/slidev) を使用することも、独自にビルドすることもできます。

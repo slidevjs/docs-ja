@@ -40,7 +40,7 @@ StackBlitz でブラウザで直接 Slidev を開始: [sli.dev/new](https://sli.
 
 ### ローカルで作成する
 
-> [Node.js](https://nodejs.org) >= 18.0 がインストールされている必要があります。
+> [Node.js](https://nodejs.org) >= 20.12.0 がインストールされている必要があります。
 
 次のコマンドを実行して、ローカルに新しい Slidev プロジェクトを作成します。
 

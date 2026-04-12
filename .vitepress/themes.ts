@@ -4,7 +4,7 @@ export interface ThemeInfo {
   description: string
   previews: string[]
   repo?: string
-  author: {
+  author?: {
     name: string
     link?: string
   }

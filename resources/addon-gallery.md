@@ -12,11 +12,11 @@ Slidev で利用可能な素晴らしいアドオンをここで参照してく�
 
 <LinkInline link="guide/theme-addon#use-addon" />でそれらを使用する方法について詳しく読み、<LinkInline link="guide/write-addon" />で独自のアドオンを作成してください。
 
-## 公式アドオン
+<!-- ## 公式アドオン
 
 <ClientOnly>
   <AddonGallery collection="official"/>
-</ClientOnly>
+</ClientOnly> -->
 
 ## コミュニティアドオン
 
