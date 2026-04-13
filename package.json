@@ -38,6 +38,7 @@
     "gray-matter": "^4.0.3",
     "markdown-exit": "1.0.0-beta.9",
     "markdown-it": "^14.1.1",
+    "oxc-minify": "^0.125.0",
     "shiki": "^4.0.2",
     "typeit": "8.1.0",
     "typescript": "^5.9.3",
