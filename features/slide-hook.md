@@ -15,11 +15,11 @@ import { onSlideEnter, onSlideLeave, useIsSlideActive } from '@slidev/client'
 
 const isActive = useIsSlideActive()
 
-onSlideEnter(() => {
+onSlideEnter((to, from) => {
   /* アクティブになったときに呼び出されます */
 })
 
-onSlideLeave(() => {
+onSlideLeave((to, from) => {
   /* 非アクティブになったときに呼び出されます */
 })
 ```
