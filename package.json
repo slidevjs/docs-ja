@@ -1,8 +1,7 @@
 {
   "name": "docs",
   "type": "module",
-  "version": "52.15.0",
-  "private": true,
+  "version": "52.15.1",
   "license": "MIT",
   "funding": "https://github.com/sponsors/antfu",
   "homepage": "https://sli.dev",
