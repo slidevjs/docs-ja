@@ -282,6 +282,22 @@ Props:
 - `conversation` (`string`, デフォルト `'none'`): [Embedded Tweet parameter](https://developer.twitter.com/en/docs/twitter-for-websites/embedded-tweets/guides/embedded-tweet-parameter-reference)
 - `cards` (`'hidden' | 'visible'`, デフォルト `'visible'`): [Embedded Tweet parameter](https://developer.twitter.com/en/docs/twitter-for-websites/embedded-tweets/guides/embedded-tweet-parameter-reference)
 
+## `BlueSky`
+
+Bluesky の投稿を埋め込みます。
+
+### 使用例
+
+```md
+<BlueSky uri="https://bsky.app/profile/sli.dev/post/3la7gcgfwpe2n" />
+<BlueSky uri="at://did:plc:432mbsu2xucyvxl6sluohidu/app.bsky.feed.post/3la7gcgfwpe2n" />
+```
+
+Props:
+
+- `uri` (`string`, required): Bluesky 投稿の AT-URI、または `https://bsky.app/profile/.../post/...`
+- `scale` (`number | string`, default `1`): 表示サイズの倍率
+
 ## `VAfter`, `VClick` と `VClicks`
 
 <LinkCard link="guide/animations#click-animation" />

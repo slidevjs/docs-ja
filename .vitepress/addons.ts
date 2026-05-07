@@ -15,6 +15,7 @@ export const official: AddonInfo[] = [
   },
 ]
 
+// Please add your addon to the end of the list.
 export const community: AddonInfo[] = [
   {
     id: 'slidev-addon-python-runner',
@@ -257,6 +258,28 @@ export const community: AddonInfo[] = [
       link: 'https://github.com/xunz3',
     },
     repo: 'https://github.com/xunz3/slidev-pane',
+  },
+  {
+    id: 'slidev-agent',
+    name: 'slidev-agent',
+    description: 'Slidev addon and wrapper CLI for LangChain-powered slide authoring.',
+    tags: ['Component', 'Integration'],
+    author: {
+      name: 'Christian Bromann',
+      link: 'https://github.com/christian-bromann',
+    },
+    repo: 'https://github.com/christian-bromann/slidev-agent',
+  },
+  {
+    id: 'slidev-addon-animated-text',
+    name: 'Animated text',
+    description: 'Stroke by stroke animated text with any font using tegaki.',
+    tags: ['Component'],
+    author: {
+      name: 'Andreas Taranetz',
+      link: 'https://andreas.taranetz.com/',
+    },
+    repo: 'https://github.com/andreas-taranetz/slidev-addon-animated-text',
   },
   // Add yours here!
   {

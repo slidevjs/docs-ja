@@ -15,6 +15,7 @@ declare module 'vue' {
     AddonInfo: typeof import('./.vitepress/theme/components/AddonInfo.vue')['default']
     Arrow: typeof import('./node_modules/@slidev/client/builtin/Arrow.vue')['default']
     AutoFitText: typeof import('./node_modules/@slidev/client/builtin/AutoFitText.vue')['default']
+    BlueSky: typeof import('./node_modules/@slidev/client/builtin/BlueSky.vue')['default']
     CarbonApps: typeof import('~icons/carbon/apps')['default']
     CarbonArrowLeft: typeof import('~icons/carbon/arrow-left')['default']
     CarbonArrowRight: typeof import('~icons/carbon/arrow-right')['default']

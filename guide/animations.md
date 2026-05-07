@@ -228,6 +228,44 @@ clicks: 10
 ---
 ```
 
+### クリックアニメーションプリセット {#click-animation-presets}
+
+headmatter / frontmatter にデフォルトのクリックアニメーションプリセットを定義できます:
+
+```yaml
+---
+clickAnimation: up
+---
+```
+
+または、ディレクティブを使って要素ごとに指定できます:
+
+```md
+<div v-click>frontmatter に定義したアニメーションプリセットを使用します</div>
+<div v-click.scale>拡大して表示し、縮小して隠します</div>
+<div v-click.fade.right>複数のアニメーションで構成されます: フェードと右</div>
+<div v-click.none>この要素にはアニメーションはありません</div>
+```
+
+いくつかのビルトインプリセットが使えます:
+
+- `fade`: 透明度 0.5 から 1 にフェードイン
+- `fade-in`: 透明度 0 から 1 にフェードイン
+- `up`: 20px 上に
+- `down`: 20px 下に
+- `left`: 20px 左に
+- `right`: 20px 右に
+- `scale`: 0.9 にスケール
+- `none`: 要素のアニメーションを無効化する
+
+また、`.slidev-vclick-anim-{プリセット名}` で CSS ルールを設定して、プリセットを定義できます:
+
+```css
+.slidev-vclick-anim-pop.slidev-vclick-hidden {
+  transform: scale(0.96) translateY(8px);
+}
+```
+
 ### 要素のトランジション {#element-transitions}
 
 `v-click` ディレクティブを要素に適用すると、クラス名 `slidev-vclick-target` が要素に付与されます。要素が非表示の場合、クラス名 `slidev-vclick-hidden` も付与されます。例えば:
