@@ -1,3 +1,15 @@
-onlyBuiltDependencies:
-  - esbuild
-  - typeit
+catalogMode: prefer
+minumumReleaseAgeExclude:
+
+shamefullyHoist: true
+shellEmulator: true
+trustPolicy: no-downgrade
+trustPolicyExclude:
+  - languium
+trustPolicyIgnoreAfter: 43200
+
+strictPeerDependencies: false
+
+allowBuilds:
+  esbuild: true
+  typeit: true
