@@ -66,7 +66,7 @@ contextMenu: true
 wakeLock: true
 # オーバービューで各スライドのスナップショットを撮影します
 overviewSnapshots: false
-# vue-router のルーターモードを指定します。"history" または "hash" が指定可能です
+# vue-router のルーターモードを指定します。"history" 、"hash"、または "memory" が指定可能です
 routerMode: history
 
 # スライドのカラースキーマを強制します。'auto'、'light'、または 'dark' が指定可能です
