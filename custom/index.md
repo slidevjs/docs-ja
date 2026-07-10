@@ -64,6 +64,9 @@ record: dev
 contextMenu: true
 # 画面の常時表示 (ウェイクロック) を有効にします。boolean、'dev'、または 'build' を指定できます
 wakeLock: true
+# オフラインでも使用できるように、アセットをプリキャッシュする PWA サポートを有効にします。boolean、'dev'、または 'build' を指定できます。
+# 詳しくは: https://sli.dev/features/pwa.html
+pwa: false
 # オーバービューで各スライドのスナップショットを撮影します
 overviewSnapshots: false
 # vue-router のルーターモードを指定します。"history" 、"hash"、または "memory" が指定できます
