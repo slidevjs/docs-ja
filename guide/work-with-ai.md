@@ -2,6 +2,25 @@
 
 Slidev はマークダウンベースであるため、AI コーディングエージェントと非常に相性が良いです。
 
+## MCP Server
+
+Slidev has a built-in <LinkInline link="features/mcp" /> that gives any MCP-capable agent structured tools to inspect, edit, reorder, and navigate your slides.
+
+When the dev server is running, point your agent to `http://localhost:<port>/__mcp`:
+
+```bash
+# e.g. for Claude Code
+claude mcp add --transport http slidev http://localhost:3030/__mcp
+```
+
+Or run a standalone stdio server that operates on the files directly:
+
+```bash
+slidev mcp slides.md
+```
+
+See <LinkInline link="features/mcp" /> for the available tools and configuration.
+
 ## Skills
 
 Slidev は AI コーディングエージェント向けに公式の [スキル](https://code.claude.com/docs/en/skills) を提供しており、プレゼンテーションの作成を支援する際に Slidev の構文、機能、およびベストプラクティスを理解できるようにします。
