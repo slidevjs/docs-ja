@@ -44,7 +44,7 @@ Props:
 
 > 試験的
 
-コンテンツに合わせて自動的にフォントサイズが調整されるボックスです。PowerPoint や Keynote のテキストボックスに似ています。
+[fitty](https://github.com/rikschennink/fitty) を使用した、コンテンツに合わせて自動的にフォントサイズが調整されるボックスです。PowerPoint や Keynote のテキストボックスに似ています。
 
 ### 使い方
 
@@ -57,6 +57,7 @@ Props:
 - `max` (`string | number`, デフォルト `100`): 最大フォントサイズ
 - `min` (`string | number`, デフォルト `30`): 最小フォントサイズ
 - `modelValue` (`string`, デフォルト `''`): テキストコンテンツ
+- `multiLine` (`boolean`, デフォルト `true`): 最小のフォントサイズに達したとき、テキストを折り返すようにする
 
 ## `LightOrDark`
 

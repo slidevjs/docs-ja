@@ -84,6 +84,12 @@ Markdown ファイルをフォーマットします。これはスライドの�
 
 - `[entry]` (`string`, デフォルト: `slides.md`): スライド Markdown ファイルのパス
 
+## `slidev mcp [entry]` {#mcp}
+
+Start an MCP (Model Context Protocol) server over stdio for AI agents to inspect and edit the slides. See <LinkInline link="features/mcp" />.
+
+- `[entry]` (`string`, default: `slides.md`): path to the slides markdown entry.
+
 ## `slidev theme [subcommand]` {#theme}
 
 テーマ関連の操作を行います。
