@@ -2,19 +2,19 @@
 relates:
   - vite-plugin-pwa: https://vite-pwa-org.netlify.app/
   - Workbox: https://developer.chrome.com/docs/workbox
-tags: [build]
+tags: [ビルド]
 since: v52.17.0
 description: |
-  Opt-in PWA support that precaches all deck assets so a built deck runs fully offline.
+  デッキ内のすべてのアセットをプリキャッシュし、ビルド済みデッキを完全にオフラインで実行できるようにする、オプトイン型の PWA サポートです。
 ---
 
-# PWA / Offline Support
+# PWA / オフラインサポート
 
-Slides are often presented on an unfamiliar or locked-down machine, over a flaky or absent network. With the opt-in `pwa` option, `slidev build` generates a [service worker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) (powered by [`vite-plugin-pwa`](https://vite-pwa-org.netlify.app/) and [Workbox](https://developer.chrome.com/docs/workbox)) that **precaches every deck asset** — JavaScript, CSS, and HTML plus all images, video, and audio — so once the served deck has loaded a first time, it runs entirely from the cache with no per-slide asset fetching mid-talk.
+スライドは時々使い慣れていない PC やセキュリティ制限がかかった端末で投影しなければならないこともあり、ネットワーク環境が不安定だったり、そもそも繋がらなかったりすることもあります。任意で `pwa` オプションを使用すると、`slidev build` はすべてのデッキアセット (JavaScript、CSS、そして HTML に加えてすべての画像、動画、音声) をプリキャッシュする [サービスワーカー](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) を ([`vite-plugin-pwa`](https://vite-pwa-org.netlify.app/) と [Workbox](https://developer.chrome.com/docs/workbox) を用いて) 生成します。そのため、一度読み込まれたスライドデッキは完全にキャッシュから実行されるようになり、プレゼンテーションの途中でスライドごとにアセットを読み込む必要がなくなります。 
 
-## Usage
+## 使用方法
 
-Enable it in the [headmatter](/custom/#headmatter) of your first slide:
+最初のスライドの [headmatter](/custom/#headmatter) で有効にします:
 
 ```yaml
 ---
@@ -22,24 +22,24 @@ pwa: true
 ---
 ```
 
-The `pwa` option can be a boolean or a string to control when the service worker is active:
+`pwa` オプションは boolean 値か、いつサービスワーカーを有効にするか string を指定できます:
 
-- `false` (default) — no service worker.
-- `true` — enabled in both dev and build.
-- `'build'` — enabled in the built output only.
-- `'dev'` — enabled in the dev server only.
+- `false` (デフォルト) — サービスワーカーを使用しません。
+- `true` — サービスワーカーを dev と build で使用します。
+- `'build'` — ビルドしたものでのみ使用します。
+- `'dev'` — 開発サーバーでのみ使用します。
 
-Since precaching every asset is heavy, `pwa` is **off by default** and should be enabled deliberately — most useful together with [`slidev build`](/guide/hosting) for a self-hosted deck you want to work offline.
+すべてのアセットをプリキャッシュすると処理が重くなるため、`pwa` は**デフォルトで無効化**されています。必要な場合に有効にしてください。特に、オフラインで使用したいセルフホスト型のデッキを [slidev build](/guide/hosting) でビルドする場合に有用です。
 
-## How It Works
+## どのように動作するか
 
-When you serve the built deck, the service worker downloads and caches all deck assets in the background. A small indicator in the bottom-right corner shows `Caching for offline…` while precaching is in progress, then briefly shows `Ready offline` once it completes. After that, disconnecting the network and reloading serves the whole deck — HTML, images, and video — from the cache.
+ビルド済みデッキを配信するとき、サービスワーカーはすべてのスライドデッキアセットをダウンロードしてキャッシュします。キャッシュ中は右下に小さく `Caching for offline…` と表示され、キャッシュが完了すると `Ready offline` と一時的に表示されます。その後はネットワークを切断して再読み込みしても、スライドデッキ全体 (HTML、画像、そして動画など) がキャッシュから提供されます。
 
-The plugin is a complete no-op when `pwa` is disabled, and the client registration and indicator are tree-shaken out of the bundle, so there is no runtime cost unless you opt in.
+このプラグインは `pwa` が無効な場合、完全に何もしない状態となり、クライアントの登録処理や表示はバンドルからツリーシェイキングによって除外されます。そのため、明示的に有効にしない限り、実行時のコストは一切かかりません。
 
-## Notes
+## 注記
 
-- **Only built assets are precached.** Files emitted into the build are cached; remote or CDN-fetched assets are not available offline. To make remote images work offline, combine this with [Bundle Remote Assets](/features/bundle-remote-assets), which downloads them into the build.
-- **No manifest icons.** An offline feature must not depend on a remote/CDN asset (and a deck's own [`favicon`](/custom/#headmatter) may be a URL), so the generated web app manifest intentionally ships no icons. It remains a valid manifest without them.
-- **Large media.** Workbox's `maximumFileSizeToCacheInBytes` is raised to 100 MB and the precache glob covers common image, video, and audio extensions, so large media files are not silently skipped.
-- **Video seeking offline.** Precached media is served as a full cached response, so playing from the start works offline; scrubbing/seeking through video may require additional range-request handling.
+- **ビルド済みアセットのみがプリキャッシュされます。** ビルドによって生成されたファイルはキャッシュされます。リモートから、あるいは CDN から取得したアセットはオフラインでは使用できません。リモートの画像をオフラインで使用したい場合には、リモートをビルドに含める [Bundle Remote Assets](/features/bundle-remote-assets) を組み合わせてください。
+- **マニフェストアイコンはありません。** オフライン機能はリモートあるいは CDN のアセット (そしてスライドデッキの [`favicon`](/custom/#headmatter) もおそらく URL でしょう) に依存してはなりません。アイコンがなくとも有効なマニフェストであることには変わりないので、生成されたマニフェストはアイコンがありません。
+- **大容量メディアの対応。** Workbox の `maximumFileSizeToCacheInBytes` を 100 MB まで引き上げました。また、プリキャッシュの対象となる glob パターンに一般的な画像、動画、音声の拡張子を含めたため、大容量のメディアファイルが警告なしにスキップされることはありません。
+- **オフラインでの動画再生。** プリキャッシュされたメディアはファイル全体を含むキャッシュ済みレスポンスとして返されます。そのため、動画を先頭から再生することはオフラインでも可能ですが、再生位置の移動やシークには、Range リクエストへの追加対応が必要になる場合があります。
