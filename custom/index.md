@@ -29,7 +29,7 @@ keywords: keyword1,keyword2
 presenter: true
 # ブラウザーエクスポーターを有効にします。boolean、'dev'、または 'build' を指定できます
 browserExporter: dev
-# SPA ビルドでの PDF ダウンロードを有効にします。カスタム URL も指定可能です
+# SPA ビルドでの PDF ダウンロードを有効にします。カスタム URL も指定できます
 download: false
 # エクスポートファイルのファイル名
 exportFilename: slidev-exported
@@ -48,7 +48,7 @@ twoslash: true
 lineNumbers: false
 # Monaco エディターを有効にします。boolean、'dev'、または 'build' を指定できます
 monaco: true
-# Monaco の型情報をどこから読み込むかを指定します。'cdn'、'local'、または 'none' が指定可能です
+# Monaco の型情報をどこから読み込むかを指定します。'cdn'、'local'、または 'none' が指定できます
 monacoTypesSource: local
 # 型情報をインポートするための追加のローカルパッケージを明示的に指定します
 monacoTypesAdditionalPackages: []
@@ -66,10 +66,10 @@ contextMenu: true
 wakeLock: true
 # オーバービューで各スライドのスナップショットを撮影します
 overviewSnapshots: false
-# vue-router のルーターモードを指定します。"history" 、"hash"、または "memory" が指定可能です
+# vue-router のルーターモードを指定します。"history" 、"hash"、または "memory" が指定できます
 routerMode: history
 
-# スライドのカラースキーマを強制します。'auto'、'light'、または 'dark' が指定可能です
+# スライドのカラースキーマを強制します。'auto'、'light'、または 'dark' が指定できます
 colorSchema: auto
 # スライドのアスペクト比を指定します
 aspectRatio: 16/9
