@@ -35,7 +35,7 @@ Slidev は高度なナビゲーション制御のためにいくつかのグロ�
 import { onSlideEnter, onSlideLeave, useDarkMode, useIsSlideActive, useNav, useSlideContext } from '@slidev/client'
 
 const { $slidev } = useSlideContext()
-const { currentPage, currentLayout, currentSlideRoute } = useNav()
+const { currentPage, currentLayout, currentFrontmatter, currentSlideRoute } = useNav()
 const { isDark } = useDarkMode()
 const isActive = useIsSlideActive()
 onSlideEnter((to, from) => { /* ... */ })
@@ -86,6 +86,7 @@ $nav.go(10) // スライド #10 に進む
 
 $nav.currentPage // 現在のスライド番号
 $nav.currentLayout // 現在のレイアウト名
+$nav.currentFrontmatter // カスタムフィールドを含む、現在のスライドのフロントマター
 ```
 
 利用可能なその他のプロパティについては、[`SlidevContextNav` インターフェース](https://github.com/slidevjs/slidev/blob/main/packages/client/composables/useNav.ts) を参照してください。
