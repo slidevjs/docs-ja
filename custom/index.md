@@ -146,6 +146,8 @@ seoMeta:
 clicks: 0
 # 開始クリック数の変更
 clicksStart: 0
+# 背景画像の URL、ローカルのパス、もしくは 色 / グラデーション
+background: undefined # or string (例 'https://cover.sli.dev' や '/image.png')
 # スライドを完全に無効化して非表示にします
 disabled: false
 # `disabled` と同じです
