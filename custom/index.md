@@ -156,8 +156,6 @@ hide: false
 hideInToc: false
 # スライドに適用されるレイアウト
 layout: <最初のスライドには "cover"、それ以外は "default">
-# スライドの背景 色 ('#fff', 'rgb(...)') や画像の URL
-background: undefined # or string
 # スライドのルート要素に適用するクラス
 class: undefined # or string | string[] | Record<string, unknown>
 # <TitleRenderer> と <Toc> コンポーネントでのタイトルレベルを上書きします
