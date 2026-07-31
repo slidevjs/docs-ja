@@ -47,3 +47,13 @@ console.log('Hello, World!')
 ````
 
 CSS 単位 (例えば `{height:'300px'}` や `{height:'100%'}`) を使用して特定の高さを設定することもできます。
+
+## 行番号
+
+Monaco エディターは他のコードブロックと同様に、グローバルなヘッドマターの `lineNumbers` 設定に従って動作します。`{lines:true}` を使うことで、単体のコードブロックにも編集可能な状態を維持したまま行番号の表示を切り替えることもできます。
+
+````md
+```ts {monaco} {lines:true}
+console.log('HelloWorld')
+```
+````
