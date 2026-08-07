@@ -146,6 +146,8 @@ seoMeta:
 clicks: 0
 # 開始クリック数の変更
 clicksStart: 0
+# 背景画像の URL、ローカルのパス、もしくは 色 / グラデーション
+background: undefined # or string (例 'https://cover.sli.dev' や '/image.png')
 # スライドを完全に無効化して非表示にします
 disabled: false
 # `disabled` と同じです
@@ -154,6 +156,8 @@ hide: false
 hideInToc: false
 # スライドに適用されるレイアウト
 layout: <最初のスライドには "cover"、それ以外は "default">
+# スライドのルート要素に適用するクラス
+class: undefined # or string | string[] | Record<string, unknown>
 # <TitleRenderer> と <Toc> コンポーネントでのタイトルレベルを上書きします
 # `title` が宣言されている場合にのみ有効です
 level: 1
