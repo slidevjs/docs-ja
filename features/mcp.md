@@ -4,24 +4,24 @@ relates:
   - Model Context Protocol: https://modelcontextprotocol.io/
   - features/vscode-extension
 since: v52.17.0
-tags: [editor, tool]
+tags: [エディタ, ツール]
 description: |
-  Built-in MCP server that lets AI agents inspect, edit, reorder, and navigate your slides.
+  AI エージェントがスライドの内容を確認・編集・並べ替えたり、スライドを移動したりできるようにする組み込みの MCP サーバーです。
 ---
 
-# MCP Server
+# MCP サーバー
 
-Slidev ships a built-in [MCP (Model Context Protocol)](https://modelcontextprotocol.io/) server, so any MCP-capable AI agent (Claude Code, Codex, Cursor, VS Code Copilot, etc.) can work with your slides through structured tools instead of raw text edits — reading slides, updating content and notes, inserting/removing/reordering slides, and even driving the live presentation.
+Slidev は組み込みの [MCP (Model Context Protocol)](https://modelcontextprotocol.io/) を提供しています。そのため、MCP に対応した AI エージェント (Claude Code, Codex, Cursor, VS Code Copilot など) は生のテキストを直接編集する代わりに、スライドを読む・更新・追加・削除・並べ替えといったことを構造化されたツールで扱うことができます。また、実際のプレゼンテーションを操作することもできます。
 
-## Via the Dev Server
+## 開発サーバー経由で使う
 
-When the dev server is running, the MCP server is available over HTTP (streamable transport) at:
+開発サーバーの実行中は、MCP サーバーに次のアドレスから HTTP (Streamable HTTP トランスポート) 経由でアクセスできます:
 
 ```
 http://localhost:<port>/__mcp
 ```
 
-For example, register it with your agent:
+例えば、次のようにして AI エージェントに MCP サーバーを登録します:
 
 ::: code-group
 
@@ -42,9 +42,9 @@ claude mcp add --transport http slidev http://localhost:3030/__mcp
 
 :::
 
-With the dev server connected, agents can also use the `slidev-goto-slide` tool to navigate all connected browsers to a slide — handy for visually verifying a slide right after editing it. Edits made through the MCP tools are written back to your markdown files and hot-reloaded instantly.
+エージェントは `slidev-goto-slide` ツールを使って、開発サーバーに接続されているすべてのブラウザを指定したスライドへ移動させることもできます。これは、スライドを編集したあとに、内容を視覚的に確認する際に便利です。MCP ツールを使って行った編集は、Markdown ファイルにすぐに書き戻され、ホットリロードされます。
 
-To disable the endpoint, set in your headmatter:
+エンドポイントを無効化するには、ヘッドマターに次のように指定します:
 
 ```yaml
 ---
@@ -52,15 +52,15 @@ mcp: false
 ---
 ```
 
-## Via Stdio
+## Stdio 経由で使う
 
-Without a dev server, you can start a standalone MCP server over stdio, operating directly on the markdown files:
+開発サーバーを使わずとも、Markdown ファイルを直接操作する スタンドアロン MCP サーバーを stdio 経由で起動できます:
 
 ```bash
 slidev mcp [entry]
 ```
 
-For example:
+設定例:
 
 ```json
 {
@@ -73,17 +73,17 @@ For example:
 }
 ```
 
-## Available Tools
+## 使用可能なツール
 
-| Tool                  | Description                                                                                        |
-| --------------------- | -------------------------------------------------------------------------------------------------- |
-| `slidev-get-info`     | Deck overview: entry file, title, slide count, markdown files, dev server URL and current position |
-| `slidev-list-slides`  | List all slides with number, title, layout, and source file                                        |
-| `slidev-get-slide`    | Full source of one slide: frontmatter, content, and note                                           |
-| `slidev-update-slide` | Update the content, note, and/or frontmatter of a slide                                            |
-| `slidev-insert-slide` | Insert a new slide after an existing one                                                           |
-| `slidev-remove-slide` | Remove a slide                                                                                     |
-| `slidev-move-slide`   | Move a slide before/after another one to reorder the deck                                          |
-| `slidev-goto-slide`   | Navigate the live presentation to a slide (dev server only)                                        |
+| ツール名              | 説明                                                                                                                                          |
+| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| `slidev-get-info`     | スライドデッキの概要: エントリ、タイトル、スライドの枚数、スライドで使っている Markdown ファイルの一覧、開発サーバーの URL と現在開いている位置 |
+| `slidev-list-slides`  | すべてのスライドのページ番号、タイトル、レイアウト、ソースファイルをリスト化                                                                    |
+| `slidev-get-slide`    | 単一のスライドのフロントマター、文章、ノート                                                                                                    |
+| `slidev-update-slide` | 単一のスライドのフロントマター、文章、ノートのすべて / いずれかを更新                                                                           |
+| `slidev-insert-slide` | 既存のスライドの後に新しいページを追加                                                                                                          |
+| `slidev-remove-slide` | スライドを削除                                                                                                                                  |
+| `slidev-move-slide`   | スライドを別のスライドの前後に移動                                                                                                              |
+| `slidev-goto-slide`   | 開いているスライドを移動する (開発サーバー起動中のみ)                                                                                           |
 
-Slides are addressed by their rendered 1-based number, matching the slide numbers shown in the presentation.
+スライド番号は実際にプレゼンテーションで表示される番号と同じく 1 から始まっています。
