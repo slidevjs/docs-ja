@@ -96,6 +96,22 @@ console.log('Step 2')
 ````
 `````
 
+## Animation Options {#animation-options}
+
+> v52.21.0 以降で利用可能
+
+`magicMoveDuration` のほかにも、`shiki.magicMove` ヘッドマターを使うことで [Shiki Magic Move](https://shiki.style/packages/magic-move#option) アニメーション (イージング、スタッガー、遅延、差分検出の挙動など) を細かく調整することができます:
+
+```yaml
+---
+shiki:
+  magicMove:
+    easing: ease-in-out
+    stagger: 5
+    delayMove: 0.2
+---
+```
+
 ## コピーボタン {#copy-button}
 
 > v0.52.0 以降で利用可能
