@@ -70,7 +70,7 @@ Slidev のローカルサーバーを起動します。
 オプション:
 
 - `--output` (`string`, デフォルト: `exportFilename` (参照: https://sli.dev/custom/#frontmatter-configures) もしくは `[entry]-export` ): 出力先のパス
-- `--format` (`'pdf', 'png', 'pptx', 'md'`, デフォルト: `'pdf'`): 出力形式
+- `--format` (`'pdf', 'png', 'pptx', 'pptx-editable', 'md'`, デフォルト: `'pdf'`): 出力形式。 `pptx` は各スライドを画像で出力し、`pptx-editable` は PowerPoint で編集可能なオブジェクトとして出力します。
 - `--timeout` (`number`, デフォルト: `30000`): 印刷ページのレンダリングのタイムアウト (参照: https://playwright.dev/docs/api/class-page#page-goto)
 - `--range` (`string`): 出力するページ範囲 (例: `'1,4-5,6'`)
 - `--dark` (`boolean`, デフォルト: `false`): ダークテーマで出力する
