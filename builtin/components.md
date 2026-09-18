@@ -273,15 +273,18 @@ Tweet を埋め込みます。
 ### 使用例
 
 ```md
-<Tweet id="20" />
+<Tweet url="https://x.com/antfu7/status/1389604687502995457" />
 ```
 
 Props:
 
-- `id` (`number | string`, 必須): Tweet の id
+- `id` (`number | string`): Tweet の id
+- `url` (`string`): `x.com` か `twitter.com` ポストの URL
 - `scale` (`number | string`, デフォルト `1`): 表示サイズの倍率
-- `conversation` (`string`, デフォルト `'none'`): [Embedded Tweet parameter](https://developer.twitter.com/en/docs/twitter-for-websites/embedded-tweets/guides/embedded-tweet-parameter-reference)
-- `cards` (`'hidden' | 'visible'`, デフォルト `'visible'`): [Embedded Tweet parameter](https://developer.twitter.com/en/docs/twitter-for-websites/embedded-tweets/guides/embedded-tweet-parameter-reference)
+- `conversation` (`string`, デフォルト `'none'`): [tweet embed parameter](https://developer.twitter.com/en/docs/twitter-for-websites/embedded-tweets/guides/embedded-tweet-parameter-reference)
+- `cards` (`'hidden' | 'visible'`, デフォルト `'visible'`): [tweet embed parameter](https://developer.twitter.com/en/docs/twitter-for-websites/embedded-tweets/guides/embedded-tweet-parameter-reference)
+
+`id` か `url` を指定してください。どちらも指定されている場合は、`id` が使用されます。
 
 ## `BlueSky`
 
